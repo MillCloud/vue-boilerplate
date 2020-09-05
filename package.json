@@ -1,0 +1,82 @@
+{
+  "name": "vue-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "check": "ncu",
+    "commit": "git-ze && git push",
+    "dev": "vue-cli-service serve"
+  },
+  "dependencies": {
+    "@vue/composition-api": "^1.0.0-beta.11",
+    "axios": "^0.20.0",
+    "better-scroll": "^2.0.2",
+    "core-js": "^3.6.5",
+    "dayjs": "^1.8.35",
+    "element-ui": "^2.13.2",
+    "element-ui-eoi": "^2.14.4",
+    "lodash-es": "^4.17.15",
+    "nprogress": "^0.2.0",
+    "ress": "^2.0.4",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.3",
+    "vuex": "^3.5.1",
+    "vxe-table": "^2.9.19",
+    "vxe-table-plugin-element": "^1.9.1",
+    "xe-utils": "^2.7.8"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "@modyqyw/eslint-config-vue": "^1.7.3",
+    "@modyqyw/prettier-config": "^1.1.1",
+    "@modyqyw/stylelint-config-scss": "^1.0.18",
+    "@types/lodash-es": "^4.17.3",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.1",
+    "compression-webpack-plugin": "^5.0.2",
+    "eslint": "^7.8.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.3.0",
+    "node-sass": "^4.14.1",
+    "npm-check-updates": "^8.1.0",
+    "prettier": "^2.1.1",
+    "sass-loader": "^10.0.2",
+    "stylelint": "^13.7.0",
+    "stylelint-webpack-plugin": "^2.1.0",
+    "vue-cli-plugin-tailwind": "~1.4.2",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/**/*.scss": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "./src/**/*.{js,jsx}": [
+      "prettier --write",
+      "vue-cli-service lint"
+    ],
+    "./src/**/*.{js,jsx,vue}": [
+      "vue-cli-service lint"
+    ]
+  }
+}

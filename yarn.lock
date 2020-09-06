@@ -10916,6 +10916,11 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+swrv@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.npm.taobao.org/swrv/download/swrv-0.7.3.tgz#fa9489e81e10b5002f9ef54c936c8192ba7e5b14"
+  integrity sha1-+pSJ6B4QtQAvnvVMk2yBkrp+WxQ=
+
 table@^5.2.3:
   version "5.4.6"
   resolved "https://registry.npm.taobao.org/table/download/table-5.4.6.tgz#1292d19500ce3f86053b05f0e8e7e4a3bb21079e"

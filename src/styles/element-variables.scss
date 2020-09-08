@@ -4,6 +4,15 @@ $--color-success: $color-success;
 $--color-warning: $color-warning;
 $--color-danger: $color-danger;
 $--color-info: $color-info;
+$--color-text-primary: $color-text-primary;
+$--color-text-regular: $color-text-regular;
+$--color-text-secondary: $color-text-secondary;
+$--color-text-placeholder: $color-text-placeholder;
+$--border-color-base: $color-border;
+$--border-color-light: $color-border-light;
+$--border-color-lighter: $color-border-lighter;
+$--border-color-extra-light: $color-border-extra-light;
+$--background-color-base: $color-background;
 
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: "~element-ui/lib/theme-chalk/fonts";

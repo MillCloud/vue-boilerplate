@@ -4,10 +4,17 @@
     class="text-center"
   >
     <div class="nav">
-      <router-link to="/">
+      <router-link
+        to="/"
+        class="mr-2"
+      >
         Home
-      </router-link> |
-      <router-link to="/about">
+      </router-link>
+      |
+      <router-link
+        to="/about"
+        class="ml-2"
+      >
         About
       </router-link>
     </div>

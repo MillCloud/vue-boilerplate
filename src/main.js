@@ -4,10 +4,8 @@ import router from './router';
 import store from './store';
 import App from './App.vue';
 import '@/styles/app.scss';
-
 import '@/directives';
 import '@/plugins';
-
 import '@/guard';
 
 Vue.config.productionTip = false;

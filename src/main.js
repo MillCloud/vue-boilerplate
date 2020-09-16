@@ -3,10 +3,12 @@ import i18n from './i18n';
 import router from './router';
 import store from './store';
 import App from './App.vue';
-import 'ress';
 import '@/styles/app.scss';
 
+import '@/directives';
 import '@/plugins';
+
+import '@/guard';
 
 Vue.config.productionTip = false;
 

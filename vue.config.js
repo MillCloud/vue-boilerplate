@@ -73,8 +73,23 @@ module.exports = {
   },
 
   // public path
+  // development
   publicPath:
     process.env.NODE_ENV === 'production'
       ? '/' // production
-      : '/', // development
+      : '/',
+
+  pluginOptions: {
+    i18n: {
+      locale: 'zh-CN',
+      fallbackLocale: 'zh-CN',
+      localeDir: 'locales',
+      enableInSFC: false,
+    },
+  },
+
+  transpileDependencies: [
+    'vue-echarts',
+    'resize-detector',
+  ],
 };

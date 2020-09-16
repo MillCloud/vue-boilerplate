@@ -1,18 +1,18 @@
 import Vue from 'vue';
-import ElementUI from 'element-ui';
-import '@/styles/element-variables.scss';
-import App from './App.vue';
+import i18n from './i18n';
 import router from './router';
 import store from './store';
+import App from './App.vue';
 import 'ress';
 import '@/styles/app.scss';
 
-Vue.use(ElementUI);
+import '@/plugins';
 
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
+  i18n,
   render: (h) => h(App),
 }).$mount('#app');

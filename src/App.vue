@@ -22,6 +22,10 @@
   </div>
 </template>
 
+<script>
+export default {};
+</script>
+
 <style lang="scss">
 .nav {
   padding: 30px;

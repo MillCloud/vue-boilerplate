@@ -3,7 +3,7 @@ const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
-const prodGzipExt = [
+const arrGZipExtension = [
   'html',
   'js',
   'css',
@@ -35,7 +35,7 @@ module.exports = {
       config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true;
       config.plugins.push(
         new CompressionPlugin({
-          test: new RegExp(`\\.(${prodGzipExt.join('|')})$`),
+          test: new RegExp(`\\.(${arrGZipExtension.join('|')})$`),
         }),
       );
       config.optimization.splitChunks = {
@@ -72,13 +72,6 @@ module.exports = {
     },
   },
 
-  // public path
-  // development
-  publicPath:
-    process.env.NODE_ENV === 'production'
-      ? '/' // production
-      : '/',
-
   pluginOptions: {
     i18n: {
       locale: 'en',
@@ -87,6 +80,8 @@ module.exports = {
       enableInSFC: false,
     },
   },
+
+  publicPath: '/',
 
   transpileDependencies: [
     'vue-echarts',

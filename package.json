@@ -5,18 +5,20 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "lint:script && lint:style",
+    "lint": "npm run lint:script && npm run lint:style && npm run lint:ls",
     "check": "ncu",
     "commit": "git-ze && git push",
     "dev": "vue-cli-service serve",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "lint:script": "vue-cli-service lint",
-    "lint:style": "stylelint ./src/**/*.scss --fix"
+    "lint:style": "stylelint ./src/**/*.scss --fix",
+    "lint:ls": "ls-lint"
   },
   "dependencies": {
     "@ant-design/colors": "^4.0.5",
     "@ant-design/icons-svg": "^4.1.0",
     "@ant-design/icons-vue": "4.0.6",
+    "@ls-lint/ls-lint": "^1.9.2",
     "@nutui/nutui": "^2.2.10",
     "@vue/composition-api": "^1.0.0-beta.14",
     "axios": "^0.20.0",
@@ -93,6 +95,9 @@
     "./src/**/*.vue": [
       "vue-cli-service lint",
       "stylelint --fix"
+    ],
+    ".": [
+      "ls-lint"
     ]
   }
 }

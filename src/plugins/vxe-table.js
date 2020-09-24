@@ -11,14 +11,8 @@ Vue.use(VXETable);
 // Vue.prototype.$XModal = VXETable.modal
 
 VXETable.setup({
+  // 国际化内置提示语
   i18n: (key) => i18n.t(key),
-  // 对参数的内容自动进行国际化翻译
-  translate(key) {
-    if (key && key.indexOf('app.') > -1) {
-      return i18n.t(key);
-    }
-    return key;
-  },
 });
 
 VXETable.use(VXETablePluginElement);

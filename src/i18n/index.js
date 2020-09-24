@@ -1,33 +1,33 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import elementEnLocales from 'element-ui/lib/locale/lang/en';
-import elementZhCNLocales from 'element-ui/lib/locale/lang/zh-CN';
-import elementZhHKLocales from 'element-ui/lib/locale/lang/zh-TW';
+import elementZhHansLocales from 'element-ui/lib/locale/lang/zh-CN';
+import elementZhHantLocales from 'element-ui/lib/locale/lang/zh-TW';
 import vuetifyEnLocales from 'vuetify/es5/locale/en';
-import vuetifyZhCNLocales from 'vuetify/es5/locale/zh-Hans';
-import vuetifyZhHKLocales from 'vuetify/es5/locale/zh-Hant';
+import vuetifyZhHansLocales from 'vuetify/es5/locale/zh-Hans';
+import vuetifyZhHantLocales from 'vuetify/es5/locale/zh-Hant';
 import vxeTableEnLocales from 'vxe-table/lib/locale/lang/en-US';
-import vxeTableZhCNLocales from 'vxe-table/lib/locale/lang/zh-CN';
-import vxeTableZhHKLocales from 'vxe-table/lib/locale/lang/zh-HK';
+import vxeTableZhHansLocales from 'vxe-table/lib/locale/lang/zh-CN';
+import vxeTableZhHantLocales from 'vxe-table/lib/locale/lang/zh-HK';
 
 Vue.use(VueI18n);
 
 const elementI18n = {
   en: elementEnLocales,
-  'zh-CN': elementZhCNLocales,
-  'zh-HK': elementZhHKLocales,
+  'zh-Hans': elementZhHansLocales,
+  'zh-Hant': elementZhHantLocales,
 };
 
 const vuetifyI18n = {
   en: vuetifyEnLocales,
-  'zh-CN': vuetifyZhCNLocales,
-  'zh-HK': vuetifyZhHKLocales,
+  'zh-Hans': vuetifyZhHansLocales,
+  'zh-Hant': vuetifyZhHantLocales,
 };
 
 const vxeTableI18n = {
   en: vxeTableEnLocales,
-  'zh-CN': vxeTableZhCNLocales,
-  'zh-HK': vxeTableZhHKLocales,
+  'zh-Hans': vxeTableZhHansLocales,
+  'zh-Hant': vxeTableZhHantLocales,
 };
 
 function loadLocaleMessages() {

@@ -3,6 +3,9 @@ import VueI18n from 'vue-i18n';
 import elementEnLocales from 'element-ui/lib/locale/lang/en';
 import elementZhCNLocales from 'element-ui/lib/locale/lang/zh-CN';
 import elementZhHKLocales from 'element-ui/lib/locale/lang/zh-TW';
+import vuetifyEnLocales from 'vuetify/es5/locale/en';
+import vuetifyZhCNLocales from 'vuetify/es5/locale/zh-Hans';
+import vuetifyZhHKLocales from 'vuetify/es5/locale/zh-Hant';
 import vxeTableEnLocales from 'vxe-table/lib/locale/lang/en-US';
 import vxeTableZhCNLocales from 'vxe-table/lib/locale/lang/zh-CN';
 import vxeTableZhHKLocales from 'vxe-table/lib/locale/lang/zh-HK';
@@ -13,6 +16,12 @@ const elementI18n = {
   en: elementEnLocales,
   'zh-CN': elementZhCNLocales,
   'zh-HK': elementZhHKLocales,
+};
+
+const vuetifyI18n = {
+  en: vuetifyEnLocales,
+  'zh-CN': vuetifyZhCNLocales,
+  'zh-HK': vuetifyZhHKLocales,
 };
 
 const vxeTableI18n = {
@@ -35,6 +44,7 @@ function loadLocaleMessages() {
       messages[locale] = {
         ...locales(key),
         ...elementI18n[locale],
+        ...vuetifyI18n[locale],
         ...vxeTableI18n[locale],
       };
     }

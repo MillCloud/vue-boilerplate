@@ -71,7 +71,6 @@ module.exports = {
       },
     },
   },
-
   pluginOptions: {
     i18n: {
       locale: 'en',
@@ -80,11 +79,10 @@ module.exports = {
       enableInSFC: false,
     },
   },
-
   publicPath: '/',
-
   transpileDependencies: [
     'vue-echarts',
     'resize-detector',
+    'vuetify',
   ],
 };

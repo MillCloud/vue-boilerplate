@@ -13,10 +13,9 @@
 ## 准备
 
 - 推荐使用 nvm，长期支持版 lts node，长期支持版 npm 和 yarn。
-  - 参照以下链接，首先安装 nvm
-    - [nvm for Mac/Linux](https://github.com/nvm-sh/nvm)
-    - [nvm-windows](https://github.com/coreybutler/nvm-windows)
-    - 使用 [Homebrew](https://brew.sh/) 在 Mac 安装 nvm 是**不**推荐的
+  - 首先安装 nvm
+    - [nvm for Mac/Linux](https://github.com/nvm-sh/nvm#readme)
+    - [nvm-windows](https://github.com/coreybutler/nvm-windows#readme) - [已知问题 #300](https://github.com/coreybutler/nvm-windows/issues/300)
   - 在终端/命令行安装长期支持版 node
   - 全局升级 npm 到长期支持版，安装 yarn
 
@@ -28,7 +27,7 @@
   - 默认设置了镜像为国内淘宝源
 - Git 也是需要的
   - [git for Windows/Linux](https://git-scm.com/downloads)
-  - 使用 [Homebrew](https://brew.sh/) 在 Mac 安装 git 是推荐的
+  - 推荐使用 [Homebrew](https://brew.sh/) 在 Mac 安装 git
 
 ### 安装
 
@@ -69,7 +68,8 @@ yarn commit
 ## 部署
 
 - 确认所有和[模式和环境变量]相关的地方已经配置完成。
-- `staging`模式下运行`yarn build:staging`，`production`模式下运行`yar build`，然后把`dist`文件夹里的内容放到服务器上。默认会生成报告。
+- `staging`模式下运行`yarn build:staging`，`production`模式下运行`yar build`，然后把`dist`文件夹里的内容放到服务器上。
+- 默认会生成报告。
 
 ## 主要依赖
 
@@ -83,7 +83,7 @@ yarn commit
 - [swrv](https://github.com/Kong/swrv#readme)
 - [ress](https://ress-css.surge.sh/)
 - [element-ui-eoi](https://github.com/ElemeFE/element/pull/19081)
-- [nut-ui](https://nutui.jd.com/)
+- [vuetify](https://vuetifyjs.com/zh-Hans/)
 - [tailwindcss](https://tailwindcss.com/)
 - [vxe-table](https://github.com/x-extends/vxe-table#readme)
 - [vxe-table-plugin-element](https://github.com/x-extends/vxe-table-plugin-element#readme)
@@ -95,6 +95,8 @@ yarn commit
 - [vue-clipboard2](https://vue-clipboard2.inndy.tw/)
 - [vue-lazyload](https://github.com/hilongjw/vue-lazyload#readme)
 - [vue-virtual-scroll-list](https://github.com/tangbc/vue-virtual-scroll-list#readme)
+- [portal-vue](https://portal-vue.linusb.org/)
+- [screenfull](https://github.com/sindresorhus/screenfull.js/#readme)
 - [sass](https://sass-lang.com/) - using [node-sass](https://github.com/sass/node-sass#readme) here
 - [commitlint](https://commitlint.js.org/)
 - [commitizen](http://commitizen.github.io/cz-cli/)

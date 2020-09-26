@@ -98,7 +98,7 @@ yarn commit
 - [vue-virtual-scroll-list](https://github.com/tangbc/vue-virtual-scroll-list#readme)
 - [portal-vue](https://portal-vue.linusb.org/)
 - [screenfull](https://github.com/sindresorhus/screenfull.js/#readme)
-- [sass](https://sass-lang.com/) - using [node-sass](https://github.com/sass/node-sass#readme) here
+- [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)，可能会导致 element 图标问题，见 [vue-element-admin issue#3344](https://github.com/PanJiaChen/vue-element-admin/issues/3344)
 - [commitlint](https://commitlint.js.org/)
 - [commitizen](http://commitizen.github.io/cz-cli/)
 - [prettier](https://prettier.io/)

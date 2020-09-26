@@ -92,6 +92,7 @@ No tests now. Pull requests are welcome.
 - [xe-utils](https://github.com/x-extends/xe-utils#readme)
 - [dayjs](https://day.js.org)
 - [nprogress](https://ricostacruz.com/nprogress/)
+- [mock.js](http://mockjs.com/)
 - [vue-clipboard2](https://vue-clipboard2.inndy.tw/)
 - [vue-lazyload](https://github.com/hilongjw/vue-lazyload#readme)
 - [vue-virtual-scroll-list](https://github.com/tangbc/vue-virtual-scroll-list#readme)

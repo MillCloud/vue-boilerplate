@@ -12,7 +12,7 @@
 
 ## 准备
 
-- 推荐使用 nvm，长期支持版 lts node，长期支持版 npm 和 yarn。
+- 推荐使用 nvm，长期支持版 node，长期支持版 npm 和 yarn。
   - 首先安装 nvm
     - [nvm for Mac/Linux](https://github.com/nvm-sh/nvm#readme)
     - [nvm-windows](https://github.com/coreybutler/nvm-windows#readme) - [已知问题 #300](https://github.com/coreybutler/nvm-windows/issues/300)
@@ -68,7 +68,7 @@ yarn commit
 ## 部署
 
 - 确认所有和[模式和环境变量]相关的地方已经配置完成。
-- `staging`模式下运行`yarn build:staging`，`production`模式下运行`yar build`，然后把`dist`文件夹里的内容放到服务器上。
+- `staging`模式下运行`yarn build:staging`，`production`模式下运行`yarn build`，然后把`dist`文件夹里的内容放到服务器上。
 - 默认会生成报告。
 
 ## 主要依赖
@@ -98,7 +98,7 @@ yarn commit
 - [vue-virtual-scroll-list](https://github.com/tangbc/vue-virtual-scroll-list#readme)
 - [portal-vue](https://portal-vue.linusb.org/)
 - [screenfull](https://github.com/sindresorhus/screenfull.js/#readme)
-- [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)，可能会导致 element 图标问题，见 [vue-element-admin issue#3344](https://github.com/PanJiaChen/vue-element-admin/issues/3344)
+- [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)，可能会导致图标问题，见 [vue-element-admin issue#3344](https://github.com/PanJiaChen/vue-element-admin/issues/3344)
 - [commitlint](https://commitlint.js.org/)
 - [commitizen](http://commitizen.github.io/cz-cli/)
 - [prettier](https://prettier.io/)

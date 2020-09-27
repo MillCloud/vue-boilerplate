@@ -14,6 +14,12 @@ $--border-color-lighter: $color-border-lighter;
 $--border-color-extra-light: $color-border-extra-light;
 $--background-color-base: $color-background;
 
+$--xs: 576px;
+$--md: 768px;
+$--lg: 992px;
+$--xl: 1200px;
+$--xxl: 1600px;
+
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: "~element-ui/lib/theme-chalk/fonts";
 

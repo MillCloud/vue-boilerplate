@@ -4,7 +4,7 @@ import router from './router';
 import store from './store';
 
 router.beforeEach(async (to, from, next) => {
-  // if (process.env.VUE_APP_MODE === 'development') {
+  // if (process.env.NODE_ENV === 'development') {
   //   console.log('\r\n');
   //   console.log('to', to);
   //   console.log('from', from);

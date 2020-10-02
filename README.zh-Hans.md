@@ -1,4 +1,4 @@
-# test-vue
+# boilerplate-vue
 
 [English](./README.md) | 简体中文
 
@@ -33,10 +33,10 @@
 
 ```sh
 # clone
-git clone git@github.com:MillCloud/test-vue.git
+git clone git@github.com:MillCloud/boilerplate-vue.git
 
 # enter the directory
-cd test-vue
+cd boilerplate-vue
 
 # install dependency
 yarn
@@ -117,4 +117,4 @@ yarn commit
 
 - **Rui Wu** - *最初工作* - [ModyQyW](https://github.com/ModyQyW)
 
-另请参阅参与此项目的 [contributors](https://github.com/ModyQyW/test-vue/contributors) 列表。
+另请参阅参与此项目的 [contributors](https://github.com/ModyQyW/boilerplate-vue/contributors) 列表。

@@ -1,4 +1,4 @@
-# test-vue
+# boilerplate-vue
 
 English | [简体中文](./README.zh-Hans.md)
 
@@ -33,10 +33,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```sh
 # clone
-git clone git@github.com:MillCloud/test-vue.git
+git clone git@github.com:MillCloud/boilerplate-vue.git
 
 # enter the directory
-cd test-vue
+cd boilerplate-vue
 
 # install dependency
 yarn
@@ -117,4 +117,4 @@ Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on code of conduct,
 
 - **Rui Wu** - *Initial work* - [ModyQyW](https://github.com/ModyQyW)
 
-See also the list of [contributors](https://github.com/MillCloud/test-vue/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/MillCloud/boilerplate-vue/contributors) who participated in this project.

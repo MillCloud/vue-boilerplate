@@ -19,6 +19,5 @@ export default new Vuetify({
     options: {
       customProperties: true,
     },
-    themes: {},
   },
 });

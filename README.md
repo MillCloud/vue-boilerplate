@@ -4,7 +4,7 @@ English | [简体中文](./README.zh-Hans.md)
 
 ---
 
-A repo for testing vue.
+A template for vue.
 
 ## Getting Started
 
@@ -108,6 +108,10 @@ No tests now. Pull requests are welcome.
 - [husky](https://github.com/typicode/husky#readme)
 - [lint-staged](https://github.com/okonet/lint-staged#readme)
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates#readme)
+
+## Browsers Support
+
+Please read [.browserslistrc](./.browserslistrc) for details.
 
 ## Contributing
 

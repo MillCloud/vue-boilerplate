@@ -4,7 +4,7 @@
 
 ---
 
-用于测试 vue 的仓库。
+vue 模板。
 
 ## 起步
 
@@ -67,7 +67,7 @@ yarn commit
 
 ## 部署
 
-- 确认所有和[模式和环境变量]相关的地方已经配置完成。
+- 确认所有和[模式和环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html)相关的地方已经配置完成。
 - `staging`模式下运行`yarn build:staging`，`production`模式下运行`yarn build`，然后把`dist`文件夹里的内容放到服务器上。
 - 默认会生成报告。
 
@@ -108,6 +108,10 @@ yarn commit
 - [husky](https://github.com/typicode/husky#readme)
 - [lint-staged](https://github.com/okonet/lint-staged#readme)
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates#readme)
+
+## 浏览器支持
+
+请查看 [.browserslistrc](./.browserslistrc)。
 
 ## 贡献
 

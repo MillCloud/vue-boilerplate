@@ -3,17 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve",
     "build:staging": "vue-cli-service build --report --mode staging",
     "build": "vue-cli-service build --report",
-    "lint": "npm run lint:script && npm run lint:style && npm run lint:ls",
     "check": "ncu",
     "commit": "git-cz && git push",
-    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/i18n/locales/*.json'",
+    "lint": "npm run lint:script && npm run lint:style && npm run lint:ls",
     "lint:script": "vue-cli-service lint",
     "lint:style": "stylelint ./src/**/*.scss --fix",
-    "lint:ls": "ls-lint"
+    "lint:ls": "ls-lint",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/i18n/locales/*.json'"
   },
   "dependencies": {
     "@ant-design/colors": "^4.0.5",

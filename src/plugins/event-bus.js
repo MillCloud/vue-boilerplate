@@ -1,3 +1,4 @@
 import Vue from 'vue';
+import emitter from 'mitt';
 
-Vue.prototype.$bus = new Vue();
+Vue.prototype.$bus = emitter();

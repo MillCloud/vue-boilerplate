@@ -79,6 +79,7 @@ yarn commit
 - [vuex](https://vuex.vuejs.org/)
 - [vue-composition-api](https://composition-api.vuejs.org/)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/)
+- [mitt](https://github.com/developit/mitt#readme)
 - [axios](https://github.com/axios/axios#readme)
 - [swrv](https://github.com/Kong/swrv#readme)
 - [ress](https://ress-css.surge.sh/)

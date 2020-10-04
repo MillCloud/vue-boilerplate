@@ -81,6 +81,9 @@
     "vue-template-compiler": "^2.6.12",
     "vuetify-loader": "^1.6.0"
   },
+  "engines": {
+    "node": ">=12 <13"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

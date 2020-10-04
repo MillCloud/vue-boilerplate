@@ -28,6 +28,7 @@
     "element-ui": "^2.13.2",
     "element-ui-eoi": "^2.14.4",
     "lodash-es": "^4.17.15",
+    "mitt": "^2.1.0",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "portal-vue": "^2.1.7",

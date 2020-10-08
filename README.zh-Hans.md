@@ -78,6 +78,7 @@ yarn commit
 - [vue-router](https://router.vuejs.org/)
 - [vuex](https://vuex.vuejs.org/)
 - [vue-composition-api](https://composition-api.vuejs.org/)
+- [mitt](https://github.com/developit/mitt#readme)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/)
 - [mitt](https://github.com/developit/mitt#readme)
 - [axios](https://github.com/axios/axios#readme)

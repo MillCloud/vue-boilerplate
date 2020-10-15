@@ -52,6 +52,11 @@ module.exports = {
             priority: 20,
             test: /[\\/]node_modules[\\/]_?element-ui(.*)/,
           },
+          vuetify: {
+            name: 'chunk-vuetify',
+            priority: 20,
+            test: /[\\/]node_modules[\\/]_?vuetify(.*)/,
+          },
           components: {
             minChunks: 2,
             name: 'chunk-components',

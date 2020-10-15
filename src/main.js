@@ -8,7 +8,7 @@ import store from './store';
 import App from './App.vue';
 import '@/styles/app.scss';
 import '@/guard';
-import vuetify from './plugins/vuetify';
+// import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false;
 
@@ -16,6 +16,6 @@ new Vue({
   router,
   store,
   i18n,
-  vuetify,
+  // vuetify,
   render: (h) => h(App),
 }).$mount('#app');

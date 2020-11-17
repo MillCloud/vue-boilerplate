@@ -45,17 +45,22 @@ module.exports = {
             chunks: 'initial',
             name: 'chunk-vendors',
             priority: 10,
-            test: /[\\/]node_modules[\\/]/,
+            test: /[/\\]node_modules[/\\]/,
           },
           element: {
             name: 'chunk-element',
             priority: 20,
-            test: /[\\/]node_modules[\\/]_?element-ui(.*)/,
+            test: /[/\\]node_modules[/\\]_?element-ui(.*)/,
+          },
+          'element-eoi': {
+            name: 'chunk-element-eoi',
+            priority: 20,
+            test: /[/\\]node_modules[/\\]_?element-ui-eoi(.*)/,
           },
           vuetify: {
             name: 'chunk-vuetify',
             priority: 20,
-            test: /[\\/]node_modules[\\/]_?vuetify(.*)/,
+            test: /[/\\]node_modules[/\\]_?vuetify(.*)/,
           },
           components: {
             minChunks: 2,
@@ -84,9 +89,5 @@ module.exports = {
     },
   },
   publicPath: '/',
-  transpileDependencies: [
-    'vue-echarts',
-    'resize-detector',
-    'vuetify',
-  ],
+  transpileDependencies: ['vue-echarts', 'resize-detector', 'vuetify'],
 };

@@ -1,22 +1,9 @@
 <template>
-  <div
-    id="app"
-    class="text-center"
-  >
+  <div id="app" class="text-center">
     <div class="nav">
-      <router-link
-        to="/"
-        class="mr-2"
-      >
-        Home
-      </router-link>
+      <router-link to="/" class="mr-2"> Home </router-link>
       |
-      <router-link
-        to="/about"
-        class="ml-2"
-      >
-        About
-      </router-link>
+      <router-link to="/about" class="ml-2"> About </router-link>
     </div>
     <router-view />
   </div>

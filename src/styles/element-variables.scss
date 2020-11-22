@@ -4,23 +4,16 @@ $--color-success: $color-success;
 $--color-warning: $color-warning;
 $--color-danger: $color-danger;
 $--color-info: $color-info;
-$--color-text-primary: $color-text-primary;
-$--color-text-regular: $color-text-regular;
-$--color-text-secondary: $color-text-secondary;
-$--color-text-placeholder: $color-text-placeholder;
-$--border-color-base: $color-border;
-$--border-color-light: $color-border-light;
-$--border-color-lighter: $color-border-lighter;
-$--border-color-extra-light: $color-border-extra-light;
-$--background-color-base: $color-background;
+$--color-text-primary: $text-color;
+$--color-text-regular: $text-color;
+$--color-text-secondary: $text-color-secondary;
+$--color-text-placeholder: $text-color-placeholder;
+$--border-color-base: $border-color;
+$--border-color-light: $border-color-light;
+$--border-color-lighter: $border-color-lighter;
+$--border-color-extra-light: $border-color-extra-light;
+$--background-color-base: $background-color;
 
-$--xs: 576px;
-$--md: 768px;
-$--lg: 992px;
-$--xl: 1200px;
-$--xxl: 1600px;
-
-/* 改变 icon 字体路径变量，必需 */
 $--font-path: "~element-ui/lib/theme-chalk/fonts";
 
 @import "~element-ui/packages/theme-chalk/src/index";

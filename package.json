@@ -16,8 +16,6 @@
   },
   "dependencies": {
     "@ant-design/colors": "~5.0.0",
-    "@ant-design/icons-svg": "~4.1.0",
-    "@ant-design/icons-vue": "~4.0.6",
     "@mdi/font": "~5.8.55",
     "@vue/composition-api": "~1.0.0-beta.19",
     "axios": "~0.21.0",
@@ -45,7 +43,7 @@
     "vuex": "~3.5.1",
     "vxe-table": "~2.10.2",
     "vxe-table-plugin-element": "~1.10.1",
-    "xe-utils": "~3.0.1"
+    "xe-utils": "~3.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "~11.0.0",
@@ -53,7 +51,7 @@
     "@intlify/vue-i18n-loader": "~1.0.0",
     "@ls-lint/ls-lint": "~1.9.2",
     "@modyqyw/eslint-config": "~1.9.3",
-    "@modyqyw/fabric": "~1.0.10",
+    "@modyqyw/fabric": "~1.1.0",
     "@modyqyw/prettier-config": "~1.1.8",
     "@modyqyw/stylelint-config": "~1.0.4",
     "@types/lodash-es": "~4.17.3",
@@ -65,25 +63,25 @@
     "babel-eslint": "~10.1.0",
     "commitizen": "~4.2.2",
     "compression-webpack-plugin": "~6.1.1",
-    "eslint": "~7.13.0",
+    "eslint": "~7.14.0",
     "husky": "~4.3.0",
     "lint-staged": "~10.5.1",
-    "npm-check-updates": "~10.2.1",
+    "npm-check-updates": "~10.2.2",
     "prettier": "~2.2.0",
     "sass": "~1.29.0",
     "sass-loader": "~10.1.0",
     "stylelint": "~13.8.0",
     "stylelint-webpack-plugin": "~2.1.1",
     "vue-cli-plugin-i18n": "~1.0.1",
-    "vue-template-compiler": "~2.6.12",
-  },
-  "engines": {
-    "node": ">=12 <13"
+    "vue-template-compiler": "~2.6.12"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "engines": {
+    "node": ">=12 <13"
   },
   "husky": {
     "hooks": {

@@ -14,6 +14,7 @@ export default {};
 </script>
 
 <style lang="scss">
+/* stylelint-disable selector-no-qualifying-type */
 .nav {
   padding: 30px;
 

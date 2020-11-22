@@ -6,12 +6,12 @@
     "dev": "vue-cli-service serve",
     "build:staging": "vue-cli-service build --report --mode staging",
     "build": "vue-cli-service build --report",
+    "lint": "yarn lint:script && yarn lint:style && yarn lint:ls",
+    "lint:ls": "ls-lint",
+    "lint:script": "vue-cli-service lint --fix",
+    "lint:style": "stylelint ./src/**/*.scss --fix",
     "check": "ncu",
     "commit": "git-cz && git push",
-    "lint": "yarn lint:script && yarn lint:style && yarn lint:ls",
-    "lint:script": "vue-cli-service lint",
-    "lint:style": "stylelint ./src/**/*.scss --fix",
-    "lint:ls": "ls-lint",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/i18n/locales/*.json'"
   },
   "dependencies": {

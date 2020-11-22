@@ -6,7 +6,7 @@ import i18n from './i18n';
 import router from './router';
 import store from './store';
 import App from './App.vue';
-import '@/styles/app.scss';
+import '@/styles/global.scss';
 import '@/guard';
 
 Vue.config.productionTip = false;

@@ -1170,10 +1170,10 @@
     vue-eslint-parser "~7.1.1"
     vue-property-decorator "~9.0.2"
 
-"@modyqyw/fabric@~1.3.4":
-  version "1.3.4"
-  resolved "https://registry.npm.taobao.org/@modyqyw/fabric/download/@modyqyw/fabric-1.3.4.tgz#6c80b312b12a1a4ffc5c32c08a69251fd52e6dc4"
-  integrity sha1-bICzErEqGk/8XDLAimklH9UubcQ=
+"@modyqyw/fabric@~1.3.10":
+  version "1.3.10"
+  resolved "https://registry.npm.taobao.org/@modyqyw/fabric/download/@modyqyw/fabric-1.3.10.tgz?cache=0&sync_timestamp=1606753663280&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40modyqyw%2Ffabric%2Fdownload%2F%40modyqyw%2Ffabric-1.3.10.tgz#6993894057b2e924f3fecf19652e62d0e47cf0b4"
+  integrity sha1-aZOJQFey6STz/s8ZZS5i0OR88LQ=
   dependencies:
     "@commitlint/config-conventional" "~11.0.0"
     "@typescript-eslint/eslint-plugin" "~4.8.2"

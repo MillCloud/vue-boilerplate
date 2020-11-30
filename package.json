@@ -50,7 +50,7 @@
     "@intlify/vue-i18n-loader": "~1.0.0",
     "@ls-lint/ls-lint": "~1.9.2",
     "@modyqyw/eslint-config": "~1.9.3",
-    "@modyqyw/fabric": "~1.3.4",
+    "@modyqyw/fabric": "~1.3.10",
     "@modyqyw/prettier-config": "~1.1.8",
     "@modyqyw/stylelint-config": "~1.0.4",
     "@types/lodash-es": "~4.17.3",

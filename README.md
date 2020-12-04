@@ -10,28 +10,50 @@ vue 模板。
 
 ## 准备
 
-- 推荐使用 nvm，长期支持版 node，长期支持版 npm 和 yarn。
-  - 首先安装 nvm
-    - [nvm for Mac/Linux](https://github.com/nvm-sh/nvm#readme)
-    - [nvm-windows](https://github.com/coreybutler/nvm-windows#readme) - [已知问题 #300](https://github.com/coreybutler/nvm-windows/issues/300)
-  - 在终端/命令行安装长期支持版 node
-  - 全局升级 npm 到长期支持版，安装 yarn
+你可能需要使用梯子或手机 WiFi 完成准备步骤。
 
-    ```sh
-    npm i -g npm@lts
-    npm i -g yarn
-    ```
+- Node 镜像[参考](https://developer.aliyun.com/mirror/NPM)
+- Homebrew 镜像[参考](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
 
-  - 默认设置了镜像为国内淘宝源
-- Git 也是需要的
-  - [git for Windows/Linux](https://git-scm.com/downloads)
-  - 推荐使用 [Homebrew](https://brew.sh/) 在 Mac 安装 git
+### macOS
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+nvm install 12
+nvm alias default 12
+npm i -g yarn
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+git -C "$(brew --repo)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git
+git -C "$(brew --repo homebrew/cask-fonts)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git
+git -C "$(brew --repo homebrew/cask-drivers)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git
+brew update
+brew install git
+
+```
+
+### Windows
+
+Install [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) and [Git](https://git-scm.com/downloads) first.
+
+```sh
+nvm node_mirror https://npm.taobao.org/mirrors/node/
+nvm npm_mirror https://npm.taobao.org/mirrors/npm/
+nvm install 12.20.0
+nvm use 12.20.0
+npm i -g yarn
+
+```
 
 ### 安装
 
 ```sh
 # clone
 git clone git@github.com:MillCloud/boilerplate-vue.git
+# or gitee
+# git clone git@github.com:MillCloud/boilerplate-vue.git
 
 # enter the directory
 cd boilerplate-vue
@@ -43,7 +65,7 @@ yarn
 yarn dev
 
 # build for staging
-yarn build:staging
+yarn staging-build
 
 # build for production
 yarn build
@@ -66,8 +88,7 @@ yarn commit
 ## 部署
 
 - 确认所有和[模式和环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html)相关的地方已经配置完成。
-- `staging`模式下运行`yarn build:staging`，`production`模式下运行`yarn build`，然后把`dist`文件夹里的内容放到服务器上。
-- 默认会生成报告。
+- 运行对应的命令，然后上传`dist`目录下的内容，默认会生成报告。
 
 ## 主要依赖
 
@@ -83,26 +104,23 @@ yarn commit
 - [axios](https://github.com/axios/axios#readme)
 - [swrv](https://github.com/Kong/swrv#readme)
 - [vuetify](https://vuetifyjs.com/)
-- [vue-echarts](https://github.com/ecomfe/vue-echarts#readme)
+- [portal-vue](https://portal-vue.linusb.org/)
+- [better-scroll](https://better-scroll.github.io/docs/zh-CN/guide/)
 - [lodash](https://lodash.com/)
 - [xe-utils](https://github.com/x-extends/xe-utils#readme)
 - [dayjs](https://day.js.org)
 - [nprogress](https://ricostacruz.com/nprogress/)
 - [mock.js](http://mockjs.com/)
-- [vue-clipboard2](https://vue-clipboard2.inndy.tw/)
-- [vue-lazyload](https://github.com/hilongjw/vue-lazyload#readme)
-- [vue-virtual-scroll-list](https://github.com/tangbc/vue-virtual-scroll-list#readme)
-- [portal-vue](https://portal-vue.linusb.org/)
-- [screenfull](https://github.com/sindresorhus/screenfull.js/#readme)
-- [sass](https://sass-lang.com/)
-- [commitlint](https://commitlint.js.org/)
+- [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
 - [commitizen](http://commitizen.github.io/cz-cli/)
+- [commitlint](https://commitlint.js.org/)
 - [prettier](https://prettier.io/)
 - [eslint](https://eslint.org/)
 - [stylelint](https://stylelint.io/)
 - [ls-lint](https://ls-lint.org/)
 - [husky](https://github.com/typicode/husky#readme)
 - [lint-staged](https://github.com/okonet/lint-staged#readme)
+- [@modyqyw/fabric](https://github.com/MillCloud/fabric#readme)
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates#readme)
 
 ## 浏览器支持

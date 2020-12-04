@@ -29,7 +29,6 @@ module.exports = {
       '@c': path.resolve(__dirname, 'src', 'components'),
       '@m': path.resolve(__dirname, 'src', 'mixins'),
       '@u': path.resolve(__dirname, 'src', 'utils'),
-      'element-ui': 'element-ui-eoi',
     };
     if (process.env.NODE_ENV !== 'development') {
       config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true;
@@ -47,15 +46,10 @@ module.exports = {
             priority: 10,
             test: /[/\\]node_modules[/\\]/,
           },
-          element: {
-            name: 'chunk-element',
+          vuetify: {
+            name: 'chunk-vuetify',
             priority: 20,
-            test: /[/\\]node_modules[/\\]_?element-ui(.*)/,
-          },
-          'element-eoi': {
-            name: 'chunk-element-eoi',
-            priority: 20,
-            test: /[/\\]node_modules[/\\]_?element-ui-eoi(.*)/,
+            test: /[/\\]node_modules[/\\]_?vuetify(.*)/,
           },
           components: {
             minChunks: 2,
@@ -84,5 +78,5 @@ module.exports = {
     },
   },
   publicPath: '/',
-  transpileDependencies: ['vue-echarts', 'resize-detector'],
+  transpileDependencies: ['vue-echarts', 'resize-detector', 'vuetify'],
 };

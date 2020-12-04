@@ -1,24 +1,15 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import elementEnLocales from 'element-ui/lib/locale/lang/en';
-import elementZhHansLocales from 'element-ui/lib/locale/lang/zh-CN';
-import elementZhHantLocales from 'element-ui/lib/locale/lang/zh-TW';
-import vxeTableEnLocales from 'vxe-table/lib/locale/lang/en-US';
-import vxeTableZhHansLocales from 'vxe-table/lib/locale/lang/zh-CN';
-import vxeTableZhHantLocales from 'vxe-table/lib/locale/lang/zh-HK';
+import vuetifyEnLocales from 'vuetify/es5/locale/en';
+import vuetifyZhHansLocales from 'vuetify/es5/locale/zh-Hans';
+import vuetifyZhHantLocales from 'vuetify/es5/locale/zh-Hant';
 
 Vue.use(VueI18n);
 
-const elementI18n = {
-  en: elementEnLocales,
-  'zh-Hans': elementZhHansLocales,
-  'zh-Hant': elementZhHantLocales,
-};
-
-const vxeTableI18n = {
-  en: vxeTableEnLocales,
-  'zh-Hans': vxeTableZhHansLocales,
-  'zh-Hant': vxeTableZhHantLocales,
+const vuetifyI18n = {
+  en: vuetifyEnLocales,
+  'zh-Hans': vuetifyZhHansLocales,
+  'zh-Hant': vuetifyZhHantLocales,
 };
 
 function loadLocaleMessages() {
@@ -30,8 +21,7 @@ function loadLocaleMessages() {
       const locale = matched[1];
       messages[locale] = {
         ...locales(key),
-        ...elementI18n[locale],
-        ...vxeTableI18n[locale],
+        ...vuetifyI18n[locale],
       };
     }
   });

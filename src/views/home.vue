@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="text-center">
     <img
       alt="Vue logo"
       src="https://cn.vuejs.org/images/logo.png"
@@ -10,7 +10,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {

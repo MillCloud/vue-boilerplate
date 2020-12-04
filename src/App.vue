@@ -1,30 +1,14 @@
 <template>
-  <div id="app" class="text-center">
-    <div class="nav">
-      <router-link to="/" class="mr-2"> Home </router-link>
+  <v-app>
+    <v-app-bar app class="pa-8 text-center">
+      <router-link to="/" exact class="mr-2">Home</router-link>
       |
-      <router-link to="/about" class="ml-2"> About </router-link>
-    </div>
+      <router-link to="/about" exact class="ml-2">About</router-link>
+    </v-app-bar>
     <router-view />
-  </div>
+  </v-app>
 </template>
 
 <script>
 export default {};
 </script>
-
-<style lang="scss">
-/* stylelint-disable selector-no-qualifying-type */
-.nav {
-  padding: 30px;
-
-  a {
-    font-weight: 700;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>

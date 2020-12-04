@@ -7,9 +7,15 @@ import vuetifyZhHantLocales from 'vuetify/es5/locale/zh-Hant';
 Vue.use(VueI18n);
 
 const vuetifyI18n = {
-  en: vuetifyEnLocales,
-  'zh-Hans': vuetifyZhHansLocales,
-  'zh-Hant': vuetifyZhHantLocales,
+  en: {
+    $vuetify: vuetifyEnLocales,
+  },
+  'zh-Hans': {
+    $vuetify: vuetifyZhHansLocales,
+  },
+  'zh-Hant': {
+    $vuetify: vuetifyZhHantLocales,
+  },
 };
 
 function loadLocaleMessages() {

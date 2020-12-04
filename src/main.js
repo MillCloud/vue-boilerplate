@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import 'ress';
 import '@/directives';
 import '@/plugins';
 import vuetify from './plugins/vuetify';

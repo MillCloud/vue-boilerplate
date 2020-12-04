@@ -1,12 +1,15 @@
 <template>
-  <div class="text-center">
-    <img
+  <v-main class="text-center">
+    <v-img
       alt="Vue logo"
+      lazy-src="https://cn.vuejs.org/images/logo.png"
       src="https://cn.vuejs.org/images/logo.png"
+      max-height="200"
+      max-width="200"
       class="mx-auto"
     />
     <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  </v-main>
 </template>
 
 <script>

@@ -1,7 +1,5 @@
 # boilerplate-vue
 
-[English](./README.md) | 简体中文
-
 ---
 
 vue 模板。

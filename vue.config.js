@@ -69,6 +69,9 @@ module.exports = {
       },
     },
   },
+  devServer: {
+    proxy: 'https://fake.url/api',
+  },
   pluginOptions: {
     i18n: {
       locale: 'zh-Hans',
@@ -77,6 +80,6 @@ module.exports = {
       enableInSFC: false,
     },
   },
-  publicPath: '/',
+  publicPath: process.env.VUE_APP_PUBLIC_PATH,
   transpileDependencies: ['vuetify'],
 };

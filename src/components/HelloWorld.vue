@@ -113,6 +113,15 @@
       </li>
       <li>
         <a
+          href="https://vueuse.js.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          vue-use
+        </a>
+      </li>
+      <li>
+        <a
           href="https://github.com/vuejs/vue-devtools#vue-devtools"
           target="_blank"
           rel="noopener noreferrer"

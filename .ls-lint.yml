@@ -14,9 +14,5 @@ ls:
     .scss: kebab-case | PascalCase | point.case
 
 ignore:
-  - .git
-  - node_modules
-  - .nuxt
-  - .next
   - ./src/.umi
   - ./src/locales

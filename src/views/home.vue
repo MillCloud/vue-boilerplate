@@ -9,6 +9,9 @@
       class="mx-auto"
     />
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <v-btn v-if="isElectron" class="mt-2" @click="handleCloseElectronWindow">
+      Close
+    </v-btn>
   </v-main>
 </template>
 
@@ -19,6 +22,16 @@ export default {
   name: 'Home',
   components: {
     HelloWorld,
+  },
+  data() {
+    return {
+      isElectron: process.env.IS_ELECTRON,
+    };
+  },
+  methods: {
+    handleCloseElectronWindow() {
+      window.ipcRenderer.send('window-closed');
+    },
   },
 };
 </script>

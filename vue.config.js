@@ -24,11 +24,11 @@ module.exports = {
       }),
     );
     config.resolve.alias = {
-      '@': path.resolve(__dirname, 'src'),
-      '@a': path.resolve(__dirname, 'src', 'assets'),
-      '@c': path.resolve(__dirname, 'src', 'components'),
-      '@m': path.resolve(__dirname, 'src', 'mixins'),
-      '@u': path.resolve(__dirname, 'src', 'utils'),
+      '@': path.resolve('src'),
+      '@a': path.resolve('src', 'assets'),
+      '@c': path.resolve('src', 'components'),
+      '@h': path.resolve('src', 'hooks'),
+      '@u': path.resolve('src', 'utils'),
     };
     if (process.env.NODE_ENV !== 'development') {
       config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true;
@@ -73,6 +73,29 @@ module.exports = {
     proxy: 'https://fake.url/api',
   },
   pluginOptions: {
+    electronBuilder: {
+      preload: path.resolve('src', 'preload.js'),
+      builderOptions: {
+        appId: '',
+        productName: '',
+        copyright: '',
+        mac: {
+          icon: path.resolve('src', 'assets', 'app.png'),
+        },
+        win: {
+          icon: path.resolve('src', 'assets', 'app.png'),
+        },
+        nsis: {
+          oneClick: false,
+          perMachine: true,
+          allowElevation: true,
+          allowToChangeInstallationDirectory: true,
+        },
+        linux: {
+          icon: path.resolve('src', 'assets', 'app.png'),
+        },
+      },
+    },
     i18n: {
       locale: 'zh-Hans',
       fallbackLocale: 'zh-Hans',

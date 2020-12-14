@@ -36,7 +36,7 @@ brew install git
 
 ### Windows
 
-Install [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) and [Git](https://git-scm.com/downloads) first.
+先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
 
 ```sh
 nvm node_mirror https://npm.taobao.org/mirrors/node/

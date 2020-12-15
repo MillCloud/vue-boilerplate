@@ -1,7 +1,5 @@
 # boilerplate-vue
 
----
-
 vue 模板。
 
 ## 起步

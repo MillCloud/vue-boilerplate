@@ -88,9 +88,10 @@ app.on('ready', async () => {
   createWindow();
 });
 
-app.on('web-contents-created', (e, webContents) => {
-  webContents.on('new-window', (event, url) => {
-    event.preventDefault();
+// Emitted when a new webContents is created.
+app.on('web-contents-created', (appEvent, webContents) => {
+  webContents.on('new-window', (webContentsEvent, url) => {
+    webContentsEvent.preventDefault();
     shell.openExternal(url);
   });
 });

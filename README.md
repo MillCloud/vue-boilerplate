@@ -34,7 +34,7 @@ brew install git
 
 ### Windows
 
-先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
+首先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
 
 ```sh
 nvm node_mirror https://npm.taobao.org/mirrors/node/
@@ -67,6 +67,15 @@ yarn staging-build
 
 # build for production
 yarn build
+
+# build for electron development
+yarn electron:dev
+
+# build for electron staging
+yarn electron:staging
+
+# build for production
+yarn electron:build
 
 # lint scripts, styles and ls
 yarn lint

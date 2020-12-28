@@ -149,6 +149,6 @@ instance.interceptors.response.use(
   },
 );
 
-Vue.prototype.$axios = instance;
+Vue.prototype.$request = instance;
 
 export default instance;

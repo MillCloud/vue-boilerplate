@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import vuetifyEnLocales from 'vuetify/es5/locale/en';
 import vuetifyZhHansLocales from 'vuetify/es5/locale/zh-Hans';
-import vuetifyZhHantLocales from 'vuetify/es5/locale/zh-Hant';
 
 Vue.use(VueI18n);
 
@@ -12,9 +11,6 @@ const vuetifyI18n = {
   },
   'zh-Hans': {
     $vuetify: vuetifyZhHansLocales,
-  },
-  'zh-Hant': {
-    $vuetify: vuetifyZhHantLocales,
   },
 };
 

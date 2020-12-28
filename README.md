@@ -88,6 +88,64 @@ yarn run check
 yarn commit
 ```
 
+### 项目结构
+
+```sh
+.
+├── public
+├── src
+│   ├── apis                    # 接口目录，也可以在 store 对应的 module 文件书写接口
+│   ├── assets                  # 资产目录
+│   ├── components              # 全局组件目录
+│   ├── directives              # 全局指令目录
+│   ├── hooks                   # 钩子函数目录
+│   ├── i18n                    # 国际化目录
+│   │   ├── index.js
+│   │   └── locales             # 对应语言文件
+│   ├── layouts                 # 布局目录
+│   │   ├── withAside           # 带侧边栏的布局目录
+│   │   └── withoutAside        # 不带侧边栏的布局目录
+│   ├── plugins                 # 插件目录
+│   │   ├── composition-api.js  # 支持@vue/composition-api
+│   │   ├── event-bus.js        # 支持 mitt 事件总线
+│   │   ├── index.js
+│   │   ├── request.js          # 支持 axios
+│   │   └── vuetify.js          # 支持 vuetify
+│   ├── router                  # 路由目录
+│   ├── store                   # 状态管理目录
+│   ├── styles                  # 全局样式目录
+│   ├── utils                   # 工具类目录
+│   ├── views                   # 页面视图目录
+│   ├── App.vue
+│   ├── background.js           # electron 主进程文件
+│   ├── guard.js                # 导航守卫
+│   ├── main.js
+│   └── preload.js              # 预加载文件
+├── .browserslistrc             # 浏览器支持列表文件
+├── .editorconfig
+├── .env                        # 所有环境都载入的环境变量
+├── .env.development            # development 载入的环境变量
+├── .env.production             # production 载入的环境变量
+├── .env.staging                # staging 载入的环境变量
+├── .eslintrc.js                # eslint 配置文件
+├── .gitattributes
+├── .gitignore
+├── .ls-lint.yml                # ls-lint 配置文件
+├── .npmrc                      # npm 镜像文件
+├── .prettierignore             # prettier 配置文件
+├── .yarnrc                     # yarn 镜像文件
+├── babel.config.js             # babel 配置文件
+├── commitlint.config.js        # commitlint 配置文件
+├── CONTRIBUTING.md
+├── package.json
+├── prettier.config.js          # prettier 配置文件
+├── README.md
+├── stylelint.config.js         # stylelint 配置文件
+├── tsconfig.json               # typescript 配置文件
+├── vue.config.js               # vue-cli 配置文件
+└── yarn.lock
+```
+
 ## 测试
 
 目前没有测试。欢迎 PR。

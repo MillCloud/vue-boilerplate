@@ -2,7 +2,8 @@
 last 2 versions
 not dead
 chrome >= 70
-firefox >= 68
-edge >= 81
-safari >= 13
+firefox >= 64
+safari >= 10
 ie >= 11
+android >= 6
+ios >= 10

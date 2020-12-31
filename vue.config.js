@@ -70,7 +70,7 @@ module.exports = {
     },
   },
   devServer: {
-    proxy: 'https://fake.url/api',
+    proxy: 'https://fake.url',
   },
   pluginOptions: {
     electronBuilder: {

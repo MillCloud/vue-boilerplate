@@ -66,8 +66,8 @@ const handleShowError = (response) => {
 };
 
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_BASE_URL,
-  timeout: JSON.parse(process.env.VUE_APP_TIMEOUT),
+  baseURL: process.env.VUE_APP_BASE_URL || '',
+  timeout: JSON.parse(process.env.VUE_APP_TIMEOUT) || 10000,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',

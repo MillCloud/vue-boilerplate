@@ -1,46 +1,92 @@
 # boilerplate-vue
 
-vue 模板。
+## 简介
+
+boilerplate-vue 是一个面向中国用户的简单 vue2 模板，目标是帮助你快速搭建网页。当然，也希望能引导你更进一步地了解 vue2 生态。
+
+### 主要依赖
+
+- [vue2](https://cn.vuejs.org)
+- [vue-cli](https://cli.vuejs.org/zh/)
+- [vue-router](https://router.vuejs.org/zh/)
+- [vuex](https://vuex.vuejs.org/zh/)
+- [vue-composition-api](https://composition-api.vuejs.org/zh/)
+- [vue-use](https://vueuse.js.org/)
+- [mitt](https://github.com/developit/mitt#readme)
+- [electron](https://www.electronjs.org/)
+- [electron-builder](https://www.electron.build/)
+- [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
+- [axios](https://github.com/axios/axios#readme)
+- [swrv](https://github.com/Kong/swrv#readme)
+- [vuetify](https://vuetifyjs.com/)
+- [portal-vue](https://portal-vue.linusb.org/)
+- [better-scroll](https://better-scroll.github.io/docs/zh-CN/guide/)
+- [lodash](https://lodash.com/)
+- [xe-utils](https://github.com/x-extends/xe-utils#readme)
+- [dayjs](https://dayjs.gitee.io/zh-CN/)
+- [nprogress](https://ricostacruz.com/nprogress/)
+- [mock.js](http://mockjs.com/)
+- [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
+- [commitizen](http://commitizen.github.io/cz-cli/)
+- [commitlint](https://commitlint.js.org/)
+- [prettier](https://prettier.io/)
+- [eslint](https://eslint.org/)
+- [stylelint](https://stylelint.io/)
+- [ls-lint](https://ls-lint.org/)
+- [husky](https://github.com/typicode/husky#readme)
+- [lint-staged](https://github.com/okonet/lint-staged#readme)
+- [@modyqyw/fabric](https://github.com/ModyQyW/fabric#readme)
+- [npm-check-updates](https://github.com/raineorshine/npm-check-updates#readme)
+
+请先阅读上面的文档，并确保你对 node 和 npm 有基本的理解。
 
 ## 起步
 
-这些说明将让你得到能在本地启动、运行的项目副本以进行开发和测试。有关如何在实时系统上部署项目，请参阅[部署](#部署)。
+这部分说明将让你得到能在本地运行的项目副本以开始开发。有关如何部署项目，请阅读[部署部分](#部署)。
 
-## 准备
+### 准备
 
 你可能需要使用梯子或手机 WiFi 完成准备步骤。
 
-- Node 镜像[参考](https://developer.aliyun.com/mirror/NPM)
-- Homebrew 镜像[参考](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
-
-### macOS
+对于 macOS 用户，请按照以下指引操作。
 
 ```sh
+# 安装 nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+# 设置 nvm 镜像
 export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+# 安装 node@12
 nvm install 12
+# 设置 node@12 为默认 node
 nvm alias default 12
+# 安装 yarn
 npm i -g yarn
+# 安装 homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# 设置 homebrew 镜像
 git -C "$(brew --repo)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
 git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git
 git -C "$(brew --repo homebrew/cask-fonts)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git
 git -C "$(brew --repo homebrew/cask-drivers)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git
 brew update
+# 安装 git
 brew install git
 
 ```
 
-### Windows
+对于 Windows 用户，请按照以下指引操作（安装 nvm，设置 nvm 镜像）。
 
 首先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
 
 ```sh
+# 设置 nvm 镜像
 nvm node_mirror https://npm.taobao.org/mirrors/node/
-nvm npm_mirror https://npm.taobao.org/mirrors/npm/
+# 安装 node@12
 nvm install 12.20.0
+# 使用 node@12
 nvm use 12.20.0
+# 安装 yarn
 npm i -g yarn
 
 ```
@@ -48,45 +94,53 @@ npm i -g yarn
 ### 安装
 
 ```sh
-# clone
+# clone 项目到本地
 git clone git@github.com:MillCloud/boilerplate-vue.git
-# or gitee
 # git clone git@github.com:MillCloud/boilerplate-vue.git
-
-# enter the directory
+# 进入项目
 cd boilerplate-vue
-
-# install dependency
+# 安装依赖
 yarn
-
-# build for development
+# 启动项目
 yarn dev
-
-# build for staging
-yarn staging-build
-
-# build for production
-yarn build
-
-# build for electron development
-yarn electron:dev
-
-# build for electron staging
-yarn electron:staging
-
-# build for production
-yarn electron:build
-
-# lint scripts, styles and ls
-yarn lint
-
-# check deps
-yarn run check
-
-# git commit and git push
-# git add should be handled by yourself
-yarn commit
 ```
+
+如果一切正常，此时模板已经启动了，你可以正式开始你的开发。但如果你想通过文档了解更多，请先阅读[主要依赖](#主要依赖)内链接对应的文档，再继续阅读下去。
+
+## 使用
+
+这部分说明力求使你能自顶向下地理解这个模板已经替你完成的工作，以及你需要自行完成的工作。
+
+### 特性
+
+- 多模式配置示例，支持 development，staging 和 production
+- 国际化配置示例，支持 en 和 zh-Hans
+- 路由配置示例
+- 状态管理配置示例
+- 请求配置示例
+- 布局示例
+- electron 示例
+
+### 命令
+
+模板里内置了比较多的命令，以适应各种不同的情况。更多的命令你可以查看 [package.json](./package.json)。
+
+|命令|含义|
+|-|-|
+|`yarn dev`|启动项目，目标是 development 环境|
+|`yarn staging-build`|打包项目，目标是 staging 环境|
+|`yarn build`|打包项目，目标是 production环境|
+|`yarn electron:dev`|electron 启动项目，目标是 development 环境|
+|`yarn electron:staging-build`|electron 打包项目，目标是 staging 环境|
+|`yarn electron:build`|electron 打包项目，目标是 production 环境|
+|`yarn run check`|检查项目依赖版本|
+|`yarn commit`|引导填写 git 提交信息并提交，你需要手动 git add 对应部分后执行该命令|
+|`yarn i18n:report`|获取国际化信息|
+|`yarn lint`|检查 json 文件，脚本文件，样式文件和目录|
+|`yarn lint:json`|格式化 json 文件|
+|`yarn lint:script`|检查并自动修复脚本文件|
+|`yarn lint:style`|检查并自动修复样式文件|
+|`yarn lint:ls`|检查目录|
 
 ### 项目结构
 
@@ -94,23 +148,14 @@ yarn commit
 .
 ├── public
 ├── src
-│   ├── apis                    # 接口目录，也可以在 store 对应的 module 文件书写接口
+│   ├── apis                    # 接口目录
 │   ├── assets                  # 资产目录
 │   ├── components              # 全局组件目录
 │   ├── directives              # 全局指令目录
 │   ├── hooks                   # 钩子函数目录
 │   ├── i18n                    # 国际化目录
-│   │   ├── index.js
-│   │   └── locales             # 对应语言文件
-│   ├── layouts                 # 布局目录
-│   │   ├── withAside           # 带侧边栏的布局目录
-│   │   └── withoutAside        # 不带侧边栏的布局目录
+│   ├── layout                  # 布局目录
 │   ├── plugins                 # 插件目录
-│   │   ├── composition-api.js  # 支持@vue/composition-api
-│   │   ├── event-bus.js        # 支持 mitt 事件总线
-│   │   ├── index.js
-│   │   ├── request.js          # 支持 axios
-│   │   └── vuetify.js          # 支持 vuetify
 │   ├── router                  # 路由目录
 │   ├── store                   # 状态管理目录
 │   ├── styles                  # 全局样式目录
@@ -120,8 +165,8 @@ yarn commit
 │   ├── background.js           # electron 主进程文件
 │   ├── guard.js                # 导航守卫
 │   ├── main.js
-│   └── preload.js              # 预加载文件
-├── .browserslistrc             # 浏览器支持列表文件
+│   └── preload.js              # electron 预加载文件
+├── .browserslistrc             # 浏览器支持
 ├── .editorconfig
 ├── .env                        # 所有环境都载入的环境变量
 ├── .env.development            # development 载入的环境变量
@@ -146,49 +191,116 @@ yarn commit
 └── yarn.lock
 ```
 
-## 测试
+### 多模式配置
+
+模板内置了四个环境变量文件。
+
+#### .env
+
+所有模式都会载入这个环境变量文件。
+
+它里面包含了两个国际化变量`VUE_APP_I18N_LOCALE`和`VUE_APP_I18N_FALLBACK_LOCALE`，值都是`zh-Hans`，表示默认使用简体中文。
+
+另外，它还包含了超时变量，用于指定请求的超时时间，值为`10000`，表示 10 秒超时。
+
+#### .env.staging
+
+staging 模式下，这个环境变量文件会被载入。
+
+它使用`VUE_APP_MODE`指定当前模式为 staging，`NODE_ENV`指定运行模式为 production。
+
+请区分当前模式和运行模式。当前模式可以由我们任意指定，而运行模式只能是 development，production 和 test 的其中一个，它会影响实际构建的表现和效果。在代码中，你可以根据实际情况，使用它们对代码做差异化处理。
+
+另外，它还指定了项目构建后的 publicPath `VUE_APP_PUBLIC_PATH`，值为`/`，表示使用根目录。
+
+而`VUE_APP_BASE_PATH`指定了请求的前缀地址，值为`https://fake.url`，这是一个假地址，在实际使用时需要修改。
+
+.env.development，.env.production 都和 .env.staging 的内容大同小异，在这里不再赘述。
+
+如果你还需要添加更多的模式，请参考以上的说明添加对应的环境变量文件。另外，也请修改 package.json 内的 scripts，添加对应的构建命令。
+
+### 国际化配置
+
+模板内置了两种语言配置，分别是简体中文和英语。
+
+简体中文文件是 [@/i18n/locales/zh-Hans.json](./src/i18n/locales/zh-Hans.json)，英语文件是 [@/i18n/locales/en.json](./src/i18n/locales/en.json)。
+
+你可以在上面两个文件里加入你需要的字段以支持翻译，务必注意字段需要保持一致，也请注意合理地划分字段。
+
+而要引入 npm 库的语言包，你可以在 [@/i18n/index.js](./src/i18n/index.js) 内操作。目前已经为 vuetify 添加了语言包，你可以参考着为其他和 vue2 绑定的 npm 库添加语言包。
+
+和 vue2 不强绑定的 npm 库，请查看它们的文档说明。
+
+### 路由配置
+
+模板把路由分成了两类，一类是静态路由，一类是动态路由。
+
+#### 静态路由
+
+静态路由是无论什么情况都能够被访问的路由。模板内置了两个静态路由 Index 和 Home。
+
+#### 动态路由
+
+而动态路由是需要手动添加的路由，有可能你需要根据用户角色来选择性添加，也有可能你会直接添加。模板内置了一个动态路由 404 用于访问页面兜底。另外，模板给出了筛选动态路由的[示例方法](./src/router/routes.js)。
+
+### 状态管理配置
+
+模板把状态管理分成了两类，一类是应用类状态，一类是业务类状态。
+
+#### 应用类状态
+
+应用类状态是应用本身的状态，包括应用是否处于 electron 环境，应用当前语言等。
+
+#### 业务类状态
+
+业务类状态是应用所承载的业务的状态，包括用户信息，页面通用数据等。模板建议把业务类状态分模块放置。
+
+### 请求配置
+
+#### axios 封装
+
+模板封装了 axios，并将`$request`绑定到 vue 实例上。你可以在修改[封装文件](./src/plugins/request.js)默认的 axios 配置以匹配业务。
+
+#### proxy
+
+在 development 模式下请求服务器往往会出现跨域问题，因此模板内已经设置了 devServer.proxy，见 [vue.config.js](./vue.config.js) L72。
+
+理论上，devServer.proxy 应该与 production 运行模式下的`VUE_APP_BASE_URL`一致。
+
+#### 取消请求
+
+考虑到取消请求的情况较少，建议手动在需要取消请求的部分添加，可以参考 [api 示例](./src/apis/user.js)。
+
+### 布局
+
+模板内使用了 Vuetify 提供的[默认布局](./src/layout/index.vue)。
+
+常见的布局可以参考 [Ant Design 示例](https://ant-design.gitee.io/components/layout-cn/)，你可以修改布局组件的属性，或添加对应的样式来调整布局。你也可以参考 Vuetify 官网就是使用 Vuetify 实现的。
+
+我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示`v-main`部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件。
+
+要实现也相当简单，我们可以添加一个`computed`属性，指定在特定路由时显示`v-app-bar`。
+
+我们也可能根据用户角色生成路由和侧边栏，模板内置的该部分功能较为薄弱，且思路源自 vue-element-admin，请查看 vue-element-admin [路由和侧边栏](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html)和[权限验证](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/permission.html)阐述的思路。
+
+### electron
+
+模板默认集成 electron，你可以快速开始你的 electron 开发。
+
+模板内提供了 ipc 的演示示例，请全局搜索 ipc 查看。
+
+### 测试
 
 目前没有测试。欢迎 PR。
 
-## 部署
+如果需要添加测试，请查看[文档说明](https://cn.vuejs.org/v2/guide/testing.html)。
+
+### 部署
 
 - 确认所有和[模式和环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html)相关的地方已经配置完成。
 - 运行对应的命令，然后上传`dist`目录下的内容，默认会生成报告。
 
-## 主要依赖
-
-- [vue](https://vuejs.org)
-- [vue-cli](https://cli.vuejs.org/)
-- [vue-router](https://router.vuejs.org/)
-- [vuex](https://vuex.vuejs.org/)
-- [vue-composition-api](https://composition-api.vuejs.org/)
-- [vue-use](https://vueuse.js.org/)
-- [mitt](https://github.com/developit/mitt#readme)
-- [vue-i18n](https://kazupon.github.io/vue-i18n/)
-- [mitt](https://github.com/developit/mitt#readme)
-- [axios](https://github.com/axios/axios#readme)
-- [swrv](https://github.com/Kong/swrv#readme)
-- [vuetify](https://vuetifyjs.com/)
-- [portal-vue](https://portal-vue.linusb.org/)
-- [better-scroll](https://better-scroll.github.io/docs/zh-CN/guide/)
-- [lodash](https://lodash.com/)
-- [xe-utils](https://github.com/x-extends/xe-utils#readme)
-- [dayjs](https://day.js.org)
-- [nprogress](https://ricostacruz.com/nprogress/)
-- [mock.js](http://mockjs.com/)
-- [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
-- [commitizen](http://commitizen.github.io/cz-cli/)
-- [commitlint](https://commitlint.js.org/)
-- [prettier](https://prettier.io/)
-- [eslint](https://eslint.org/)
-- [stylelint](https://stylelint.io/)
-- [ls-lint](https://ls-lint.org/)
-- [husky](https://github.com/typicode/husky#readme)
-- [lint-staged](https://github.com/okonet/lint-staged#readme)
-- [@modyqyw/fabric](https://github.com/MillCloud/fabric#readme)
-- [npm-check-updates](https://github.com/raineorshine/npm-check-updates#readme)
-
-## 浏览器支持
+### 浏览器支持
 
 请查看 [.browserslistrc](./.browserslistrc)。
 

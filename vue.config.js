@@ -70,7 +70,7 @@ module.exports = {
     },
   },
   devServer: {
-    proxy: 'https://fake.url',
+    proxy: process.env.VUE_APP_BASE_URL || 'https://fake.url',
   },
   pluginOptions: {
     electronBuilder: {
@@ -97,12 +97,12 @@ module.exports = {
       },
     },
     i18n: {
-      locale: 'zh-Hans',
-      fallbackLocale: 'zh-Hans',
+      locale: process.env.VUE_APP_I18N_LOCALE,
+      fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE,
       localeDir: 'i18n/locales',
       enableInSFC: false,
     },
   },
-  publicPath: process.env.VUE_APP_PUBLIC_PATH,
+  publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
   transpileDependencies: ['vuetify'],
 };

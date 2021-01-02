@@ -1,29 +1,30 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '@/views/home.vue';
+import { loadStaticRoutes, loadExceptionRoutes } from './routes';
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/about.vue'),
-  },
-];
+/** @desc 创建路由实例的方法 */
+const createRouter = () =>
+  new VueRouter({
+    mode: 'hash',
+    scrollBehavior: () => ({ y: 0 }),
+    routes: loadStaticRoutes(),
+  });
 
-const router = new VueRouter({
-  mode: 'hash',
-  routes,
-});
+/** @des 路由实例 */
+const router = createRouter();
+
+/** @desc 添加异常路由 */
+router.addRoutes(loadExceptionRoutes());
+
+/**
+ * @desc 重置路由实例
+ * @link https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
+ */
+export const resetRouter = () => {
+  const newRouter = createRouter();
+  router.matcher = newRouter.matcher;
+};
 
 export default router;

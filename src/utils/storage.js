@@ -26,6 +26,25 @@ export function getToken() {
 /**
  * @param {string} token
  */
-export function setToken(token) {
+export function setToken(token = '') {
   setItem({ key: keyToken, value: token });
+}
+
+const keyLanguage = 'language';
+
+/**
+ * @return {string} language
+ */
+export function getLanguage() {
+  return getItem({
+    key: keyLanguage,
+    defaultValue: process.env.VUE_APP_I18N_LOCALE,
+  });
+}
+
+/**
+ * @param {string} language
+ */
+export function setLanguage(language = process.env.VUE_APP_I18N_LOCALE) {
+  setItem({ key: keyLanguage, value: language });
 }

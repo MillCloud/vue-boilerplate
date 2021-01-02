@@ -1,16 +1,7 @@
 /* stylelint-disable selector-max-id, value-keyword-case */
 @import "~nprogress/nprogress.css";
 
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
-
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", Avenir, "Helvetica Neue", elvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

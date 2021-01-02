@@ -7,7 +7,7 @@ export default {
   },
   getters: {},
   mutations: {
-    setToken(state, token) {
+    setToken(state, token = '') {
       state.token = token;
       setToken(token);
     },

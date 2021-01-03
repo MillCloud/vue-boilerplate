@@ -229,9 +229,9 @@ staging 模式下，这个环境变量文件会被载入。
 
 你可以在上面两个文件里加入你需要的字段以支持翻译，务必注意字段需要保持一致，也请注意合理地划分字段。
 
-而要引入 npm 库的语言包，你可以在 [@/i18n/index.js](./src/i18n/index.js) 内操作。目前已经为 vuetify 添加了语言包，你可以参考着为其他和 vue2 绑定的 npm 库添加语言包。
+而要引入和 vue2 强绑定的 npm 库的语言包，你可以在 [@/i18n/index.js](./src/i18n/index.js) 内操作。目前已经为 vuetify 添加了语言包，你可以参考着为其他和 vue2 强绑定的 npm 库添加语言包。
 
-和 vue2 不强绑定的 npm 库，请查看它们的文档说明。
+引入和 vue2 不强绑定的 npm 库的语言包，请查看它们的文档说明。
 
 ### 路由配置
 
@@ -291,6 +291,10 @@ staging 模式下，这个环境变量文件会被载入。
 
 模板内提供了 ipc 的演示示例，请全局搜索 ipc 查看。
 
+### VSCode 支持
+
+你可以参考[插件](https://www.yuque.com/modyqyw/environment/skhbfr) 和 [settings.json](https://www.yuque.com/modyqyw/environment/aozv2q)。
+
 ### 测试
 
 目前没有测试。欢迎 PR。
@@ -314,4 +318,4 @@ staging 模式下，这个环境变量文件会被载入。
 
 - **Rui Wu** - *最初工作* - [ModyQyW](https://github.com/ModyQyW)
 
-另请参阅参与此项目的 [contributors](https://github.com/ModyQyW/boilerplate-vue/contributors) 列表。
+另请参阅参与此项目的 [contributors](https://github.com/MillCloud/boilerplate-vue/contributors) 列表。

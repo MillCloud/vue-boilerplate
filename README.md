@@ -75,7 +75,7 @@ brew install git
 
 ```
 
-对于 Windows 用户，请按照以下指引操作（安装 nvm，设置 nvm 镜像）。
+对于 Windows 用户，请按照以下指引操作。
 
 首先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
 
@@ -90,6 +90,8 @@ nvm use 12.20.0
 npm i -g yarn
 
 ```
+
+其它系统请根据以上指引自行调整。
 
 ### 安装
 
@@ -127,12 +129,12 @@ yarn dev
 
 |命令|含义|
 |-|-|
-|`yarn dev`|启动项目，目标是 development 环境|
-|`yarn staging-build`|打包项目，目标是 staging 环境|
-|`yarn build`|打包项目，目标是 production环境|
-|`yarn electron:dev`|electron 启动项目，目标是 development 环境|
-|`yarn electron:staging-build`|electron 打包项目，目标是 staging 环境|
-|`yarn electron:build`|electron 打包项目，目标是 production 环境|
+|`yarn dev`|development 模式启动项目|
+|`yarn staging-build`|staging 模式打包项目|
+|`yarn build`|production 模式打包项目|
+|`yarn electron:dev`|electron development 模式启动项目|
+|`yarn electron:staging-build`|electron staging 模式打包项目|
+|`yarn electron:build`|electron production 模式打包项目|
 |`yarn run check`|检查项目依赖版本|
 |`yarn commit`|引导填写 git 提交信息并提交，你需要手动 git add 对应部分后执行该命令|
 |`yarn i18n:report`|获取国际化信息|

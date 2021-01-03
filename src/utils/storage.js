@@ -16,25 +16,19 @@ export function clear({ storage = localStorage }) {
 
 const keyToken = 'token';
 
-/**
- * @return {string} token
- */
+/** @return {string} token */
 export function getToken() {
   return getItem({ key: keyToken });
 }
 
-/**
- * @param {string} token
- */
+/** @param {string} token */
 export function setToken(token = '') {
   setItem({ key: keyToken, value: token });
 }
 
 const keyLanguage = 'language';
 
-/**
- * @return {string} language
- */
+/** @return {string} language */
 export function getLanguage() {
   return getItem({
     key: keyLanguage,
@@ -42,9 +36,7 @@ export function getLanguage() {
   });
 }
 
-/**
- * @param {string} language
- */
+/** @param {string} language */
 export function setLanguage(language = process.env.VUE_APP_I18N_LOCALE) {
   setItem({ key: keyLanguage, value: language });
 }

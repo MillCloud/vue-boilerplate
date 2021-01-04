@@ -1,8 +1,8 @@
 > 0.2%
 last 2 versions
 not dead
-chrome >= 70
-firefox >= 64
+chrome >= 56
+firefox >= 51
 safari >= 10
 ie >= 11
 android >= 6

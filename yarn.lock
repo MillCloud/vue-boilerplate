@@ -1506,7 +1506,7 @@
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.20.tgz#f7974863edd21d1f8a494a73e8e2b3658615c340"
   integrity sha1-95dIY+3SHR+KSUpz6OKzZYYVw0A=
 
-"@types/node@^12.0.12":
+"@types/node@^12.0.12", "@types/node@~12.19.12":
   version "12.19.12"
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.19.12.tgz#04793c2afa4ce833a9972e4c476432e30f9df47b"
   integrity sha1-BHk8KvpM6DOply5MR2Qy4w+d9Hs=

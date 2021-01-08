@@ -8,9 +8,11 @@ import packageInfo from '../../package.json';
 // https://github.com/axios/axios#readme
 // 要取消请求，参考 https://github.com/axios/axios#cancellation 第二种方式
 
-const reLaunchCodes = new Set(['TOKEN_OUTDATED']);
+/** @desc 需要返回到首页并清空登录信息的响应代码 */
+export const reLaunchCodes = new Set(['TOKEN_OUTDATED']);
 
-const objectStatusCode = {
+/** @desc 状态码对应的国际化键 */
+export const objectStatusCode = {
   400: 'BAD_REQUEST',
   401: 'UNAUTHORIZED',
   403: 'FORBIDDEN',
@@ -50,13 +52,12 @@ const objectStatusCode = {
   511: 'NETWORK_AUTHENTICATION_REQUIRED',
 };
 
-/**
- * @param {number} statusCode
- */
+/** @param {number} statusCode */
 const handleValidateStatusCode = (statusCode) =>
   (statusCode >= 200 && statusCode < 300) || statusCode === 304;
 
-const handleShowError = (response) => {
+/** @desc 错误统一处理方法 */
+export const handleShowError = (response) => {
   if (reLaunchCodes.has(response.code)) {
     clearStorage();
     router.replace('/');
@@ -65,6 +66,7 @@ const handleShowError = (response) => {
   }
 };
 
+/** @desc 请求实例 */
 const instance = axios.create({
   baseURL: process.env.VUE_APP_BASE_URL || '',
   timeout: JSON.parse(process.env.VUE_APP_TIMEOUT) || 10000,
@@ -81,20 +83,19 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use((config) => {
-  const token = getToken();
   return {
     ...config,
     headers: {
       ...config.headers,
-      'X-Token': token || '',
+      'X-Token': getToken() || '',
     },
   };
 });
 
 instance.interceptors.response.use(
   (response) => {
-    const { data } = response;
-    if (!data.success) {
+    const { data, config } = response;
+    if (!data.success && config.showError !== false) {
       handleShowError(data);
     }
     return response.data;
@@ -144,7 +145,9 @@ instance.interceptors.response.use(
       response.code = 'REQUEST_ERROR';
     }
     // 处理错误
-    handleShowError(response);
+    if (error.config.showError !== false) {
+      handleShowError(response);
+    }
     return response;
   },
 );

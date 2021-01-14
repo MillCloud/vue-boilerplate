@@ -98,7 +98,7 @@ instance.interceptors.response.use(
     if (!data.success && config.showError !== false) {
       handleShowError(data);
     }
-    return response.data;
+    return data;
   },
   (error) => {
     if (axios.isCancel(error)) {

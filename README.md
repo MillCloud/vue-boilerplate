@@ -30,6 +30,7 @@ boilerplate-vue 是一个面向中国用户的简单 vue2 模板，目标是帮�
 - [commitizen](http://commitizen.github.io/cz-cli/)
 - [commitlint](https://commitlint.js.org/)
 - [prettier](https://prettier.io/)
+- [markdownlint](https://github.com/igorshubovych/markdownlint-cli#readme)
 - [eslint](https://eslint.org/)
 - [stylelint](https://stylelint.io/)
 - [ls-lint](https://ls-lint.org/)

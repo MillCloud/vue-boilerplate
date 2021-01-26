@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "dist",
     "paths": {
       "@/*": ["./src/*"],
       "@a/*": ["./src/assets/*"],
@@ -13,6 +12,5 @@
     "allowJs": true,
     "noEmit": true
   },
-  "include": ["**/*"],
   "exclude": ["node_modules"]
 }

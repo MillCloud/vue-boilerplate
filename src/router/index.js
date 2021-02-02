@@ -16,7 +16,9 @@ const createRouter = () =>
 const router = createRouter();
 
 /** @desc 添加异常路由 */
-router.addRoutes(loadExceptionRoutes());
+loadExceptionRoutes().forEach((route) => {
+  router.addRoute(route);
+});
 
 /**
  * @desc 重置路由实例

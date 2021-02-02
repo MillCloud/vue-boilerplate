@@ -38,24 +38,31 @@ async function createWindow() {
     win.loadURL('app://./index.html');
   }
 
+  // if (process.platform === 'darwin') {
+  //   const template = [
+  //     {
+  //       submenu: [{ role: 'minimize' }, { role: 'about' }, { role: 'quit' }],
+  //     },
+  //     {
+  //       label: 'Edit',
+  //       submenu: [
+  //         { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
+  //         { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' },
+  //       ],
+  //     },
+  //   ];
+  //   const menu = Menu.buildFromTemplate(template);
+  //   Menu.setApplicationMenu(menu);
+  // } else {
+  //   Menu.setApplicationMenu(null);
+  // }
+  const template = [{ role: 'editMenu' }];
   if (process.platform === 'darwin') {
-    const template = [
-      {
-        submenu: [{ role: 'about' }, { role: 'quit' }],
-      },
-      {
-        label: 'Edit',
-        submenu: [
-          { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
-          { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' },
-        ],
-      },
-    ];
-    const menu = Menu.buildFromTemplate(template);
-    Menu.setApplicationMenu(menu);
+    template.unshift({ role: 'appMenu' });
   } else {
-    Menu.setApplicationMenu(null);
+    template.unshift({ role: 'fileMenu' });
   }
+  Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 }
 
 // Quit when all windows are closed.

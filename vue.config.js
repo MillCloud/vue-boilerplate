@@ -19,7 +19,7 @@ module.exports = {
   configureWebpack: (config) => {
     config.plugins.push(
       new StylelintPlugin({
-        files: ['src/**/*.{css,less,scss,vue}'],
+        files: ['src/**/*.{css,less,sass,scss,vue}'],
         fix: true,
       }),
     );

@@ -58,20 +58,18 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
 # 安装 node@12
 nvm install 12
-# 设置 node@12 为默认 node
+# 设置 node@12 为默认版本
 nvm alias default 12
 # 安装 yarn
 npm i -g yarn
-# 安装 homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# 设置 homebrew 镜像
-git -C "$(brew --repo)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
-git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git
-git -C "$(brew --repo homebrew/cask-fonts)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git
-git -C "$(brew --repo homebrew/cask-drivers)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-drivers.git
-git -C "$(brew --repo homebrew/cask-versions)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-versions.git
-brew update-reset && brew update && brew upgrade && brew cleanup && brew doctor
+
+```
+
+接着，请参考[清华大学开源软件镜像站 Homebrew / Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)安装 Homebrew。
+
+最后，安装 Git 并修改默认配置。
+
+```sh
 # 安装 git
 brew install git
 # 不自动转换换行符
@@ -82,6 +80,15 @@ git config --global core.autocrlf false
 对于 Windows 用户，请按照以下指引操作。
 
 首先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
+
+如果你正在使用 [Chocolatey](https://chocolatey.org/)，你也可以通过命令安装。
+
+```sh
+choco install nvm
+choco install git
+```
+
+然后配置即可。
 
 ```sh
 # 不自动转换换行符
@@ -104,13 +111,14 @@ npm i -g yarn
 ```sh
 # clone 项目到本地
 git clone git@github.com:MillCloud/boilerplate-vue.git
-# git clone git@github.com:MillCloud/boilerplate-vue.git
+# git clone git@gitee.com:MillCloud/boilerplate-vue.git
 # 进入项目
 cd boilerplate-vue
 # 安装依赖
 yarn
 # 启动项目
 yarn dev
+
 ```
 
 如果一切正常，此时模板已经启动了，你可以正式开始你的开发。但如果你想通过文档了解更多，请先阅读[主要依赖](#主要依赖)内链接对应的文档，再继续阅读下去。
@@ -131,7 +139,7 @@ yarn dev
 
 ### 命令
 
-模板里内置了比较多的命令，以适应各种不同的情况。更多的命令你可以查看 [package.json](./package.json)。
+模板里内置了较多命令，以适应各种不同的情况。更多的命令你可以查看 [package.json](./package.json)。
 
 |命令|含义|
 |-|-|
@@ -168,14 +176,15 @@ yarn dev
 │   ├── router                  # 路由目录
 │   ├── store                   # 状态管理目录
 │   ├── styles                  # 全局样式目录
-│   ├── utils                   # 工具类目录
+│   ├── utils                   # 工具方法目录
 │   ├── views                   # 页面视图目录
 │   ├── App.vue
 │   ├── background.js           # electron 主进程文件
 │   ├── guard.js                # 导航守卫
 │   ├── main.js
 │   └── preload.js              # electron 预加载文件
-├── .browserslistrc             # 浏览器支持
+├── tests                       # 测试内容文件夹
+├── .browserslistrc             # 浏览器支持列表文件
 ├── .editorconfig
 ├── .env                        # 所有环境都载入的环境变量
 ├── .env.development            # development 载入的环境变量
@@ -323,9 +332,3 @@ staging 模式下，这个环境变量文件会被载入。
 ## 贡献
 
 请阅读 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解行为准则以及提交拉取请求的流程的详细信息。
-
-## 作者
-
-- **Rui Wu** - *最初工作* - [ModyQyW](https://github.com/ModyQyW)
-
-另请参阅参与此项目的 [contributors](https://github.com/MillCloud/boilerplate-vue/contributors) 列表。

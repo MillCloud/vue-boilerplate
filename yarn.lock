@@ -977,7 +977,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@commitlint/cli@~11.0.0":
+"@commitlint/cli@^11.0.0":
   version "11.0.0"
   resolved "https://registry.npm.taobao.org/@commitlint/cli/download/@commitlint/cli-11.0.0.tgz#698199bc52afed50aa28169237758fa14a67b5d3"
   integrity sha1-aYGZvFKv7VCqKBaSN3WPoUpntdM=
@@ -1366,10 +1366,10 @@
   resolved "https://registry.npm.taobao.org/@mdi/font/download/@mdi/font-5.9.55.tgz#41acd50b88073ded7095fc3029d8712b6e12f38e"
   integrity sha1-QazVC4gHPe1wlfwwKdhxK24S844=
 
-"@modyqyw/fabric@~1.13.2":
-  version "1.13.2"
-  resolved "https://registry.npm.taobao.org/@modyqyw/fabric/download/@modyqyw/fabric-1.13.2.tgz#cd431ec45ee9646fed01b764686c00c2eb7a8d31"
-  integrity sha1-zUMexF7pZG/tAbdkaGwAwut6jTE=
+"@modyqyw/fabric@~1.13.4":
+  version "1.13.4"
+  resolved "https://registry.npm.taobao.org/@modyqyw/fabric/download/@modyqyw/fabric-1.13.4.tgz#56e8be47a2af30e6fde8e3d07880cc4b47575eb9"
+  integrity sha1-Vui+R6KvMOb96OPQeIDMS0dXXrk=
   dependencies:
     "@commitlint/config-conventional" "~11.0.0"
     "@typescript-eslint/eslint-plugin" "~4.14.2"
@@ -1726,7 +1726,7 @@
   resolved "https://registry.npm.taobao.org/@types/minimist/download/@types/minimist-1.2.1.tgz?cache=0&sync_timestamp=1604943434232&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fminimist%2Fdownload%2F%40types%2Fminimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
   integrity sha1-KD9mn/dte4Jg34q3pCYsyD2YglY=
 
-"@types/node@*", "@types/node@~14.14.22":
+"@types/node@*":
   version "14.14.22"
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.22.tgz#0d29f382472c4ccf3bd96ff0ce47daf5b7b84b18"
   integrity sha1-DSnzgkcsTM872W/wzkfa9be4Sxg=
@@ -1735,6 +1735,11 @@
   version "12.19.15"
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.19.15.tgz#0de7e978fb43db62da369db18ea088a63673c182"
   integrity sha1-DefpePtD22LaNp2xjqCIpjZzwYI=
+
+"@types/node@~14.14.25":
+  version "14.14.25"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-14.14.25.tgz#15967a7b577ff81383f9b888aa6705d43fbbae93"
+  integrity sha1-FZZ6e1d/+BOD+biIqmcF1D+7rpM=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -2285,10 +2290,10 @@
   resolved "https://registry.npm.taobao.org/@vue/preload-webpack-plugin/download/@vue/preload-webpack-plugin-1.1.2.tgz?cache=0&sync_timestamp=1595814732688&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fpreload-webpack-plugin%2Fdownload%2F%40vue%2Fpreload-webpack-plugin-1.1.2.tgz#ceb924b4ecb3b9c43871c7a429a02f8423e621ab"
   integrity sha1-zrkktOyzucQ4ccekKaAvhCPmIas=
 
-"@vue/test-utils@~1.1.2":
-  version "1.1.2"
-  resolved "https://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-1.1.2.tgz?cache=0&sync_timestamp=1610020549925&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Ftest-utils%2Fdownload%2F%40vue%2Ftest-utils-1.1.2.tgz#fdb487448dceefeaf3d01d465f7c836a3d666dbc"
-  integrity sha1-/bSHRI3O7+rz0B1GX3yDaj1mbbw=
+"@vue/test-utils@~1.1.3":
+  version "1.1.3"
+  resolved "https://registry.npm.taobao.org/@vue/test-utils/download/@vue/test-utils-1.1.3.tgz#747f5683d8d4633c85a385fe2e02c1bb35bec153"
+  integrity sha1-dH9Wg9jUYzyFo4X+LgLBuzW+wVM=
   dependencies:
     dom-event-types "^1.0.0"
     lodash "^4.17.15"
@@ -4192,6 +4197,13 @@ commitizen@^4.0.3, commitizen@~4.2.3:
     strip-bom "4.0.0"
     strip-json-comments "3.0.1"
 
+commitlint@~11.0.0:
+  version "11.0.0"
+  resolved "https://registry.npm.taobao.org/commitlint/download/commitlint-11.0.0.tgz#a60f759b938c97c5d601c881cfe71b1d4051d219"
+  integrity sha1-pg91m5OMl8XWAciBz+cbHUBR0hk=
+  dependencies:
+    "@commitlint/cli" "^11.0.0"
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/commondir/download/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -5304,10 +5316,10 @@ electron-to-chromium@^1.3.634:
   resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.642.tgz#8b884f50296c2ae2a9997f024d0e3e57facc2b94"
   integrity sha1-i4hPUClsKuKpmX8CTQ4+V/rMK5Q=
 
-electron@~11.2.1:
-  version "11.2.1"
-  resolved "https://registry.npm.taobao.org/electron/download/electron-11.2.1.tgz?cache=0&sync_timestamp=1612199446199&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felectron%2Fdownload%2Felectron-11.2.1.tgz#8641dd1a62911a1144e0c73c34fd9f37ccc65c2b"
-  integrity sha1-hkHdGmKRGhFE4Mc8NP2fN8zGXCs=
+electron@~11.2.2:
+  version "11.2.2"
+  resolved "https://registry.npm.taobao.org/electron/download/electron-11.2.2.tgz?cache=0&sync_timestamp=1612569617749&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felectron%2Fdownload%2Felectron-11.2.2.tgz#c2e53eb56bd21ae1dc01bc781f2f6bcbe0c18033"
+  integrity sha1-wuU+tWvSGuHcAbx4Hy9ry+DBgDM=
   dependencies:
     "@electron/get" "^1.0.1"
     "@types/node" "^12.0.12"
@@ -8861,10 +8873,10 @@ linkify-it@^3.0.1:
   dependencies:
     uc.micro "^1.0.1"
 
-lint-staged@~10.5.3:
-  version "10.5.3"
-  resolved "https://registry.npm.taobao.org/lint-staged/download/lint-staged-10.5.3.tgz#c682838b3eadd4c864d1022da05daa0912fb1da5"
-  integrity sha1-xoKDiz6t1Mhk0QItoF2qCRL7HaU=
+lint-staged@~10.5.4:
+  version "10.5.4"
+  resolved "https://registry.npm.taobao.org/lint-staged/download/lint-staged-10.5.4.tgz#cd153b5f0987d2371fc1d2847a409a2fe705b665"
+  integrity sha1-zRU7XwmH0jcfwdKEekCaL+cFtmU=
   dependencies:
     chalk "^4.1.0"
     cli-truncate "^2.1.0"
@@ -14222,10 +14234,10 @@ vue@^2.6.11, vue@~2.6.12:
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.12.tgz?cache=0&sync_timestamp=1609359872993&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha1-9evU+mvShpQD4pqJau1JBEVskSM=
 
-vuetify-loader@~1.7.1:
-  version "1.7.1"
-  resolved "https://registry.npm.taobao.org/vuetify-loader/download/vuetify-loader-1.7.1.tgz#d2fb905ee7dbd1183ea210dbd31e52756fd622fc"
-  integrity sha1-0vuQXufb0Rg+ohDb0x5SdW/WIvw=
+vuetify-loader@~1.7.2:
+  version "1.7.2"
+  resolved "https://registry.npm.taobao.org/vuetify-loader/download/vuetify-loader-1.7.2.tgz#5cdc45309496cf3a5fe431fd7611706ffa4aa8c8"
+  integrity sha1-XNxFMJSWzzpf5DH9dhFwb/pKqMg=
   dependencies:
     decache "^4.6.0"
     file-loader "^6.2.0"

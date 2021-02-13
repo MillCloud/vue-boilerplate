@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import HelloWorld from '@/components/HelloWorld.vue';
 
 export default {

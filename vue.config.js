@@ -27,7 +27,6 @@ module.exports = {
       '@': path.resolve('src'),
       '@a': path.resolve('src', 'assets'),
       '@c': path.resolve('src', 'components'),
-      '@h': path.resolve('src', 'hooks'),
       '@u': path.resolve('src', 'utils'),
     };
     if (process.env.NODE_ENV !== 'development') {

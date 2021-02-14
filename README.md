@@ -4,6 +4,8 @@
 
 boilerplate-vue 是一个面向中国用户的简单 vue2 模板，目标是帮助你快速搭建网页。当然，也希望能引导你更进一步地了解 vue2 生态。
 
+要查看 vue3 模板，请切换到 vue3 分支。
+
 ### 主要依赖
 
 - [vue2](https://cn.vuejs.org)
@@ -169,7 +171,7 @@ yarn dev
 │   ├── assets                  # 资产目录
 │   ├── components              # 全局组件目录
 │   ├── directives              # 全局指令目录
-│   ├── hooks                   # 钩子函数目录
+│   ├── composables             # 组合式函数目录
 │   ├── i18n                    # 国际化目录
 │   ├── layout                  # 布局目录
 │   ├── plugins                 # 插件目录

@@ -99,7 +99,7 @@
   "lint-staged": {
     "*.json": "prettier --write",
     "*.md": "markdownlint --fix",
-    "*.{js,jsx,ts,tsx,vue}": "vue-cli-service --fix",
+    "*.{js,jsx,ts,tsx,vue}": "vue-cli-service lint --fix",
     "*.{css,less,scss,vue}": "stylelint --fix"
   }
 }

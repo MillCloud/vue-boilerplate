@@ -44,9 +44,6 @@ export default {
     isHome() {
       return this.$route.name === 'Home';
     },
-    isAbout() {
-      return this.$route.name === 'About';
-    },
   },
 };
 </script>

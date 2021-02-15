@@ -2,7 +2,9 @@ import { isYuan, isMobileNumber } from '@u/validator';
 
 describe('validator', () => {
   it('isYuan', () => {
+    // @ts-ignore
     expect(isYuan()).toBe(false);
+    // @ts-ignore
     expect(isYuan(null)).toBe(false);
     expect(isYuan('0')).toBe(false);
     expect(isYuan('.')).toBe(false);
@@ -14,8 +16,10 @@ describe('validator', () => {
     expect(isYuan('1.0')).toBe(true);
     expect(isYuan('1.00')).toBe(true);
   });
-  it('isMobileNumber Case1', () => {
+  it('isMobileNumber', () => {
+    // @ts-ignore
     expect(isMobileNumber()).toBe(false);
+    // @ts-ignore
     expect(isMobileNumber(null)).toBe(false);
     expect(isMobileNumber('')).toBe(false);
     expect(isMobileNumber('1')).toBe(false);

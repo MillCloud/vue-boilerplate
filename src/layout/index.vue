@@ -3,11 +3,11 @@
     <v-app-bar app flat>
       <span class="mr-8 title">boilerplate-vue</span>
       <router-link to="/" exact>Index</router-link>
-      <router-link to="/home" exact class="mx-2">Home</router-link>
+      <router-link to="/home" exact class="ml-2">Home</router-link>
     </v-app-bar>
     <v-navigation-drawer app>
       <v-toolbar flat>
-        <v-toolbar-title class="title"> boilerplate-vue </v-toolbar-title>
+        <v-toolbar-title class="title">boilerplate-vue</v-toolbar-title>
       </v-toolbar>
     </v-navigation-drawer>
     <router-view />

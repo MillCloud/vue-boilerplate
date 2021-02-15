@@ -4,12 +4,8 @@
       <v-row justify="center" align="center" class="my-0">
         <h6 class="text-h6">这里是首页</h6>
       </v-row>
-      <v-row justify="center" align="center" class="my-0">
-        <v-btn
-          v-if="isElectron"
-          class="mt-2"
-          @click="handleCloseElectronWindow"
-        >
+      <v-row v-if="isElectron" justify="center" align="center" class="my-0">
+        <v-btn class="mt-2" @click="handleCloseElectronWindow">
           Electron 环境 - 关闭应用
         </v-btn>
       </v-row>

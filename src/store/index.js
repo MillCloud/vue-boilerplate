@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import vuetify from '@/plugins/vuetify';
+import i18n from '@/i18n';
 import { getLanguage, setLanguage } from '@u/storage';
 
 Vue.use(Vuex);
@@ -33,7 +33,7 @@ export default new Vuex.Store({
     setLanguage(state, language = process.env.VUE_APP_I18N_LOCALE) {
       state.language = language;
       setLanguage(language);
-      vuetify.lang.current = language;
+      i18n.locale = language;
     },
   },
   actions: {},

@@ -49,7 +49,7 @@
       >
       <a
         class="mx-2"
-        href="https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify#readme"
+        href="https://github.com/intlify/vue-cli-plugin-i18n#readme"
         target="_blank"
         rel="noopener noreferrer"
         >i18n</a
@@ -57,7 +57,7 @@
       <a
         v-if="isElectron"
         class="mx-2"
-        href="https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify#readme"
+        href="https://github.com/nklayman/vue-cli-plugin-electron-builder#readme"
         target="_blank"
         rel="noopener noreferrer"
         >electron-builder</a
@@ -104,7 +104,7 @@
       >
       <a
         class="mx-2"
-        href="https://github.com/vuejs/vue-devtools#vue-devtools"
+        href="https://github.com/vuejs/vue-devtools#readme"
         target="_blank"
         rel="noopener noreferrer"
         >vue-devtools</a

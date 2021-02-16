@@ -1,5 +1,4 @@
-import './composition-api';
+import './bus';
 import './dayjs';
-import './event-bus';
 import './request';
 import './vuetify';

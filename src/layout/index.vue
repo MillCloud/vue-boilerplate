@@ -31,19 +31,3 @@
     </v-footer>
   </v-app>
 </template>
-
-<script>
-export default {
-  data() {
-    return {};
-  },
-  computed: {
-    isIndex() {
-      return this.$route.name === 'Index';
-    },
-    isHome() {
-      return this.$route.name === 'Home';
-    },
-  },
-};
-</script>

@@ -12,14 +12,11 @@ boilerplate-vue 是一个面向中国用户的简单 vue2 模板，目标是帮�
 - [vue-cli](https://cli.vuejs.org/zh/)
 - [vue-router](https://router.vuejs.org/zh/)
 - [vuex](https://vuex.vuejs.org/zh/)
-- [vue-composition-api](https://composition-api.vuejs.org/zh/)
-- [vue-use](https://vueuse.js.org/)
 - [mitt](https://github.com/developit/mitt#readme)
 - [electron](https://www.electronjs.org/)
 - [electron-builder](https://www.electron.build/)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [axios](https://github.com/axios/axios#readme)
-- [swrv](https://github.com/Kong/swrv#readme)
 - [vuetify](https://vuetifyjs.com/)
 - [portal-vue](https://portal-vue.linusb.org/)
 - [better-scroll](https://better-scroll.github.io/docs/zh-CN/guide/)
@@ -27,8 +24,9 @@ boilerplate-vue 是一个面向中国用户的简单 vue2 模板，目标是帮�
 - [xe-utils](https://github.com/x-extends/xe-utils#readme)
 - [dayjs](https://dayjs.gitee.io/zh-CN/)
 - [nprogress](https://ricostacruz.com/nprogress/)
-- [mock.js](http://mockjs.com/)
+- [faker.js](https://github.com/marak/Faker.js/#readme)
 - [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
+- [jest](https://jestjs.io/)
 - [commitizen](http://commitizen.github.io/cz-cli/)
 - [commitlint](https://commitlint.js.org/)
 - [prettier](https://prettier.io/)
@@ -154,6 +152,7 @@ yarn dev
 |`yarn run check`|检查项目依赖版本|
 |`yarn commit`|引导填写 git 提交信息并提交，你需要手动 git add 对应部分后执行该命令|
 |`yarn i18n:report`|获取国际化信息|
+|`yarn test:unit`|单元测试|
 |`yarn lint`|检查 json 文件，脚本文件，样式文件和目录|
 |`yarn lint:json`|格式化 json 文件|
 |`yarn lint:markdown`|格式化 markdown 文件|
@@ -171,13 +170,12 @@ yarn dev
 │   ├── assets                  # 资产目录
 │   ├── components              # 全局组件目录
 │   ├── directives              # 全局指令目录
-│   ├── composables             # 组合式函数目录
 │   ├── i18n                    # 国际化目录
 │   ├── layout                  # 布局目录
 │   ├── plugins                 # 插件目录
 │   ├── router                  # 路由目录
 │   ├── store                   # 状态管理目录
-│   ├── styles                  # 全局样式目录
+│   ├── styles                  # 全局样式和全局变量目录
 │   ├── utils                   # 工具方法目录
 │   ├── views                   # 页面视图目录
 │   ├── App.vue
@@ -186,6 +184,7 @@ yarn dev
 │   ├── main.js
 │   └── preload.js              # electron 预加载文件
 ├── tests                       # 测试内容文件夹
+├── typings                     # typescript 定义文件夹，为未来迁移做准备
 ├── .browserslistrc             # 浏览器支持列表文件
 ├── .editorconfig
 ├── .env                        # 所有环境都载入的环境变量
@@ -201,10 +200,10 @@ yarn dev
 ├── .markdownlintignore         # markdownlint 配置文件
 ├── .npmrc                      # npm 镜像文件
 ├── .prettierignore             # prettier 配置文件
+├── .stylelintignore            # stylelint 配置文件
 ├── .yarnrc                     # yarn 镜像文件
 ├── babel.config.js             # babel 配置文件
 ├── commitlint.config.js        # commitlint 配置文件
-├── CONTRIBUTING.md
 ├── package.json
 ├── prettier.config.js          # prettier 配置文件
 ├── README.md
@@ -222,21 +221,21 @@ yarn dev
 
 所有模式都会载入这个环境变量文件。
 
-它里面包含了两个国际化变量`VUE_APP_I18N_LOCALE`和`VUE_APP_I18N_FALLBACK_LOCALE`，值都是`zh-Hans`，表示默认使用简体中文。
+它里面包含了两个国际化变量 `VUE_APP_I18N_LOCALE` 和 `VUE_APP_I18N_FALLBACK_LOCALE`，值都是 `zh-Hans`，表示默认使用简体中文。
 
-另外，它还包含了超时变量，用于指定请求的超时时间，值为`10000`，表示 10 秒超时。
+另外，它还包含了请求变量 `VUE_APP_TIMEOUT`，用于指定请求的超时时间，值为 `10000`，表示 10 秒超时。
 
 #### .env.staging
 
 staging 模式下，这个环境变量文件会被载入。
 
-它使用`VUE_APP_MODE`指定当前模式为 staging，`NODE_ENV`指定运行模式为 production。
+它使用 `VUE_APP_MODE` 指定当前模式为 staging，`NODE_ENV` 指定运行模式为 production。
 
 请区分当前模式和运行模式。当前模式可以由我们任意指定，而运行模式只能是 development，production 和 test 的其中一个，它会影响实际构建的表现和效果。在代码中，你可以根据实际情况，使用它们对代码做差异化处理。
 
-另外，它还指定了项目构建后的 publicPath `VUE_APP_PUBLIC_PATH`，值为`/`，表示使用根目录。
+另外，它还指定了项目构建后的 publicPath `VUE_APP_PUBLIC_PATH`，值为 `/`，表示使用根目录。
 
-而`VUE_APP_BASE_PATH`指定了请求的前缀地址，值为`https://fake.url`，这是一个假地址，在实际使用时需要修改。
+而 `VUE_APP_BASE_PATH` 指定了请求的前缀地址，值为 `https://fake.url`，这是一个假地址，在实际使用时需要修改。
 
 .env.development，.env.production 都和 .env.staging 的内容大同小异，在这里不再赘述。
 
@@ -282,13 +281,13 @@ staging 模式下，这个环境变量文件会被载入。
 
 #### axios 封装
 
-模板封装了 axios，并将`$request`绑定到 vue 实例上。你可以在修改[封装文件](./src/plugins/request.js)默认的 axios 配置以匹配业务。
+模板封装了 axios，并将 `$request` 绑定到 vue 实例上。你可以在修改[封装文件](./src/plugins/request.js)默认的配置以匹配业务。
 
 #### proxy
 
 在 development 模式下请求服务器往往会出现跨域问题，因此模板内已经设置了 devServer.proxy，见 [vue.config.js](./vue.config.js) L72。
 
-理论上，devServer.proxy 应该与 production 运行模式下的`VUE_APP_BASE_URL`一致。
+理论上，devServer.proxy 应该与 production 运行模式下的 `VUE_APP_BASE_URL` 一致。
 
 #### 取消请求
 
@@ -300,9 +299,9 @@ staging 模式下，这个环境变量文件会被载入。
 
 常见的布局可以参考 [Ant Design 示例](https://ant-design.gitee.io/components/layout-cn/)，你可以修改布局组件的属性，或添加对应的样式来调整布局。你也可以参考 Vuetify 官网就是使用 Vuetify 实现的。
 
-我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示`v-main`部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件。
+我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示 `v-main` 部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件。
 
-要实现也相当简单，我们可以添加一个`computed`属性，指定在特定路由时显示`v-app-bar`。
+要实现也相当简单，我们可以添加一个 `computed` 属性，指定在特定路由时显示 `v-app-bar`。
 
 我们也可能根据用户角色生成路由和侧边栏，模板内置的该部分功能较为薄弱，且思路源自 vue-element-admin，请查看 vue-element-admin [路由和侧边栏](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html)和[权限验证](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/permission.html)阐述的思路。
 
@@ -318,19 +317,17 @@ staging 模式下，这个环境变量文件会被载入。
 
 ### 测试
 
-目前没有测试。欢迎 PR。
+目前有单元测试，并提供了对 `@/utils` 下两个文件的单元测试。
 
-如果需要添加测试，请查看[文档说明](https://cn.vuejs.org/v2/guide/testing.html)。
+如果需要添加单元测试，请先学习 [Jest](https://jestjs.io/)。
+
+如果需要添加其它测试，请查看[文档说明](https://cn.vuejs.org/v2/guide/testing.html)。
 
 ### 部署
 
 - 确认所有和[模式和环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html)相关的地方已经配置完成。
-- 运行对应的命令，然后上传`dist`目录下的内容，默认会生成报告。
+- 运行对应的命令，然后上传 `dist` 目录下的内容，默认会生成报告。
 
 ### 浏览器支持
 
 请查看 [.browserslistrc](./.browserslistrc)。
-
-## 贡献
-
-请阅读 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解行为准则以及提交拉取请求的流程的详细信息。

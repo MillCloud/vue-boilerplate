@@ -69,7 +69,7 @@ export const handleShowError = (response) => {
 /** @desc 请求实例 */
 const instance = axios.create({
   baseURL: process.env.VUE_APP_BASE_URL || '',
-  timeout: JSON.parse(process.env.VUE_APP_TIMEOUT) || 10000,
+  timeout: JSON.parse(process.env.VUE_APP_TIMEOUT || '10000') || 10000,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
@@ -78,7 +78,6 @@ const instance = axios.create({
   },
   withCredentials: false,
   responseType: 'json',
-  responseEncoding: 'utf8',
   validateStatus: handleValidateStatusCode,
 });
 
@@ -116,33 +115,34 @@ instance.interceptors.response.use(
     };
     if (error.response) {
       // 发送了请求且有响应
-      const { status } = error.response;
+      let { status } = error.response;
       if (!handleValidateStatusCode(status)) {
         // 状态码不正常
+        status = JSON.stringify(status);
+        response.code = status;
         response.message = objectStatusCode[status]
           ? i18n.t(`error.${objectStatusCode[status]}`)
           : i18n.t('error.ERROR_OCCURRED');
-        response.code = status;
       } else {
         // 超时
         const timeoutCodes = ['TIMEOUT', 'CONNRESET'];
-        const strError = JSON.stringify(error);
+        const strError = JSON.stringify(error).toUpperCase();
         for (let i = 0, len = timeoutCodes.length; i < len; i += 1) {
           if (strError.includes(timeoutCodes[i])) {
-            response.message = i18n.t('error.REQUEST_TIMEOUT');
             response.code = 'REQUEST_TIMEOUT';
+            response.message = i18n.t('error.REQUEST_TIMEOUT');
             break;
           }
         }
       }
     } else if (error.request) {
       // 发送了请求，没有收到响应
-      response.message = i18n.t('error.NO_RESPONSE');
       response.code = 'NO_RESPONSE';
+      response.message = i18n.t('error.NO_RESPONSE');
     } else {
       // 请求时发生错误
-      response.message = i18n.t('error.REQUEST_ERROR');
       response.code = 'REQUEST_ERROR';
+      response.message = i18n.t('error.REQUEST_ERROR');
     }
     // 处理错误
     if (error.config.showError !== false) {

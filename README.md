@@ -2,9 +2,9 @@
 
 ## 简介
 
-boilerplate-vue 是一个面向中国用户的简单 vue2 模板，目标是帮助你快速搭建网页。当然，也希望能引导你更进一步地了解 vue2 生态。
+boilerplate-vue 是一个面向中国用户的简单 vue 模板，目标是帮助你快速搭建网页。当然，也希望能引导你更进一步地了解 vue 生态。
 
-要查看 vue3 模板，请切换到 vue3 分支。
+当前是 vue2 分支。要查看 vue3 模板，请切换到 vue3 分支。
 
 ### 主要依赖
 
@@ -281,7 +281,7 @@ staging 模式下，这个环境变量文件会被载入。
 
 #### axios 封装
 
-模板封装了 axios，并将 `$request` 绑定到 vue 实例上。你可以在修改[封装文件](./src/plugins/request.js)默认的配置以匹配业务。
+模板封装了 axios，并将 `$request` 绑定到 vue 实例上。你可以修改[封装文件](./src/plugins/request.js)默认的配置以匹配业务。
 
 #### proxy
 
@@ -295,13 +295,11 @@ staging 模式下，这个环境变量文件会被载入。
 
 ### 布局
 
-模板内使用了 Vuetify 提供的[默认布局](./src/layout/index.vue)。
+模板内使用了 vuetify 提供的[默认布局](./src/layout/index.vue)。
 
-常见的布局可以参考 [Ant Design 示例](https://ant-design.gitee.io/components/layout-cn/)，你可以修改布局组件的属性，或添加对应的样式来调整布局。你也可以参考 Vuetify 官网就是使用 Vuetify 实现的。
+常见的布局可以参考 [Ant Design 示例](https://ant-design.gitee.io/components/layout-cn/)，你可以修改布局组件的属性，或添加对应的样式来调整布局。你也可以参考 vuetify 官网。
 
-我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示 `v-main` 部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件。
-
-要实现也相当简单，我们可以添加一个 `computed` 属性，指定在特定路由时显示 `v-app-bar`。
+我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示 `v-main` 部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件，只需要获取当前路由信息并加以判断即可。
 
 我们也可能根据用户角色生成路由和侧边栏，模板内置的该部分功能较为薄弱，且思路源自 vue-element-admin，请查看 vue-element-admin [路由和侧边栏](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html)和[权限验证](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/permission.html)阐述的思路。
 

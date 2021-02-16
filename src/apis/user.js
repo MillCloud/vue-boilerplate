@@ -5,7 +5,7 @@ import axios from 'axios';
 const { CancelToken } = axios;
 
 export function signIn({ username, password, showError = true } = {}) {
-  let abort;
+  let cancel;
   const r = request({
     method: 'POST',
     url: '/api/sign-in',
@@ -14,12 +14,12 @@ export function signIn({ username, password, showError = true } = {}) {
       password,
     },
     cancelToken: new CancelToken((c) => {
-      abort = c;
+      cancel = c;
     }),
     showError,
   });
   // 供取消请求
-  r.abort = abort;
+  r.cancel = cancel;
   return r;
 }
 
@@ -30,7 +30,7 @@ export function signUp({
   password,
   showError = true,
 } = {}) {
-  let abort;
+  let cancel;
   const r = request({
     method: 'POST',
     url: '/api/sign-up',
@@ -41,25 +41,25 @@ export function signUp({
       password,
     },
     cancelToken: new CancelToken((c) => {
-      abort = c;
+      cancel = c;
     }),
     showError,
   });
-  r.abort = abort;
+  r.cancel = cancel;
   return r;
 }
 
 export function renew({ showError = true } = {}) {
-  let abort;
+  let cancel;
   const r = request({
     method: 'POST',
     url: '/api/renew',
     cancelToken: new CancelToken((c) => {
-      abort = c;
+      cancel = c;
     }),
     showError,
   });
-  r.abort = abort;
+  r.cancel = cancel;
   return r;
 }
 

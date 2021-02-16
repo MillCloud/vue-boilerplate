@@ -2232,13 +2232,6 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@vue/composition-api@~1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.npm.taobao.org/@vue/composition-api/download/@vue/composition-api-1.0.0-rc.1.tgz#d5286bbaffcd1987e56d5e3a9f26bfb6023e7c41"
-  integrity sha1-1Shruv/NGYflbV46nya/tgI+fEE=
-  dependencies:
-    tslib "^2.0.3"
-
 "@vue/preload-webpack-plugin@^1.1.0":
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/@vue/preload-webpack-plugin/download/@vue/preload-webpack-plugin-1.1.2.tgz?cache=0&sync_timestamp=1595814732688&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fpreload-webpack-plugin%2Fdownload%2F%40vue%2Fpreload-webpack-plugin-1.1.2.tgz#ceb924b4ecb3b9c43871c7a429a02f8423e621ab"
@@ -2257,21 +2250,6 @@
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/@vue/web-component-wrapper/download/@vue/web-component-wrapper-1.2.0.tgz#bb0e46f1585a7e289b4ee6067dcc5a6ae62f1dd1"
   integrity sha1-uw5G8VhafiibTuYGfcxaauYvHdE=
-
-"@vueuse/core@~4.1.1":
-  version "4.1.1"
-  resolved "https://registry.npm.taobao.org/@vueuse/core/download/@vueuse/core-4.1.1.tgz#9136952bc435dfc42263959bea8dac35965bac43"
-  integrity sha1-kTaVK8Q138QiY5Wb6o2sNZZbrEM=
-  dependencies:
-    "@vueuse/shared" "4.1.1"
-    vue-demi latest
-
-"@vueuse/shared@4.1.1":
-  version "4.1.1"
-  resolved "https://registry.npm.taobao.org/@vueuse/shared/download/@vueuse/shared-4.1.1.tgz#58e4333d5ab45927e25578fad83bc81cecfea475"
-  integrity sha1-WOQzPVq0WSfiVXj62DvIHOz+pHU=
-  dependencies:
-    vue-demi latest
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -4114,11 +4092,6 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   integrity sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=
   dependencies:
     delayed-stream "~1.0.0"
-
-commander@*:
-  version "7.0.0"
-  resolved "https://registry.npm.taobao.org/commander/download/commander-7.0.0.tgz?cache=0&sync_timestamp=1610702151695&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcommander%2Fdownload%2Fcommander-7.0.0.tgz#3e2bbfd8bb6724760980988fb5b22b7ee6b71ab2"
-  integrity sha1-Piu/2LtnJHYJgJiPtbIrfua3GrI=
 
 commander@2.17.x:
   version "2.17.1"
@@ -6073,6 +6046,11 @@ extsprintf@^1.2.0:
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/extsprintf/download/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
+
+faker@~5.4.0:
+  version "5.4.0"
+  resolved "https://registry.npm.taobao.org/faker/download/faker-5.4.0.tgz#f18e55993c6887918182b003d163df14daeb3011"
+  integrity sha1-8Y5VmTxoh5GBgrAD0WPfFNrrMBE=
 
 fast-deep-equal@^3.1.1:
   version "3.1.3"
@@ -9626,13 +9604,6 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.npm.taobao.org/mkdirp/download/mkdirp-1.0.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fmkdirp%2Fdownload%2Fmkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
 
-mockjs@~1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/mockjs/download/mockjs-1.1.0.tgz#e6a0c378e91906dbaff20911cc0273b3c7d75b06"
-  integrity sha1-5qDDeOkZBtuv8gkRzAJzs8fXWwY=
-  dependencies:
-    commander "*"
-
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -13139,11 +13110,6 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-swrv@~0.9.3:
-  version "0.9.3"
-  resolved "https://registry.npm.taobao.org/swrv/download/swrv-0.9.3.tgz#eec6bb69c7fb2c17b3983bc3d318d40970c1b959"
-  integrity sha1-7sa7acf7LBezmDvD0xjUCXDBuVk=
-
 symbol-tree@^3.2.2:
   version "3.2.4"
   resolved "https://registry.npm.taobao.org/symbol-tree/download/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
@@ -13519,11 +13485,6 @@ tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1609887539329&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
-
-tslib@^2.0.3:
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/tslib/download/tslib-2.1.0.tgz?cache=0&sync_timestamp=1609887539329&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
-  integrity sha1-2mCGDxwuyqVwOrfTm8Bba/mIuXo=
 
 tsutils@^3.17.1:
   version "3.20.0"
@@ -14058,11 +14019,6 @@ vue-cli-plugin-vuetify@~2.1.0:
     null-loader "^3.0.0"
     semver "^7.1.2"
     shelljs "^0.8.3"
-
-vue-demi@latest:
-  version "0.6.0"
-  resolved "https://registry.npm.taobao.org/vue-demi/download/vue-demi-0.6.0.tgz#e314282f704cb449119b9fd002cbbc0e39f591fe"
-  integrity sha1-4xQoL3BMtEkRm5/QAsu8Djn1kf4=
 
 vue-eslint-parser@^7.4.1, vue-eslint-parser@~7.4.1:
   version "7.4.1"

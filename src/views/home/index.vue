@@ -12,7 +12,7 @@
         width="200"
         class="mx-auto"
       />
-      <HelloWorld msg="Welcome to Your Vue.js App" />
+      <HelloWorld msg="Welcome to Your Vue.js v2 App" />
     </v-container>
   </v-main>
 </template>

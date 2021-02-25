@@ -81,15 +81,13 @@ const instance = axios.create({
   validateStatus: handleValidateStatusCode,
 });
 
-instance.interceptors.request.use((config) => {
-  return {
-    ...config,
-    headers: {
-      ...config.headers,
-      'X-Token': getToken() || '',
-    },
-  };
-});
+instance.interceptors.request.use((config) => ({
+  ...config,
+  headers: {
+    ...config.headers,
+    'X-Token': getToken() || '',
+  },
+}));
 
 instance.interceptors.response.use(
   (response) => {

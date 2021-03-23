@@ -42,17 +42,17 @@
     "portal-vue": "~2.1.7",
     "roboto-fontface": "~0.10.0",
     "vue": "~2.6.12",
-    "vue-i18n": "~8.24.1",
+    "vue-i18n": "~8.24.2",
     "vue-router": "~3.5.1",
     "vuetify": "~2.4.7",
     "vuex": "~3.6.2",
-    "xe-utils": "~3.1.11"
+    "xe-utils": "~3.1.12"
   },
   "devDependencies": {
     "@commitlint/cli": "~12.0.1",
     "@intlify/vue-i18n-loader": "~1.1.0",
     "@ls-lint/ls-lint": "~1.9.2",
-    "@modyqyw/fabric": "~1.22.1",
+    "@modyqyw/fabric": "~1.24.0",
     "@types/electron-devtools-installer": "~2.2.0",
     "@types/jest": "~26.0.21",
     "@types/lodash-es": "~4.17.4",
@@ -83,7 +83,7 @@
     "stylelint-webpack-plugin": "~2.1.1",
     "vue-cli-plugin-electron-builder": "~2.0.0-rc.6",
     "vue-cli-plugin-i18n": "~2.0.2",
-    "vue-cli-plugin-vuetify": "~2.2.2",
+    "vue-cli-plugin-vuetify": "~2.3.1",
     "vue-template-compiler": "~2.6.12",
     "vuetify-loader": "~1.7.2"
   },

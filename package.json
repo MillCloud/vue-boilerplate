@@ -55,7 +55,7 @@
     "@commitlint/cli": "~12.0.1",
     "@intlify/vue-i18n-loader": "~1.1.0",
     "@ls-lint/ls-lint": "~1.9.2",
-    "@modyqyw/fabric": "~1.25.2",
+    "@modyqyw/fabric": "~1.25.4",
     "@types/electron-devtools-installer": "~2.2.0",
     "@types/jest": "~26.0.22",
     "@types/lodash-es": "~4.17.4",

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import vuetifyEnLocales from 'vuetify/es5/locale/en';
 import vuetifyZhHansLocales from 'vuetify/es5/locale/zh-Hans';
-import { getLanguage } from '@u/storage';
+import { getLanguage } from '@/utils';
 
 Vue.use(VueI18n);
 

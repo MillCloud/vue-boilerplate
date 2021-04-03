@@ -2,7 +2,7 @@ import Vue from 'vue';
 import axios from 'axios';
 import router from '@/router';
 import i18n from '@/i18n';
-import { getToken, clear as clearStorage } from '@u/storage';
+import { getToken, clear as clearStorage } from '@/utils';
 import packageInfo from '../../package.json';
 
 // https://github.com/axios/axios#readme

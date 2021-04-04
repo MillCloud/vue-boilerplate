@@ -68,7 +68,7 @@ export const handleShowError = (response) => {
 
 /** @desc 请求实例 */
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_BASE_URL || '',
+  baseURL: process.env.VUE_APP_REQUEST_BASE_URL || '',
   timeout: JSON.parse(process.env.VUE_APP_TIMEOUT || '10000') || 10000,
   headers: {
     Accept: 'application/json',

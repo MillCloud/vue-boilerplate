@@ -33,7 +33,6 @@
   "dependencies": {
     "@mdi/font": "~5.9.55",
     "axios": "~0.21.1",
-    "better-scroll": "~2.2.1",
     "core-js": "~3.10.0",
     "dayjs": "~1.10.4",
     "lodash-es": "~4.17.21",
@@ -47,12 +46,12 @@
     "vue-router": "~3.5.1",
     "vuetify": "~2.4.9",
     "vuex": "~3.6.2",
-    "xe-utils": "~3.1.12"
+    "xe-utils": "~3.1.13"
   },
   "devDependencies": {
     "@babel/core": "~7.13.14",
     "@babel/eslint-parser": "~7.13.14",
-    "@commitlint/cli": "~12.0.1",
+    "@commitlint/cli": "~12.1.1",
     "@intlify/vue-i18n-loader": "~1.1.0",
     "@ls-lint/ls-lint": "~1.9.2",
     "@modyqyw/fabric": "~1.25.4",

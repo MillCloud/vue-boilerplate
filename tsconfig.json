@@ -6,7 +6,9 @@
     },
     "lib": ["esnext", "scripthost"],
     "allowJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules", "dist", "dist_electron"]
 }

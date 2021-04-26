@@ -2,13 +2,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@@/*": ["./*"],
       "@/*": ["./src/*"]
     },
     "lib": ["esnext", "scripthost"],
+    "typeRoots": ["./node_modules/@types", "./typings", "./src/typings"],
     "allowJs": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
-  "exclude": ["node_modules", "dist", "dist_electron"]
+  "exclude": ["node_modules", "dist", "dist_electron", "out"]
 }

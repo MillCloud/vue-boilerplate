@@ -5,7 +5,7 @@
       "@@/*": ["./*"],
       "@/*": ["./src/*"]
     },
-    "lib": ["esnext", "scripthost"],
+    "lib": ["esnext", "DOM", "scripthost"],
     "typeRoots": ["./node_modules/@types", "./typings", "./src/typings"],
     "allowJs": true,
     "noEmit": true,

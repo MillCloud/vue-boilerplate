@@ -1497,7 +1497,7 @@
     vue-eslint-parser "~7.8.0"
     vue-property-decorator "~9.1.2"
 
-"@modyqyw/utils@^0.6.0":
+"@modyqyw/utils@~0.6.0":
   version "0.6.0"
   resolved "https://registry.nlark.com/@modyqyw/utils/download/@modyqyw/utils-0.6.0.tgz#a53b5c86008e96497e47c385b506badc75c6db64"
   integrity sha1-pTtchgCOlkl+R8OFtQa63HXG22Q=
@@ -5675,7 +5675,7 @@ electron-to-chromium@^1.3.723:
   resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.759.tgz#b0d652d376831470a4c230ba721da2427bfb996a"
   integrity sha512-nM76xH0t2FBH5iMEZDVc3S/qbdKjGH7TThezxC8k1Q7w7WHvIAyJh8lAe2UamGfdRqBTjHfPDn82LJ0ksCiB9g==
 
-electron@~13.1.6:
+electron@13.1.6:
   version "13.1.6"
   resolved "https://registry.nlark.com/electron/download/electron-13.1.6.tgz#6ecaf969255d62ce82cc0b5c948bf26e7dfb489b"
   integrity sha1-bsr5aSVdYs6CzAtclIvybn37SJs=
@@ -14755,11 +14755,6 @@ xdg-basedir@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-4.0.0.tgz#4bc8d9984403696225ef83a1573cbbcb4e79db13"
   integrity sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==
-
-xe-utils@~3.3.0:
-  version "3.3.0"
-  resolved "https://registry.npmjs.org/xe-utils/-/xe-utils-3.3.0.tgz#24a6f3c74a1041324a6ed15dc7baa0ee3f884f6e"
-  integrity sha512-16wd38zEyhcrED/2gIPl4f9MAUsFfV1TccvIxPCOCTXLCBWcHdvzB2JvU+zIxHREsix7zR3hRYBoD9yT2A5JQg==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"

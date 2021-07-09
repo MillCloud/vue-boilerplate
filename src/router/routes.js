@@ -1,4 +1,4 @@
-import { isNumber, isArray } from 'lodash-es';
+import { isNumber } from '@modyqyw/utils';
 
 /** @desc 获取路由模块的方法 */
 function loadModules() {
@@ -32,7 +32,7 @@ function hasPermission(route, role) {
     isNumber(role) &&
     route.meta &&
     route.meta.roles &&
-    isArray(route.meta.roles)
+    Array.isArray(route.meta.roles)
   ) {
     return route.meta.roles.includes(role);
   }

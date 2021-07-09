@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import '@/directives';
 import '@/plugins';
 import vuetify from './plugins/vuetify';
 import i18n from './i18n';

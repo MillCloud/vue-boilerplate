@@ -8,7 +8,7 @@ export default [
       {
         path: '',
         name: 'Index',
-        component: () => import('@/views/index'),
+        component: () => import('@/views/index/index.vue'),
       },
     ],
   },
@@ -19,7 +19,7 @@ export default [
       {
         path: '',
         name: 'Home',
-        component: () => import('@/views/home'),
+        component: () => import('@/views/home/index.vue'),
       },
     ],
   },

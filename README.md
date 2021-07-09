@@ -19,15 +19,16 @@
 - [electron-builder](https://www.electron.build/)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [axios](https://github.com/axios/axios#readme)
-- [vuetify2](https://vuetifyjs.com/) - 你可以考虑使用 [element-ui](https://element.eleme.cn/#/zh-CN) + [nut-ui2](https://nutui.jd.com/)
+- [axios-retry](https://github.com/softonic/axios-retry)
+- [vuetify2](https://vuetifyjs.com/) - 你可以考虑使用 [element-ui](https://element.eleme.cn/#/zh-CN) + [nut-ui](https://nutui.jd.com/)
 - [portal-vue](https://portal-vue.linusb.org/)
-- [lodash](https://lodash.com/)
-- [xe-utils](https://github.com/x-extends/xe-utils#readme)
+- [@modyqyw/utils](https://github.com/modyqyw/utils)
 - [dayjs](https://dayjs.gitee.io/zh-CN/)
 - [nprogress](https://ricostacruz.com/nprogress/)
 - [mock.js](http://mockjs.com/)
 - [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
 - [jest](https://jestjs.io/)
+- [@modyqyw/fabric](https://github.com/ModyQyW/fabric#readme)
 - [commitizen](http://commitizen.github.io/cz-cli/)
 - [commitlint](https://commitlint.js.org/)
 - [prettier](https://prettier.io/)
@@ -38,7 +39,6 @@
 - [ls-lint](https://ls-lint.org/)
 - [husky](https://github.com/typicode/husky#readme)
 - [lint-staged](https://github.com/okonet/lint-staged#readme)
-- [@modyqyw/fabric](https://github.com/ModyQyW/fabric#readme)
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates#readme)
 
 请先阅读上面的文档，并确保对 `node` 和 `npm` 有 [基本了解](http://nodejs.cn/learn)。
@@ -55,13 +55,13 @@
 
 ```sh
 # 安装 nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 # 设置 nvm 镜像
 export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
-# 安装 node@12
-nvm install 12
-# 设置 node@12 为默认版本
-nvm alias default 12
+# 安装 node@14
+nvm install 14
+# 设置 node@14 为默认版本
+nvm alias default 14
 # 安装 yarn
 npm i -g yarn --registry=https://registry.npm.taobao.org
 # 安装 homebrew
@@ -96,10 +96,10 @@ git config --global core.autocrlf false
 git config --global init.defaultBranch main
 # 设置 nvm 镜像
 nvm node_mirror https://npm.taobao.org/mirrors/node/
-# 安装 node@12
-nvm install 12.22.1
-# 使用 node@12
-nvm use 12.22.1
+# 安装 node@14
+nvm install 14.17.3
+# 使用 node@14
+nvm use 14.17.3
 # 安装 yarn
 npm i -g yarn --registry=https://registry.npm.taobao.org
 
@@ -171,7 +171,6 @@ yarn dev
 │   ├── apis                    # 接口目录
 │   ├── assets                  # 资产目录
 │   ├── components              # 全局组件目录
-│   ├── directives              # 全局指令目录
 │   ├── i18n                    # 国际化目录
 │   ├── layout                  # 布局目录
 │   ├── plugins                 # 插件目录
@@ -285,7 +284,7 @@ yarn dev
 
 #### axios 封装
 
-模板把 `axios` 封装成 `$request` 并绑定到 `vue` 实例上。你可以调整 [封装文件](./src/plugins/request.js) 默认的配置以匹配业务。
+模板把 `axios` 封装成 `$request` 并绑定到 `vue` 实例上，另外还添加了 `axios-retry` 做自动重试。你可以调整 [封装文件](./src/plugins/request.js) 默认的配置以匹配业务。
 
 #### proxy
 
@@ -337,14 +336,6 @@ module.exports = {
 ### VSCode 支持
 
 你可以参考 [插件](https://www.yuque.com/modyqyw/environment/skhbfr)和  [settings.json](https://www.yuque.com/modyqyw/environment/aozv2q)。
-
-### 测试
-
-目前有单元测试，并提供了对 `@/utils` 下两个文件的单元测试。
-
-如果需要添加单元测试，请先学习 [Jest](https://jestjs.io/)。
-
-如果需要添加其它测试，请查看[文档说明](https://cn.vuejs.org/v2/guide/testing.html)。
 
 ### 部署
 

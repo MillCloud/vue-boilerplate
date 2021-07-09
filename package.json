@@ -18,7 +18,7 @@
     "check": "ncu",
     "commit": "cz",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/i18n/locales/*.json'",
-    "test:unit": "vue-cli-service test:unit --coverage",
+    "test:unit": "vue-cli-service test:unit --coverage --passWithNoTests",
     "lint": "yarn run lint:json && yarn run lint:markdown && yarn run lint:script && yarn run lint:style",
     "lint:json": "prettier ./**/*.json --write --ignore-path=.gitignore",
     "lint:markdown": "markdownlint . --fix --ignore-path=.gitignore",
@@ -89,6 +89,7 @@
     "stylelint-webpack-plugin": "~2.2.2",
     "vue-cli-plugin-electron-builder": "~2.1.1",
     "vue-cli-plugin-vuetify": "~2.4.1",
+    "vue-jest": "~3.0.7",
     "vue-template-compiler": "~2.6.14",
     "vuetify-loader": "~1.7.2"
   },

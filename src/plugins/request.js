@@ -5,18 +5,16 @@ import i18n from '@/i18n';
 import { getToken, clear as clearStorage } from '@/utils';
 import statuses from 'statuses';
 import { constantCase } from '@modyqyw/utils';
+import { setupCache } from 'axios-cache-adapter';
+import axiosLogger from 'axios-logger';
 import axiosRetry from 'axios-retry';
-import packageInfo from '../../package.json';
+import pkg from '@@/package.json';
 
 // https://github.com/axios/axios#readme
 // 要取消请求，参考 https://github.com/axios/axios#cancellation 第二种方式
 
 /** @desc 需要返回到首页并清空登录信息的响应代码 */
 export const reLaunchCodes = new Set(['TOKEN_OUTDATED']);
-
-/** @param {number} statusCode */
-const handleValidateStatusCode = (statusCode) =>
-  (statusCode >= 200 && statusCode < 300) || statusCode === 304;
 
 /** @desc 错误统一处理方法 */
 export const handleShowError = (response) => {
@@ -28,6 +26,19 @@ export const handleShowError = (response) => {
   }
 };
 
+const cache = setupCache({
+  maxAge: 15 * 60 * 1000,
+  invalidate: async (config, request) => {
+    if (request.clearCacheEntry) {
+      try {
+        // @ts-ignore
+        await config.store.removeItem(config.uuid);
+        // eslint-disable-next-line no-empty
+      } catch {}
+    }
+  },
+});
+
 /** @desc 请求实例 */
 const instance = axios.create({
   baseURL: process.env.VUE_APP_REQUEST_BASE_URL || '',
@@ -36,11 +47,9 @@ const instance = axios.create({
     Accept: 'application/json',
     'Content-Type': 'application/json',
     'X-Requested-With': 'XMLHttpRequest',
-    'X-Version': `${packageInfo.name}/${packageInfo.version}`,
+    'X-Version': `${pkg.name}/${pkg.version}`,
   },
-  withCredentials: false,
-  responseType: 'json',
-  validateStatus: handleValidateStatusCode,
+  adapter: cache.adapter,
 });
 
 instance.interceptors.request.use((config) => ({
@@ -50,8 +59,11 @@ instance.interceptors.request.use((config) => ({
     'X-Token': getToken() || '',
   },
 }));
-
 axiosRetry(instance, { retryDelay: axiosRetry.exponentialDelay });
+instance.interceptors.request.use(
+  (request) => axiosLogger.requestLogger(request, { prefixText: false }),
+  axiosLogger.errorLogger,
+);
 
 instance.interceptors.response.use(
   (response) => {
@@ -77,14 +89,16 @@ instance.interceptors.response.use(
     };
     if (error.response) {
       // 发送了请求且有响应
-      let { status } = error.response;
-      if (!handleValidateStatusCode(status)) {
+      const { status } = error.response;
+      if (status < 200 || status >= 300) {
         // 状态码不正常
-        status = JSON.stringify(status);
-        response.code = status;
-        response.message = statuses(status)
-          ? i18n.t(`error.${constantCase(statuses(status))}`)
-          : i18n.t('error.ERROR_OCCURRED');
+        try {
+          response.code = constantCase(statuses(status));
+          response.message = i18n.t(`error.${constantCase(statuses(status))}`);
+        } catch {
+          response.code = 'ERROR_OCCURRED';
+          response.message = i18n.t(`error.ERROR_OCCURRED`);
+        }
       } else {
         // 超时
         const timeoutCodes = ['TIMEOUT', 'CONNRESET'];
@@ -112,6 +126,10 @@ instance.interceptors.response.use(
     }
     return response;
   },
+);
+instance.interceptors.response.use(
+  (response) => axiosLogger.responseLogger(response, { prefixText: false }),
+  axiosLogger.errorLogger,
 );
 
 Vue.prototype.$request = instance;

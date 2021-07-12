@@ -6,7 +6,7 @@ import { getToken, clear as clearStorage } from '@/utils';
 import statuses from 'statuses';
 import { constantCase } from '@modyqyw/utils';
 import { setupCache } from 'axios-cache-adapter';
-import axiosLogger from 'axios-logger';
+import * as AxiosLogger from 'axios-logger';
 import axiosRetry from 'axios-retry';
 import pkg from '@@/package.json';
 
@@ -61,8 +61,8 @@ instance.interceptors.request.use((config) => ({
 }));
 axiosRetry(instance, { retryDelay: axiosRetry.exponentialDelay });
 instance.interceptors.request.use(
-  (request) => axiosLogger.requestLogger(request, { prefixText: false }),
-  axiosLogger.errorLogger,
+  (request) => AxiosLogger.requestLogger(request, { prefixText: false }),
+  AxiosLogger.errorLogger,
 );
 
 instance.interceptors.response.use(
@@ -128,8 +128,8 @@ instance.interceptors.response.use(
   },
 );
 instance.interceptors.response.use(
-  (response) => axiosLogger.responseLogger(response, { prefixText: false }),
-  axiosLogger.errorLogger,
+  (response) => AxiosLogger.responseLogger(response, { prefixText: false }),
+  AxiosLogger.errorLogger,
 );
 
 Vue.prototype.$request = instance;

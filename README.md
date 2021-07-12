@@ -19,6 +19,9 @@
 - [electron-builder](https://www.electron.build/)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [axios](https://github.com/axios/axios#readme)
+- [axios-cache-adapter](https://github.com/RasCarlito/axios-cache-adapter)
+- [axios-logger](https://github.com/hg-pyun/axios-logger)
+- [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter)
 - [axios-retry](https://github.com/softonic/axios-retry)
 - [vuetify2](https://vuetifyjs.com/) - 你可以考虑使用 [element-ui](https://element.eleme.cn/#/zh-CN) + [nut-ui](https://nutui.jd.com/)
 - [portal-vue](https://portal-vue.linusb.org/)
@@ -284,7 +287,7 @@ yarn dev
 
 #### axios 封装
 
-模板把 `axios` 封装成 `$request` 并绑定到 `vue` 实例上，另外还添加了 `axios-retry` 做自动重试。你可以调整 [封装文件](./src/plugins/request.js) 默认的配置以匹配业务。
+模板把 `axios` 封装成 `$request` 并绑定到 `vue` 实例上，另外还添加了拦截器和适配器以实现自动日志、缓存、重试。你可以调整 [封装文件](./src/plugins/request.js) 默认的配置以匹配业务。
 
 #### proxy
 

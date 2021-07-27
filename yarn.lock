@@ -1205,6 +1205,11 @@
   resolved "https://registry.nlark.com/@humanwhocodes/object-schema/download/@humanwhocodes/object-schema-1.2.0.tgz?cache=0&sync_timestamp=1625264051240&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40humanwhocodes%2Fobject-schema%2Fdownload%2F%40humanwhocodes%2Fobject-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha1-h956+cIxgm/daKxyWPd8Qp4OX88=
 
+"@iconify/vue2@~1.0.0-beta.1":
+  version "1.0.0-beta.1"
+  resolved "https://registry.nlark.com/@iconify/vue2/download/@iconify/vue2-1.0.0-beta.1.tgz#4f71fef328efcfa40ab05bdb03e17355ac0dd265"
+  integrity sha1-T3H+8yjvz6QKsFvbA+FzVawN0mU=
+
 "@intlify/shared@^9.0.0":
   version "9.1.7"
   resolved "https://registry.nlark.com/@intlify/shared/download/@intlify/shared-9.1.7.tgz#e7d8bc90cb59dc17dd7b4c85a73db16fcb7891fc"

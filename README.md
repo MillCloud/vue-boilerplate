@@ -175,13 +175,13 @@ yarn dev
 │   ├── assets                  # 资产目录
 │   ├── components              # 全局组件目录
 │   ├── i18n                    # 国际化目录
-│   ├── layout                  # 布局目录
+│   ├── layouts                 # 布局目录
+│   ├── pages                   # 页面视图目录
 │   ├── plugins                 # 插件目录
 │   ├── router                  # 路由目录
 │   ├── store                   # 状态管理目录
 │   ├── styles                  # 全局样式和全局变量目录
 │   ├── utils                   # 工具方法目录
-│   ├── views                   # 页面视图目录
 │   ├── App.vue
 │   ├── background.js           # electron 主进程文件
 │   ├── guard.js                # 导航守卫

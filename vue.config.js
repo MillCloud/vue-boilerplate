@@ -103,6 +103,9 @@ module.exports = {
       localeDir: 'i18n/locales',
       enableInSFC: false,
     },
+    autoRouting: {
+      chunkNamePrefix: 'page-',
+    },
   },
   publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
   transpileDependencies: ['vuetify'],

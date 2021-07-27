@@ -35,6 +35,13 @@
       >
       <a
         class="mx-2"
+        href="https://github.com/ktsn/vue-cli-plugin-auto-routing"
+        target="_blank"
+        rel="noopener noreferrer"
+        >auto-routing</a
+      >
+      <a
+        class="mx-2"
         href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex"
         target="_blank"
         rel="noopener noreferrer"

@@ -1,32 +1,33 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import { loadStaticRoutes, loadExceptionRoutes } from './routes';
+import Router from 'vue-router';
+import routes from 'vue-auto-routing';
+import { createRouterLayout } from 'vue-router-layout';
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-/** @desc 创建路由实例的方法 */
-const createRouter = () =>
-  new VueRouter({
-    mode: 'hash',
-    scrollBehavior: () => ({ y: 0 }),
-    routes: loadStaticRoutes(),
-  });
+const RouterLayout = createRouterLayout((layout) =>
+  import(`@/layouts/${layout}.vue`),
+);
 
-/** @des 路由实例 */
-const router = createRouter();
-
-/** @desc 添加异常路由 */
-loadExceptionRoutes().forEach((route) => {
-  router.addRoute(route);
+export default new Router({
+  mode: 'history',
+  scrollBehavior: () => ({ y: 0, behavior: 'smooth' }),
+  routes: [
+    {
+      path: '/',
+      component: RouterLayout,
+      children: routes,
+    },
+    {
+      path: '*',
+      component: RouterLayout,
+      children: [
+        {
+          name: 'page-404',
+          path: '',
+          component: () => import('@/pages/404.vue'),
+        },
+      ],
+    },
+  ],
 });
-
-/**
- * @desc 重置路由实例
- * @link https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
- */
-export const resetRouter = () => {
-  const newRouter = createRouter();
-  router.matcher = newRouter.matcher;
-};
-
-export default router;

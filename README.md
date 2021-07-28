@@ -6,24 +6,25 @@
 
 如果你想要快速开发移动端应用，请考虑加入 `cordova`、`native-script` 或 `capacitor`。
 
-当前是 `vue2` 分支。要查看 `vue3` 模板，请切换到 `vue3` 分支。
+当前只支持 `vue2`。
 
 ### 主要依赖
 
 - [vue2](https://cn.vuejs.org)
 - [vue-cli](https://cli.vuejs.org/zh/)
 - [vue-router](https://router.vuejs.org/zh/)
+- [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing)
 - [vuex](https://vuex.vuejs.org/zh/)
-- [mitt](https://github.com/developit/mitt#readme)
+- [mitt](https://github.com/developit/mitt)
 - [electron](https://www.electronjs.org/)
 - [electron-builder](https://www.electron.build/)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
-- [axios](https://github.com/axios/axios#readme)
+- [axios](https://github.com/axios/axios)
 - [axios-cache-adapter](https://github.com/RasCarlito/axios-cache-adapter)
 - [axios-logger](https://github.com/hg-pyun/axios-logger)
 - [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter)
 - [axios-retry](https://github.com/softonic/axios-retry)
-- [vuetify2](https://vuetifyjs.com/) - 你可以考虑使用 [element-ui](https://element.eleme.cn/#/zh-CN) + [nut-ui](https://nutui.jd.com/)
+- [vuetify](https://vuetifyjs.com/) - 你可以考虑使用 [element-ui](https://element.eleme.cn/#/zh-CN) + [nut-ui](https://nutui.jd.com/)
 - [iconify](https://iconify.design/)
 - [portal-vue](https://portal-vue.linusb.org/)
 - [@modyqyw/utils](https://github.com/modyqyw/utils)
@@ -32,17 +33,17 @@
 - [mock.js](http://mockjs.com/)
 - [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
 - [jest](https://jestjs.io/)
-- [@modyqyw/fabric](https://github.com/ModyQyW/fabric#readme)
+- [@modyqyw/fabric](https://github.com/ModyQyW/fabric)
 - [commitizen](http://commitizen.github.io/cz-cli/)
 - [commitlint](https://commitlint.js.org/)
 - [prettier](https://prettier.io/)
-- [markdownlint](https://github.com/igorshubovych/markdownlint-cli#readme)
+- [markdownlint](https://github.com/igorshubovych/markdownlint-cli)
 - [eslint](https://eslint.org/)
 - [stylelint](https://stylelint.io/)
 - [ls-lint](https://ls-lint.org/)
-- [husky](https://github.com/typicode/husky#readme)
-- [lint-staged](https://github.com/okonet/lint-staged#readme)
-- [npm-check-updates](https://github.com/raineorshine/npm-check-updates#readme)
+- [husky](https://github.com/typicode/husky)
+- [lint-staged](https://github.com/okonet/lint-staged)
+- [npm-check-updates](https://github.com/raineorshine/npm-check-updates)
 
 请先阅读上面的文档，并确保对 `node` 和 `npm` 有 [基本了解](http://nodejs.cn/learn)。
 
@@ -261,15 +262,7 @@ yarn dev
 
 ### 路由配置
 
-模板把路由分成了两类，一类是静态路由，一类是动态路由。
-
-#### 静态路由
-
-静态路由是无论什么情况都能够被访问的路由。模板内置了两个静态路由 `Index` 和 `Home`。
-
-#### 动态路由
-
-而动态路由是需要手动添加的路由，有可能你需要根据用户角色来选择性添加，也有可能你会直接添加。模板内置了一个动态路由 404 用于访问页面兜底。另外，模板给出了筛选动态路由的 [示例方法](./src/router/routes.js)。
+模板使用了 `vue-cli-plugin-auto-routing` 以自动生成 `nuxt` 风格的约定式路由，更易于迁移到 `vite` + `vite-plugin-pages` + `vite-plugin-vue-layouts` 的组合。
 
 ### 状态管理配置
 
@@ -320,11 +313,11 @@ module.exports = {
 
 ### 布局
 
-模板内使用了 `vuetify2` 提供的 [默认布局](./src/layout/index.vue)。
+模板内使用了 `vuetify2` 提供的 [默认布局](./src/layouts/default.vue)，你可以视需求添加额外的布局并应用。
 
 常见的布局可以参考 [Ant Design 示例](https://ant.design/components/layout-cn/) 和 [@ant-design/pro-layout](https://procomponents.ant.design/components/layout)，你可以修改布局组件的属性，或添加对应的样式来调整布局。你也可以参考 `vuetify` 官网。
 
-我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示 `el-main` 部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件，只需要 [获取当前路由信息](https://next.router.vuejs.org/zh/api/#useroute) 并加以判断即可。
+我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示 `v-main` 部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件，只需要 [获取当前路由信息](https://next.router.vuejs.org/zh/api/#useroute) 并加以判断即可。
 
 我们也可能根据用户角色生成路由和侧边栏，模板内置的该部分功能较为薄弱，且思路源自 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)，请查看 vue-element-admin [路由和侧边栏](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html) 和 [权限验证](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/permission.html) 阐述的思路。
 
@@ -338,7 +331,7 @@ module.exports = {
 
 ### VSCode 支持
 
-你可以参考 [插件](https://www.yuque.com/modyqyw/environment/skhbfr)和  [settings.json](https://www.yuque.com/modyqyw/environment/aozv2q)。
+你可以参考 [插件](https://www.yuque.com/modyqyw/environment/skhbfr) 和 [settings.json](https://www.yuque.com/modyqyw/environment/aozv2q)。
 
 ### 部署
 

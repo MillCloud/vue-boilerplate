@@ -14,7 +14,7 @@
     <v-footer app class="justify-center">
       <a
         class="mx-2"
-        href="https://github.com/MillCloud/boilerplate-vue#readme"
+        href="https://github.com/MillCloud/boilerplate-vue"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -22,7 +22,7 @@
       </a>
       <a
         class="mx-2"
-        href="https://gitee.com/MillCloud/boilerplate-vue#readme"
+        href="https://gitee.com/MillCloud/boilerplate-vue"
         target="_blank"
         rel="noopener noreferrer"
       >

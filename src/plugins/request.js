@@ -10,7 +10,7 @@ import * as AxiosLogger from 'axios-logger';
 import axiosRetry from 'axios-retry';
 import pkg from '@@/package.json';
 
-// https://github.com/axios/axios#readme
+// https://github.com/axios/axios
 // 要取消请求，参考 https://github.com/axios/axios#cancellation 第二种方式
 
 /** @desc 需要返回到首页并清空登录信息的响应代码 */

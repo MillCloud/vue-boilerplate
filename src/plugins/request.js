@@ -45,7 +45,7 @@ const instance = axios.create({
   timeout: JSON.parse(process.env.VUE_APP_REQUEST_TIMEOUT || '10000') || 10000,
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json; charset=utf-8',
     'X-Requested-With': 'XMLHttpRequest',
     'X-Version': `${pkg.name}/${pkg.version}`,
   },

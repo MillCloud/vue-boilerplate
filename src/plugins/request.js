@@ -1,14 +1,14 @@
 import Vue from 'vue';
 import axios from 'axios';
-import router from '@/router';
-import i18n from '@/i18n';
-import { getToken, clear as clearStorage } from '@/utils';
 import statuses from 'statuses';
 import { constantCase } from '@modyqyw/utils';
 import { setupCache } from 'axios-cache-adapter';
 import * as AxiosLogger from 'axios-logger';
 import axiosRetry from 'axios-retry';
 import pkg from '@@/package.json';
+import { getToken, clear as clearStorage } from '@/utils';
+import i18n from '@/i18n';
+import router from '@/router';
 
 // https://github.com/axios/axios
 // 要取消请求，参考 https://github.com/axios/axios#cancellation 第二种方式
@@ -29,7 +29,7 @@ export const handleShowError = (response) => {
 const cache = setupCache({
   maxAge: 15 * 60 * 1000,
   invalidate: async (config, request) => {
-    if (request.clearCacheEntry) {
+    if (request.invalidate === true) {
       try {
         // @ts-ignore
         await config.store.removeItem(config.uuid);

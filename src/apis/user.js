@@ -1,5 +1,5 @@
-import request from '@/plugins/request';
 import axios from 'axios';
+import request from '@/plugins/request';
 
 // 考虑到取消请求是较为少数的情况，可以这么处理
 const { CancelToken } = axios;

@@ -12,7 +12,10 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    "moduleResolution": "node",
+    "strict": true
   },
   "vueCompilerOptions": {
     "experimentalCompatMode": 2
@@ -26,5 +29,12 @@
     "./**/*.tsx",
     "./**/*.vue"
   ],
-  "exclude": ["node_modules", "dist", "dist_electron", "out", "unpackage"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "dist-ssr",
+    "dist_electron",
+    "out",
+    "unpackage"
+  ]
 }

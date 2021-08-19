@@ -66,8 +66,8 @@ export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
 nvm install 14
 # 设置 node@14 为默认版本
 nvm alias default 14
-# 安装 yarn
-npm i -g yarn --registry=https://registry.npm.taobao.org
+# 安装 pnpm
+npm i -g pnpm --registry=https://registry.npm.taobao.org
 # 安装 homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # 安装 git
@@ -76,6 +76,14 @@ brew install git
 git config --global core.autocrlf false
 # 设置默认分支名为 main
 git config --global init.defaultBranch main
+
+```
+
+设置 `~/.huskyrc`。
+
+```sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 ```
 
@@ -101,11 +109,11 @@ git config --global init.defaultBranch main
 # 设置 nvm 镜像
 nvm node_mirror https://npm.taobao.org/mirrors/node/
 # 安装 node@14
-nvm install 14.17.3
+nvm install 14.17.5
 # 使用 node@14
-nvm use 14.17.3
-# 安装 yarn
-npm i -g yarn --registry=https://registry.npm.taobao.org
+nvm use 14.17.5
+# 安装 pnpm
+npm i -g pnpm --registry=https://registry.npm.taobao.org
 
 ```
 
@@ -120,9 +128,9 @@ git clone git@github.com:MillCloud/boilerplate-vue.git
 # 进入项目
 cd boilerplate-vue
 # 安装依赖
-yarn
+pnpm install
 # 启动项目
-yarn dev
+pnpm run dev
 
 ```
 
@@ -148,22 +156,22 @@ yarn dev
 
 |命令|含义|
 |-|-|
-|`yarn dev`|`development` 模式启动项目|
-|`yarn staging-build`|`staging` 模式打包项目|
-|`yarn build`|`production` 模式打包项目|
-|`yarn electron:dev`|使用 `electron`，`development` 模式启动项目|
-|`yarn electron:staging-build`|使用 `electron`，`staging` 模式打包项目|
-|`yarn electron:build`|使用 `electron`，`production` 模式打包项目|
-|`yarn run check`|检查项目依赖版本|
-|`yarn commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
-|`yarn i18n:report`|获取国际化信息|
-|`yarn test:unit`|单元测试|
-|`yarn lint`|检查 json 文件，脚本文件，样式文件和目录|
-|`yarn lint:json`|格式化 json 文件|
-|`yarn lint:markdown`|格式化 markdown 文件|
-|`yarn lint:script`|检查并自动修复脚本文件|
-|`yarn lint:style`|检查并自动修复样式文件|
-|`yarn lint:ls`|检查目录|
+|`pnpm run dev`|`development` 模式启动项目|
+|`pnpm run staging-build`|`staging` 模式打包项目|
+|`pnpm run build`|`production` 模式打包项目|
+|`pnpm run electron:dev`|使用 `electron`，`development` 模式启动项目|
+|`pnpm run electron:staging-build`|使用 `electron`，`staging` 模式打包项目|
+|`pnpm run electron:build`|使用 `electron`，`production` 模式打包项目|
+|`pnpm run run check`|检查项目依赖版本|
+|`pnpm run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
+|`pnpm run i18n:report`|获取国际化信息|
+|`pnpm run test:unit`|单元测试|
+|`pnpm run lint`|检查 json 文件，脚本文件，样式文件和目录|
+|`pnpm run lint:json`|格式化 json 文件|
+|`pnpm run lint:markdown`|格式化 markdown 文件|
+|`pnpm run lint:script`|检查并自动修复脚本文件|
+|`pnpm run lint:style`|检查并自动修复样式文件|
+|`pnpm run lint:ls`|检查目录|
 
 ### 项目结构
 
@@ -175,8 +183,10 @@ yarn dev
 │   ├── apis                    # 接口目录
 │   ├── assets                  # 资产目录
 │   ├── components              # 全局组件目录
+│   ├── composables             # 组合式 API 目录
 │   ├── i18n                    # 国际化目录
 │   ├── layouts                 # 布局目录
+│   ├── mocks                   # 接口模拟目录
 │   ├── pages                   # 页面视图目录
 │   ├── plugins                 # 插件目录
 │   ├── router                  # 路由目录
@@ -190,34 +200,29 @@ yarn dev
 │   └── preload.js              # electron 预加载文件
 ├── tests                       # 测试内容文件夹
 ├── typings                     # typescript 定义文件夹，为未来迁移做准备
-│   └── index.d.ts              # typescript 定义文件，通用
 ├── .browserslistrc             # 浏览器支持列表文件
+├── .commitlintrc.js            # commitlint 配置文件
 ├── .editorconfig
 ├── .env                        # 所有环境都载入的环境变量
 ├── .env.development            # development 载入的环境变量
 ├── .env.production             # production 载入的环境变量
 ├── .env.staging                # staging 载入的环境变量
-├── .eslintignore               # eslint 配置文件
 ├── .eslintrc.js                # eslint 配置文件
 ├── .gitattributes              # git 配置文件
 ├── .gitignore                  # git 配置文件
-├── .lintmdrc.yml               # lint-md 配置文件
-├── .ls-lint.yml                # ls-lint 配置文件
+├── .lintstagedrc.js            # lint-staged 配置文件
 ├── .markdownlint.json          # markdownlint 配置文件
-├── .markdownlintignore         # markdownlint 配置文件
-├── .npmrc                      # npm 镜像文件
-├── .prettierignore             # prettier 配置文件
-├── .stylelintignore            # stylelint 配置文件
-├── .yarnrc                     # yarn 镜像文件
+├── .npmrc                      # npm 配置文件
+├── .prettierrc.js              # prettier 配置文件
+├── .release-it.js              # release-it 配置文件
+├── .stylelintrc.js             # stylelint 配置文件
 ├── babel.config.js             # babel 配置文件
-├── commitlint.config.js        # commitlint 配置文件
+├── jest.config.js              # jest 配置文件
 ├── package.json
-├── prettier.config.js          # prettier 配置文件
+├── pnpm-lock.yaml
 ├── README.md
-├── stylelint.config.js         # stylelint 配置文件
 ├── tsconfig.json               # typescript 配置文件
-├── vue.config.js               # vue-cli 配置文件
-└── yarn.lock
+└── vue.config.js               # vue-cli 配置文件
 ```
 
 ### 多模式配置
@@ -336,7 +341,10 @@ module.exports = {
 ### 部署
 
 - 确认所有和 [模式和环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html) 相关的地方已经配置完成。
-- 运行对应的命令，然后上传 `dist` 目录下的内容，默认会生成报告。
+- 运行 `pnpm run release`，更新版本号。
+- 上传 `dist` 目录下的内容。
+- 默认会生成报告。
+- 更多自定义可以参考 `release-it` 文档说明，使用 `node` 运行脚本完成操作。
 
 ### 浏览器支持
 

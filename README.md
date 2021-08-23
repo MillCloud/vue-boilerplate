@@ -24,7 +24,7 @@
 - [axios-logger](https://github.com/hg-pyun/axios-logger)
 - [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter)
 - [axios-retry](https://github.com/softonic/axios-retry)
-- [vuetify](https://vuetifyjs.com/) - 你可以考虑使用 [element-ui](https://element.eleme.cn/#/zh-CN) + [nut-ui](https://nutui.jd.com/)
+- [element-ui](https://element.eleme.cn) - 对于移动端网页，请考虑 [vant](https://youzan.github.io/vant)
 - [iconify](https://iconify.design/)
 - [portal-vue](https://portal-vue.linusb.org/)
 - [@modyqyw/utils](https://github.com/modyqyw/utils)
@@ -34,15 +34,6 @@
 - [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
 - [jest](https://jestjs.io/)
 - [@modyqyw/fabric](https://github.com/ModyQyW/fabric)
-- [commitizen](http://commitizen.github.io/cz-cli/)
-- [commitlint](https://commitlint.js.org/)
-- [prettier](https://prettier.io/)
-- [markdownlint](https://github.com/igorshubovych/markdownlint-cli)
-- [eslint](https://eslint.org/)
-- [stylelint](https://stylelint.io/)
-- [ls-lint](https://ls-lint.org/)
-- [husky](https://github.com/typicode/husky)
-- [lint-staged](https://github.com/okonet/lint-staged)
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates)
 
 请先阅读上面的文档，并确保对 `node` 和 `npm` 有 [基本了解](http://nodejs.cn/learn)。
@@ -66,8 +57,8 @@ export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
 nvm install 14
 # 设置 node@14 为默认版本
 nvm alias default 14
-# 安装 pnpm
-npm i -g pnpm --registry=https://registry.npm.taobao.org
+# 安装 yarn
+npm i -g yarn --registry=https://registry.npm.taobao.org
 # 安装 homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # 安装 git
@@ -112,8 +103,8 @@ nvm node_mirror https://npm.taobao.org/mirrors/node/
 nvm install 14.17.5
 # 使用 node@14
 nvm use 14.17.5
-# 安装 pnpm
-npm i -g pnpm --registry=https://registry.npm.taobao.org
+# 安装 yarn
+npm i -g yarn --registry=https://registry.npm.taobao.org
 
 ```
 
@@ -128,9 +119,9 @@ git clone git@github.com:MillCloud/boilerplate-vue.git
 # 进入项目
 cd boilerplate-vue
 # 安装依赖
-pnpm install
+yarn install
 # 启动项目
-pnpm run dev
+yarn run dev
 
 ```
 
@@ -156,22 +147,22 @@ pnpm run dev
 
 |命令|含义|
 |-|-|
-|`pnpm run dev`|`development` 模式启动项目|
-|`pnpm run staging-build`|`staging` 模式打包项目|
-|`pnpm run build`|`production` 模式打包项目|
-|`pnpm run electron:dev`|使用 `electron`，`development` 模式启动项目|
-|`pnpm run electron:staging-build`|使用 `electron`，`staging` 模式打包项目|
-|`pnpm run electron:build`|使用 `electron`，`production` 模式打包项目|
-|`pnpm run run check`|检查项目依赖版本|
-|`pnpm run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
-|`pnpm run i18n:report`|获取国际化信息|
-|`pnpm run test:unit`|单元测试|
-|`pnpm run lint`|检查 json 文件，脚本文件，样式文件和目录|
-|`pnpm run lint:json`|格式化 json 文件|
-|`pnpm run lint:markdown`|格式化 markdown 文件|
-|`pnpm run lint:script`|检查并自动修复脚本文件|
-|`pnpm run lint:style`|检查并自动修复样式文件|
-|`pnpm run lint:ls`|检查目录|
+|`yarn run dev`|`development` 模式启动项目|
+|`yarn run staging-build`|`staging` 模式打包项目|
+|`yarn run build`|`production` 模式打包项目|
+|`yarn run electron:dev`|使用 `electron`，`development` 模式启动项目|
+|`yarn run electron:staging-build`|使用 `electron`，`staging` 模式打包项目|
+|`yarn run electron:build`|使用 `electron`，`production` 模式打包项目|
+|`yarn run run check`|检查项目依赖版本|
+|`yarn run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
+|`yarn run i18n:report`|获取国际化信息|
+|`yarn run test:unit`|单元测试|
+|`yarn run lint`|检查 json 文件，脚本文件，样式文件和目录|
+|`yarn run lint:json`|格式化 json 文件|
+|`yarn run lint:markdown`|格式化 markdown 文件|
+|`yarn run lint:script`|检查并自动修复脚本文件|
+|`yarn run lint:style`|检查并自动修复样式文件|
+|`yarn run lint:ls`|检查目录|
 
 ### 项目结构
 
@@ -219,10 +210,10 @@ pnpm run dev
 ├── babel.config.js             # babel 配置文件
 ├── jest.config.js              # jest 配置文件
 ├── package.json
-├── pnpm-lock.yaml
 ├── README.md
 ├── tsconfig.json               # typescript 配置文件
-└── vue.config.js               # vue-cli 配置文件
+├── vue.config.js               # vue-cli 配置文件
+└── yarn.lock
 ```
 
 ### 多模式配置
@@ -261,7 +252,7 @@ pnpm run dev
 
 你可以在上面两个文件里加入你需要的字段以支持翻译，务必注意字段需要保持一致，也请注意合理地划分字段。
 
-而要引入和 `vue2` 强绑定的 `npm` 库的语言包，你可以在 [@/i18n/index.js](./src/i18n/index.js) 内操作。目前已经为 `vuetify` 添加了语言包，你可以参考着为其他和 `vue2` 强绑定的 `npm` 库添加语言包。
+而要引入和 `vue2` 强绑定的 `npm` 库的语言包，你可以在 [@/i18n/index.js](./src/i18n/index.js) 内操作。目前已经为 `element-ui` 添加了语言包，你可以参考着为其他和 `vue2` 强绑定的 `npm` 库添加语言包。
 
 引入和 `vue2` 不强绑定的 `npm` 库的语言包，请查看它们的文档说明。
 
@@ -318,11 +309,11 @@ module.exports = {
 
 ### 布局
 
-模板内使用了 `vuetify2` 提供的 [默认布局](./src/layouts/default.vue)，你可以视需求添加额外的布局并应用。
+模板内使用了 `element` 提供的 [默认布局](./src/layouts/default.vue)，你可以视需求添加额外的布局并应用。
 
-常见的布局可以参考 [Ant Design 示例](https://ant.design/components/layout-cn/) 和 [@ant-design/pro-layout](https://procomponents.ant.design/components/layout)，你可以修改布局组件的属性，或添加对应的样式来调整布局。你也可以参考 `vuetify` 官网。
+常见的布局可以参考 [Ant Design](https://ant.design/components/layout-cn/)，[@ant-design/pro-layout](https://procomponents.ant.design/components/layout) 和 [Vuetify](https://vuetifyjs.com/)。
 
-我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示 `v-main` 部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件，只需要 [获取当前路由信息](https://next.router.vuejs.org/zh/api/#useroute) 并加以判断即可。
+我们会试图让布局适用于所有页面。试想这么一个情况：登录页面只显示 `v-main` 部分，而在其它页面显示所有部分。直接使用默认布局是不能实现的，所以有必要根据不同的路由来调整布局组件，只需要 [获取当前路由信息](https://router.vuejs.org/zh/api/#%E8%B7%AF%E7%94%B1%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7) 并加以判断即可。
 
 我们也可能根据用户角色生成路由和侧边栏，模板内置的该部分功能较为薄弱，且思路源自 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)，请查看 vue-element-admin [路由和侧边栏](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html) 和 [权限验证](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/permission.html) 阐述的思路。
 
@@ -341,7 +332,7 @@ module.exports = {
 ### 部署
 
 - 确认所有和 [模式和环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html) 相关的地方已经配置完成。
-- 运行 `pnpm run release`，更新版本号。
+- 运行 `yarn run release`，更新版本号。
 - 上传 `dist` 目录下的内容。
 - 默认会生成报告。
 - 更多自定义可以参考 `release-it` 文档说明，使用 `node` 运行脚本完成操作。

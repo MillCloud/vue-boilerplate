@@ -13,7 +13,7 @@ module.exports = {
     release: false,
   },
   hooks: {
-    'before:init': 'pnpm run lint',
-    'after:bump': 'pnpm run build',
+    'before:init': 'yarn run lint',
+    'after:bump': 'yarn run build',
   },
 };

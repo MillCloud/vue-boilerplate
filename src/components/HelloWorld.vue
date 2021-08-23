@@ -1,9 +1,9 @@
 <template>
-  <v-row>
-    <v-col cols="12">
-      <h3 class="text-h3 text-center">{{ msg }}</h3>
-    </v-col>
-    <v-col cols="12">
+  <el-row>
+    <el-col>
+      <h3 class="prose-2xl text-center">{{ msg }}</h3>
+    </el-col>
+    <el-col>
       <p class="text-center">
         For a guide and recipes on how to configure / customize this project,
         check out the
@@ -14,11 +14,11 @@
           >vue-cli documentation</a
         >
       </p>
-    </v-col>
-    <v-col cols="12">
-      <h6 class="text-h6 text-center">Installed CLI Plugins</h6>
-    </v-col>
-    <v-col cols="12" class="text-center">
+    </el-col>
+    <el-col m="t-2">
+      <h6 class="prose-lg text-center">Installed CLI Plugins</h6>
+    </el-col>
+    <el-col class="text-center">
       <a
         class="mx-2"
         href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
@@ -69,18 +69,11 @@
         rel="noopener noreferrer"
         >electron-builder</a
       >
-      <a
-        class="mx-2"
-        href="https://github.com/vuetifyjs/vue-cli-plugins/tree/master/packages/vue-cli-plugin-vuetify"
-        target="_blank"
-        rel="noopener noreferrer"
-        >vuetify</a
-      >
-    </v-col>
-    <v-col cols="12">
-      <h6 class="text-h6 text-center">Ecosystem</h6>
-    </v-col>
-    <v-col cols="12" class="text-center">
+    </el-col>
+    <el-col m="t-2">
+      <h6 class="prose-lg text-center">Ecosystem</h6>
+    </el-col>
+    <el-col class="text-center">
       <a
         class="mx-2"
         href="https://cn.vuejs.org"
@@ -125,10 +118,10 @@
       >
       <a
         class="mx-2"
-        href="https://vuetifyjs.com"
+        href="https://element.eleme.cn/"
         target="_blank"
         rel="noopener noreferrer"
-        >vuetify</a
+        >element</a
       >
       <a
         class="mx-2"
@@ -137,8 +130,8 @@
         rel="noopener noreferrer"
         >awesome-vue</a
       >
-    </v-col>
-  </v-row>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

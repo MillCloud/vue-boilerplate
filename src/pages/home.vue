@@ -1,20 +1,20 @@
 <template>
-  <v-main>
-    <v-container fluid>
-      <v-row justify="center" align="center" class="my-0">
-        <h6 class="text-h6">这里是主页</h6>
-      </v-row>
-      <v-img
+  <el-main>
+    <el-row flex="~" class="justify-center items-center" m="y-0">
+      <h6 class="prose-lg">这里是首页</h6>
+    </el-row>
+    <el-row flex="~" class="justify-center items-center" m="y-0">
+      <el-image
         alt="Vue logo"
-        lazy-src="https://cn.vuejs.org/images/logo.png"
+        fit="fill"
+        lazy
         src="https://cn.vuejs.org/images/logo.png"
-        height="200"
-        width="200"
-        class="mx-auto"
+        h="200px"
+        w="200px"
       />
-      <HelloWorld msg="Welcome to Your Vue.js v2 App" />
-    </v-container>
-  </v-main>
+    </el-row>
+    <HelloWorld msg="Welcome to Your Vue.js v2 App" />
+  </el-main>
 </template>
 
 <script>

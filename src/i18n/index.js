@@ -1,17 +1,17 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import vuetifyEnLocales from 'vuetify/es5/locale/en';
-import vuetifyZhHansLocales from 'vuetify/es5/locale/zh-Hans';
+import elementEnLocales from 'element-ui/lib/locale/lang/en';
+import elementZhCnLocales from 'element-ui/lib/locale/lang/zh-CN';
 import { getLanguage } from '@/utils';
 
 Vue.use(VueI18n);
 
-const vuetifyI18n = {
+const i18nMessages = {
   en: {
-    $vuetify: vuetifyEnLocales,
+    ...elementEnLocales,
   },
   'zh-Hans': {
-    $vuetify: vuetifyZhHansLocales,
+    ...elementZhCnLocales,
   },
 };
 
@@ -24,7 +24,7 @@ function loadLocaleMessages() {
       const locale = matched[1];
       messages[locale] = {
         ...locales(key),
-        ...vuetifyI18n[locale],
+        ...i18nMessages[locale],
       };
     }
   });

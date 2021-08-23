@@ -1,20 +1,18 @@
 <template>
-  <v-main class="align-center justify-center">
-    <v-container>
-      <v-row>
-        <v-col cols="12">
-          <h6 class="text-h6 text-center">404 Not Found</h6>
-        </v-col>
-        <v-col cols="12" class="text-center">
-          <v-btn @click="handleGoBack">{{ $t('hint.back') }}</v-btn>
-          <v-btn class="mx-2" @click="handleToIndex">
-            {{ $t('hint.index') }}
-          </v-btn>
-          <v-btn @click="handleToHome">{{ $t('hint.home') }}</v-btn>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-main>
+  <el-main flex="~" class="align-center justify-center">
+    <el-row>
+      <el-col text="center">
+        <h6 class="prose-lg">404 Not Found</h6>
+      </el-col>
+      <el-col text="center" m="t-2">
+        <el-button @click="handleGoBack">{{ $t('hint.back') }}</el-button>
+        <el-button class="mx-2" @click="handleToIndex">
+          {{ $t('hint.index') }}
+        </el-button>
+        <el-button @click="handleToHome">{{ $t('hint.home') }}</el-button>
+      </el-col>
+    </el-row>
+  </el-main>
 </template>
 
 <script>
@@ -24,10 +22,10 @@ export default {
       this.$router.go(-1);
     },
     handleToIndex() {
-      this.$router.replace({ name: 'Index' });
+      this.$router.replace('/');
     },
     handleToHome() {
-      this.$router.replace({ name: 'Home' });
+      this.$router.replace('/home');
     },
   },
 };

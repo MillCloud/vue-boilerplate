@@ -44,10 +44,10 @@ module.exports = {
             priority: 10,
             test: /[/\\]node_modules[/\\]/,
           },
-          vuetify: {
-            name: 'chunk-vuetify',
+          element: {
+            name: 'chunk-element',
             priority: 20,
-            test: /[/\\]node_modules[/\\]_?vuetify(.*)/,
+            test: /[/\\]node_modules[/\\]_?element(.*)/,
           },
           components: {
             minChunks: 2,
@@ -108,5 +108,4 @@ module.exports = {
     },
   },
   publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
-  transpileDependencies: ['vuetify'],
 };

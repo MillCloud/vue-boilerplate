@@ -1,16 +1,14 @@
 <template>
-  <v-main>
-    <v-container fluid>
-      <v-row justify="center" align="center" class="my-0">
-        <h6 class="text-h6">这里是首页</h6>
-      </v-row>
-      <v-row v-if="isElectron" justify="center" align="center" class="my-0">
-        <v-btn class="mt-2" @click="handleCloseElectronWindow">
-          Electron 环境 - 关闭应用
-        </v-btn>
-      </v-row>
-    </v-container>
-  </v-main>
+  <el-main>
+    <el-row flex="~" m="y-0" class="justify-center items-center">
+      <h6 class="prose-lg">这里是首页</h6>
+    </el-row>
+    <el-row v-if="isElectron" m="y-0" class="justify-center items-center">
+      <el-button m="t-2" @click="handleCloseElectronWindow">
+        Electron 环境 - 关闭应用
+      </el-button>
+    </el-row>
+  </el-main>
 </template>
 
 <script>

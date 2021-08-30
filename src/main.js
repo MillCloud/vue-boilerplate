@@ -4,10 +4,10 @@ import i18n from './i18n';
 import router from './router';
 import store from './store';
 import App from './App.vue';
+import '@/styles/preflight.scss';
+import '@/styles/tailwind.scss';
 import '@/styles/global.scss';
 import '@/guard';
-// eslint-disable-next-line import/no-unresolved
-import 'windi.css';
 
 Vue.config.productionTip = false;
 

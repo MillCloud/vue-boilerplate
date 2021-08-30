@@ -8,10 +8,13 @@
     "name": "",
     "url": ""
   },
+  "main": "background.js",
+  "engines": {
+    "node": "^12.22.5 || ^14.17.5 || ^16.6.2",
+    "npm": "^6.14.14 || ^7.20.3"
+  },
   "scripts": {
     "build": "vue-cli-service build --mode production --report",
-    "test:unit": "vue-cli-service test:unit --coverage --passWithNoTests",
-    "lint": "yarn run lint:json && yarn run lint:markdown && yarn run lint:script && yarn run lint:style",
     "check": "ncu",
     "commit": "cz",
     "dev": "vue-cli-service serve --mode development",
@@ -19,6 +22,7 @@
     "electron:dev": "vue-cli-service electron:serve",
     "electron:staging-build": "vue-cli-service electron:build --report --mode staging -m -w -l",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/i18n/locales/*.json'",
+    "lint": "yarn run lint:json && yarn run lint:markdown && yarn run lint:script && yarn run lint:style",
     "lint:json": "prettier ./**/*.json --write --ignore-path=.gitignore",
     "lint:markdown": "markdownlint . --fix --ignore-path=.gitignore",
     "lint:script": "vue-cli-service lint --fix",
@@ -27,9 +31,9 @@
     "postuninstall": "electron-builder install-app-deps",
     "prepare": "is-ci || husky install",
     "release": "release-it",
-    "staging-build": "vue-cli-service build --mode staging --report"
+    "staging-build": "vue-cli-service build --mode staging --report",
+    "test:unit": "vue-cli-service test:unit --coverage --passWithNoTests"
   },
-  "main": "background.js",
   "dependencies": {
     "@ant-design/colors": "~6.0.0",
     "@iconify/vue2": "~1.0.0",
@@ -45,16 +49,14 @@
     "axios-logger": "~2.5.0",
     "axios-mock-adapter": "~1.20.0",
     "axios-retry": "~3.1.9",
-    "core-js": "~3.16.2",
-    "daisyui": "~1.13.2",
+    "core-js": "~3.16.4",
     "dayjs": "~1.10.6",
     "element-ui": "~2.15.5",
     "mitt": "~3.0.0",
     "mockjs": "~1.1.0",
     "nprogress": "~0.2.0",
     "portal-vue": "~2.1.7",
-    "ress": "^4.0.0",
-    "roboto-fontface": "~0.10.0",
+    "ress": "~4.0.0",
     "statuses": "~2.0.1",
     "vue": "~2.6.14",
     "vue-auto-routing": "~1.0.1",
@@ -68,21 +70,21 @@
     "@babel/eslint-parser": "~7.15.0",
     "@commitlint/cli": "~13.1.0",
     "@intlify/vue-i18n-loader": "~1.1.0",
-    "@modyqyw/fabric": "~3.0.3",
+    "@modyqyw/fabric": "~3.2.1",
     "@types/electron-devtools-installer": "~2.2.0",
     "@types/jest": "~27.0.1",
-    "@types/node": "~16.7.1",
+    "@types/node": "~16.7.6",
     "@types/nprogress": "~0.2.0",
     "@types/statuses": "~2.0.0",
-    "@typescript-eslint/eslint-plugin": "~4.29.2",
-    "@typescript-eslint/parser": "~4.29.2",
+    "@typescript-eslint/eslint-plugin": "~4.29.3",
+    "@typescript-eslint/parser": "~4.29.3",
     "@vue/cli-plugin-babel": "~5.0.0-beta.3",
     "@vue/cli-plugin-eslint": "~5.0.0-beta.3",
     "@vue/cli-plugin-router": "~5.0.0-beta.3",
     "@vue/cli-plugin-unit-jest": "~5.0.0-beta.3",
     "@vue/cli-plugin-vuex": "~5.0.0-beta.3",
     "@vue/cli-service": "~5.0.0-beta.3",
-    "@vue/runtime-dom": "~3.2.4",
+    "@vue/runtime-dom": "~3.2.6",
     "@vue/test-utils": "~1.2.2",
     "@vuedx/typescript-plugin-vue": "~0.7.4",
     "@windicss/plugin-animations": "~1.0.9",
@@ -92,12 +94,13 @@
     "@windicss/plugin-scrollbar": "~1.2.3",
     "commitizen": "~4.2.4",
     "compression-webpack-plugin": "~8.0.1",
-    "electron": "13.2.1",
+    "electron": "13.2.3",
     "electron-devtools-installer": "~3.2.0",
     "eslint": "~7.32.0",
-    "husky": "~7.0.1",
+    "husky": "~7.0.2",
     "is-ci": "~3.0.0",
     "less": "~4.1.1",
+    "less-loader": "~10.0.1",
     "lint-staged": "~11.1.2",
     "markdownlint-cli": "~0.28.1",
     "npm-check-updates": "~11.8.3",
@@ -110,7 +113,7 @@
     "typescript": "~4.3.5",
     "vue-cli-plugin-auto-routing": "~1.3.0",
     "vue-cli-plugin-electron-builder": "~2.1.1",
-    "vue-cli-plugin-windicss": "~1.0.3",
+    "vue-cli-plugin-windicss": "~1.0.4",
     "vue-jest": "~3.0.7",
     "vue-template-compiler": "~2.6.14",
     "windicss": "~3.1.7"
@@ -119,9 +122,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "engines": {
-    "node": "^12.22.5 || ^14.17.5 || ^16.6.2",
-    "npm": "^6.14.14 || ^7.20.3"
   }
 }

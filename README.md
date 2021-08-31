@@ -1,8 +1,8 @@
-# boilerplate-vue
+# boilerplate-vue2
 
 ## 简介
 
-`boilerplate-vue` 是一个面向中国用户的简单 `vue` 模板，目标是帮助你快速开发桌面端网页/桌面端应用/移动端网页。当然，也希望能引导你更进一步地了解 `vue` 生态。
+`boilerplate-vue2` 是一个面向中国用户的简单 `vue` 模板，目标是帮助你快速开发桌面端网页/桌面端应用/移动端网页。当然，也希望能引导你更进一步地了解 `vue` 生态。
 
 如果你想要快速开发移动端应用，请考虑加入 `cordova`、`native-script` 或 `capacitor`。
 
@@ -114,10 +114,10 @@ npm i -g yarn --registry=https://registry.npm.taobao.org
 
 ```sh
 # clone 项目到本地
-git clone git@github.com:MillCloud/boilerplate-vue.git
-# git clone git@gitee.com:MillCloud/boilerplate-vue.git
+git clone git@github.com:MillCloud/boilerplate-vue2.git
+# git clone git@gitee.com:MillCloud/boilerplate-vue2.git
 # 进入项目
-cd boilerplate-vue
+cd boilerplate-vue2
 # 安装依赖
 yarn install
 # 启动项目

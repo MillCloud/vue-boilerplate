@@ -2,7 +2,7 @@
   <el-container class="relative min-h-screen">
     <el-aside class="fixed w-64 h-screen z-20">
       <el-header class="flex items-center">
-        <h5 class="mr-8 prose-xl">boilerplate-vue</h5>
+        <h5 class="mr-8 prose-xl">boilerplate-vue2</h5>
       </el-header>
     </el-aside>
     <el-container>
@@ -14,7 +14,7 @@
       <el-footer class="flex justify-center items-center z-10">
         <a
           class="mx-2"
-          href="https://github.com/MillCloud/boilerplate-vue"
+          href="https://github.com/MillCloud/boilerplate-vue2"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -22,7 +22,7 @@
         </a>
         <a
           class="mx-2"
-          href="https://gitee.com/MillCloud/boilerplate-vue"
+          href="https://gitee.com/MillCloud/boilerplate-vue2"
           target="_blank"
           rel="noopener noreferrer"
         >

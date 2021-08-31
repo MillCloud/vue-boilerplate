@@ -1,10 +1,10 @@
 <template>
   <el-main>
-    <el-row flex="~" m="y-0" class="justify-center items-center">
+    <el-row class="flex my-0 justify-center items-center">
       <h6 class="prose-lg">这里是首页</h6>
     </el-row>
-    <el-row v-if="isElectron" m="y-0" class="justify-center items-center">
-      <el-button m="t-2" @click="handleCloseElectronWindow">
+    <el-row v-if="isElectron" class="my-0 justify-center items-center">
+      <el-button class="mt-2" @click="handleCloseElectronWindow">
         Electron 环境 - 关闭应用
       </el-button>
     </el-row>

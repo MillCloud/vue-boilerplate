@@ -1,7 +1,6 @@
-/* eslint-disable no-lonely-if */
 import nprogress from 'nprogress';
 import router from './router';
-import store from './store';
+// import store from './store';
 
 router.beforeEach(async (to, from, next) => {
   // if (process.env.NODE_ENV === 'development') {

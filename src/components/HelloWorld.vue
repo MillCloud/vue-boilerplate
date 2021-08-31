@@ -11,8 +11,9 @@
           href="https://cli.vuejs.org"
           target="_blank"
           rel="noopener noreferrer"
-          >vue-cli documentation</a
         >
+          vue-cli documentation
+        </a>
       </p>
     </el-col>
     <el-col m="t-2">
@@ -24,51 +25,58 @@
         href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
         target="_blank"
         rel="noopener noreferrer"
-        >babel</a
       >
+        babel
+      </a>
       <a
         class="mx-2"
         href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router"
         target="_blank"
         rel="noopener noreferrer"
-        >router</a
       >
+        router
+      </a>
       <a
         class="mx-2"
         href="https://github.com/ktsn/vue-cli-plugin-auto-routing"
         target="_blank"
         rel="noopener noreferrer"
-        >auto-routing</a
       >
+        auto-routing
+      </a>
       <a
         class="mx-2"
         href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex"
         target="_blank"
         rel="noopener noreferrer"
-        >vuex</a
       >
+        vuex
+      </a>
       <a
         class="mx-2"
         href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
         target="_blank"
         rel="noopener noreferrer"
-        >eslint</a
       >
+        eslint
+      </a>
       <a
         class="mx-2"
         href="https://github.com/intlify/vue-cli-plugin-i18n"
         target="_blank"
         rel="noopener noreferrer"
-        >i18n</a
       >
+        i18n
+      </a>
       <a
         v-if="isElectron"
         class="mx-2"
         href="https://github.com/nklayman/vue-cli-plugin-electron-builder"
         target="_blank"
         rel="noopener noreferrer"
-        >electron-builder</a
       >
+        electron-builder
+      </a>
     </el-col>
     <el-col m="t-2">
       <h6 class="prose-lg text-center">Ecosystem</h6>
@@ -79,57 +87,65 @@
         href="https://cn.vuejs.org"
         target="_blank"
         rel="noopener noreferrer"
-        >vue</a
       >
+        vue
+      </a>
       <a
         class="mx-2"
         href="https://router.vuejs.org/zh/"
         target="_blank"
         rel="noopener noreferrer"
-        >vue-router</a
       >
+        vue-router
+      </a>
       <a
         class="mx-2"
         href="https://vuex.vuejs.org/zh/"
         target="_blank"
         rel="noopener noreferrer"
-        >vuex</a
       >
+        vuex
+      </a>
       <a
         class="mx-2"
         href="https://vueuse.js.org/"
         target="_blank"
         rel="noopener noreferrer"
-        >vue-use</a
       >
+        vue-use
+      </a>
       <a
         class="mx-2"
         href="https://github.com/vuejs/vue-devtools"
         target="_blank"
         rel="noopener noreferrer"
-        >vue-devtools</a
       >
+        vue-devtools
+      </a>
       <a
         class="mx-2"
         href="https://vue-loader.vuejs.org/zh/"
         target="_blank"
         rel="noopener noreferrer"
-        >vue-loader</a
       >
+        vue-loader
+      </a>
       <a
         class="mx-2"
         href="https://element.eleme.cn/"
         target="_blank"
         rel="noopener noreferrer"
-        >element</a
       >
+        element
+      </a>
       <a
         class="mx-2"
         href="https://github.com/vuejs/awesome-vue"
         target="_blank"
         rel="noopener noreferrer"
-        >awesome-vue</a
       >
+        awesome-vue
+      </a>
     </el-col>
   </el-row>
 </template>

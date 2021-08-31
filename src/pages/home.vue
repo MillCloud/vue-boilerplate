@@ -1,16 +1,15 @@
 <template>
   <el-main>
-    <el-row flex="~" class="justify-center items-center" m="y-0">
-      <h6 class="prose-lg">这里是首页</h6>
+    <el-row class="flex justify-center items-center my-0">
+      <h6 class="prose-lg">这里是主页</h6>
     </el-row>
-    <el-row flex="~" class="justify-center items-center" m="y-0">
+    <el-row class="flex justify-center items-center my-0">
       <el-image
         alt="Vue logo"
         fit="fill"
         lazy
         src="https://cn.vuejs.org/images/logo.png"
-        h="200px"
-        w="200px"
+        class="w-64 h-64"
       />
     </el-row>
     <HelloWorld msg="Welcome to Your Vue.js v2 App" />

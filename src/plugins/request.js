@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import axios from 'axios';
 import statuses from 'statuses';
+import { MessageBox } from 'element-ui';
 import { constantCase } from '@modyqyw/utils';
 import { setupCache } from 'axios-cache-adapter';
 import * as AxiosLogger from 'axios-logger';
@@ -22,7 +23,10 @@ export const handleShowError = (response) => {
     clearStorage();
     router.replace('/');
   } else {
-    console.error(response.message);
+    MessageBox.alert(response.message, {
+      title: '错误',
+      type: 'error',
+    });
   }
 };
 

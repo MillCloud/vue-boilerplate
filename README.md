@@ -25,6 +25,7 @@
 - [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter)
 - [axios-retry](https://github.com/softonic/axios-retry)
 - [element-ui](https://element.eleme.cn) - 对于移动端网页，请考虑 [vant](https://youzan.github.io/vant)
+- [tailwindcss](https://v1.tailwindcss.com/) - 支持了大部分 v2 类值、支持大部分类渐进增强、`0.5` 将会被替换成 `0_5`、`1/2` 将会被替换成 `1-2`，但仍然不要使用高级特性，否则不能支持低端浏览器，具体可以到 [caniuse](https://caniuse.com/) 查询
 - [iconify](https://iconify.design/)
 - [portal-vue](https://portal-vue.linusb.org/)
 - [@modyqyw/utils](https://github.com/modyqyw/utils)
@@ -211,6 +212,7 @@ yarn run dev
 ├── jest.config.js              # jest 配置文件
 ├── package.json
 ├── README.md
+├── tailwind.config.js          # tailwindcss 配置文件
 ├── tsconfig.json               # typescript 配置文件
 ├── vue.config.js               # vue-cli 配置文件
 └── yarn.lock

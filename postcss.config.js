@@ -19,6 +19,7 @@ module.exports = {
           /^router-link(|-exact)-active$/,
           /data-v-.*/,
           /^uni-.*/,
+          /^cl-.*/,
           /^u-.*/,
           /^tui-.*/,
         ],

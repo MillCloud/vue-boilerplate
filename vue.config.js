@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
@@ -69,6 +70,10 @@ module.exports = {
   },
   devServer: {
     proxy: process.env.VUE_APP_REQUEST_BASE_URL || 'https://fake.url',
+    https: {
+      key: fs.readFileSync(path.resolve('src', 'assets', 'localhost-key.pem')),
+      cert: fs.readFileSync(path.resolve('src', 'assets', 'localhost.pem')),
+    },
   },
   pluginOptions: {
     electronBuilder: {

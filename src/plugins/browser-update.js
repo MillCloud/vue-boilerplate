@@ -25,5 +25,4 @@ Vue.use(VueBrowserUpdate, {
     unsupported: true,
     style: 'corner',
   },
-  test: true,
 });

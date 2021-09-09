@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-extraneous-dependencies, no-console */
 import { app, protocol, BrowserWindow, Menu, shell, ipcMain } from 'electron';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
@@ -107,3 +107,4 @@ ipcMain.on('window-closed', () => {
     win.close();
   }
 });
+/* eslint-enable import/no-extraneous-dependencies, no-console */

@@ -3,3 +3,4 @@
 const { ipcRenderer } = require('electron');
 
 window.ipcRenderer = ipcRenderer;
+/* eslint-enable import/no-extraneous-dependencies */

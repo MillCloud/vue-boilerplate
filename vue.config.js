@@ -69,6 +69,7 @@ module.exports = {
     },
   },
   devServer: {
+    host: 'localhost',
     proxy: process.env.VUE_APP_REQUEST_BASE_URL || 'https://fake.url',
     https: {
       key: fs.readFileSync(path.resolve('src', 'assets', 'localhost-key.pem')),

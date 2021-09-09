@@ -1,3 +1,4 @@
+import './browser-update';
 import './bus';
 import './composition-api';
 import './dayjs';

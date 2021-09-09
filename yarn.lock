@@ -2162,6 +2162,13 @@
     remark "^13.0.0"
     unist-util-find-all-after "^3.0.2"
 
+"@sum.cumo/vue-browserupdate@~3.0.1":
+  version "3.0.1"
+  resolved "https://registry.nlark.com/@sum.cumo/vue-browserupdate/download/@sum.cumo/vue-browserupdate-3.0.1.tgz#5cc5fc7b7fff3b61b25a3f10a8c98b6a11236ff8"
+  integrity sha1-XMX8e3//O2GyWj8QqMmLahEjb/g=
+  dependencies:
+    browser-update "^3.3.21"
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.nlark.com/@szmarczak/http-timer/download/@szmarczak/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -2493,10 +2500,10 @@
   resolved "https://registry.nlark.com/@types/node/download/@types/node-16.4.14.tgz#e27705ec2278b2355bd59f1952de23a152b9f208"
   integrity sha1-4ncF7CJ4sjVb1Z8ZUt4joVK58gg=
 
-"@types/node@~16.7.11":
-  version "16.7.11"
-  resolved "https://registry.nlark.com/@types/node/download/@types/node-16.7.11.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.7.11.tgz#5877b3ab359af251fd413517be2d4265b7fea9a9"
-  integrity sha1-WHezqzWa8lH9QTUXvi1CZbf+qak=
+"@types/node@~16.9.0":
+  version "16.9.0"
+  resolved "https://registry.nlark.com/@types/node/download/@types/node-16.9.0.tgz#d9512fe037472dcb58931ce19f837348db828a62"
+  integrity sha1-2VEv4DdHLctYkxzhn4NzSNuCimI=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -3174,39 +3181,39 @@
   dependencies:
     tslib "^2.3.0"
 
-"@vue/reactivity@3.2.9":
-  version "3.2.9"
-  resolved "https://registry.nlark.com/@vue/reactivity/download/@vue/reactivity-3.2.9.tgz?cache=0&sync_timestamp=1630881501334&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Freactivity%2Fdownload%2F%40vue%2Freactivity-3.2.9.tgz#f4ec61519f4779224d98a23ac07b481d95687cae"
-  integrity sha1-9OxhUZ9HeSJNmKI6wHtIHZVofK4=
+"@vue/reactivity@3.2.11":
+  version "3.2.11"
+  resolved "https://registry.nlark.com/@vue/reactivity/download/@vue/reactivity-3.2.11.tgz?cache=0&sync_timestamp=1631141978411&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Freactivity%2Fdownload%2F%40vue%2Freactivity-3.2.11.tgz#ec04d33acaf2b92cca2960535bec81b26cc5772b"
+  integrity sha1-7ATTOsryuSzKKWBTW+yBsmzFdys=
   dependencies:
-    "@vue/shared" "3.2.9"
+    "@vue/shared" "3.2.11"
 
-"@vue/runtime-core@3.2.9":
-  version "3.2.9"
-  resolved "https://registry.nlark.com/@vue/runtime-core/download/@vue/runtime-core-3.2.9.tgz?cache=0&sync_timestamp=1630881501595&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fruntime-core%2Fdownload%2F%40vue%2Fruntime-core-3.2.9.tgz#32854c9d9853aa2075fcecfc762b5f033a6bae1e"
-  integrity sha1-MoVMnZhTqiB1/Oz8ditfAzprrh4=
+"@vue/runtime-core@3.2.11":
+  version "3.2.11"
+  resolved "https://registry.nlark.com/@vue/runtime-core/download/@vue/runtime-core-3.2.11.tgz?cache=0&sync_timestamp=1631141981931&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fruntime-core%2Fdownload%2F%40vue%2Fruntime-core-3.2.11.tgz#0dbe801be4bd0bfde253226797e7d304c8fdda30"
+  integrity sha1-Db6AG+S9C/3iUyJnl+fTBMj92jA=
   dependencies:
-    "@vue/reactivity" "3.2.9"
-    "@vue/shared" "3.2.9"
+    "@vue/reactivity" "3.2.11"
+    "@vue/shared" "3.2.11"
 
-"@vue/runtime-dom@~3.2.9":
-  version "3.2.9"
-  resolved "https://registry.nlark.com/@vue/runtime-dom/download/@vue/runtime-dom-3.2.9.tgz?cache=0&sync_timestamp=1630881501742&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fruntime-dom%2Fdownload%2F%40vue%2Fruntime-dom-3.2.9.tgz#397572a142db2772fb4b7f0a2bc06b5486e5db81"
-  integrity sha1-OXVyoULbJ3L7S38KK8BrVIbl24E=
+"@vue/runtime-dom@~3.2.11":
+  version "3.2.11"
+  resolved "https://registry.nlark.com/@vue/runtime-dom/download/@vue/runtime-dom-3.2.11.tgz?cache=0&sync_timestamp=1631141984978&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fruntime-dom%2Fdownload%2F%40vue%2Fruntime-dom-3.2.11.tgz#04f9054a9e64bdf156c2fc22cad67cfaa8b84616"
+  integrity sha1-BPkFSp5kvfFWwvwiytZ8+qi4RhY=
   dependencies:
-    "@vue/runtime-core" "3.2.9"
-    "@vue/shared" "3.2.9"
+    "@vue/runtime-core" "3.2.11"
+    "@vue/shared" "3.2.11"
     csstype "^2.6.8"
+
+"@vue/shared@3.2.11":
+  version "3.2.11"
+  resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.2.11.tgz#01899f54949caf1ac241de397bd17069632574de"
+  integrity sha1-AYmfVJScrxrCQd45e9FwaWMldN4=
 
 "@vue/shared@3.2.4":
   version "3.2.4"
   resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.2.4.tgz#ba2a09527afff27b28d08f921b4a597e9504ca7a"
   integrity sha1-uioJUnr/8nso0I+SG0pZfpUEyno=
-
-"@vue/shared@3.2.9":
-  version "3.2.9"
-  resolved "https://registry.nlark.com/@vue/shared/download/@vue/shared-3.2.9.tgz?cache=0&sync_timestamp=1630881474290&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fshared%2Fdownload%2F%40vue%2Fshared-3.2.9.tgz#44e44dbd82819997f192fb7dbdb90af5715dbf52"
-  integrity sha1-RORNvYKBmZfxkvt9vbkK9XFdv1I=
 
 "@vue/test-utils@~1.2.2":
   version "1.2.2"
@@ -3335,20 +3342,20 @@
     "@vueuse/shared" "6.0.0"
     vue-demi "*"
 
-"@vueuse/core@~6.2.1":
-  version "6.2.1"
-  resolved "https://registry.nlark.com/@vueuse/core/download/@vueuse/core-6.2.1.tgz#bba48727e9e70637c3924011c95bf934616338d0"
-  integrity sha1-u6SHJ+nnBjfDkkARyVv5NGFjONA=
+"@vueuse/core@~6.3.2":
+  version "6.3.2"
+  resolved "https://registry.nlark.com/@vueuse/core/download/@vueuse/core-6.3.2.tgz#3365b21a2d094d5afc42b607e84792fed6a4c463"
+  integrity sha1-M2WyGi0JTVr8QrYH6EeS/takxGM=
   dependencies:
-    "@vueuse/shared" "6.2.1"
+    "@vueuse/shared" "6.3.2"
     vue-demi "*"
 
-"@vueuse/electron@~6.2.1":
-  version "6.2.1"
-  resolved "https://registry.nlark.com/@vueuse/electron/download/@vueuse/electron-6.2.1.tgz#c4ee2c869f837d57451a23c0505cc9ef287a3710"
-  integrity sha1-xO4shp+DfVdFGiPAUFzJ7yh6NxA=
+"@vueuse/electron@~6.3.2":
+  version "6.3.2"
+  resolved "https://registry.nlark.com/@vueuse/electron/download/@vueuse/electron-6.3.2.tgz#b755327783f1d20a7d7bd80be9a94fb2479d41f4"
+  integrity sha1-t1Uyd4Px0gp9e9gL6alPskedQfQ=
   dependencies:
-    "@vueuse/shared" "6.2.1"
+    "@vueuse/shared" "6.3.2"
     vue-demi "*"
 
 "@vueuse/gesture@~1.0.0":
@@ -3358,15 +3365,15 @@
   dependencies:
     vue-demi "^0.7.4"
 
-"@vueuse/integrations@~6.2.1":
-  version "6.2.1"
-  resolved "https://registry.nlark.com/@vueuse/integrations/download/@vueuse/integrations-6.2.1.tgz#d68169ce839f26d2b027e79bc7277e437534c0fc"
-  integrity sha1-1oFpzoOfJtKwJ+ebxyd+Q3U0wPw=
+"@vueuse/integrations@~6.3.2":
+  version "6.3.2"
+  resolved "https://registry.nlark.com/@vueuse/integrations/download/@vueuse/integrations-6.3.2.tgz#8e4aaeaa0a5bc7946f1e497adb2cf63029af4ec2"
+  integrity sha1-jkquqgpbx5RvHkl62yz2MCmvTsI=
   dependencies:
-    "@vueuse/shared" "6.2.1"
+    "@vueuse/shared" "6.3.2"
     vue-demi "*"
   optionalDependencies:
-    axios "^0.21.1"
+    axios "^0.21.4"
     focus-trap "^6.6.1"
     jwt-decode "^3.1.2"
     nprogress "^0.2.0"
@@ -3389,10 +3396,10 @@
   dependencies:
     vue-demi "*"
 
-"@vueuse/shared@6.2.1":
-  version "6.2.1"
-  resolved "https://registry.nlark.com/@vueuse/shared/download/@vueuse/shared-6.2.1.tgz#4b20b3876de44c3e8590849b463500dfbed37908"
-  integrity sha1-SyCzh23kTD6FkISbRjUA377TeQg=
+"@vueuse/shared@6.3.2":
+  version "6.3.2"
+  resolved "https://registry.nlark.com/@vueuse/shared/download/@vueuse/shared-6.3.2.tgz#35a821561fd4fb1ea2e24b6fa9086f3d0d506316"
+  integrity sha1-NaghVh/U+x6i4ktvqQhvPQ1QYxY=
   dependencies:
     vue-demi "*"
 
@@ -4280,14 +4287,7 @@ axios-retry@~3.1.9:
   dependencies:
     is-retry-allowed "^1.1.0"
 
-axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.npm.taobao.org/axios/download/axios-0.21.1.tgz?cache=0&sync_timestamp=1608609215811&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxios%2Fdownload%2Faxios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
-  dependencies:
-    follow-redirects "^1.10.0"
-
-axios@~0.21.4:
+axios@^0.21.4, axios@~0.21.4:
   version "0.21.4"
   resolved "https://registry.nlark.com/axios/download/axios-0.21.4.tgz?cache=0&sync_timestamp=1630942571025&other_urls=https%3A%2F%2Fregistry.nlark.com%2Faxios%2Fdownload%2Faxios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
   integrity sha1-xnuQ3AVo5cHPKwuFjEO6KOLtpXU=
@@ -4684,6 +4684,11 @@ browser-process-hrtime@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/browser-process-hrtime/download/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"
   integrity sha1-PJtLfXgsgSHlbxAQbYTA0P/JRiY=
+
+browser-update@^3.3.21:
+  version "3.3.30"
+  resolved "https://registry.nlark.com/browser-update/download/browser-update-3.3.30.tgz#b4c362699f1fb0d98f6d3d5302f0157f8cf958fd"
+  integrity sha1-tMNiaZ8fsNmPbT1TAvAVf4z5WP0=
 
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
@@ -7952,7 +7957,7 @@ focus-trap@^6.6.1:
   dependencies:
     tabbable "^5.2.1"
 
-follow-redirects@^1.0.0, follow-redirects@^1.10.0:
+follow-redirects@^1.0.0:
   version "1.14.2"
   resolved "https://registry.nlark.com/follow-redirects/download/follow-redirects-1.14.2.tgz?cache=0&sync_timestamp=1629288519293&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ffollow-redirects%2Fdownload%2Ffollow-redirects-1.14.2.tgz#cecb825047c00f5e66b142f90fed4f515dec789b"
   integrity sha1-zsuCUEfAD15msUL5D+1PUV3seJs=

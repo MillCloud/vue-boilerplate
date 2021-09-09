@@ -11,7 +11,7 @@ Vue.use(VueBrowserUpdate, {
   options: {
     required: {
       // ie / edge
-      i: 19,
+      i: 79,
       // firefox
       f: 54,
       // opera

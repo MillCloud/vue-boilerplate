@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const UnpluginVue2ScriptSetupPlugin = require('unplugin-vue2-script-setup/webpack');
 
 const arrGZipExtension = [
   'html',
@@ -23,6 +24,9 @@ module.exports = {
         fix: true,
       },
     ]);
+    config
+      .plugin('unplugin-vue2-script-setup')
+      .use(UnpluginVue2ScriptSetupPlugin({}));
     config.resolve.alias
       .set('@@', path.resolve(''))
       .set('@', path.resolve('src'));
@@ -77,32 +81,6 @@ module.exports = {
     },
   },
   pluginOptions: {
-    electronBuilder: {
-      preload: path.resolve('src', 'preload.js'),
-      builderOptions: {
-        // eslint-disable-next-line no-template-curly-in-string
-        artifactName: '${productName}_${version}_${os}_${arch}.${ext}',
-        appId: '',
-        productName: '',
-        copyright: '',
-        icon: path.resolve('src', 'assets', 'app.png'),
-        mac: {
-          target: [{ target: 'dmg', arch: ['universal'] }],
-        },
-        win: {
-          target: [{ target: 'nsis', arch: ['x64', 'ia32'] }],
-        },
-        nsis: {
-          oneClick: false,
-          perMachine: true,
-          allowElevation: true,
-          allowToChangeInstallationDirectory: true,
-        },
-        linux: {
-          target: [{ target: 'AppImage', arch: ['x64'] }],
-        },
-      },
-    },
     i18n: {
       locale: process.env.VUE_APP_I18N_LOCALE || 'zh-Hans',
       fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'zh-Hans',

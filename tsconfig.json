@@ -7,6 +7,7 @@
     },
     "lib": ["esnext", "DOM", "scripthost"],
     "typeRoots": ["./node_modules/@types", "./typings", "./src/typings"],
+    "types": ["unplugin-vue2-script-setup/types"],
     "allowJs": true,
     "noEmit": true,
     "esModuleInterop": true,

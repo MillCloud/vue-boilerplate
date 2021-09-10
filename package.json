@@ -2,7 +2,7 @@
   "name": "boilerplate-vue2",
   "version": "0.0.0",
   "private": true,
-  "description": "A boilerplate for vue-cli and vue2",
+  "description": "A boilerplate for vue-cli and vue2.",
   "scripts": {
     "build": "vue-cli-service build --mode production --report",
     "check": "ncu",

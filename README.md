@@ -16,8 +16,6 @@
 - [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing)
 - [vuex](https://vuex.vuejs.org/zh/)
 - [mitt](https://github.com/developit/mitt)
-- [electron](https://www.electronjs.org/)
-- [electron-builder](https://www.electron.build/)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [axios](https://github.com/axios/axios)
 - [axios-cache-adapter](https://github.com/RasCarlito/axios-cache-adapter)
@@ -38,6 +36,8 @@
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates)
 
 请先阅读上面的文档，并确保对 `node` 和 `npm` 有 [基本了解](http://nodejs.cn/learn)。
+
+模板本身并未提供 Electron 支持。如果你有这方面的需求，可以考虑 [nativefier](https://github.com/nativefier/nativefier)，[vue-cli-plugin-electron-builder](https://nklayman.github.io/vue-cli-plugin-electron-builder/)。
 
 ## 起步
 
@@ -140,7 +140,6 @@ yarn run dev
 - 状态管理配置示例
 - 请求配置示例
 - 布局示例
-- `electron` 示例
 
 ### 命令
 
@@ -151,9 +150,6 @@ yarn run dev
 |`yarn run dev`|`development` 模式启动项目|
 |`yarn run staging-build`|`staging` 模式打包项目|
 |`yarn run build`|`production` 模式打包项目|
-|`yarn run electron:dev`|使用 `electron`，`development` 模式启动项目|
-|`yarn run electron:staging-build`|使用 `electron`，`staging` 模式打包项目|
-|`yarn run electron:build`|使用 `electron`，`production` 模式打包项目|
 |`yarn run run check`|检查项目依赖版本|
 |`yarn run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
 |`yarn run i18n:report`|获取国际化信息|
@@ -186,10 +182,8 @@ yarn run dev
 │   ├── styles                  # 全局样式和全局变量目录
 │   ├── utils                   # 工具方法目录
 │   ├── App.vue
-│   ├── background.js           # electron 主进程文件
 │   ├── guard.js                # 导航守卫
-│   ├── main.js
-│   └── preload.js              # electron 预加载文件
+│   └── main.js
 ├── tests                       # 测试内容文件夹
 ├── typings                     # typescript 定义文件夹，为未来迁移做准备
 ├── .browserslistrc             # 浏览器支持列表文件
@@ -268,7 +262,7 @@ yarn run dev
 
 #### 应用类状态
 
-应用类状态是应用本身的状态，包括应用是否处于 `electron` 环境，应用当前语言等。
+应用类状态是应用本身的状态，包括应用当前语言等。
 
 #### 业务类状态
 
@@ -320,12 +314,6 @@ module.exports = {
 我们也可能根据用户角色生成路由和侧边栏，模板内置的该部分功能较为薄弱，且思路源自 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)，请查看 vue-element-admin [路由和侧边栏](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/router-and-nav.html) 和 [权限验证](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/permission.html) 阐述的思路。
 
 也推荐你学习 [vue-vben-admin](https://github.com/anncwb/vue-vben-admin) 源码。
-
-### electron
-
-模板默认集成 `electron`，你可以快速开始 `electron` 开发。
-
-模板内提供了 `ipc` 的演示示例，请全局搜索 `ipc` 查看。
 
 ### VSCode 支持
 

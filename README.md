@@ -31,7 +31,6 @@
 - [nprogress](https://ricostacruz.com/nprogress/)
 - [mock.js](http://mockjs.com/)
 - [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
-- [jest](https://jestjs.io/)
 - [@modyqyw/fabric](https://github.com/ModyQyW/fabric)
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates)
 
@@ -203,7 +202,6 @@ yarn run dev
 ├── .release-it.js              # release-it 配置文件
 ├── .stylelintrc.js             # stylelint 配置文件
 ├── babel.config.js             # babel 配置文件
-├── jest.config.js              # jest 配置文件
 ├── package.json
 ├── README.md
 ├── tailwind.config.js          # tailwindcss 配置文件

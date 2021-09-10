@@ -2,36 +2,26 @@
   "name": "boilerplate-vue2",
   "version": "0.0.0",
   "private": true,
-  "description": "A boilerplate for vue2",
-  "author": {
-    "email": "",
-    "name": "",
-    "url": ""
-  },
-  "main": "background.js",
-  "engines": {
-    "node": "^12.22.5 || ^14.17.5 || ^16.6.2",
-    "npm": "^6.14.14 || ^7.20.3"
-  },
+  "description": "A boilerplate for vue-cli and vue2",
   "scripts": {
     "build": "vue-cli-service build --mode production --report",
     "check": "ncu",
     "commit": "cz",
     "dev": "vue-cli-service serve --mode development",
-    "electron:build": "vue-cli-service electron:build --report -m -w -l",
-    "electron:dev": "vue-cli-service electron:serve",
-    "electron:staging-build": "vue-cli-service electron:build --report --mode staging -m -w -l",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/i18n/locales/*.json'",
     "lint": "yarn run lint:eslint && yarn run lint:markdownlint && yarn run lint:stylelint",
     "lint:eslint": "vue-cli-service lint --fix",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "lint:stylelint": "stylelint ./**/*.{css,less,scss,vue} --fix --allow-empty-input --ignore-path=.gitignore",
-    "postinstall": "electron-builder install-app-deps",
-    "postuninstall": "electron-builder install-app-deps",
     "prepare": "is-ci || husky install",
     "release": "release-it",
     "staging-build": "vue-cli-service build --mode staging --report",
     "test:unit": "vue-cli-service test:unit --coverage --passWithNoTests"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@ant-design/colors": "~6.0.0",
@@ -39,9 +29,8 @@
     "@modyqyw/utils": "~0.7.0",
     "@sum.cumo/vue-browserupdate": "~3.0.1",
     "@tailwindcss/typography": "~0.2.0",
-    "@vue/composition-api": "~1.1.4",
+    "@vue/composition-api": "~1.1.5",
     "@vueuse/core": "~6.3.2",
-    "@vueuse/electron": "~6.3.2",
     "@vueuse/gesture": "~1.0.0",
     "@vueuse/integrations": "~6.3.2",
     "@vueuse/motion": "~1.6.0",
@@ -75,12 +64,11 @@
     "@fullhuman/postcss-purgecss": "~3.1.3",
     "@fullhuman/vue-cli-plugin-purgecss": "~4.0.3",
     "@intlify/vue-i18n-loader": "~1.1.0",
-    "@modyqyw/fabric": "~3.4.0",
-    "@types/electron-devtools-installer": "~2.2.0",
+    "@modyqyw/fabric": "~3.4.2",
     "@types/faker": "~5.5.8",
     "@types/jest": "~27.0.1",
     "@types/mockjs": "~1.0.4",
-    "@types/node": "~16.9.0",
+    "@types/node": "~16.9.1",
     "@types/nprogress": "~0.2.0",
     "@types/statuses": "~2.0.0",
     "@typescript-eslint/eslint-plugin": "~4.31.0",
@@ -96,8 +84,6 @@
     "@vuedx/typescript-plugin-vue": "~0.7.4",
     "commitizen": "~4.2.4",
     "compression-webpack-plugin": "~8.0.1",
-    "electron": "14.0.0",
-    "electron-devtools-installer": "~3.2.0",
     "eslint": "~7.32.0",
     "husky": "~7.0.2",
     "is-ci": "~3.0.0",
@@ -114,14 +100,13 @@
     "stylelint": "~13.13.1",
     "stylelint-webpack-plugin": "~3.0.1",
     "typescript": "~4.4.2",
+    "unplugin-vue2-script-setup": "~0.6.1",
     "vue-cli-plugin-auto-routing": "~1.3.0",
-    "vue-cli-plugin-electron-builder": "~2.1.1",
     "vue-jest": "~3.0.7",
     "vue-template-compiler": "~2.6.14"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "engines": {
+    "node": "^12.22.6 || ^14.17.6 || ^16.6.2",
+    "npm": "^6.14.15 || ^7.20.3"
   }
 }

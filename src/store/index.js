@@ -25,7 +25,6 @@ const modules = loadModules();
 export default new Vuex.Store({
   strict: process.env.NODE_ENV === 'development',
   state: {
-    isElectron: process.env.IS_ELECTRON,
     language: getLanguage(),
   },
   getters: {},

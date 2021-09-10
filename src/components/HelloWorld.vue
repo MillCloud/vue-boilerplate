@@ -68,15 +68,6 @@
       >
         i18n
       </a>
-      <a
-        v-if="isElectron"
-        class="mx-2"
-        href="https://github.com/nklayman/vue-cli-plugin-electron-builder"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        electron-builder
-      </a>
     </el-col>
     <el-col m="t-2">
       <h6 class="prose-lg text-center">Ecosystem</h6>
@@ -151,8 +142,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
   name: 'HelloWorld',
   props: {
@@ -160,11 +149,6 @@ export default {
       type: String,
       default: () => '',
     },
-  },
-  computed: {
-    ...mapState({
-      isElectron: (state) => state.isElectron,
-    }),
   },
 };
 </script>

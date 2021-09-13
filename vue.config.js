@@ -1,41 +1,56 @@
+/**
+ * @typedef { import("@vue/cli-service").ProjectOptions } Options
+ */
+
 const fs = require('fs');
 const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const UnpluginIconsPlugin = require('unplugin-icons/webpack');
+const IconsResolver = require('unplugin-icons/resolver');
+const UnpluginVueComponentsPlugin = require('unplugin-vue-components/webpack');
+const { ElementUiResolver } = require('unplugin-vue-components/resolvers');
 const UnpluginVue2ScriptSetupPlugin = require('unplugin-vue2-script-setup/webpack');
 
-const arrGZipExtension = [
-  'html',
-  'js',
-  'css',
-  'ttf',
-  'eot',
-  'otf',
-  'woff',
-  'woff2',
-  'png',
-];
-
-module.exports = {
+/** @type {Options} */
+const options = {
   chainWebpack: (config) => {
+    // stylelint
     config.plugin('stylelint').use(StylelintPlugin, [
       {
         files: ['src/**/*.{css,less,sass,scss,vue}'],
         fix: true,
       },
     ]);
+    config.plugin('unplugin-icons').use(
+      UnpluginIconsPlugin({
+        compiler: 'vue2',
+      }),
+    );
+    // unplugin-vue-components
+    config.plugin('unplugin-vue-components').use(
+      UnpluginVueComponentsPlugin({
+        dts: true,
+        resolvers: [
+          IconsResolver({
+            defaultClass: 'el-icon-',
+          }),
+          ElementUiResolver,
+        ],
+      }),
+    );
+    // unplugin-vue2-script-setup
     config
       .plugin('unplugin-vue2-script-setup')
       .use(UnpluginVue2ScriptSetupPlugin({}));
+    // alias
     config.resolve.alias
       .set('@@', path.resolve(''))
       .set('@', path.resolve('src'));
     config.when(process.env.NODE_ENV === 'production', (config_) => {
       config_
         .plugin('compression')
-        .use(CompressionPlugin, [
-          { test: new RegExp(`\\.(${arrGZipExtension.join('|')})$`) },
-        ]);
+        .use(CompressionPlugin, [{ test: /\\.(html|css|js)$/i }]);
       config_.optimization.minimizer('terser').tap((args) => {
         args[0].terserOptions.compress.drop_console = true;
         return args;
@@ -93,3 +108,5 @@ module.exports = {
   },
   publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
 };
+
+module.exports = options;

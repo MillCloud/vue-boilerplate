@@ -1,33 +1,42 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@@/*": ["./*"],
-      "@/*": ["./src/*"]
-    },
-    "lib": ["esnext", "DOM", "scripthost"],
-    "typeRoots": ["./node_modules/@types", "./typings", "./src/typings"],
-    "types": ["unplugin-vue2-script-setup/types"],
-    "allowJs": true,
-    "noEmit": true,
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true,
     "resolveJsonModule": true,
-    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
-    "moduleResolution": "node",
-    "strict": true
+    "noUnusedLocals": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "baseUrl": ".",
+    "types": [
+      "webpack-env",
+      "unplugin-icons/types/vue",
+      "unplugin-vue2-script-setup/types"
+    ],
+    "typeRoots": ["./node_modules/@types", "./typings", "./src/typings"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@@/*": ["./*"]
+    },
+    "lib": ["esnext", "dom", "scripthost"]
   },
   "vueCompilerOptions": {
     "experimentalCompatMode": 2
   },
   "include": [
-    "./**/*.js",
     "./**/.*.js",
+    "./**/*.js",
     "./**/*.jsx",
-    "./**/*.ts",
     "./**/.*.ts",
+    "./**/*.ts",
     "./**/*.tsx",
     "./**/*.vue"
   ],

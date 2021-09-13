@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "strict": true,
     "jsx": "preserve",
     "moduleResolution": "node",
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -23,8 +25,7 @@
     ],
     "typeRoots": ["./node_modules/@types", "./typings", "./src/typings"],
     "paths": {
-      "@/*": ["./src/*"],
-      "@@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "lib": ["esnext", "dom", "scripthost"]
   },

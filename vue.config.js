@@ -6,10 +6,10 @@ const fs = require('fs');
 const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
-const UnpluginIconsPlugin = require('unplugin-icons/webpack');
-const IconsResolver = require('unplugin-icons/resolver');
-const UnpluginVueComponentsPlugin = require('unplugin-vue-components/webpack');
-const { ElementUiResolver } = require('unplugin-vue-components/resolvers');
+// const UnpluginIconsPlugin = require('unplugin-icons/webpack');
+// const IconsResolver = require('unplugin-icons/resolver');
+// const UnpluginVueComponentsPlugin = require('unplugin-vue-components/webpack');
+// const { ElementUiResolver } = require('unplugin-vue-components/resolvers');
 const UnpluginVue2ScriptSetupPlugin = require('unplugin-vue2-script-setup/webpack');
 
 /** @type {Options} */
@@ -22,39 +22,44 @@ const options = {
         fix: true,
       },
     ]);
-    config.plugin('unplugin-icons').use(
-      UnpluginIconsPlugin({
-        compiler: 'vue2',
-      }),
-    );
-    // unplugin-vue-components
-    config.plugin('unplugin-vue-components').use(
-      UnpluginVueComponentsPlugin({
-        dts: true,
-        resolvers: [
-          IconsResolver({
-            defaultClass: 'el-icon-',
-          }),
-          ElementUiResolver,
-        ],
-      }),
-    );
+    // unplugin-icons
+    // config.plugin('unplugin-icons').use(
+    //   UnpluginIconsPlugin({
+    //     compiler: 'vue2',
+    //   }),
+    // );
+    // // unplugin-vue-components
+    // config.plugin('unplugin-vue-components').use(
+    //   UnpluginVueComponentsPlugin({
+    //     dts: true,
+    //     resolvers: [
+    //       IconsResolver({
+    //         defaultClass: 'el-icon-',
+    //       }),
+    //       ElementUiResolver,
+    //     ],
+    //   }),
+    // );
     // unplugin-vue2-script-setup
     config
       .plugin('unplugin-vue2-script-setup')
       .use(UnpluginVue2ScriptSetupPlugin({}));
     // alias
-    config.resolve.alias
-      .set('@@', path.resolve(''))
-      .set('@', path.resolve('src'));
+    config.resolve.alias.set('@', path.resolve('src'));
+    // fork-ts-checker
+    config.plugins.delete('fork-ts-checker');
+    // production only
     config.when(process.env.NODE_ENV === 'production', (config_) => {
+      // compression-webpack-plugin
       config_
         .plugin('compression')
         .use(CompressionPlugin, [{ test: /\\.(html|css|js)$/i }]);
+      // terser-webpack-plugin
       config_.optimization.minimizer('terser').tap((args) => {
         args[0].terserOptions.compress.drop_console = true;
         return args;
       });
+      // splitChunks
       config_.optimization.splitChunks({
         chunks: 'all',
         cacheGroups: {

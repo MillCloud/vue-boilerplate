@@ -14,7 +14,7 @@ module.exports = {
     release: false,
   },
   hooks: {
-    'before:init': 'yarn run lint',
+    'before:init': 'yarn install && yarn run lint',
     'after:bump': 'yarn run build',
   },
 };

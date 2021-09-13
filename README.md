@@ -2,9 +2,9 @@
 
 ## 简介
 
-`boilerplate-vue2` 是一个面向中国用户的简单 `vue` 模板，目标是帮助你快速开发桌面端网页/桌面端应用/移动端网页。当然，也希望能引导你更进一步地了解 `vue` 生态。
+`boilerplate-vue2` 是一个面向中国用户的简单 `vue` 模板，目标是帮助你快速开发桌面端网页/移动端网页。当然，也希望能引导你更进一步地了解 `vue` 生态。
 
-如果你想要快速开发移动端应用，请考虑加入 `cordova`、`native-script` 或 `capacitor`。
+如果你想要快速开发移动端应用，请考虑加入 `cordova`、`native-script` 或 `capacitor`，或者使用 [boilerplate-uni-app-vue2](https://github.com/MillCloud/boilerplate-uni-app-vue2)。
 
 当前只支持 `vue2`。
 
@@ -15,6 +15,8 @@
 - [vue-router](https://router.vuejs.org/zh/)
 - [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing)
 - [vuex](https://vuex.vuejs.org/zh/)
+- [@vue/composition-api](https://github.com/vuejs/composition-api/blob/main/README.zh-CN.md)
+- [vue-use](https://vueuse.org)
 - [mitt](https://github.com/developit/mitt)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [axios](https://github.com/axios/axios)
@@ -26,6 +28,7 @@
 - [tailwindcss](https://v1.tailwindcss.com/) - 支持了大部分 v2 类值、支持大部分类渐进增强、`0.5` 将会被替换成 `0_5`、`1/2` 将会被替换成 `1-2`，但仍然不要使用高级特性，否则不能支持低端浏览器，具体可以到 [caniuse](https://caniuse.com/) 查询
 - [iconify](https://iconify.design/)
 - [portal-vue](https://portal-vue.linusb.org/)
+- [@sum.cumo/vue-browserupdate](https://browser-update.org/zh/)
 - [@modyqyw/utils](https://github.com/modyqyw/utils)
 - [dayjs](https://dayjs.gitee.io/zh-CN/)
 - [nprogress](https://ricostacruz.com/nprogress/)
@@ -36,7 +39,7 @@
 
 请先阅读上面的文档，并确保对 `node` 和 `npm` 有 [基本了解](http://nodejs.cn/learn)。
 
-模板本身并未提供 Electron 支持。如果你有这方面的需求，可以考虑 [nativefier](https://github.com/nativefier/nativefier)，[vue-cli-plugin-electron-builder](https://nklayman.github.io/vue-cli-plugin-electron-builder/)。
+模板本身并未提供 Electron 支持。如果你有这方面的需求，可以考虑 [nativefier](https://github.com/nativefier/nativefier) 和 [vue-cli-plugin-electron-builder](https://nklayman.github.io/vue-cli-plugin-electron-builder/)。
 
 ## 起步
 
@@ -100,9 +103,9 @@ git config --global init.defaultBranch main
 # 设置 nvm 镜像
 nvm node_mirror https://npm.taobao.org/mirrors/node/
 # 安装 node@14
-nvm install 14.17.5
+nvm install 14.17.6
 # 使用 node@14
-nvm use 14.17.5
+nvm use 14.17.6
 # 安装 yarn
 npm i -g yarn --registry=https://registry.npm.taobao.org
 
@@ -149,16 +152,15 @@ yarn run dev
 |`yarn run dev`|`development` 模式启动项目|
 |`yarn run staging-build`|`staging` 模式打包项目|
 |`yarn run build`|`production` 模式打包项目|
-|`yarn run run check`|检查项目依赖版本|
+|`yarn run check`|检查项目依赖版本|
 |`yarn run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
 |`yarn run i18n:report`|获取国际化信息|
 |`yarn run test:unit`|单元测试|
-|`yarn run lint`|检查 json 文件，脚本文件，样式文件和目录|
-|`yarn run lint:json`|格式化 json 文件|
-|`yarn run lint:markdown`|格式化 markdown 文件|
-|`yarn run lint:script`|检查并自动修复脚本文件|
-|`yarn run lint:style`|检查并自动修复样式文件|
-|`yarn run lint:ls`|检查目录|
+|`yarn run lint`|检查脚本文件，样式文件和 markdown 文件|
+|`yarn run lint:eslint`|检查并自动修复脚本文件|
+|`yarn run lint:markdownlint`|格式化 markdown 文件|
+|`yarn run lint:stylelint`|检查并自动修复样式文件|
+|`yarn run release`|发布新版本|
 
 ### 项目结构
 
@@ -167,10 +169,10 @@ yarn run dev
 ├── .husky                      # husky 配置目录
 ├── public
 ├── src
-│   ├── apis                    # 接口目录
 │   ├── assets                  # 资产目录
 │   ├── components              # 全局组件目录
 │   ├── composables             # 组合式 API 目录
+│   ├── data                    # 固定数据目录
 │   ├── i18n                    # 国际化目录
 │   ├── layouts                 # 布局目录
 │   ├── mocks                   # 接口模拟目录
@@ -181,10 +183,10 @@ yarn run dev
 │   ├── styles                  # 全局样式和全局变量目录
 │   ├── utils                   # 工具方法目录
 │   ├── App.vue
-│   ├── guard.js                # 导航守卫
-│   └── main.js
-├── tests                       # 测试内容文件夹
-├── typings                     # typescript 定义文件夹，为未来迁移做准备
+│   ├── guard.ts                # 导航守卫
+│   ├── main.ts
+│   ├── shims-tsx.d.ts
+│   └── shims-vue.d.ts
 ├── .browserslistrc             # 浏览器支持列表文件
 ├── .commitlintrc.js            # commitlint 配置文件
 ├── .editorconfig
@@ -202,7 +204,9 @@ yarn run dev
 ├── .release-it.js              # release-it 配置文件
 ├── .stylelintrc.js             # stylelint 配置文件
 ├── babel.config.js             # babel 配置文件
+├── components.d.ts             # 组件定义文件
 ├── package.json
+├── postcss.config.js           # postcss 配置文件
 ├── README.md
 ├── tailwind.config.js          # tailwindcss 配置文件
 ├── tsconfig.json               # typescript 配置文件
@@ -252,7 +256,7 @@ yarn run dev
 
 ### 路由配置
 
-模板使用了 `vue-cli-plugin-auto-routing` 以自动生成 `nuxt` 风格的约定式路由，更易于迁移到 `vite` + `vite-plugin-pages` + `vite-plugin-vue-layouts` 的组合。
+模板使用了 `vue-cli-plugin-auto-routing` 以自动生成基于文件系统的约定式路由，更易于迁移到 `vite` + `vite-plugin-pages` + `vite-plugin-vue-layouts` 的组合。
 
 ### 状态管理配置
 
@@ -270,7 +274,9 @@ yarn run dev
 
 #### axios 封装
 
-模板把 `axios` 封装成 `$request` 并绑定到 `vue` 实例上，另外还添加了拦截器和适配器以实现自动日志、缓存、重试。你可以调整 [封装文件](./src/plugins/request.js) 默认的配置以匹配业务。
+模板基于 [useAxios](https://vueuse.org/integrations/useaxios/) 封装了 `useAdvancedAxios`，默认使用一些拦截器和适配器以实现自动日志、缓存、重试。 你可以调整 [封装文件](./src/composables/axios.ts) 默认的配置以匹配业务。
+
+你也可以考虑使用 [swrv](https://docs-swrv.netlify.app/) 或者 [vue-query](https://vue-query.vercel.app/)。
 
 #### proxy
 
@@ -296,10 +302,6 @@ module.exports = {
 ```
 
 一般情况下，`devServer.proxy` 应该与某个 `production` 运行模式下的 `VUE_APP_REQUEST_BASE_URL` 一致。
-
-#### 取消请求
-
-考虑到取消请求的情况较少，建议手动在需要取消请求的部分添加，可以参考 [api 示例](./src/apis/user.js)。
 
 ### 布局
 

@@ -5,13 +5,13 @@ import { createRouterLayout } from 'vue-router-layout';
 
 Vue.use(Router);
 
-const RouterLayout = createRouterLayout((layout) =>
-  import(`@/layouts/${layout}.vue`),
+const RouterLayout = createRouterLayout(
+  (layout) => import(`@/layouts/${layout}.vue`),
 );
 
 export default new Router({
   mode: 'hash',
-  scrollBehavior: () => ({ y: 0, behavior: 'smooth' }),
+  scrollBehavior: () => ({ x: 0, y: 0, behavior: 'smooth' }),
   routes: [
     {
       path: '/',

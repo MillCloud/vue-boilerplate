@@ -1,3 +1,4 @@
+// @ts-ignore
 import VueBrowserUpdate from '@sum.cumo/vue-browserupdate';
 import Vue from 'vue';
 

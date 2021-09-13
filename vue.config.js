@@ -6,10 +6,10 @@ const fs = require('fs');
 const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
-// const UnpluginIconsPlugin = require('unplugin-icons/webpack');
-// const IconsResolver = require('unplugin-icons/resolver');
-// const UnpluginVueComponentsPlugin = require('unplugin-vue-components/webpack');
-// const { ElementUiResolver } = require('unplugin-vue-components/resolvers');
+const UnpluginVueComponentsPlugin = require('unplugin-vue-components/webpack');
+const { ElementUiResolver } = require('unplugin-vue-components/resolvers');
+const UnpluginIconsPlugin = require('unplugin-icons/webpack');
+const IconsResolver = require('unplugin-icons/resolver');
 const UnpluginVue2ScriptSetupPlugin = require('unplugin-vue2-script-setup/webpack');
 
 /** @type {Options} */
@@ -22,24 +22,24 @@ const options = {
         fix: true,
       },
     ]);
+    // unplugin-vue-components
+    config.plugin('unplugin-vue-components').use(
+      UnpluginVueComponentsPlugin({
+        dts: true,
+        resolvers: [
+          IconsResolver({
+            defaultClass: 'el-icon-',
+          }),
+          ElementUiResolver(),
+        ],
+      }),
+    );
     // unplugin-icons
-    // config.plugin('unplugin-icons').use(
-    //   UnpluginIconsPlugin({
-    //     compiler: 'vue2',
-    //   }),
-    // );
-    // // unplugin-vue-components
-    // config.plugin('unplugin-vue-components').use(
-    //   UnpluginVueComponentsPlugin({
-    //     dts: true,
-    //     resolvers: [
-    //       IconsResolver({
-    //         defaultClass: 'el-icon-',
-    //       }),
-    //       ElementUiResolver,
-    //     ],
-    //   }),
-    // );
+    config.plugin('unplugin-icons').use(
+      UnpluginIconsPlugin({
+        compiler: 'vue2',
+      }),
+    );
     // unplugin-vue2-script-setup
     config
       .plugin('unplugin-vue2-script-setup')

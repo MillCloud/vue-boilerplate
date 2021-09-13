@@ -1,5 +1,5 @@
 <template>
-  <el-main flex="~" class="align-center justify-center">
+  <el-main class="flex justify-center align-center">
     <el-row>
       <el-col text="center">
         <h6 class="prose-lg">404 Not Found</h6>
@@ -15,17 +15,21 @@
   </el-main>
 </template>
 
-<script>
+<script lang="ts">
+import { useRouter } from '@/composables';
+
+const router = useRouter();
+
 export default {
   methods: {
     handleGoBack() {
-      this.$router.go(-1);
+      router.go(-1);
     },
     handleToIndex() {
-      this.$router.replace('/');
+      router.replace('/');
     },
     handleToHome() {
-      this.$router.replace('/home');
+      router.replace('/home');
     },
   },
 };

@@ -1,24 +1,39 @@
-import Vue from 'vue';
 import axios from 'axios';
+import type { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 import statuses from 'statuses';
 import { MessageBox } from 'element-ui';
 import { constantCase } from '@modyqyw/utils';
 import { setupCache } from 'axios-cache-adapter';
 import * as AxiosLogger from 'axios-logger';
 import axiosRetry from 'axios-retry';
-import pkg from '@@/package.json';
-import { getToken, clear as clearStorage } from '@/utils';
+import { useAxios } from '@vueuse/integrations';
+import pkg from '@/../package.json';
+import { getToken, clearStorage } from '@/utils';
 import i18n from '@/i18n';
 import router from '@/router';
 
-// https://github.com/axios/axios
-// 要取消请求，参考 https://github.com/axios/axios#cancellation 第二种方式
+interface AdvancedAxiosRequestConfig extends AxiosRequestConfig {
+  showError?: boolean;
+}
 
-/** @desc 需要返回到首页并清空登录信息的响应代码 */
+interface Response {
+  success: boolean;
+  code: string;
+  message: string;
+  [propName: string]: any;
+}
+
+interface AdvancedAxiosResponse extends AxiosResponse<Response> {
+  config: AdvancedAxiosRequestConfig;
+}
+
+interface AdvancedAxiosError extends AxiosError<Response> {
+  config: AdvancedAxiosRequestConfig;
+}
+
 export const reLaunchCodes = new Set(['TOKEN_OUTDATED']);
 
-/** @desc 错误统一处理方法 */
-export const handleShowError = (response) => {
+export const handleShowError = (response: Response) => {
   if (reLaunchCodes.has(response.code)) {
     clearStorage();
     router.replace('/');
@@ -33,17 +48,18 @@ export const handleShowError = (response) => {
 const cache = setupCache({
   maxAge: 15 * 60 * 1000,
   invalidate: async (config, request) => {
-    if (request.invalidate === true) {
+    if (request.clearCacheEntry === true) {
       try {
         // @ts-ignore
         await config.store.removeItem(config.uuid);
-        // eslint-disable-next-line no-empty
-      } catch {}
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error('error', error);
+      }
     }
   },
 });
 
-/** @desc 请求实例 */
 const instance = axios.create({
   baseURL: process.env.VUE_APP_REQUEST_BASE_URL || '',
   timeout: JSON.parse(process.env.VUE_APP_REQUEST_TIMEOUT || '10000') || 10000,
@@ -78,14 +94,14 @@ if (process.env.NODE_ENV === 'development') {
   );
 }
 instance.interceptors.response.use(
-  (response) => {
+  (response: AdvancedAxiosResponse) => {
     const { data, config } = response;
     if (!data.success && config.showError !== false) {
       handleShowError(data);
     }
     return data;
   },
-  (error) => {
+  (error: AdvancedAxiosError) => {
     if (axios.isCancel(error)) {
       // 取消请求
       return {
@@ -94,7 +110,7 @@ instance.interceptors.response.use(
         code: 'REQUEST_CANCELLED',
       };
     }
-    const response = {
+    const response: Response = {
       success: false,
       message: '',
       code: '',
@@ -105,32 +121,34 @@ instance.interceptors.response.use(
       if (status < 200 || status >= 300) {
         // 状态码不正常
         try {
-          response.code = constantCase(statuses(status));
-          response.message = i18n.t(`error.${constantCase(statuses(status))}`);
+          response.code = constantCase(statuses(status).toString());
+          response.message = i18n.t(
+            `error.${constantCase(statuses(status).toString())}`,
+          ) as string;
         } catch {
           response.code = 'ERROR_OCCURRED';
-          response.message = i18n.t(`error.ERROR_OCCURRED`);
+          response.message = i18n.t(`error.ERROR_OCCURRED`) as string;
         }
       } else {
         // 超时
         const timeoutCodes = ['TIMEOUT', 'CONNRESET'];
-        const strError = JSON.stringify(error).toUpperCase();
-        for (let i = 0, len = timeoutCodes.length; i < len; i += 1) {
-          if (strError.includes(timeoutCodes[i])) {
-            response.code = 'REQUEST_TIMEOUT';
-            response.message = i18n.t('error.REQUEST_TIMEOUT');
-            break;
-          }
+        const errorText = JSON.stringify(error).toUpperCase();
+        const timeoutCode = timeoutCodes.find((item) =>
+          errorText.includes(item),
+        );
+        if (timeoutCode) {
+          response.code = 'REQUEST_TIMEOUT';
+          response.message = i18n.t('error.REQUEST_TIMEOUT') as string;
         }
       }
     } else if (error.request) {
       // 发送了请求，没有收到响应
       response.code = 'NO_RESPONSE';
-      response.message = i18n.t('error.NO_RESPONSE');
+      response.message = i18n.t('error.NO_RESPONSE') as string;
     } else {
       // 请求时发生错误
       response.code = 'REQUEST_ERROR';
-      response.message = i18n.t('error.REQUEST_ERROR');
+      response.message = i18n.t('error.REQUEST_ERROR') as string;
     }
     // 处理错误
     if (error.config.showError !== false) {
@@ -140,6 +158,7 @@ instance.interceptors.response.use(
   },
 );
 
-Vue.prototype.$request = instance;
-
-export default instance;
+export const useAdvancedAxios = (
+  url: string,
+  config: AdvancedAxiosRequestConfig,
+) => useAxios(url, config, instance);

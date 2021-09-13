@@ -8,7 +8,7 @@ Vue.use(Vuex);
 /** @desc 获取状态管理模块的方法 */
 function loadModules() {
   const moduleFiles = require.context('./modules', true, /\.js$/);
-  const modules = {};
+  const modules: Record<string, any> = {};
   moduleFiles.keys().forEach((key) => {
     const matched = key.match(/([\w-]+)\./);
     if (matched && matched.length > 1) {

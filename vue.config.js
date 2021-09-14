@@ -13,7 +13,7 @@ const IconsResolver = require('unplugin-icons/resolver');
 const UnpluginVue2ScriptSetupPlugin = require('unplugin-vue2-script-setup/webpack');
 
 /** @type {Options} */
-const options = {
+module.exports = {
   chainWebpack: (config) => {
     // stylelint
     config.plugin('stylelint').use(StylelintPlugin, [
@@ -48,6 +48,10 @@ const options = {
     config.resolve.alias.set('@', path.resolve('src'));
     // fork-ts-checker
     config.plugins.delete('fork-ts-checker');
+    // remove warning
+    config.module.merge({
+      unknownContextCritical: false,
+    });
     // production only
     config.when(process.env.NODE_ENV === 'production', (config_) => {
       // compression-webpack-plugin
@@ -113,5 +117,3 @@ const options = {
   },
   publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
 };
-
-module.exports = options;

@@ -12,6 +12,9 @@
 
 - [vue2](https://cn.vuejs.org)
 - [vue-cli](https://cli.vuejs.org/zh/)
+- [unplugin-icons](https://github.com/antfu/unplugin-icons)
+- [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+- [unplugin-vue2-script-setup](https://github.com/antfu/unplugin-vue2-script-setup)
 - [vue-router](https://router.vuejs.org/zh/)
 - [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing)
 - [vuex](https://vuex.vuejs.org/zh/)
@@ -20,10 +23,7 @@
 - [mitt](https://github.com/developit/mitt)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [axios](https://github.com/axios/axios)
-- [axios-cache-adapter](https://github.com/RasCarlito/axios-cache-adapter)
-- [axios-logger](https://github.com/hg-pyun/axios-logger)
-- [axios-mock-adapter](https://github.com/ctimmerm/axios-mock-adapter)
-- [axios-retry](https://github.com/softonic/axios-retry)
+- [vue-query](https://vue-query.vercel.app/)
 - [element-ui](https://element.eleme.cn) - 对于移动端网页，请考虑 [vant](https://youzan.github.io/vant)
 - [tailwindcss](https://v1.tailwindcss.com/) - 支持了大部分 v2 类值、支持大部分类渐进增强、`0.5` 将会被替换成 `0_5`、`1/2` 将会被替换成 `1-2`，但仍然不要使用高级特性，否则不能支持低端浏览器，具体可以到 [caniuse](https://caniuse.com/) 查询
 - [iconify](https://iconify.design/)
@@ -274,9 +274,11 @@ yarn run dev
 
 #### axios 封装
 
-模板基于 [useAxios](https://vueuse.org/integrations/useaxios/) 封装了 `useAdvancedAxios`，默认使用一些拦截器和适配器以实现自动日志、缓存、重试。 你可以调整 [封装文件](./src/composables/axios.ts) 默认的配置以匹配业务。
+模板提供了基于 axios 和 vue-query 的请求示例，可以查看 [@/utils/request.ts](./src/utils/request.ts)，[@/App.vue](./src/App.vue) 和 [@/pages/index.vue](./src/pages/index.vue)，并根据业务做适当调整。
 
-你也可以考虑使用 [swrv](https://docs-swrv.netlify.app/) 或者 [vue-query](https://vue-query.vercel.app/)。
+模板也提供了 `useAdvancedAxios`，默认加入了一些拦截器和适配器以实现自动日志、自动缓存、自动重试。你可以根据业务适当调整 [封装文件](./src/composables/axios.ts)。
+
+你也可以考虑使用 [swrv](https://docs-swrv.netlify.app/)。
 
 #### proxy
 

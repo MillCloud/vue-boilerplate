@@ -6,7 +6,9 @@
 
 如果你想要快速开发移动端应用，请考虑加入 `cordova`、`native-script` 或 `capacitor`，或者使用 [boilerplate-uni-app-vue2](https://github.com/MillCloud/boilerplate-uni-app-vue2)。
 
-当前只支持 `vue2`。
+如果你想要快速开发桌面端应用，请考虑使用 [nativefier](https://github.com/nativefier/nativefier) 或 [vue-cli-plugin-electron-builder](https://nklayman.github.io/vue-cli-plugin-electron-builder/)。
+
+该模板只支持 vue 2。vue 3 支持请查看 [boilerplate-vue3](https://github.com/MillCloud/boilerplate-vue3)（WIP）。
 
 ### 主要依赖
 
@@ -20,6 +22,7 @@
 - [vuex](https://vuex.vuejs.org/zh/)
 - [@vue/composition-api](https://github.com/vuejs/composition-api/blob/main/README.zh-CN.md)
 - [vue-use](https://vueuse.org)
+- [typescript](https://www.typescriptlang.org/zh/)
 - [mitt](https://github.com/developit/mitt)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [axios](https://github.com/axios/axios)
@@ -38,8 +41,6 @@
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates)
 
 请先阅读上面的文档，并确保对 `node` 和 `npm` 有 [基本了解](http://nodejs.cn/learn)。
-
-模板本身并未提供 Electron 支持。如果你有这方面的需求，可以考虑 [nativefier](https://github.com/nativefier/nativefier) 和 [vue-cli-plugin-electron-builder](https://nklayman.github.io/vue-cli-plugin-electron-builder/)。
 
 ## 起步
 

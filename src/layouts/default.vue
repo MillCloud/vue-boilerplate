@@ -11,7 +11,7 @@
         <router-link to="/home" exact class="ml-2">Home</router-link>
       </el-header>
       <router-view />
-      <el-footer class="z-10 flex items-center justify-center">
+      <el-footer class="z-10 center">
         <a
           class="mx-2"
           href="https://github.com/MillCloud/boilerplate-vue2"
@@ -33,12 +33,6 @@
     </el-container>
   </el-container>
 </template>
-
-<script lang="ts">
-export default {
-  name: 'DefaultLayout',
-};
-</script>
 
 <style scoped lang="scss">
 .el-container {

@@ -134,17 +134,27 @@
   </el-row>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: {
-      type: String,
-      default: () => '',
-    },
+<script setup lang="ts">
+// eslint-disable-next-line no-undef
+defineProps({
+  msg: {
+    type: String,
+    default: () => '',
   },
-};
+});
 </script>
+
+<!-- <script lang="ts">
+// export default {
+//   name: 'HelloWorld',
+//   props: {
+//     msg: {
+//       type: String,
+//       default: () => '',
+//     },
+//   },
+// };
+</script> -->
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

@@ -6,9 +6,14 @@ declare module 'vue' {
   export interface GlobalComponents {
     ElAside: typeof import('element-ui/lib/aside')['default'];
     ElBacktop: typeof import('element-ui/lib/backtop')['default'];
+    ElButton: typeof import('element-ui/lib/button')['default'];
+    ElCol: typeof import('element-ui/lib/col')['default'];
     ElContainer: typeof import('element-ui/lib/container')['default'];
     ElFooter: typeof import('element-ui/lib/footer')['default'];
     ElHeader: typeof import('element-ui/lib/header')['default'];
+    ElImage: typeof import('element-ui/lib/image')['default'];
+    ElMain: typeof import('element-ui/lib/main')['default'];
+    ElRow: typeof import('element-ui/lib/row')['default'];
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];

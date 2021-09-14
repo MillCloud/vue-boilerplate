@@ -12777,16 +12777,16 @@ unpipe@1.0.0, unpipe@~1.0.0:
   resolved "https://registry.nlark.com/unpipe/download/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
 
-unplugin-icons@~0.9.0:
-  version "0.9.0"
-  resolved "https://registry.nlark.com/unplugin-icons/download/unplugin-icons-0.9.0.tgz#7fb0d4a7934748cf02f4faec5eaf5dbbc79f044a"
-  integrity sha1-f7DUp5NHSM8C9PrsXq9du8efBEo=
+unplugin-icons@~0.10.0:
+  version "0.10.0"
+  resolved "https://registry.nlark.com/unplugin-icons/download/unplugin-icons-0.10.0.tgz#bb82e86c2e587599d52df0f0d07ce307b22f8eae"
+  integrity sha1-u4LobC5YdZnVLfDw0HzjB7Ivjq4=
   dependencies:
     "@iconify/json-tools" "^1.0.10"
     has-pkg "^0.0.1"
     unplugin "^0.2.9"
 
-unplugin-vue-components@~0.15.0:
+unplugin-vue-components@~0.15.1:
   version "0.15.1"
   resolved "https://registry.nlark.com/unplugin-vue-components/download/unplugin-vue-components-0.15.1.tgz?cache=0&sync_timestamp=1631586147989&other_urls=https%3A%2F%2Fregistry.nlark.com%2Funplugin-vue-components%2Fdownload%2Funplugin-vue-components-0.15.1.tgz#60833df9f54e5eedde7d916c2ba66e9a263798a7"
   integrity sha1-YIM9+fVOXu3efZFsK6ZumiY3mKc=

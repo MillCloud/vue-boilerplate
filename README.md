@@ -39,7 +39,7 @@
 - [nprogress](https://ricostacruz.com/nprogress/)
 - [faker](https://github.com/marak/Faker.js/)
 - [mock.js](http://mockjs.com/)
-- [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)
+- [sass](https://sass-lang.com/) - 使用了 [dart-sass](https://sass-lang.com/dart-sass)，可能会导致图标问题，见 [vue-element-admin issue#3344](https://github.com/PanJiaChen/vue-element-admin/issues/3344)
 - [purgecss](https://purgecss.com)
 - [@modyqyw/fabric](https://github.com/ModyQyW/fabric)
 - [npm-check-updates](https://github.com/raineorshine/npm-check-updates)

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import type { StoreOptions } from 'vuex';
 import i18n from '@/i18n';
 import { getLanguage, setLanguage } from '@/utils';
 
@@ -22,6 +23,10 @@ function loadModules() {
 /** @desc 状态管理模块 */
 const modules = loadModules();
 
+export interface RootState {
+  language: string;
+}
+
 export default new Vuex.Store({
   strict: process.env.NODE_ENV === 'development',
   state: {
@@ -29,7 +34,14 @@ export default new Vuex.Store({
   },
   getters: {},
   mutations: {
-    setLanguage(state, language = process.env.VUE_APP_I18N_LOCALE) {
+    setLanguage(
+      state,
+      {
+        language = process.env.VUE_APP_I18N_LOCALE || 'zh-Hans',
+      }: {
+        language?: string;
+      },
+    ) {
       state.language = language;
       setLanguage(language);
       i18n.locale = language;
@@ -37,4 +49,4 @@ export default new Vuex.Store({
   },
   actions: {},
   modules,
-});
+} as StoreOptions<RootState>);

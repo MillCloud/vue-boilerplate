@@ -3,7 +3,6 @@ import type { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 import statuses from 'statuses';
 import { MessageBox } from 'element-ui';
 import { constantCase } from '@modyqyw/utils';
-import { setupCache } from 'axios-cache-adapter';
 import * as AxiosLogger from 'axios-logger';
 import axiosRetry from 'axios-retry';
 import { useAxios } from '@vueuse/integrations';
@@ -12,7 +11,8 @@ import { getToken, clearStorage } from '@/utils';
 import i18n from '@/i18n';
 import router from '@/router';
 
-interface AdvancedAxiosRequestConfig extends AxiosRequestConfig {
+interface AdvancedRequestConfig extends AxiosRequestConfig {
+  clearCacheEntry?: boolean;
   showError?: boolean;
 }
 
@@ -23,12 +23,12 @@ interface Response {
   [propName: string]: any;
 }
 
-interface AdvancedAxiosResponse extends AxiosResponse<Response> {
-  config: AdvancedAxiosRequestConfig;
+interface AdvancedResponse extends AxiosResponse<Response> {
+  config: AdvancedRequestConfig;
 }
 
-interface AdvancedAxiosError extends AxiosError<Response> {
-  config: AdvancedAxiosRequestConfig;
+interface AdvancedError extends AxiosError<Response> {
+  config: AdvancedRequestConfig;
 }
 
 export const reLaunchCodes = new Set(['TOKEN_OUTDATED']);
@@ -38,27 +38,15 @@ export const handleShowError = (response: Response) => {
     clearStorage();
     router.replace('/');
   } else {
-    MessageBox.alert(response.message, {
-      title: '错误',
-      type: 'error',
-    });
+    MessageBox.alert(
+      `错误代码：${response.code}，错误信息：${response.message}`,
+      {
+        title: '错误',
+        type: 'error',
+      },
+    );
   }
 };
-
-const cache = setupCache({
-  maxAge: 15 * 60 * 1000,
-  invalidate: async (config, request) => {
-    if (request.clearCacheEntry === true) {
-      try {
-        // @ts-ignore
-        await config.store.removeItem(config.uuid);
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error('error', error);
-      }
-    }
-  },
-});
 
 const instance = axios.create({
   baseURL: process.env.VUE_APP_REQUEST_BASE_URL || '',
@@ -69,7 +57,6 @@ const instance = axios.create({
     'X-Requested-With': 'XMLHttpRequest',
     'X-Version': `${pkg.name}/${pkg.version}`,
   },
-  adapter: cache.adapter,
 });
 
 instance.interceptors.request.use((config) => ({
@@ -94,14 +81,14 @@ if (process.env.NODE_ENV === 'development') {
   );
 }
 instance.interceptors.response.use(
-  (response: AdvancedAxiosResponse) => {
+  (response: AdvancedResponse) => {
     const { data, config } = response;
     if (!data.success && config.showError !== false) {
       handleShowError(data);
     }
     return data;
   },
-  (error: AdvancedAxiosError) => {
+  (error: AdvancedError) => {
     if (axios.isCancel(error)) {
       // 取消请求
       return {
@@ -158,7 +145,5 @@ instance.interceptors.response.use(
   },
 );
 
-export const useAdvancedAxios = (
-  url: string,
-  config: AdvancedAxiosRequestConfig,
-) => useAxios(url, config, instance);
+export const useRequest = (url: string, config: AdvancedRequestConfig) =>
+  useAxios(url, config, instance);

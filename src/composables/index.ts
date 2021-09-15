@@ -1,3 +1,3 @@
-export * from './axios';
+export * from './request';
 export * from './router';
 export * from './store';

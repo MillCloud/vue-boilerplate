@@ -281,7 +281,7 @@ yarn run dev
 
 模板提供了基于 axios 和 vue-query 的请求示例，可以查看 [@/utils/request.ts](./src/utils/request.ts)，[@/App.vue](./src/App.vue) 和 [@/pages/index.vue](./src/pages/index.vue)，并根据业务做适当调整。
 
-模板也提供了 `useAdvancedAxios`，默认加入了一些拦截器和适配器以实现自动日志、自动缓存、自动重试。你可以根据业务适当调整 [封装文件](./src/composables/axios.ts)。
+模板也提供了 `useRequest`，默认加入了一些拦截器和适配器以实现自动日志、自动重试。你可以根据业务适当调整 [封装文件](./src/composables/axios.ts)。
 
 你也可以考虑使用 [swrv](https://docs-swrv.netlify.app/)。
 

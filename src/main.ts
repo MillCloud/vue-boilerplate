@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import { enableAllPlugins } from 'immer';
 import '@/plugins';
 import i18n from './i18n';
 import router from './router';
@@ -8,6 +9,8 @@ import '@/styles/preflight.scss';
 import '@/styles/tailwind.scss';
 import '@/styles/global.scss';
 import '@/guard';
+
+enableAllPlugins();
 
 Vue.config.productionTip = false;
 

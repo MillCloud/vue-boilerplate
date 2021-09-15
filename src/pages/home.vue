@@ -1,9 +1,9 @@
 <template>
   <el-main>
-    <el-row class="center my-0">
+    <el-row class="my-0 center">
       <h6 class="prose-lg">这里是主页</h6>
     </el-row>
-    <el-row class="center my-0">
+    <el-row class="my-0 center">
       <el-image
         alt="Vue logo"
         fit="fill"

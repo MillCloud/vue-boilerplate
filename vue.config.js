@@ -41,9 +41,11 @@ module.exports = {
       }),
     );
     // unplugin-vue2-script-setup
-    config
-      .plugin('unplugin-vue2-script-setup')
-      .use(UnpluginVue2ScriptSetupPlugin({}));
+    config.plugin('unplugin-vue2-script-setup').use(
+      UnpluginVue2ScriptSetupPlugin({
+        refTransform: true,
+      }),
+    );
     // alias
     config.resolve.alias.set('@', path.resolve('src'));
     // fork-ts-checker

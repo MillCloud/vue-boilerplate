@@ -22,7 +22,8 @@
     "types": [
       "webpack-env",
       "unplugin-icons/types/vue",
-      "unplugin-vue2-script-setup/types"
+      "unplugin-vue2-script-setup/types",
+      "unplugin-vue2-script-setup/ref-macros"
     ],
     "typeRoots": ["./node_modules/@types", "./typings", "./src/typings"],
     "paths": {

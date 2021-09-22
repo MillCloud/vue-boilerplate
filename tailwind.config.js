@@ -1842,6 +1842,5 @@ module.exports = {
     divideOpacity: false,
     divideStyle: false,
   },
-  plugins: [require('@tailwindcss/typography')],
 };
 /* eslint-enable global-require */

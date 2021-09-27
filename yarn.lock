@@ -1191,10 +1191,10 @@
   resolved "https://registry.npm.taobao.org/@iconify/json-tools/download/@iconify/json-tools-1.0.10.tgz#d9a7050dbbe8bb29d684d4b3f9446ed2d0bea3cc"
   integrity sha1-2acFDbvouynWhNSz+URu0tC+o8w=
 
-"@iconify/json@~1.1.406":
-  version "1.1.406"
-  resolved "https://registry.npmmirror.com/@iconify/json/download/@iconify/json-1.1.406.tgz#a5f009eb8ed5e19b995e1166788517362ad99988"
-  integrity sha1-pfAJ647V4ZuZXhFmeIUXNirZmYg=
+"@iconify/json@~1.1.407":
+  version "1.1.407"
+  resolved "https://registry.npmmirror.com/@iconify/json/download/@iconify/json-1.1.407.tgz#55e9f0893bcd97ddb7b65f190afb39cd5f1f43c2"
+  integrity sha1-VenwiTvNl923tl8ZCvs5zV8fQ8I=
 
 "@iconify/vue2@~1.0.0":
   version "1.0.0"
@@ -1203,7 +1203,7 @@
 
 "@intlify/shared@^9.0.0":
   version "9.1.7"
-  resolved "https://registry.npmmirror.com/@intlify/shared/download/@intlify/shared-9.1.7.tgz?cache=0&sync_timestamp=1632471103219&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40intlify%2Fshared%2Fdownload%2F%40intlify%2Fshared-9.1.7.tgz#e7d8bc90cb59dc17dd7b4c85a73db16fcb7891fc"
+  resolved "https://registry.npmmirror.com/@intlify/shared/download/@intlify/shared-9.1.7.tgz?cache=0&sync_timestamp=1632724463957&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40intlify%2Fshared%2Fdownload%2F%40intlify%2Fshared-9.1.7.tgz#e7d8bc90cb59dc17dd7b4c85a73db16fcb7891fc"
   integrity sha1-59i8kMtZ3Bfde0yFpz2xb8t4kfw=
 
 "@intlify/vue-i18n-loader@~1.1.0":
@@ -1217,7 +1217,7 @@
 
 "@modyqyw/fabric@~3.6.0":
   version "3.6.0"
-  resolved "https://registry.nlark.com/@modyqyw/fabric/download/@modyqyw/fabric-3.6.0.tgz#36fdea5caebe3d62d8f05f32f2ef340dac88e650"
+  resolved "https://registry.npmmirror.com/@modyqyw/fabric/download/@modyqyw/fabric-3.6.0.tgz#36fdea5caebe3d62d8f05f32f2ef340dac88e650"
   integrity sha1-Nv3qXK6+PWLY8F8y8u80DayI5lA=
   dependencies:
     "@babel/core" "~7.15.5"
@@ -1564,7 +1564,7 @@
 
 "@tootallnate/once@1":
   version "1.1.2"
-  resolved "https://registry.npmmirror.com/@tootallnate/once/download/@tootallnate/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
+  resolved "https://registry.npmmirror.com/@tootallnate/once/download/@tootallnate/once-1.1.2.tgz?cache=0&sync_timestamp=1632734105305&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40tootallnate%2Fonce%2Fdownload%2F%40tootallnate%2Fonce-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha1-zLkURTYBeaBOf+av94wA/8Hur4I=
 
 "@trysound/sax@0.2.0":
@@ -5882,7 +5882,7 @@ get-caller-file@^2.0.1, get-caller-file@^2.0.5:
 
 get-intrinsic@^1.0.2, get-intrinsic@^1.1.0, get-intrinsic@^1.1.1:
   version "1.1.1"
-  resolved "https://registry.nlark.com/get-intrinsic/download/get-intrinsic-1.1.1.tgz#15f59f376f855c446963948f0d24cd3637b4abc6"
+  resolved "https://registry.npm.taobao.org/get-intrinsic/download/get-intrinsic-1.1.1.tgz#15f59f376f855c446963948f0d24cd3637b4abc6"
   integrity sha1-FfWfN2+FXERpY5SPDSTNNje0q8Y=
   dependencies:
     function-bind "^1.1.1"
@@ -8252,13 +8252,13 @@ nano-time@1.0.0:
 
 nanocolors@^0.1.0, nanocolors@^0.1.12, nanocolors@^0.1.5:
   version "0.1.12"
-  resolved "https://registry.npmmirror.com/nanocolors/download/nanocolors-0.1.12.tgz?cache=0&sync_timestamp=1632653736935&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fnanocolors%2Fdownload%2Fnanocolors-0.1.12.tgz#8577482c58cbd7b5bb1681db4cf48f11a87fd5f6"
+  resolved "https://registry.npmmirror.com/nanocolors/download/nanocolors-0.1.12.tgz?cache=0&sync_timestamp=1632719361228&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fnanocolors%2Fdownload%2Fnanocolors-0.1.12.tgz#8577482c58cbd7b5bb1681db4cf48f11a87fd5f6"
   integrity sha1-hXdILFjL17W7FoHbTPSPEah/1fY=
 
 nanocolors@^0.2.2, nanocolors@^0.2.8:
-  version "0.2.9"
-  resolved "https://registry.npmmirror.com/nanocolors/download/nanocolors-0.2.9.tgz?cache=0&sync_timestamp=1632653736935&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fnanocolors%2Fdownload%2Fnanocolors-0.2.9.tgz#319c5e7a73571abd60e4d273150c2cb95017ac5b"
-  integrity sha1-MZxeenNXGr1g5NJzFQwsuVAXrFs=
+  version "0.2.10"
+  resolved "https://registry.npmmirror.com/nanocolors/download/nanocolors-0.2.10.tgz?cache=0&sync_timestamp=1632719361228&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fnanocolors%2Fdownload%2Fnanocolors-0.2.10.tgz#a712df4d3c1bf12d9b4fb8b5aa61b5ba31337503"
+  integrity sha1-pxLfTTwb8S2bT7i1qmG1ujEzdQM=
 
 nanoid@^3.1.25, nanoid@~3.1.25:
   version "3.1.28"
@@ -11928,7 +11928,7 @@ typedarray-to-buffer@^3.1.5:
 
 typescript@~4.4.3:
   version "4.4.3"
-  resolved "https://registry.npmmirror.com/typescript/download/typescript-4.4.3.tgz?cache=0&sync_timestamp=1632640860459&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftypescript%2Fdownload%2Ftypescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
+  resolved "https://registry.npmmirror.com/typescript/download/typescript-4.4.3.tgz?cache=0&sync_timestamp=1632727212611&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftypescript%2Fdownload%2Ftypescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
   integrity sha1-vcVAfKorEJ79T4L+EwZW+XeikyQ=
 
 uc.micro@^1.0.1, uc.micro@^1.0.5:
@@ -12467,7 +12467,7 @@ vue-hot-reload-api@^2.3.0:
 
 vue-i18n@~8.26.1:
   version "8.26.1"
-  resolved "https://registry.npmmirror.com/vue-i18n/download/vue-i18n-8.26.1.tgz?cache=0&sync_timestamp=1632471124261&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvue-i18n%2Fdownload%2Fvue-i18n-8.26.1.tgz#56419bcb2414a01e0e9046fe1883d0edd421bf41"
+  resolved "https://registry.npmmirror.com/vue-i18n/download/vue-i18n-8.26.1.tgz?cache=0&sync_timestamp=1632724538660&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvue-i18n%2Fdownload%2Fvue-i18n-8.26.1.tgz#56419bcb2414a01e0e9046fe1883d0edd421bf41"
   integrity sha1-VkGbyyQUoB4OkEb+GIPQ7dQhv0E=
 
 vue-loader@^16.4.0:

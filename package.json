@@ -65,7 +65,7 @@
     "@commitlint/cli": "~13.1.0",
     "@fullhuman/postcss-purgecss": "~4.0.3",
     "@fullhuman/vue-cli-plugin-purgecss": "~4.0.3",
-    "@iconify/json": "~1.1.406",
+    "@iconify/json": "~1.1.407",
     "@intlify/vue-i18n-loader": "~1.1.0",
     "@modyqyw/fabric": "~3.6.0",
     "@types/faker": "~5.5.8",

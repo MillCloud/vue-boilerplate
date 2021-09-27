@@ -24,6 +24,7 @@
 - [vue-use](https://vueuse.org)
 - [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [typescript](https://www.typescriptlang.org/zh/)
+- [vue2-helpers](https://github.com/ambit-tsai/vue2-helpers)
 - [mitt](https://github.com/developit/mitt)
 - [axios](https://github.com/axios/axios)
 - [vue-query](https://vue-query.vercel.app/)

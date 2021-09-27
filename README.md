@@ -161,7 +161,6 @@ yarn run dev
 |`yarn run check`|检查项目依赖版本|
 |`yarn run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
 |`yarn run i18n:report`|获取国际化信息|
-|`yarn run test:unit`|单元测试|
 |`yarn run lint`|检查脚本文件，样式文件和 markdown 文件|
 |`yarn run lint:eslint`|检查并自动修复脚本文件|
 |`yarn run lint:markdownlint`|格式化 markdown 文件|

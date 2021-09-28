@@ -7,7 +7,7 @@ const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const UnpluginVueComponentsPlugin = require('unplugin-vue-components/webpack');
-const { ElementUiResolver } = require('unplugin-vue-components/resolvers');
+// const { ElementUiResolver } = require('unplugin-vue-components/resolvers');
 const UnpluginIconsPlugin = require('unplugin-icons/webpack');
 const IconsResolver = require('unplugin-icons/resolver');
 const UnpluginVue2ScriptSetupPlugin = require('unplugin-vue2-script-setup/webpack');
@@ -30,7 +30,7 @@ module.exports = {
           IconsResolver({
             defaultClass: 'el-icon-',
           }),
-          ElementUiResolver(),
+          // ElementUiResolver(),
         ],
       }),
     );

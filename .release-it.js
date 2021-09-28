@@ -14,8 +14,8 @@ module.exports = {
     release: false,
   },
   hooks: {
-    'before:init': 'yarn install && yarn run lint',
-    'after:bump': 'yarn run build',
+    'before:init': 'pnpm install && pnpm run lint',
+    'after:bump': 'pnpm run build',
   },
 };
 /* eslint-enable no-template-curly-in-string */

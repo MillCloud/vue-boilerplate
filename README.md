@@ -66,8 +66,8 @@ export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
 nvm install 14
 # 设置 node@14 为默认版本
 nvm alias default 14
-# 安装 yarn
-npm i -g yarn --registry=https://registry.npm.taobao.org
+# 安装 pnpm
+npm i -g pnpm --registry=https://registry.npm.taobao.org
 # 安装 homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # 安装 git
@@ -112,8 +112,8 @@ nvm node_mirror https://npm.taobao.org/mirrors/node/
 nvm install 14.17.6
 # 使用 node@14
 nvm use 14.17.6
-# 安装 yarn
-npm i -g yarn --registry=https://registry.npm.taobao.org
+# 安装 pnpm
+npm i -g pnpm --registry=https://registry.npm.taobao.org
 
 ```
 
@@ -128,9 +128,9 @@ git clone git@github.com:MillCloud/boilerplate-vue2.git
 # 进入项目
 cd boilerplate-vue2
 # 安装依赖
-yarn install
+pnpm install
 # 启动项目
-yarn run dev
+pnpm run dev
 
 ```
 
@@ -155,17 +155,17 @@ yarn run dev
 
 |命令|含义|
 |-|-|
-|`yarn run dev`|`development` 模式启动项目|
-|`yarn run staging-build`|`staging` 模式打包项目|
-|`yarn run build`|`production` 模式打包项目|
-|`yarn run check`|检查项目依赖版本|
-|`yarn run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
-|`yarn run i18n:report`|获取国际化信息|
-|`yarn run lint`|检查脚本文件，样式文件和 markdown 文件|
-|`yarn run lint:eslint`|检查并自动修复脚本文件|
-|`yarn run lint:markdownlint`|格式化 markdown 文件|
-|`yarn run lint:stylelint`|检查并自动修复样式文件|
-|`yarn run release`|发布新版本|
+|`pnpm run dev`|`development` 模式启动项目|
+|`pnpm run staging-build`|`staging` 模式打包项目|
+|`pnpm run build`|`production` 模式打包项目|
+|`pnpm run check`|检查项目依赖版本|
+|`pnpm run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
+|`pnpm run i18n:report`|获取国际化信息|
+|`pnpm run lint`|检查脚本文件，样式文件和 markdown 文件|
+|`pnpm run lint:eslint`|检查并自动修复脚本文件|
+|`pnpm run lint:markdownlint`|格式化 markdown 文件|
+|`pnpm run lint:stylelint`|检查并自动修复样式文件|
+|`pnpm run release`|发布新版本|
 
 ### 项目结构
 
@@ -211,12 +211,12 @@ yarn run dev
 ├── babel.config.js             # babel 配置文件
 ├── components.d.ts             # 组件定义文件
 ├── package.json
+├── pnpm-lock.yaml
 ├── postcss.config.js           # postcss 配置文件
 ├── README.md
 ├── tailwind.config.js          # tailwindcss 配置文件
 ├── tsconfig.json               # typescript 配置文件
-├── vue.config.js               # vue-cli 配置文件
-└── yarn.lock
+└── vue.config.js               # vue-cli 配置文件
 ```
 
 ### 多模式配置
@@ -329,7 +329,7 @@ module.exports = {
 ### 部署
 
 - 确认所有和 [模式和环境变量](https://cli.vuejs.org/zh/guide/mode-and-env.html) 相关的地方已经配置完成。
-- 运行 `yarn run release`，更新版本号。
+- 运行 `pnpm run release`，更新版本号。
 - 上传 `dist` 目录下的内容。
 - 默认会生成报告。
 - 更多自定义可以参考 `release-it` 文档说明，使用 `node` 运行脚本完成操作。

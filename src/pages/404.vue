@@ -1,10 +1,10 @@
 <template>
   <el-main class="flex justify-center align-center">
     <el-row>
-      <el-col text="center">
-        <h6 class="prose-lg">404 Not Found</h6>
+      <el-col class="text-center">
+        <h6 class="text-lg">404 Not Found</h6>
       </el-col>
-      <el-col text="center" m="t-2">
+      <el-col class="mt-2 text-center">
         <el-button @click="handleGoBack">{{ $t('hint.back') }}</el-button>
         <el-button class="mx-2" @click="handleToIndex">
           {{ $t('hint.index') }}

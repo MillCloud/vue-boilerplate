@@ -2,7 +2,7 @@
   <el-container class="relative min-h-screen">
     <el-aside class="fixed z-20 w-64 h-screen">
       <el-header class="flex items-center">
-        <h5 class="mr-8 prose-xl">boilerplate-vue2</h5>
+        <h5 class="mr-8 text-xl">boilerplate-vue2</h5>
       </el-header>
     </el-aside>
     <el-container class="relative flex-col min-h-screen">

@@ -1,7 +1,7 @@
 <template>
   <el-main>
     <el-row class="center">
-      <h6 class="prose-lg">这里是首页</h6>
+      <h6 class="text-lg">这里是首页</h6>
     </el-row>
     <el-row class="my-4 center">
       <el-button @click="refetchPosts">Refetch</el-button>

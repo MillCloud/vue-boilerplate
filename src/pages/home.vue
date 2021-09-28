@@ -1,7 +1,7 @@
 <template>
   <el-main>
     <el-row class="my-0 center">
-      <h6 class="prose-lg">这里是主页</h6>
+      <h6 class="text-lg">这里是主页</h6>
     </el-row>
     <el-row class="my-0 center">
       <el-image

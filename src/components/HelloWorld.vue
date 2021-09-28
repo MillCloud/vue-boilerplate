@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col>
-      <h3 class="prose-2xl text-center">{{ msg }}</h3>
+      <h3 class="text-2xl text-center">{{ msg }}</h3>
     </el-col>
     <el-col>
       <p class="text-center">
@@ -11,8 +11,8 @@
         </a>
       </p>
     </el-col>
-    <el-col m="t-2">
-      <h6 class="prose-lg text-center">Installed CLI Plugins</h6>
+    <el-col class="mt-2">
+      <h6 class="text-lg text-center">Installed CLI Plugins</h6>
     </el-col>
     <el-col class="text-center">
       <a
@@ -65,8 +65,8 @@
         >i18n</a
       >
     </el-col>
-    <el-col m="t-2">
-      <h6 class="prose-lg text-center">Ecosystem</h6>
+    <el-col class="mt-2">
+      <h6 class="text-lg text-center">Ecosystem</h6>
     </el-col>
     <el-col class="text-center">
       <a class="mx-2" href="https://cn.vuejs.org" target="_blank" rel="noopener noreferrer">vue</a>

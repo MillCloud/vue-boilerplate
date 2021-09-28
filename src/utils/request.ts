@@ -2,13 +2,6 @@ import axios from 'axios';
 import pkg from '@/../package.json';
 import { getToken } from '@/utils/storage';
 
-export interface Response {
-  success: boolean;
-  code: string;
-  message: string;
-  [propName: string]: any;
-}
-
 const instance = axios.create({
   baseURL: process.env.VUE_APP_REQUEST_BASE_URL || '',
   timeout: JSON.parse(process.env.VUE_APP_REQUEST_TIMEOUT || '10000') || 10000,
@@ -27,4 +20,4 @@ instance.interceptors.request.use((config) => ({
   },
 }));
 
-export { instance as request };
+export { instance as axiosInstance };

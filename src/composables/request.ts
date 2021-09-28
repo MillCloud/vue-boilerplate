@@ -16,24 +16,17 @@ interface AdvancedRequestConfig extends AxiosRequestConfig {
   showError?: boolean;
 }
 
-interface Response {
-  success: boolean;
-  code: string;
-  message: string;
-  [propName: string]: any;
-}
-
-interface AdvancedResponse extends AxiosResponse<Response> {
+interface AdvancedResponse extends AxiosResponse<IResponseData> {
   config: AdvancedRequestConfig;
 }
 
-interface AdvancedError extends AxiosError<Response> {
+interface AdvancedError extends AxiosError<IResponseData> {
   config: AdvancedRequestConfig;
 }
 
 export const reLaunchCodes = new Set(['TOKEN_OUTDATED']);
 
-export const handleShowError = (response: Response) => {
+export const handleShowError = (response: IResponseData) => {
   if (reLaunchCodes.has(response.code)) {
     clearStorage();
     router.replace('/');
@@ -94,7 +87,7 @@ instance.interceptors.response.use(
         code: 'REQUEST_CANCELLED',
       };
     }
-    const response: Response = {
+    const response: IResponseData = {
       success: false,
       message: '',
       code: '',

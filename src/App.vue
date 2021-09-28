@@ -8,48 +8,59 @@
 <script setup lang="ts">
 import { useQueryProvider, QueryClient } from 'vue-query';
 import { VueQueryDevTools } from 'vue-query/devtools';
-import type { AxiosResponse, AxiosPromise } from 'axios';
-import { request } from '@/utils';
+import { MessageBox } from 'element-ui';
+import { axiosInstance } from '@/utils';
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      // queryFn: async ({ queryKey, pageParam }) => {
-      //   console.log('');
-      //   console.log('queryKey', queryKey);
-      //   console.log('pageParam', pageParam);
-      //   console.log('');
-      //   const { data } = (await request({
-      //     method: 'GET',
-      //     url: queryKey[0] as string,
-      //     params: pageParam,
-      //   })) as AxiosResponse<Response>;
-      //   return data;
-      // },
       queryFn: async ({ queryKey, pageParam }) => {
-        const { data } = (await request({
+        const { data } = await axiosInstance.request<IResponseData>({
           method: 'GET',
           url: queryKey[0] as string,
           params: pageParam,
-        })) as AxiosResponse<Response>;
+        });
         return data;
+      },
+      retry: (failureCount, error) => {
+        if (failureCount >= 5) {
+          MessageBox.alert(
+            `错误代码：${(error as IResponseError)?.code ?? '无'}，错误信息：${
+              (error as IResponseError)?.message ?? '无'
+            }`,
+            {
+              title: '错误',
+              type: 'error',
+            },
+          );
+          return false;
+        }
+        return true;
       },
     },
     mutations: {
-      // mutationFn: async (variables) => {
-      //   console.log('');
-      //   console.log('variables', variables);
-      //   console.log('');
-      //   return request({
-      //     method: 'POST',
-      //     ...(variables as Record<string, any>),
-      //   }) as AxiosPromise<Response>;
-      // },
-      mutationFn: async (variables) =>
-        request({
+      mutationFn: async (variables) => {
+        const { data } = await axiosInstance.request<IResponseData>({
           method: 'POST',
           ...(variables as Record<string, any>),
-        }) as AxiosPromise<Response>,
+        });
+        return data;
+      },
+      retry: (failureCount, error) => {
+        if (failureCount >= 5) {
+          MessageBox.alert(
+            `错误代码：${(error as IResponseError)?.code ?? '无'}，错误信息：${
+              (error as IResponseError)?.message ?? '无'
+            }`,
+            {
+              title: '错误',
+              type: 'error',
+            },
+          );
+          return false;
+        }
+        return true;
+      },
     },
   },
 });

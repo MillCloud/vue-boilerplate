@@ -55,13 +55,13 @@ specifiers:
   markdownlint-cli: ~0.28.1
   mitt: ~3.0.0
   mockjs: ~1.1.0
+  modern-normalize: ~1.1.0
   npm-check-updates: ~11.8.5
   nprogress: ~0.2.0
   portal-vue: ~2.1.7
   postcss-preset-env: ~6.7.0
   prettier: ~2.2.1
   release-it: ~14.11.6
-  ress: ~4.0.0
   rimraf: ~3.0.2
   sass: ~1.32.13
   sass-loader: ~12.1.0
@@ -108,9 +108,9 @@ dependencies:
   immer: 9.0.6
   mitt: 3.0.0
   mockjs: 1.1.0
+  modern-normalize: 1.1.0
   nprogress: 0.2.0
   portal-vue: 2.1.7_vue@2.6.14
-  ress: 4.0.0
   statuses: 2.0.1
   tailwindcss: 1.9.6
   vue: 2.6.14
@@ -8662,6 +8662,11 @@ packages:
       commander: 8.2.0
     dev: false
 
+  /modern-normalize/1.1.0:
+    resolution: {integrity: sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==}
+    engines: {node: '>=6'}
+    dev: false
+
   /module-alias/2.2.2:
     resolution: {integrity: sha512-A/78XjoX2EmNvppVWEhM2oGk3x4lLxnkEA4jTbaK97QKSDjkIoOsKQlfylt/d3kKKi596Qy3NP5XrXJ6fZIC9Q==}
     dev: true
@@ -11119,10 +11124,6 @@ packages:
     dependencies:
       lowercase-keys: 2.0.0
     dev: true
-
-  /ress/4.0.0:
-    resolution: {integrity: sha512-awpQM9e6VL6ljw4XuH/ww2q4IEU0SAY9Lcvu4h4nIB5c5XhTUXH3Me8WA0zW3s3naU79lY8uVUJg30dvKJ5cNw==}
-    dev: false
 
   /restore-cursor/2.0.0:
     resolution: {integrity: sha1-n37ih/gv0ybU/RYpI9YhKe7g368=}

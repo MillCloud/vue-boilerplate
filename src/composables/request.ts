@@ -38,13 +38,10 @@ export const handleShowError = (response: Response) => {
     clearStorage();
     router.replace('/');
   } else {
-    MessageBox.alert(
-      `错误代码：${response.code}，错误信息：${response.message}`,
-      {
-        title: '错误',
-        type: 'error',
-      },
-    );
+    MessageBox.alert(`错误代码：${response.code}，错误信息：${response.message}`, {
+      title: '错误',
+      type: 'error',
+    });
   }
 };
 
@@ -109,9 +106,7 @@ instance.interceptors.response.use(
         // 状态码不正常
         try {
           response.code = constantCase(statuses(status).toString());
-          response.message = i18n.t(
-            `error.${constantCase(statuses(status).toString())}`,
-          ) as string;
+          response.message = i18n.t(`error.${constantCase(statuses(status).toString())}`) as string;
         } catch {
           response.code = 'ERROR_OCCURRED';
           response.message = i18n.t(`error.ERROR_OCCURRED`) as string;
@@ -120,9 +115,7 @@ instance.interceptors.response.use(
         // 超时
         const timeoutCodes = ['TIMEOUT', 'CONNRESET'];
         const errorText = JSON.stringify(error).toUpperCase();
-        const timeoutCode = timeoutCodes.find((item) =>
-          errorText.includes(item),
-        );
+        const timeoutCode = timeoutCodes.find((item) => errorText.includes(item));
         if (timeoutCode) {
           response.code = 'REQUEST_TIMEOUT';
           response.message = i18n.t('error.REQUEST_TIMEOUT') as string;

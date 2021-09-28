@@ -46,11 +46,7 @@ const {
   refetch: refetchPosts,
 } = useQuery<Post[]>('https://jsonplaceholder.typicode.com/posts');
 
-const { mutate: mutatePost } = useMutation<
-  Response,
-  unknown,
-  Record<string, any>
->({
+const { mutate: mutatePost } = useMutation<Response, unknown, Record<string, any>>({
   onSuccess: () => {
     queryClient.invalidateQueries('https://jsonplaceholder.typicode.com/posts');
   },

@@ -9,7 +9,7 @@
 import { useQueryProvider, QueryClient } from 'vue-query';
 import { VueQueryDevTools } from 'vue-query/devtools';
 import type { AxiosResponse, AxiosPromise } from 'axios';
-import { request, Response } from '@/utils';
+import { request } from '@/utils';
 
 const queryClient = new QueryClient({
   defaultOptions: {

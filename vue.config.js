@@ -57,9 +57,7 @@ module.exports = {
     // production only
     config.when(process.env.NODE_ENV === 'production', (config_) => {
       // compression-webpack-plugin
-      config_
-        .plugin('compression')
-        .use(CompressionPlugin, [{ test: /\\.(html|css|js)$/i }]);
+      config_.plugin('compression').use(CompressionPlugin, [{ test: /\\.(html|css|js)$/i }]);
       // terser-webpack-plugin
       config_.optimization.minimizer('terser').tap((args) => {
         args[0].terserOptions.compress.drop_console = true;

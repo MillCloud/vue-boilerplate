@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { useRouter } from '@/composables';
+import { useRouter } from 'vue2-helpers/vue-router';
 
 const router = useRouter();
 

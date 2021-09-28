@@ -29,8 +29,8 @@
           Gitee
         </a>
       </el-footer>
-      <el-backtop />
     </el-container>
+    <el-backtop />
   </el-container>
 </template>
 

@@ -4,14 +4,6 @@ import { createStore } from 'vue2-helpers/vuex';
 
 Vue.use(Vuex);
 
-export type TUser = Partial<{
-  id: number;
-}>;
-
-export interface RootState {
-  user: TUser;
-}
-
 export default createStore<RootState>({
   strict: process.env.NODE_ENV === 'development',
   state: {

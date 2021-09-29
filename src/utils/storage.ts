@@ -22,7 +22,6 @@ export function setToken(token = '') {
 
 const keyLanguage = 'language';
 
-/** @return {string} language */
 export function getLanguage() {
   return getItem({
     key: keyLanguage,
@@ -30,7 +29,6 @@ export function getLanguage() {
   });
 }
 
-/** @param {string} language */
-export function setLanguage(language = process.env.VUE_APP_I18N_LOCALE) {
+export function setLanguage(language = process.env.VUE_APP_I18N_LOCALE || 'zh-Hans') {
   setItem({ key: keyLanguage, value: language });
 }

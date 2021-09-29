@@ -14,11 +14,12 @@ import { axiosInstance } from '@/utils';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      queryFn: async ({ queryKey, pageParam }) => {
+      queryFn: async ({ queryKey }) => {
         const { data } = await axiosInstance.request<IResponseData>({
           method: 'GET',
           url: queryKey[0] as string,
-          params: pageParam,
+          params: queryKey[1] as Record<string, any>,
+          data: queryKey[1] as Record<string, any>,
         });
         return data;
       },

@@ -10,7 +10,7 @@ export default createStore<RootState>({
     user: {},
   },
   mutations: {
-    setUser(state, { user = {} as TUser } = {}) {
+    setUser(state, { user = {} as TUser }: { user?: TUser } = {}) {
       state.user = {
         ...state.user,
         ...user,

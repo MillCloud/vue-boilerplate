@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { MessageBox, Notification, Message } from 'element-ui';
 import pkg from '@/../package.json';
 import { getToken } from '@/utils/storage';
 
@@ -21,3 +22,31 @@ instance.interceptors.request.use((config) => ({
 }));
 
 export { instance as axiosInstance };
+
+export const showError = (
+  error: IResponseError,
+  type: 'alert' | 'notification' | 'message' = 'alert',
+) => {
+  const content = `错误代码：${error?.code ?? error?.response?.data?.code ?? '无'}，错误信息：${
+    error?.message ?? error?.response?.data?.message ?? '无'
+  }。`;
+  if (type === 'alert') {
+    MessageBox.alert(content, {
+      title: '错误',
+      type: 'error',
+    });
+    return;
+  }
+  if (type === 'notification') {
+    Notification.error({
+      title: '错误',
+      message: content,
+    });
+    return;
+  }
+  if (type === 'message') {
+    Message.error({
+      message: content,
+    });
+  }
+};

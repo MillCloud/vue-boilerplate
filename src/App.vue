@@ -6,12 +6,21 @@
 </template>
 
 <script setup lang="ts">
-import { useQueryProvider, QueryClient } from 'vue-query';
+import { useQueryProvider, QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { VueQueryDevTools } from 'vue-query/devtools';
-import { MessageBox } from 'element-ui';
-import { axiosInstance } from '@/utils';
+import { axiosInstance, showError } from '@/utils';
 
 const queryClient = new QueryClient({
+  queryCache: new QueryCache({
+    onError: (error) => {
+      showError(error as IResponseError);
+    },
+  }),
+  mutationCache: new MutationCache({
+    onError: (error) => {
+      showError(error as IResponseError);
+    },
+  }),
   defaultOptions: {
     queries: {
       queryFn: async ({ queryKey }) => {
@@ -21,22 +30,13 @@ const queryClient = new QueryClient({
           params: queryKey[1] as Record<string, any>,
           data: queryKey[1] as Record<string, any>,
         });
-        return data;
-      },
-      retry: (failureCount, error) => {
-        if (failureCount >= 5) {
-          MessageBox.alert(
-            `错误代码：${(error as IResponseError)?.code ?? '无'}，错误信息：${
-              (error as IResponseError)?.message ?? '无'
-            }`,
-            {
-              title: '错误',
-              type: 'error',
-            },
+        if (!data.success && ((queryKey[1] as Record<string, any>)?.showError ?? true)) {
+          showError(
+            (data as unknown) as IResponseError,
+            (queryKey[1] as Record<string, any>)?.showErrorType,
           );
-          return false;
         }
-        return true;
+        return data;
       },
     },
     mutations: {
@@ -45,22 +45,13 @@ const queryClient = new QueryClient({
           method: 'POST',
           ...(variables as Record<string, any>),
         });
-        return data;
-      },
-      retry: (failureCount, error) => {
-        if (failureCount >= 5) {
-          MessageBox.alert(
-            `错误代码：${(error as IResponseError)?.code ?? '无'}，错误信息：${
-              (error as IResponseError)?.message ?? '无'
-            }`,
-            {
-              title: '错误',
-              type: 'error',
-            },
+        if (!data.success && ((variables as Record<string, any>)?.showError ?? true)) {
+          showError(
+            (data as unknown) as IResponseError,
+            (variables as Record<string, any>)?.showErrorType,
           );
-          return false;
         }
-        return true;
+        return data;
       },
     },
   },

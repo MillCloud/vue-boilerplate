@@ -1,52 +1,28 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import type { StoreOptions } from 'vuex';
-import i18n from '@/i18n';
-import { getLanguage, setLanguage } from '@/utils';
+import { createStore } from 'vue2-helpers/vuex';
 
 Vue.use(Vuex);
 
-/** @desc 获取状态管理模块的方法 */
-function loadModules() {
-  const moduleFiles = require.context('./modules', true, /\.js$/);
-  const modules: Record<string, any> = {};
-  moduleFiles.keys().forEach((key) => {
-    const matched = key.match(/([\w-]+)\./);
-    if (matched && matched.length > 1) {
-      const moduleName = matched[1];
-      modules[moduleName] = moduleFiles(key).default;
-    }
-  });
-  return modules;
-}
-
-/** @desc 状态管理模块 */
-const modules = loadModules();
+export type TUser = Partial<{
+  id: number;
+}>;
 
 export interface RootState {
-  language: string;
+  user: TUser;
 }
 
-export default new Vuex.Store({
+export default createStore<RootState>({
   strict: process.env.NODE_ENV === 'development',
   state: {
-    language: getLanguage(),
+    user: {},
   },
-  getters: {},
   mutations: {
-    setLanguage(
-      state,
-      {
-        language = process.env.VUE_APP_I18N_LOCALE || 'zh-Hans',
-      }: {
-        language?: string;
-      },
-    ) {
-      state.language = language;
-      setLanguage(language);
-      i18n.locale = language;
+    setUser(state, { user = {} as TUser } = {}) {
+      state.user = {
+        ...state.user,
+        ...user,
+      };
     },
   },
-  actions: {},
-  modules,
-} as StoreOptions<RootState>);
+});

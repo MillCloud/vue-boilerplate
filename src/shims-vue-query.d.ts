@@ -46,7 +46,10 @@ declare module 'vue-query' {
   export declare function useMutation<
     TData = IResponseData,
     TError = IResponseError,
-    TVariables = AxiosRequestConfig & { showErrorType?: 'alert' | 'message' | 'notification' },
+    TVariables = AxiosRequestConfig & {
+      showError?: boolean;
+      showErrorType?: 'alert' | 'message' | 'notification';
+    },
     TContext = unknown
   >(
     options: UseMutationOptions<TData, TError, TVariables, TContext>,
@@ -55,7 +58,10 @@ declare module 'vue-query' {
   export declare function useMutation<
     TData = IResponseData,
     TError = IResponseError,
-    TVariables = AxiosRequestConfig & { showErrorType?: 'alert' | 'message' | 'notification' },
+    TVariables = AxiosRequestConfig & {
+      showError?: boolean;
+      showErrorType?: 'alert' | 'message' | 'notification';
+    },
     TContext = unknown
   >(
     mutationFn: MutationFunction<TData, TVariables>,
@@ -65,7 +71,10 @@ declare module 'vue-query' {
   export declare function useMutation<
     TData = IResponseData,
     TError = IResponseError,
-    TVariables = AxiosRequestConfig & { showErrorType?: 'alert' | 'message' | 'notification' },
+    TVariables = AxiosRequestConfig & {
+      showError?: boolean;
+      showErrorType?: 'alert' | 'message' | 'notification';
+    },
     TContext = unknown
   >(
     mutationKey: MutationKey,
@@ -75,7 +84,10 @@ declare module 'vue-query' {
   export declare function useMutation<
     TData = IResponseData,
     TError = IResponseError,
-    TVariables = AxiosRequestConfig & { showErrorType?: 'alert' | 'message' | 'notification' },
+    TVariables = AxiosRequestConfig & {
+      showError?: boolean;
+      showErrorType?: 'alert' | 'message' | 'notification';
+    },
     TContext = unknown
   >(
     mutationKey: MutationKey,

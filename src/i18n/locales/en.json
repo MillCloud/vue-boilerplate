@@ -46,11 +46,13 @@
   },
   "hint": {
     "OK": "OK",
+    "ok": "ok",
     "confirm": "Confirm",
     "cancel": "Cancel",
     "reset": "Reset",
     "back": "Back",
     "home": "Home",
-    "index": "Index"
+    "index": "Index",
+    "reSignIn": "Re sign in please"
   }
 }

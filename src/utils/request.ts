@@ -2,7 +2,11 @@ import axios from 'axios';
 import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import pkg from '@/../package.json';
-import { getToken } from '@/utils/storage';
+import { clearStorage, getToken } from '@/utils/storage';
+import router from '@/router';
+import i18n from '@/i18n';
+
+const reSignInCodes = new Set(['TOKEN_OUTDATED']);
 
 const instance = axios.create({
   baseURL: process.env.VUE_APP_REQUEST_BASE_URL || '',
@@ -18,6 +22,7 @@ instance.interceptors.request.use((config) => ({
   ...config,
   headers: {
     ...config.headers,
+    token: getToken() || '',
     'X-Token': getToken() || '',
   },
 }));
@@ -73,11 +78,19 @@ export const queryClient = new QueryClient({
           params: queryKey[1] as Record<string, any>,
           data: queryKey[1] as Record<string, any>,
         });
-        if (!data.success && ((queryKey[1] as Record<string, any>)?.showError ?? true)) {
-          showError(
-            (data as unknown) as IResponseError,
-            (queryKey[1] as Record<string, any>)?.showErrorType,
-          );
+        if (!data.success) {
+          if (reSignInCodes.has(data.code)) {
+            clearStorage();
+            showError({
+              message: i18n.t('hint.reSignIn'),
+            } as IResponseError);
+            router.push('/sign-in');
+          } else if ((queryKey[1] as Record<string, any>)?.showError ?? true) {
+            showError(
+              (data as unknown) as IResponseError,
+              (queryKey[1] as Record<string, any>)?.showErrorType,
+            );
+          }
         }
         return data;
       },
@@ -89,11 +102,19 @@ export const queryClient = new QueryClient({
           method: 'POST',
           ...(variables as Record<string, any>),
         });
-        if (!data.success && ((variables as Record<string, any>)?.showError ?? true)) {
-          showError(
-            (data as unknown) as IResponseError,
-            (variables as Record<string, any>)?.showErrorType,
-          );
+        if (!data.success) {
+          if (reSignInCodes.has(data.code)) {
+            clearStorage();
+            showError({
+              message: i18n.t('hint.reSignIn'),
+            } as IResponseError);
+            router.push('/sign-in');
+          } else if ((variables as Record<string, any>)?.showError ?? true) {
+            showError(
+              (data as unknown) as IResponseError,
+              (variables as Record<string, any>)?.showErrorType,
+            );
+          }
         }
         return data;
       },

@@ -32,3 +32,13 @@ export function getLanguage() {
 export function setLanguage(language = process.env.VUE_APP_I18N_LOCALE || 'zh-Hans') {
   setItem({ key: keyLanguage, value: language });
 }
+
+const isAsideCollapsedKey = 'isAsideCollapsed';
+
+export function getIsAsideCollapsed(): boolean {
+  return JSON.parse(getItem({ key: isAsideCollapsedKey }) || 'false');
+}
+
+export function setIsAsideCollapsed(isAsideCollapsed = false) {
+  setItem({ key: isAsideCollapsedKey, value: JSON.stringify(isAsideCollapsed) });
+}

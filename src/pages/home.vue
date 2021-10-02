@@ -26,3 +26,12 @@ export default {
   },
 };
 </script>
+
+<route lang="json">
+{
+  "meta": {
+    "icon": "ant-design:dashboard-outlined",
+    "i18nKey": "hint.home"
+  }
+}
+</route>

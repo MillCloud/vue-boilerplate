@@ -49,10 +49,6 @@ module.exports = {
     config.resolve.alias.set('@', path.resolve('src'));
     // fork-ts-checker
     config.plugins.delete('fork-ts-checker');
-    // remove warning
-    config.module.merge({
-      unknownContextCritical: false,
-    });
     // production only
     config.when(process.env.NODE_ENV === 'production', (config_) => {
       // compression-webpack-plugin

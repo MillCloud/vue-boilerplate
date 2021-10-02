@@ -94,6 +94,12 @@ export const queryClient = new QueryClient({
         }
         return data;
       },
+      retry: (failureCount, error) => {
+        if ((error as IResponseError).response?.status === 404) {
+          return false;
+        }
+        return failureCount < 3;
+      },
     },
     mutations: {
       mutationFn: async (variables) => {
@@ -117,6 +123,12 @@ export const queryClient = new QueryClient({
           }
         }
         return data;
+      },
+      retry: (failureCount, error) => {
+        if ((error as IResponseError).response?.status === 404) {
+          return false;
+        }
+        return failureCount < 3;
       },
     },
   },

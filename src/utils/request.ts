@@ -76,7 +76,6 @@ export const queryClient = new QueryClient({
           method: 'GET',
           url: queryKey[0] as string,
           params: queryKey[1] as Record<string, any>,
-          data: queryKey[1] as Record<string, any>,
         });
         if (!data.success) {
           if (reSignInCodes.has(data.code)) {

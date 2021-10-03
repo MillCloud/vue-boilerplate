@@ -113,7 +113,7 @@ export default defineComponent({
     const route = useRoute();
     const defaultActive = computed(() => {
       const menuItem = menuItems.find(
-        (item) => item.path.includes(route.path) || route.path.includes(route.path),
+        (item) => item.path.includes(route.path) || route.path.includes(item.path),
       );
       if (!menuItem) {
         return '';

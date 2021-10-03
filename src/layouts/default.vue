@@ -76,7 +76,12 @@
       <el-header
         class="fixed z-10 flex items-center justify-end flex-none w-full bg-white"
       ></el-header>
-      <router-view />
+      <template v-if="$route.meta && $route.meta.keepAlive">
+        <keep-alive>
+          <router-view />
+        </keep-alive>
+      </template>
+      <router-view v-else />
     </el-container>
     <el-backtop />
   </el-container>
@@ -84,7 +89,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from '@vue/composition-api';
-import { useRouter, useRoute } from 'vue2-helpers/vue-router';
+import { useRouter } from 'vue2-helpers/vue-router';
 import { Icon } from '@iconify/vue2';
 import { getIsAsideCollapsed, setIsAsideCollapsed } from '@/utils';
 import pkg from '@/../package.json';
@@ -93,27 +98,28 @@ export default defineComponent({
   components: {
     Icon,
   },
-  setup() {
+  setup(props, { root }) {
     const router = useRouter();
-    const menuItems = (router.options.routes?.[0]?.children ?? [])
-      .filter((item) => !['404'].includes(item.path))
-      .sort((itemA, itemB) => (itemA?.meta?.sort ?? 0) - (itemB?.meta?.sort ?? 0))
-      .map((item) => ({
-        ...item,
-        path: `/${item.path}`,
-      }))
-      .map((parent) => ({
-        ...parent,
-        children: (parent.children ?? []).map((child) => ({
-          ...child,
-          path: child.path === '' ? parent.path : `${parent.path}/${child.path}`,
+    const menuItems = computed(() =>
+      (router.options.routes?.[0]?.children ?? [])
+        .filter((item) => !['404'].includes(item.path))
+        .sort((itemA, itemB) => (itemA?.meta?.sort ?? 0) - (itemB?.meta?.sort ?? 0))
+        .map((item) => ({
+          ...item,
+          path: `/${item.path}`,
+        }))
+        .map((parent) => ({
+          ...parent,
+          children: (parent.children ?? []).map((child) => ({
+            ...child,
+            path: child.path === '' ? parent.path : `${parent.path}/${child.path}`,
+          })),
         })),
-      }));
+    );
 
-    const route = useRoute();
     const defaultActive = computed(() => {
-      const menuItem = menuItems.find(
-        (item) => item.path.includes(route.path) || route.path.includes(item.path),
+      const menuItem = menuItems.value.find(
+        (item) => item.path.includes(root.$route.path) || root.$route.path.includes(item.path),
       );
       if (!menuItem) {
         return '';
@@ -121,7 +127,7 @@ export default defineComponent({
       if (menuItem.meta?.hideChildren) {
         return menuItem.path;
       }
-      const menuItemChild = menuItem.children.find((child) => child.path === route.path);
+      const menuItemChild = menuItem.children.find((child) => child.path === root.$route.path);
       return menuItemChild ? menuItemChild.path : menuItem.path;
     });
 

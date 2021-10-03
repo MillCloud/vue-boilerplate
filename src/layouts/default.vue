@@ -18,26 +18,49 @@
         :default-active="defaultActive"
         router
       >
-        <el-menu-item v-for="item of menuItems" :key="item.path" :index="item.path">
-          <i
-            v-if="item.meta && item.meta.icon && item.meta.icon.startsWith('el-icon-')"
-            :class="item.meta.icon"
-          />
-          <Icon
-            v-if="item.meta && item.meta.icon && !item.meta.icon.startsWith('el-icon-')"
-            :icon="item.meta.icon"
-            class="el-icon-"
-          />
-          <span slot="title">
-            {{
-              item.meta && item.meta.i18nKey
-                ? $t(item.meta.i18nKey)
-                : item.meta && item.meta.name
-                ? item.meta.name
-                : ''
-            }}
-          </span>
-        </el-menu-item>
+        <template v-for="item of menuItems">
+          <template
+            v-if="item.meta && !item.meta.hideChildren && item.children && item.children.length > 0"
+          >
+            <el-submenu :key="item.path" :index="item.path">
+              <template slot="title">
+                <i
+                  v-if="item.meta && item.meta.icon && item.meta.icon.startsWith('el-icon-')"
+                  :class="item.meta.icon"
+                />
+                <Icon
+                  v-if="item.meta && item.meta.icon && !item.meta.icon.startsWith('el-icon-')"
+                  :icon="item.meta.icon"
+                  class="el-icon-"
+                />
+                <span>
+                  {{ item.meta && item.meta.name ? item.meta.name : '' }}
+                </span>
+              </template>
+              <el-menu-item v-for="child of item.children" :key="child.path" :index="child.path">
+                <span slot="title">
+                  {{ child.meta && child.meta.name ? child.meta.name : '' }}
+                </span>
+              </el-menu-item>
+            </el-submenu>
+          </template>
+          <template v-else>
+            <el-menu-item :key="item.path" :index="item.path">
+              <i
+                v-if="item.meta && item.meta.icon && item.meta.icon.startsWith('el-icon-')"
+                :class="item.meta.icon"
+              />
+              <Icon
+                v-if="item.meta && item.meta.icon && !item.meta.icon.startsWith('el-icon-')"
+                :icon="item.meta.icon"
+                class="el-icon-"
+              />
+              <span slot="title">
+                {{ item.meta && item.meta.name ? item.meta.name : '' }}
+              </span>
+            </el-menu-item>
+          </template>
+        </template>
       </el-menu>
       <el-footer
         class="flex-none w-full transition bg-white cursor-pointer center"
@@ -73,7 +96,8 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     const menuItems = (router.options.routes?.[0]?.children ?? [])
-      .filter((item) => item.path !== '404')
+      .filter((item) => !['404'].includes(item.path))
+      .sort((itemA, itemB) => (itemA?.meta?.sort ?? 0) - (itemB?.meta?.sort ?? 0))
       .map((item) => ({
         ...item,
         path: `/${item.path}`,
@@ -82,14 +106,24 @@ export default defineComponent({
         ...parent,
         children: (parent.children ?? []).map((child) => ({
           ...child,
-          path: `${parent.path}/${child.path}`,
+          path: child.path === '' ? parent.path : `${parent.path}/${child.path}`,
         })),
       }));
 
     const route = useRoute();
-    const defaultActive = computed(
-      () => menuItems.find((item) => item.path.includes(route.path))?.path,
-    );
+    const defaultActive = computed(() => {
+      const menuItem = menuItems.find(
+        (item) => item.path.includes(route.path) || route.path.includes(route.path),
+      );
+      if (!menuItem) {
+        return '';
+      }
+      if (menuItem.meta?.hideChildren) {
+        return menuItem.path;
+      }
+      const menuItemChild = menuItem.children.find((child) => child.path === route.path);
+      return menuItemChild ? menuItemChild.path : menuItem.path;
+    });
 
     const isAsideCollapsed = ref(getIsAsideCollapsed());
     const handleToggleIsAsideCollapsed = () => {

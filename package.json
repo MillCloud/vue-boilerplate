@@ -4,7 +4,7 @@
   "private": true,
   "description": "A boilerplate for vue-cli and vue2.",
   "scripts": {
-    "build": "vue-tsc && vue-cli-service build --mode production --report",
+    "build": "vue-cli-service build --mode production --report",
     "check": "ncu",
     "commit": "cz",
     "dev": "vue-cli-service serve --mode development",

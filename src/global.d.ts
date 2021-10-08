@@ -14,6 +14,7 @@ declare global {
 
   type TUser = Partial<{
     id: number;
+    role: number;
   }>;
 
   interface RootState {

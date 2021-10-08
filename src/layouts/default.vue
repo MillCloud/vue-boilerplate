@@ -14,13 +14,15 @@
       </el-header>
       <el-menu
         class="flex-auto w-full py-5 transition border-0"
+        router
         :collapse="isAsideCollapsed"
         :default-active="defaultActive"
-        router
       >
         <template v-for="item of menuItems">
           <template
-            v-if="item.meta && !item.meta.hideChildren && item.children && item.children.length > 0"
+            v-if="
+              item.meta && !item.meta.isChildrenHidden && item.children && item.children.length > 0
+            "
           >
             <el-submenu :key="item.path" :index="item.path">
               <template slot="title">
@@ -73,9 +75,17 @@
       </el-footer>
     </el-aside>
     <el-container class="relative flex-col min-h-screen">
-      <el-header
-        class="fixed z-10 flex items-center justify-end flex-none w-full bg-white"
-      ></el-header>
+      <el-header class="fixed z-10 flex-none w-full bg-white">
+        <el-row class="flex items-center justify-between w-full h-full">
+          <el-col class="flex-auto w-auto">
+            <el-breadcrumb>
+              <el-breadcrumb-item v-for="item of breadcrumbs" :key="item.path" :to="item.path">
+                {{ item.meta.name }}
+              </el-breadcrumb-item>
+            </el-breadcrumb>
+          </el-col>
+        </el-row>
+      </el-header>
       <template v-if="$route.meta && $route.meta.keepAlive">
         <keep-alive>
           <router-view />
@@ -89,28 +99,58 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from '@vue/composition-api';
+import { useStore } from 'vue2-helpers/vuex';
 import { useRouter } from 'vue2-helpers/vue-router';
 import { Icon } from '@iconify/vue2';
-import { getIsAsideCollapsed, setIsAsideCollapsed } from '@/utils';
 import pkg from '@/../package.json';
+import { getIsAsideCollapsed, setIsAsideCollapsed } from '@/utils';
 
 export default defineComponent({
   components: {
     Icon,
   },
   setup(props, { root }) {
+    const store = useStore();
+    const user = computed(() => store.state.user);
+
     const router = useRouter();
+    // 不考虑多层路由，多层路由往往意味着路由设计有问题，应该重新设计路由
     const menuItems = computed(() =>
       (router.options.routes?.[0]?.children ?? [])
-        .filter((item) => !['404'].includes(item.path))
+        // isHidden 或 isChildrenHidden 隐藏
+        .filter((item) => (item?.meta?.isHidden ?? false) !== true)
+        .map((parent) => ({
+          ...parent,
+          children: parent?.meta?.isChildrenHidden ?? false ? [] : parent?.children ?? [],
+        }))
+        .map((parent) => ({
+          ...parent,
+          children: [...(parent.children ?? [])].filter((child) => child?.meta?.isHidden !== true),
+        }))
+        // 限定角色
+        .filter((item) => (item?.meta?.roles ?? [0, 3, 5]).includes(user.value.role))
+        .map((parent) => ({
+          ...parent,
+          children: [...(parent.children ?? [])].filter((child) =>
+            (child?.meta?.roles ?? [0, 3, 5]).includes(user.value.role),
+          ),
+        }))
+        // 排序，sort 越小，显示越靠前，默认 0，相同的 sort 按照字典顺序排序
         .sort((itemA, itemB) => (itemA?.meta?.sort ?? 0) - (itemB?.meta?.sort ?? 0))
+        .map((parent) => ({
+          ...parent,
+          children: [...(parent.children ?? [])].sort(
+            (childA, childB) => (childA?.meta?.sort ?? 0) - (childB?.meta?.sort ?? 0),
+          ),
+        }))
+        // 补全路径
         .map((item) => ({
           ...item,
           path: `/${item.path}`,
         }))
         .map((parent) => ({
           ...parent,
-          children: (parent.children ?? []).map((child) => ({
+          children: [...(parent.children ?? [])].map((child) => ({
             ...child,
             path: child.path === '' ? parent.path : `${parent.path}/${child.path}`,
           })),
@@ -124,12 +164,19 @@ export default defineComponent({
       if (!menuItem) {
         return '';
       }
-      if (menuItem.meta?.hideChildren) {
+      if (menuItem.meta?.isChildrenHidden) {
         return menuItem.path;
       }
       const menuItemChild = menuItem.children.find((child) => child.path === root.$route.path);
       return menuItemChild ? menuItemChild.path : menuItem.path;
     });
+
+    const breadcrumbs = computed(() =>
+      root.$route.matched
+        .slice(1)
+        .filter((item) => (item?.meta?.isHidden ?? false) !== true)
+        .filter((item) => item?.meta?.name),
+    );
 
     const isAsideCollapsed = ref(getIsAsideCollapsed());
     const handleToggleIsAsideCollapsed = () => {
@@ -141,8 +188,10 @@ export default defineComponent({
       pkg,
       menuItems,
       defaultActive,
+      breadcrumbs,
       isAsideCollapsed,
       handleToggleIsAsideCollapsed,
+      user,
     };
   },
 });

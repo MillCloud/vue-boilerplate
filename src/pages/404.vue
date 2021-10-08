@@ -5,11 +5,9 @@
         <h6 class="text-lg">404 Not Found</h6>
       </el-col>
       <el-col class="mt-2 text-center">
-        <el-button @click="handleGoBack">{{ $t('hint.back') }}</el-button>
-        <el-button class="mx-2" @click="handleToIndex">
-          {{ $t('hint.index') }}
-        </el-button>
-        <el-button @click="handleToHome">{{ $t('hint.home') }}</el-button>
+        <el-button @click="handleGoBack">返回</el-button>
+        <el-button class="mx-2" @click="handleToIndex">首页</el-button>
+        <el-button @click="handleToHome">主页</el-button>
       </el-col>
     </el-row>
   </el-main>
@@ -34,3 +32,11 @@ export default {
   },
 };
 </script>
+
+<route lang="json">
+{
+  "meta": {
+    "isHidden": true
+  }
+}
+</route>

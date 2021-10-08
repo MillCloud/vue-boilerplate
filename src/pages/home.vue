@@ -31,7 +31,8 @@ export default {
 {
   "meta": {
     "icon": "ant-design:dashboard-outlined",
-    "name": "主页"
+    "name": "主页",
+    "keepAlive": true
   }
 }
 </route>

@@ -3,7 +3,7 @@
     <el-aside
       class="fixed z-20 flex flex-col w-64 h-screen transition border-0 border-r border-solid border-gray-5"
       :style="{
-        width: !isAsideCollapsed ? '16rem' : '4rem',
+        width: !isAsideCollapsed ? '256px' : '64px',
       }"
     >
       <el-header class="flex items-center flex-none w-full p-0 transition">

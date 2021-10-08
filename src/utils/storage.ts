@@ -20,19 +20,6 @@ export function setToken(token = '') {
   setItem({ key: keyToken, value: token });
 }
 
-const keyLanguage = 'language';
-
-export function getLanguage() {
-  return getItem({
-    key: keyLanguage,
-    defaultValue: process.env.VUE_APP_I18N_LOCALE,
-  });
-}
-
-export function setLanguage(language = process.env.VUE_APP_I18N_LOCALE || 'zh-Hans') {
-  setItem({ key: keyLanguage, value: language });
-}
-
 const isAsideCollapsedKey = 'isAsideCollapsed';
 
 export function getIsAsideCollapsed(): boolean {

@@ -8,7 +8,6 @@ import axiosRetry from 'axios-retry';
 import { useAxios } from '@vueuse/integrations';
 import pkg from '@/../package.json';
 import { getToken, clearStorage } from '@/utils';
-import i18n from '@/i18n';
 import router from '@/router';
 
 interface AdvancedRequestConfig extends AxiosRequestConfig {
@@ -28,6 +27,10 @@ export const reLaunchCodes = new Set(['TOKEN_OUTDATED']);
 
 export const handleShowError = (response: IResponseData) => {
   if (reLaunchCodes.has(response.code)) {
+    MessageBox.alert(`请重新登录`, {
+      title: '错误',
+      type: 'error',
+    });
     clearStorage();
     router.replace('/');
   } else {
@@ -83,7 +86,7 @@ instance.interceptors.response.use(
       // 取消请求
       return {
         success: false,
-        message: i18n.t('error.REQUEST_CANCELLED'),
+        message: '请求取消',
         code: 'REQUEST_CANCELLED',
       };
     }
@@ -99,10 +102,10 @@ instance.interceptors.response.use(
         // 状态码不正常
         try {
           response.code = constantCase(statuses(status).toString());
-          response.message = i18n.t(`error.${constantCase(statuses(status).toString())}`) as string;
+          response.message = constantCase(statuses(status).toString());
         } catch {
           response.code = 'ERROR_OCCURRED';
-          response.message = i18n.t(`error.ERROR_OCCURRED`) as string;
+          response.message = '发生了错误';
         }
       } else {
         // 超时
@@ -111,17 +114,17 @@ instance.interceptors.response.use(
         const timeoutCode = timeoutCodes.find((item) => errorText.includes(item));
         if (timeoutCode) {
           response.code = 'REQUEST_TIMEOUT';
-          response.message = i18n.t('error.REQUEST_TIMEOUT') as string;
+          response.message = '请求超时';
         }
       }
     } else if (error.request) {
       // 发送了请求，没有收到响应
       response.code = 'NO_RESPONSE';
-      response.message = i18n.t('error.NO_RESPONSE') as string;
+      response.message = '服务器无响应';
     } else {
       // 请求时发生错误
       response.code = 'REQUEST_ERROR';
-      response.message = i18n.t('error.REQUEST_ERROR') as string;
+      response.message = '请求错误';
     }
     // 处理错误
     if (error.config.showError !== false) {

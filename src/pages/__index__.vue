@@ -98,7 +98,7 @@ const deletePost = () => {
 {
   "meta": {
     "icon": "el-icon-menu",
-    "i18nKey": "hint.index"
+    "name": "首页"
   }
 }
 </route>

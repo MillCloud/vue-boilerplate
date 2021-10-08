@@ -4,7 +4,6 @@ import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import pkg from '@/../package.json';
 import { clearStorage, getToken } from '@/utils/storage';
 import router from '@/router';
-import i18n from '@/i18n';
 
 const reSignInCodes = new Set(['TOKEN_OUTDATED']);
 
@@ -81,7 +80,7 @@ export const queryClient = new QueryClient({
           if (reSignInCodes.has(data.code)) {
             clearStorage();
             showError({
-              message: i18n.t('hint.reSignIn'),
+              message: '请重新登录',
             } as IResponseError);
             router.push('/sign-in');
           } else if ((queryKey[1] as Record<string, any>)?.showError ?? true) {
@@ -111,7 +110,7 @@ export const queryClient = new QueryClient({
           if (reSignInCodes.has(data.code)) {
             clearStorage();
             showError({
-              message: i18n.t('hint.reSignIn'),
+              message: '请重新登录',
             } as IResponseError);
             router.push('/sign-in');
           } else if ((variables as Record<string, any>)?.showError ?? true) {

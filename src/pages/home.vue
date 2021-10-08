@@ -31,7 +31,7 @@ export default {
 {
   "meta": {
     "icon": "ant-design:dashboard-outlined",
-    "i18nKey": "hint.home"
+    "name": "主页"
   }
 }
 </route>

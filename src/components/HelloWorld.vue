@@ -57,13 +57,6 @@
         rel="noopener noreferrer"
         >eslint</a
       >
-      <a
-        class="mx-2"
-        href="https://github.com/intlify/vue-cli-plugin-i18n"
-        target="_blank"
-        rel="noopener noreferrer"
-        >i18n</a
-      >
     </el-col>
     <el-col class="mt-2">
       <h6 class="text-lg text-center">Ecosystem</h6>

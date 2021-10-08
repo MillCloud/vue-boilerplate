@@ -22,7 +22,6 @@
 - [vuex](https://vuex.vuejs.org/zh/)
 - [@vue/composition-api](https://github.com/vuejs/composition-api/blob/main/README.zh-CN.md)
 - [vue-use](https://vueuse.org)
-- [vue-i18n](https://kazupon.github.io/vue-i18n/zh/)
 - [typescript](https://www.typescriptlang.org/zh/)
 - [vue2-helpers](https://github.com/ambit-tsai/vue2-helpers)
 - [mitt](https://github.com/developit/mitt)
@@ -143,7 +142,6 @@ pnpm run dev
 ### 特性
 
 - 多模式配置示例，支持 `development`，`staging` 和 `production`
-- 国际化配置示例，支持 `en` 和 `zh-Hans`
 - 路由配置示例
 - 状态管理配置示例
 - 请求配置示例
@@ -158,9 +156,9 @@ pnpm run dev
 |`pnpm run dev`|`development` 模式启动项目|
 |`pnpm run staging-build`|`staging` 模式打包项目|
 |`pnpm run build`|`production` 模式打包项目|
-|`pnpm run check`|检查项目依赖版本|
+|`pnpm run check:deps`|检查项目依赖版本|
+|`pnpm run check:types`|检查项目代码类型|
 |`pnpm run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
-|`pnpm run i18n:report`|获取国际化信息|
 |`pnpm run lint`|检查脚本文件，样式文件和 markdown 文件|
 |`pnpm run lint:eslint`|检查并自动修复脚本文件|
 |`pnpm run lint:markdownlint`|格式化 markdown 文件|
@@ -178,7 +176,6 @@ pnpm run dev
 │   ├── components              # 全局组件目录
 │   ├── composables             # 组合式 API 目录
 │   ├── data                    # 固定数据目录
-│   ├── i18n                    # 国际化目录
 │   ├── layouts                 # 布局目录
 │   ├── mocks                   # 接口模拟目录
 │   ├── pages                   # 页面视图目录
@@ -227,9 +224,7 @@ pnpm run dev
 
 所有模式都会载入这个环境变量文件。
 
-它里面包含了两个国际化变量 `VUE_APP_I18N_LOCALE` 和 `VUE_APP_I18N_FALLBACK_LOCALE`，值都是 `zh-Hans`，表示默认使用简体中文。
-
-另外，它还包含了请求变量 `VUE_APP_REQUEST_TIMEOUT`，用于指定请求的超时时间，值为 `10000`，表示 10 秒超时。
+它里面包含了包含了请求变量 `VUE_APP_REQUEST_TIMEOUT`，用于指定请求的超时时间，值为 `10000`，表示 10 秒超时。
 
 #### .env.staging
 
@@ -246,18 +241,6 @@ pnpm run dev
 `.env.development`，`.env.production` 都和 `.env.staging` 的内容大同小异，在这里不再赘述。
 
 如果你还需要添加更多的模式，请参考以上的说明添加对应的环境变量文件。另外，还需要修改 `package.json` 内的 `scripts` 字段，以添加对应的构建命令。
-
-### 国际化配置
-
-模板内置了两种语言配置，分别是简体中文和英语。
-
-简体中文文件是 [@/i18n/locales/zh-Hans.json](./src/i18n/locales/zh-Hans.json)，英语文件是 [@/i18n/locales/en.json](./src/i18n/locales/en.json)。
-
-你可以在上面两个文件里加入你需要的字段以支持翻译，务必注意字段需要保持一致，也请注意合理地划分字段。
-
-而要引入和 `vue2` 强绑定的 `npm` 库的语言包，你可以在 [@/i18n/index.js](./src/i18n/index.js) 内操作。目前已经为 `element-ui` 添加了语言包，你可以参考着为其他和 `vue2` 强绑定的 `npm` 库添加语言包。
-
-引入和 `vue2` 不强绑定的 `npm` 库的语言包，请查看它们的文档说明。
 
 ### 路由配置
 

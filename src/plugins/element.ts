@@ -2,9 +2,6 @@ import Vue from 'vue';
 import Element from 'element-ui';
 // @ts-ignore
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
-import i18n from '@/i18n';
 
-Vue.use(Element, {
-  i18n: (key: any, value: any) => i18n.t(key, value),
-});
+Vue.use(Element);
 Vue.component(CollapseTransition.name, CollapseTransition);

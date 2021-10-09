@@ -59,12 +59,14 @@
 ```sh
 # 安装 nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-# 设置 nvm 镜像
+# 设置镜像，加快下载速度
 export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
-# 安装 node@14
-nvm install 14
-# 设置 node@14 为默认版本
-nvm alias default 14
+# 安装 node@lts
+nvm install --lts
+# 使用 node@lts
+nvm use --lts
+# 设置默认版本
+nvm alias default node
 # 安装 pnpm
 npm i -g pnpm --registry=https://registry.npm.taobao.org
 # 安装 homebrew
@@ -88,7 +90,7 @@ export NVM_DIR="$HOME/.nvm"
 
 对于 Windows 用户，请按照以下指引操作。
 
-首先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.7/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
+首先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.8/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
 
 如果你正在使用 [Chocolatey](https://chocolatey.org/) 或 [Scoop](https://scoop.sh/)，你也可以通过命令安装，然后配置。
 
@@ -105,12 +107,13 @@ scoop install git
 git config --global core.autocrlf false
 # 设置默认分支名为 main
 git config --global init.defaultBranch main
-# 设置 nvm 镜像
+# 设置镜像，加快下载速度
 nvm node_mirror https://npm.taobao.org/mirrors/node/
-# 安装 node@14
-nvm install 14.17.6
-# 使用 node@14
-nvm use 14.17.6
+nvm npm_mirror https://npm.taobao.org/mirrors/npm/
+# 安装 node@lts
+nvm install lts
+# 使用 node@lts
+nvm use lts
 # 安装 pnpm
 npm i -g pnpm --registry=https://registry.npm.taobao.org
 
@@ -185,10 +188,13 @@ pnpm run dev
 │   ├── styles                  # 全局样式和全局变量目录
 │   ├── utils                   # 工具方法目录
 │   ├── App.vue
+│   ├── global.d.ts
 │   ├── guard.ts                # 导航守卫
 │   ├── main.ts
 │   ├── shims-tsx.d.ts
-│   └── shims-vue.d.ts
+│   ├── shims-vue-query.d.ts
+│   ├── shims-vue.d.ts
+│   └── shims-vue2-helpers.d.ts
 ├── .browserslistrc             # 浏览器支持列表文件
 ├── .commitlintrc.js            # commitlint 配置文件
 ├── .editorconfig

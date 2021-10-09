@@ -59,8 +59,6 @@
     "@babel/core": "~7.15.8",
     "@babel/eslint-parser": "~7.15.8",
     "@commitlint/cli": "~13.2.0",
-    "@fullhuman/postcss-purgecss": "~4.0.3",
-    "@fullhuman/vue-cli-plugin-purgecss": "~4.0.3",
     "@iconify/json": "~1.1.411",
     "@modyqyw/fabric": "~3.9.0",
     "@types/faker": "~5.5.8",

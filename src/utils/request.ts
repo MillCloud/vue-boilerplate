@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
+import { isRef, isReactive, toRaw } from '@vue/composition-api';
 import pkg from '@/../package.json';
-import { clearStorage, getToken } from '@/utils/storage';
+import { clearStorage, getToken } from './storage';
 import router from '@/router';
 
 const reSignInCodes = new Set(['TOKEN_OUTDATED']);
@@ -71,10 +72,22 @@ export const queryClient = new QueryClient({
     queries: {
       queryFn: async ({ queryKey }) => {
         // console.log('queryKey', queryKey);
+        const url = queryKey[2]
+          ? `${queryKey[0]}${isRef(queryKey[1]) ? queryKey[1].value : queryKey[1]}`
+          : `${queryKey[0]}`;
+        let params;
+        if (queryKey[2]) {
+          params = undefined;
+        } else if (isRef(queryKey[1])) {
+          params = queryKey[1].value;
+        } else {
+          // eslint-disable-next-line prefer-destructuring
+          params = queryKey[1];
+        }
         const { data } = await instance.request<IResponseData>({
           method: 'GET',
-          url: queryKey[0] as string,
-          params: queryKey[1] as Record<string, any>,
+          url,
+          params,
         });
         if (!data.success) {
           if (reSignInCodes.has(data.code)) {
@@ -92,6 +105,7 @@ export const queryClient = new QueryClient({
         }
         return data;
       },
+      refetchOnWindowFocus: false,
       retry: (failureCount, error) => {
         if ((error as IResponseError).response?.status === 404) {
           return false;
@@ -102,9 +116,17 @@ export const queryClient = new QueryClient({
     mutations: {
       mutationFn: async (variables) => {
         // console.log('variables', variables);
+        let config;
+        if (isReactive(variables)) {
+          config = toRaw(variables) as Record<string, any>;
+        } else if (isRef(variables)) {
+          config = variables.value as Record<string, any>;
+        } else {
+          config = variables as Record<string, any>;
+        }
         const { data } = await instance.request<IResponseData>({
           method: 'POST',
-          ...(variables as Record<string, any>),
+          ...config,
         });
         if (!data.success) {
           if (reSignInCodes.has(data.code)) {

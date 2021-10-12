@@ -1,5 +1,5 @@
 <template>
-  <el-main>
+  <el-row>
     <el-row class="center">
       <h6 class="text-lg">这里是首页</h6>
     </el-row>
@@ -23,7 +23,7 @@
         </ul>
       </div>
     </el-row>
-  </el-main>
+  </el-row>
 </template>
 
 <script setup lang="ts">

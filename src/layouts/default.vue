@@ -74,8 +74,8 @@
         </transition>
       </el-footer>
     </el-aside>
-    <el-container class="relative flex-col min-h-screen">
-      <el-header class="fixed z-10 flex-none w-full bg-white">
+    <el-container class="relative flex-col min-h-screen" :class="{ 'is-wider': isAsideCollapsed }">
+      <el-header class="fixed z-10 flex-none w-full transition bg-white">
         <el-row class="flex items-center justify-between w-full h-full">
           <el-col class="flex-auto w-auto">
             <el-breadcrumb>
@@ -86,12 +86,14 @@
           </el-col>
         </el-row>
       </el-header>
-      <template v-if="$route.meta && $route.meta.keepAlive">
-        <keep-alive>
-          <router-view />
-        </keep-alive>
-      </template>
-      <router-view v-else />
+      <el-main class="transition">
+        <template v-if="$route.meta && $route.meta.keepAlive">
+          <keep-alive>
+            <router-view />
+          </keep-alive>
+        </template>
+        <router-view v-else />
+      </el-main>
     </el-container>
     <el-backtop />
   </el-container>
@@ -203,6 +205,14 @@ export default defineComponent({
   > .el-main,
   > .el-footer {
     padding-left: 276px;
+  }
+
+  &.is-wider {
+    > .el-header,
+    > .el-main,
+    > .el-footer {
+      padding-left: 84px;
+    }
   }
 
   > .el-main {

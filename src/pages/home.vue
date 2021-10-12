@@ -1,5 +1,5 @@
 <template>
-  <el-main>
+  <el-row>
     <el-row class="my-0 center">
       <h6 class="text-lg">这里是主页</h6>
     </el-row>
@@ -13,7 +13,7 @@
       />
     </el-row>
     <HelloWorld msg="Welcome to Your Vue.js v2 App" />
-  </el-main>
+  </el-row>
 </template>
 
 <script lang="ts">

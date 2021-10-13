@@ -2,6 +2,7 @@ import axios from 'axios';
 import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { isRef, isReactive, toRaw } from '@vue/composition-api';
+import { isObject } from '@modyqyw/utils';
 import pkg from '@/../package.json';
 import { clearStorage, getToken } from './storage';
 import router from '@/router';
@@ -72,17 +73,23 @@ export const queryClient = new QueryClient({
     queries: {
       queryFn: async ({ queryKey }) => {
         // console.log('queryKey', queryKey);
-        const url = queryKey[2]
-          ? `${queryKey[0]}${isRef(queryKey[1]) ? queryKey[1].value : queryKey[1]}`
-          : `${queryKey[0]}`;
-        let params;
-        if (queryKey[2]) {
-          params = undefined;
-        } else if (isRef(queryKey[1])) {
-          params = queryKey[1].value;
-        } else {
-          // eslint-disable-next-line prefer-destructuring
-          params = queryKey[1];
+        let url = `${queryKey[0]}`;
+        if (isRef(queryKey[1])) {
+          url += `${queryKey[1].value}`;
+        } else if (Array.isArray(queryKey[1])) {
+          queryKey[1].forEach((item, index) => {
+            url = url.replace(`:${index}`, isRef(item) ? `${item.value}` : `${item}`);
+          });
+        }
+        let params: Record<string, any> = {};
+        if (isObject(queryKey[2])) {
+          Object.keys(queryKey[2]).forEach((key) => {
+            params = {
+              ...params,
+              // @ts-ignore
+              [key]: isRef(queryKey[2][key]) ? queryKey[2][key].value : queryKey[2][key],
+            };
+          });
         }
         const { data } = await instance.request<IResponseData>({
           method: 'GET',

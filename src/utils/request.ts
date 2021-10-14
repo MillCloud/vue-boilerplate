@@ -87,7 +87,11 @@ export const queryClient = new QueryClient({
             params = {
               ...params,
               // @ts-ignore
-              [key]: isRef(queryKey[2][key]) ? queryKey[2][key].value : queryKey[2][key],
+              [key]: isRef(queryKey[2][key])
+                ? // @ts-ignore
+                  encodeURIComponent(queryKey[2][key].value)
+                : // @ts-ignore
+                  encodeURIComponent(queryKey[2][key]),
             };
           });
         }

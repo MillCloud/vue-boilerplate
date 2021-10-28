@@ -25,6 +25,7 @@ module.exports = {
     // unplugin-vue-components
     config.plugin('unplugin-vue-components').use(
       UnpluginVueComponentsPlugin({
+        // dts: 'src/components.d.ts',
         resolvers: [
           IconsResolver({
             defaultClass: 'el-icon-',

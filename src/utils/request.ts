@@ -82,7 +82,17 @@ export const queryClient = new QueryClient({
           });
         }
         let params: Record<string, any> = {};
-        if (isObject(queryKey[2])) {
+        if (isReactive(queryKey[2])) {
+          params = {
+            ...params,
+            ...toRaw(queryKey[2] as Record<string, any>),
+          };
+        } else if (isRef(queryKey[2])) {
+          params = {
+            ...params,
+            ...(queryKey[2].value as Record<string, any>),
+          };
+        } else if (isObject(queryKey[2])) {
           Object.keys(queryKey[2]).forEach((key) => {
             params = {
               ...params,

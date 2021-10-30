@@ -27,7 +27,7 @@
     "@iconify/vue2": "~1.0.0",
     "@modyqyw/utils": "~1.1.0",
     "@sum.cumo/vue-browserupdate": "~3.0.1",
-    "@vue/composition-api": "~1.2.4",
+    "@vue/composition-api": "~1.3.0",
     "@vueuse/core": "~6.7.4",
     "@vueuse/integrations": "~6.7.4",
     "axios": "~0.24.0",
@@ -56,11 +56,11 @@
     "vuex": "~3.6.2"
   },
   "devDependencies": {
-    "@babel/core": "~7.15.8",
-    "@babel/eslint-parser": "~7.15.8",
+    "@babel/core": "~7.16.0",
+    "@babel/eslint-parser": "~7.16.0",
     "@commitlint/cli": "~13.2.1",
-    "@iconify/json": "~1.1.420",
-    "@modyqyw/fabric": "~4.0.0-10",
+    "@iconify/json": "~1.1.421",
+    "@modyqyw/fabric": "~4.0.0-11",
     "@types/faker": "~5.5.9",
     "@types/mockjs": "~1.0.4",
     "@types/node": "~16.11.6",
@@ -94,14 +94,10 @@
     "stylelint-webpack-plugin": "~3.0.1",
     "typescript": "~4.4.4",
     "unplugin-icons": "~0.12.17",
-    "unplugin-vue-components": "~0.16.0",
+    "unplugin-vue-components": "~0.17.0",
     "unplugin-vue2-script-setup": "~0.6.12",
     "vue-cli-plugin-auto-routing": "~1.3.0",
     "vue-template-compiler": "~2.6.14",
     "vue-tsc": "~0.28.10"
-  },
-  "engines": {
-    "node": "^12.22.6 || ^14.17.6 || ^16.8.0",
-    "npm": "^6.14.15 || ^7.21.0"
   }
 }

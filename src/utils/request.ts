@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
-import { isRef, isReactive, toRaw } from '@vue/composition-api';
-import { isObject } from '@modyqyw/utils';
+import { isRef, isReactive, unref } from '@vue/composition-api';
+import { isArray } from '@modyqyw/utils';
 import pkg from '@/../package.json';
 import { clearStorage, getToken } from './storage';
 import router from '@/router';
@@ -74,37 +74,26 @@ export const queryClient = new QueryClient({
       queryFn: async ({ queryKey }) => {
         // console.log('queryKey', queryKey);
         let url = `${queryKey[0]}`;
-        if (isRef(queryKey[1])) {
-          url += `${queryKey[1].value}`;
-        } else if (Array.isArray(queryKey[1])) {
+        if (isArray(queryKey[1])) {
           queryKey[1].forEach((item, index) => {
-            url = url.replace(`:${index}`, isRef(item) ? `${item.value}` : `${item}`);
+            url = url.replace(`:${index}`, `${unref(item)}`);
           });
+        } else if (queryKey[1]) {
+          url += `${unref(queryKey[1])}`;
         }
         let params: Record<string, any> = {};
-        if (isReactive(queryKey[2])) {
+        if (isReactive(queryKey[2]) || isRef(queryKey[2])) {
           params = {
             ...params,
-            ...toRaw(queryKey[2] as Record<string, any>),
+            ...unref(queryKey[2] as Record<string, any>),
           };
-        } else if (isRef(queryKey[2])) {
-          params = {
-            ...params,
-            ...(queryKey[2].value as Record<string, any>),
-          };
-        } else if (isObject(queryKey[2])) {
-          Object.keys(queryKey[2]).forEach((key) => {
-            params = {
-              ...params,
-              // @ts-ignore
-              [key]: isRef(queryKey[2][key])
-                ? // @ts-ignore
-                  encodeURIComponent(queryKey[2][key].value)
-                : // @ts-ignore
-                  encodeURIComponent(queryKey[2][key]),
-            };
-          });
         }
+        Object.keys(params).forEach((key) => {
+          params = {
+            ...params,
+            [key]: encodeURIComponent(params[key]),
+          };
+        });
         const { data } = await instance.request<IResponseData>({
           method: 'GET',
           url,
@@ -137,17 +126,9 @@ export const queryClient = new QueryClient({
     mutations: {
       mutationFn: async (variables) => {
         // console.log('variables', variables);
-        let config;
-        if (isReactive(variables)) {
-          config = toRaw(variables) as Record<string, any>;
-        } else if (isRef(variables)) {
-          config = variables.value as Record<string, any>;
-        } else {
-          config = variables as Record<string, any>;
-        }
         const { data } = await instance.request<IResponseData>({
           method: 'POST',
-          ...config,
+          ...(unref(variables) as Record<string, any>),
         });
         if (!data.success) {
           if (reSignInCodes.has(data.code)) {

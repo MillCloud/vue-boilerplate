@@ -117,7 +117,7 @@ export const queryClient = new QueryClient({
       },
       refetchOnWindowFocus: false,
       retry: (failureCount, error) => {
-        if ((error as IResponseError).response?.status === 404) {
+        if ([403, 404, 500].includes((error as IResponseError).response?.status ?? 200)) {
           return false;
         }
         return failureCount < 3;
@@ -147,7 +147,7 @@ export const queryClient = new QueryClient({
         return data;
       },
       retry: (failureCount, error) => {
-        if ((error as IResponseError).response?.status === 404) {
+        if ([403, 404, 500].includes((error as IResponseError).response?.status ?? 200)) {
           return false;
         }
         return failureCount < 3;

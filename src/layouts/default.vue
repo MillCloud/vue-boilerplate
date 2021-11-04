@@ -87,12 +87,10 @@
         </el-row>
       </el-header>
       <el-main class="transition">
-        <template v-if="$route.meta && $route.meta.keepAlive">
-          <keep-alive>
-            <router-view />
-          </keep-alive>
-        </template>
-        <router-view v-else />
+        <keep-alive>
+          <router-view v-if="$route.meta && $route.meta.keepAlive" />
+        </keep-alive>
+        <router-view v-if="!($route.meta && $route.meta.keepAlive)" />
       </el-main>
     </el-container>
     <el-backtop />

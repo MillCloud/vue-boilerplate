@@ -34,7 +34,7 @@
   "vueCompilerOptions": {
     "experimentalCompatMode": 2,
     "experimentalTemplateCompilerOptions": {
-      "compatConfig": { "Mode": 2 }
+      "compatConfig": { "MODE": 2 }
     }
   },
   "include": [

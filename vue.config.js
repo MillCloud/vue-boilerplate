@@ -27,9 +27,7 @@ module.exports = {
       UnpluginVueComponentsPlugin({
         // dts: 'src/components.d.ts',
         resolvers: [
-          IconsResolver({
-            defaultClass: 'el-icon-',
-          }),
+          IconsResolver(),
           // ElementUiResolver(),
         ],
       }),
@@ -38,6 +36,7 @@ module.exports = {
     config.plugin('unplugin-icons').use(
       UnpluginIconsPlugin({
         compiler: 'vue2',
+        defaultClass: 'el-icon-',
       }),
     );
     // unplugin-vue2-script-setup

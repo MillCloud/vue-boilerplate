@@ -2,21 +2,18 @@ import axios from 'axios';
 import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { isRef, isReactive, unref } from '@vue/composition-api';
-import { isArray } from '@modyqyw/utils';
-import pkg from '@/../package.json';
-import { clearStorage, getToken } from './storage';
+import { isArray, isObject } from '@modyqyw/utils';
+import { removeToken, getToken } from './storage';
 import router from '@/router';
+import { DefaultHeaders } from '@/data';
 
 const reSignInCodes = new Set(['TOKEN_OUTDATED']);
 
 const instance = axios.create({
   baseURL: process.env.VUE_APP_REQUEST_BASE_URL || '',
-  timeout: JSON.parse(process.env.VUE_APP_REQUEST_TIMEOUT || '10000') || 10000,
+  timeout: JSON.parse(process.env.VUE_APP_REQUEST_TIMEOUT || '10000') || 10_000,
   headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json; charset=utf-8',
-    'X-Requested-With': 'XMLHttpRequest',
-    'X-Version': `${pkg.name}/${pkg.version}`,
+    ...DefaultHeaders,
   },
 });
 instance.interceptors.request.use((config) => ({
@@ -72,7 +69,9 @@ export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       queryFn: async ({ queryKey }) => {
+        // console.log('');
         // console.log('queryKey', queryKey);
+        // console.log('');
         let url = `${queryKey[0]}`;
         if (isArray(queryKey[1])) {
           queryKey[1].forEach((item, index) => {
@@ -82,30 +81,47 @@ export const queryClient = new QueryClient({
           url += `${unref(queryKey[1])}`;
         }
         let params: Record<string, any> = {};
-        if (isReactive(queryKey[2]) || isRef(queryKey[2])) {
+        if (isReactive(queryKey[2]) || isRef(queryKey[2]) || isObject(queryKey[2])) {
           params = {
             ...params,
             ...unref(queryKey[2] as Record<string, any>),
           };
         }
         Object.keys(params).forEach((key) => {
-          params = {
-            ...params,
-            [key]: encodeURIComponent(params[key]),
-          };
+          if (['', 'undefined', 'null', undefined, null].includes(params[key])) {
+            delete params[key];
+          } else {
+            params = {
+              ...params,
+              [key]: params[key],
+            };
+          }
         });
+        let config: Record<string, any> = {};
+        if (isReactive(queryKey[3]) || isRef(queryKey[3]) || isObject(queryKey[3])) {
+          config = {
+            ...config,
+            ...unref(queryKey[3] as Record<string, any>),
+          };
+        }
         const { data } = await instance.request<IResponseData>({
           method: 'GET',
           url,
           params,
+          ...config,
         });
-        if (!data.success) {
+        if (!(data?.success ?? true)) {
           if (reSignInCodes.has(data.code)) {
-            clearStorage();
+            removeToken();
             showError({
               message: '请重新登录',
             } as IResponseError);
-            router.push('/sign-in');
+            router.push({
+              path: '/sign-in',
+              query: {
+                redirect: encodeURIComponent(router.currentRoute.fullPath),
+              },
+            });
           } else if ((queryKey[1] as Record<string, any>)?.showError ?? true) {
             showError(
               (data as unknown) as IResponseError,
@@ -125,18 +141,25 @@ export const queryClient = new QueryClient({
     },
     mutations: {
       mutationFn: async (variables) => {
+        // console.log('');
         // console.log('variables', variables);
+        // console.log('');
         const { data } = await instance.request<IResponseData>({
           method: 'POST',
           ...(unref(variables) as Record<string, any>),
         });
         if (!data.success) {
           if (reSignInCodes.has(data.code)) {
-            clearStorage();
+            removeToken();
             showError({
               message: '请重新登录',
             } as IResponseError);
-            router.push('/sign-in');
+            router.push({
+              path: '/sign-in',
+              query: {
+                redirect: encodeURIComponent(router.currentRoute.fullPath),
+              },
+            });
           } else if ((variables as Record<string, any>)?.showError ?? true) {
             showError(
               (data as unknown) as IResponseError,

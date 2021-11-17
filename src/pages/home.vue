@@ -16,15 +16,8 @@
   </el-row>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue';
-
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld,
-  },
-};
 </script>
 
 <route lang="json">

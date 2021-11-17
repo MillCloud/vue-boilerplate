@@ -205,17 +205,17 @@ export default defineComponent({
     padding-left: 276px;
   }
 
+  > .el-main {
+    width: 100%;
+    padding-top: 80px;
+  }
+
   &.is-wider {
     > .el-header,
     > .el-main,
     > .el-footer {
       padding-left: 84px;
     }
-  }
-
-  > .el-main {
-    width: 100%;
-    padding-top: 80px;
   }
 }
 </style>

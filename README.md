@@ -34,7 +34,6 @@
 - [portal-vue](https://portal-vue.linusb.org/)
 - [@sum.cumo/vue-browserupdate](https://browser-update.org/zh/)
 - [@modyqyw/utils](https://github.com/modyqyw/utils)
-- [immer](https://immerjs.github.io/immer/)
 - [dayjs](https://dayjs.gitee.io/zh-CN/)
 - [nprogress](https://ricostacruz.com/nprogress/)
 - [faker](https://github.com/marak/Faker.js/)
@@ -153,19 +152,19 @@ pnpm run dev
 
 模板里内置了较多命令，以适应各种不同的情况。更多的命令你可以查看 [package.json](./package.json)。
 
-|命令|含义|
-|-|-|
-|`pnpm run dev`|`development` 模式启动项目|
-|`pnpm run staging-build`|`staging` 模式打包项目|
-|`pnpm run build`|`production` 模式打包项目|
-|`pnpm run check:deps`|检查项目依赖版本|
-|`pnpm run check:types`|检查项目代码类型|
-|`pnpm run commit`|引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令|
-|`pnpm run lint`|检查脚本文件，样式文件和 markdown 文件|
-|`pnpm run lint:eslint`|检查并自动修复脚本文件|
-|`pnpm run lint:markdownlint`|格式化 markdown 文件|
-|`pnpm run lint:stylelint`|检查并自动修复样式文件|
-|`pnpm run release`|发布新版本|
+| 命令                         | 含义                                                                   |
+| ---------------------------- | ---------------------------------------------------------------------- |
+| `pnpm run dev`               | `development` 模式启动项目                                             |
+| `pnpm run staging-build`     | `staging` 模式打包项目                                                 |
+| `pnpm run build`             | `production` 模式打包项目                                              |
+| `pnpm run check:deps`        | 检查项目依赖版本                                                       |
+| `pnpm run check:types`       | 检查项目代码类型                                                       |
+| `pnpm run commit`            | 引导填写 git 提交信息并提交，你需要手动 `git add` 对应部分后执行该命令 |
+| `pnpm run lint`              | 检查脚本文件，样式文件和 markdown 文件                                 |
+| `pnpm run lint:eslint`       | 检查并自动修复脚本文件                                                 |
+| `pnpm run lint:markdownlint` | 格式化 markdown 文件                                                   |
+| `pnpm run lint:stylelint`    | 检查并自动修复样式文件                                                 |
+| `pnpm run release`           | 发布新版本                                                             |
 
 ### 项目结构
 
@@ -293,7 +292,6 @@ module.exports = {
     },
   },
 };
-
 ```
 
 一般情况下，`devServer.proxy` 应该与某个 `production` 运行模式下的 `VUE_APP_REQUEST_BASE_URL` 一致。

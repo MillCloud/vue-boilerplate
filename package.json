@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@ant-design/colors": "~6.0.0",
-    "@iconify/vue2": "~1.1.0",
+    "@iconify/vue2": "~1.0.0",
     "@modyqyw/utils": "~2.0.1",
     "@sum.cumo/vue-browserupdate": "~3.0.1",
     "@vue/composition-api": "~1.4.0",

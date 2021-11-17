@@ -9,7 +9,7 @@
       <el-header class="flex items-center flex-none w-full p-0 transition">
         <img src="@/assets/app.png" class="h-full" alt="logo" title="logo" />
         <span v-show="!isAsideCollapsed" class="text-xl font-bold transition">
-          {{ pkg.description || pkg.name }}
+          {{ pkg.name }}
         </span>
       </el-header>
       <el-menu

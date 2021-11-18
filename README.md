@@ -56,9 +56,9 @@
 
 ```sh
 # 安装 nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 # 设置镜像，加快下载速度
-export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node
 # 安装 node@lts
 nvm install --lts
 # 使用 node@lts
@@ -66,7 +66,7 @@ nvm use --lts
 # 设置默认版本
 nvm alias default node
 # 安装 pnpm
-npm i -g pnpm --registry=https://registry.npm.taobao.org
+npm i -g pnpm --registry=https://registry.npmmirror.com
 # 安装 homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # 安装 git
@@ -90,6 +90,8 @@ export NVM_DIR="$HOME/.nvm"
 
 首先安装 [nvm-windows](https://github.com/coreybutler/nvm-windows/releases/download/1.1.8/nvm-setup.zip) 和 [Git](https://git-scm.com/downloads)。
 
+然后使用 Windows Terminal 作为终端，Git Bash 作为 Shell，参考 [让 Win10 的终端更好用](https://sspai.com/post/63814) 和 [配置 Windows Terminal](https://sspai.com/post/62167)。
+
 如果你正在使用 [Chocolatey](https://chocolatey.org/) 或 [Scoop](https://scoop.sh/)，你也可以通过命令安装，然后配置。
 
 ```sh
@@ -106,16 +108,18 @@ git config --global core.autocrlf false
 # 设置默认分支名为 main
 git config --global init.defaultBranch main
 # 设置镜像，加快下载速度
-nvm node_mirror https://npm.taobao.org/mirrors/node/
-nvm npm_mirror https://npm.taobao.org/mirrors/npm/
+nvm node_mirror https://npmmirror.com/mirrors/node
+nvm npm_mirror https://npmmirror.com/mirrors/npm
 # 安装 node@lts
 nvm install lts
 # 使用 node@lts
 nvm use lts
 # 安装 pnpm
-npm i -g pnpm --registry=https://registry.npm.taobao.org
+npm i -g pnpm --registry=https://registry.npmmirror.com
 
 ```
+
+你可能需要配置 `~/.huskyrc`。
 
 其它系统请根据以上指引自行调整。
 
@@ -256,19 +260,23 @@ pnpm run dev
 
 #### 应用类状态
 
-应用类状态是应用本身的状态，包括应用当前语言等。
+应用类状态是应用本身的状态，包括应用语言、侧边栏是否展开等。
+
+不建议直接操作 Storage。建议在初始化时，读取 Storage 数据保存到状态仓库，随后从状态仓库读取相应的状态，写入 Storage 时同时更新状态仓库的状态。
+
+如果这些数据不会多页面同时使用，建议不要保存到状态仓库，而是直接保存到组件内。
 
 #### 业务类状态
 
-业务类状态是应用所承载的业务的状态，包括用户信息，页面通用数据等。模板建议把业务类状态分模块放置。
+业务类状态是应用所承载的业务的状态，包括用户信息，页面通用数据等。
+
+不建议保存过多的业务类状态，借助 vue-query，你可以很方便地做数据缓存，你只需要保留必需的业务类状态到状态仓库即可，比如用户信息。
 
 ### 请求配置
 
-#### axios 封装
+#### axios 和 vue-query 封装
 
-模板提供了基于 axios 和 vue-query 的请求示例，可以查看 [@/utils/request.ts](./src/utils/request.ts)，[@/App.vue](./src/App.vue) 和 [@/pages/index.vue](./src/pages/index.vue)，并根据业务做适当调整。
-
-模板也提供了 `useRequest`，默认加入了一些拦截器和适配器以实现自动日志、自动重试。你可以根据业务适当调整 [封装文件](./src/composables/request.ts)。
+模板提供了基于 axios + vue-query 的请求示例，可以查看 [@/utils/request.ts](./src/utils/request.ts)，[@/App.vue](./src/App.vue) 和 [@/pages/index.vue](./src/pages/__index__.vue)，并根据业务做适当调整。
 
 你也可以考虑使用 [swrv](https://docs-swrv.netlify.app/)。
 
@@ -276,7 +284,7 @@ pnpm run dev
 
 在 `development` 运行模式下请求服务器往往会出现跨域问题，因此模板内已经设置了只在 `development` 运行模式下生效的 `devServer.proxy`，见 [vue.config.js](./vue.config.js) L68。
 
-同时，需要设置 `axios` 的 `baseURL` 为空字符串，否则会导致代理失败，见 [@/composables/useAxios.ts](./src/composables/useAxios.ts) L72。
+同时，需要设置 `axios` 的 `baseURL` 为空字符串，否则会导致代理失败，见 [@/utils/request.ts](./src/utils/request.ts) L13。
 
 为了向其它 CLI 靠近，你可以调整 `devServer.proxy`，下面是一个示例。
 

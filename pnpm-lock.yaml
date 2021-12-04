@@ -5,7 +5,7 @@ specifiers:
   '@babel/core': ~7.16.0
   '@babel/eslint-parser': ~7.16.3
   '@commitlint/cli': ~15.0.0
-  '@iconify/json': ~1.1.430
+  '@iconify/json': ~1.1.438
   '@iconify/vue2': ~1.1.1
   '@modyqyw/fabric': ~4.2.1
   '@modyqyw/utils': ~2.0.1
@@ -17,7 +17,7 @@ specifiers:
   '@typescript-eslint/parser': ~5.5.0
   '@vitejs/plugin-legacy': ~1.6.3
   '@vue/composition-api': ~1.4.1
-  '@vue/runtime-dom': ~3.2.22
+  '@vue/runtime-dom': ~3.2.23
   '@vueuse/core': ~7.1.2
   '@vueuse/integrations': ~7.1.2
   axios: ~0.24.0
@@ -62,7 +62,7 @@ specifiers:
   vue-query: ~1.14.0
   vue-router: ~3.5.3
   vue-template-compiler: ~2.6.14
-  vue-tsc: ~0.29.5
+  vue-tsc: ~0.29.8
   vue2-helpers: ~1.1.6
   vuex: ~3.6.2
 

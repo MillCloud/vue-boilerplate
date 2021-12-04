@@ -1,5 +1,6 @@
-/* eslint-disable global-require */
 const antdColors = require('@ant-design/colors');
+
+const primary = antdColors.generate('#1890ff');
 
 module.exports = {
   future: {
@@ -540,24 +541,24 @@ module.exports = {
         'darken-4': antdColors.magenta[9],
       },
       primary: {
-        ...antdColors.blue.reduce(
+        ...primary.reduce(
           (acc, cur, idx) => ({
             ...acc,
             [idx + 1]: cur,
           }),
           {},
         ),
-        default: antdColors.blue[5],
-        DEFAULT: antdColors.blue[5],
-        'lighten-5': antdColors.blue[0],
-        'lighten-4': antdColors.blue[1],
-        'lighten-3': antdColors.blue[2],
-        'lighten-2': antdColors.blue[3],
-        'lighten-1': antdColors.blue[4],
-        'darken-1': antdColors.blue[6],
-        'darken-2': antdColors.blue[7],
-        'darken-3': antdColors.blue[8],
-        'darken-4': antdColors.blue[9],
+        default: primary[5],
+        DEFAULT: primary[5],
+        'lighten-5': primary[0],
+        'lighten-4': primary[1],
+        'lighten-3': primary[2],
+        'lighten-2': primary[3],
+        'lighten-1': primary[4],
+        'darken-1': primary[6],
+        'darken-2': primary[7],
+        'darken-3': primary[8],
+        'darken-4': primary[9],
       },
       success: {
         ...antdColors.green.reduce(
@@ -1810,4 +1811,3 @@ module.exports = {
     divideStyle: false,
   },
 };
-/* eslint-enable global-require */

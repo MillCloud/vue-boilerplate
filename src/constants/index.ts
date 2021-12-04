@@ -9,4 +9,4 @@ export const DefaultHeaders = {
   'X-Version': `${pkg.name}/${pkg.version}`,
 };
 
-export const PageLimits: TPageLimit[] = [10, 20, 50, 100, 200, 500];
+export const PageLimits: TPageLimit[] = [10, 20, 50, 100];

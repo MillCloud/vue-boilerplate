@@ -1,31 +1,13 @@
 import Vue from 'vue';
-import Router from 'vue-router';
-import routes from 'vue-auto-routing';
-import { createRouterLayout } from 'vue-router-layout';
+import VueRouter from 'vue-router';
+import { setupLayouts } from 'virtual:generated-layouts';
+import generatedRoutes from 'virtual:generated-pages';
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
-const RouterLayout = createRouterLayout((layout) => import(`@/layouts/${layout}.vue`));
-
-export default new Router({
+const routes = setupLayouts(generatedRoutes);
+export default new VueRouter({
   mode: 'hash',
   scrollBehavior: () => ({ x: 0, y: 0, behavior: 'smooth' }),
-  routes: [
-    {
-      path: '/',
-      component: RouterLayout,
-      children: routes,
-    },
-    {
-      path: '*',
-      component: RouterLayout,
-      children: [
-        {
-          name: 'page-404',
-          path: '',
-          component: () => import('@/pages/404.vue'),
-        },
-      ],
-    },
-  ],
+  routes,
 });

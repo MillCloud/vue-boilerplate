@@ -41,3 +41,17 @@ export function setIsAsideCollapsed(isAsideCollapsed = false) {
 export function removeIsAsideCollapsed() {
   removeItem({ key: isAsideCollapsedKey });
 }
+
+const pageLimitKey = 'pageLimit';
+
+export function getPageLimit() {
+  return JSON.parse(getItem({ key: pageLimitKey }) || '10');
+}
+
+export function setPageLimit(pageLimit = 10) {
+  setItem({ key: pageLimitKey, value: JSON.stringify(pageLimit) });
+}
+
+export function removePageLimit() {
+  removeItem({ key: pageLimitKey });
+}

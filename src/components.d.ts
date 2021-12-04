@@ -92,7 +92,8 @@ declare module 'vue' {
     ElTransfer: typeof import('element-ui/lib/transfer')['default'];
     ElTree: typeof import('element-ui/lib/tree')['default'];
     ElUpload: typeof import('element-ui/lib/upload')['default'];
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default'];
+    Portal: typeof import('portal-vue')['Portal'];
+    PortalTarget: typeof import('portal-vue')['PortalTarget'];
     RouterLink: typeof import('vue-router')['RouterLink'];
     RouterView: typeof import('vue-router')['RouterView'];
   }

@@ -20,7 +20,9 @@
     "noEmit": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env",
+      "vite/client",
+      "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client",
       "unplugin-icons/types/vue",
       "unplugin-vue2-script-setup/types",
       "unplugin-vue2-script-setup/ref-macros"
@@ -46,5 +48,5 @@
     "./**/*.tsx",
     "./**/*.vue"
   ],
-  "exclude": ["node_modules", "dist", "dist-ssr", "dist_electron", "out", "unpackage"]
+  "exclude": ["node_modules", "dist"]
 }

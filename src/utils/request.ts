@@ -3,18 +3,27 @@ import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { isRef, isReactive, unref } from '@vue/composition-api';
 import { isArray, isObject } from '@modyqyw/utils';
+import qs from 'query-string';
 import { removeToken, getToken } from './storage';
 import router from '@/router';
-import { DefaultHeaders } from '@/data';
+import { DefaultHeaders } from '@/constants';
 
-const reSignInCodes = new Set(['TOKEN_OUTDATED']);
+const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_REQUEST_BASE_URL || '',
-  timeout: JSON.parse(process.env.VUE_APP_REQUEST_TIMEOUT || '10000') || 10_000,
+  baseURL: process.env.VITE_REQUEST_BASE_URL || '',
+  timeout: 30_000,
   headers: {
     ...DefaultHeaders,
   },
+  paramsSerializer: (params: Record<string, any>) =>
+    qs.stringify(
+      Object.fromEntries(
+        Object.entries(params).filter(
+          ([, v]) => !['', 'undefined', 'null', undefined, null].includes(v?.toString() ?? v),
+        ),
+      ),
+    ),
 });
 instance.interceptors.request.use((config) => ({
   ...config,
@@ -82,27 +91,21 @@ export const queryClient = new QueryClient({
         }
         let params: Record<string, any> = {};
         if (isReactive(queryKey[2]) || isRef(queryKey[2]) || isObject(queryKey[2])) {
-          params = {
-            ...params,
-            ...unref(queryKey[2] as Record<string, any>),
-          };
-        }
-        Object.keys(params).forEach((key) => {
-          if (['', 'undefined', 'null', undefined, null].includes(params[key])) {
-            delete params[key];
-          } else {
-            params = {
+          params = Object.fromEntries(
+            Object.entries({
               ...params,
-              [key]: params[key],
-            };
-          }
-        });
+              ...unref(queryKey[2] as Record<string, any>),
+            }).map(([k, v]) => [unref(k), unref(v)]),
+          );
+        }
         let config: Record<string, any> = {};
         if (isReactive(queryKey[3]) || isRef(queryKey[3]) || isObject(queryKey[3])) {
-          config = {
-            ...config,
-            ...unref(queryKey[3] as Record<string, any>),
-          };
+          config = Object.fromEntries(
+            Object.entries({
+              ...config,
+              ...unref(queryKey[3] as Record<string, any>),
+            }).map(([k, v]) => [unref(k), unref(v)]),
+          );
         }
         const { data } = await instance.request<IResponseData>({
           method: 'GET',
@@ -124,7 +127,7 @@ export const queryClient = new QueryClient({
             });
           } else if ((queryKey[1] as Record<string, any>)?.showError ?? true) {
             showError(
-              (data as unknown) as IResponseError,
+              data as unknown as IResponseError,
               (queryKey[1] as Record<string, any>)?.showErrorType,
             );
           }
@@ -146,9 +149,14 @@ export const queryClient = new QueryClient({
         // console.log('');
         const { data } = await instance.request<IResponseData>({
           method: 'POST',
-          ...(unref(variables) as Record<string, any>),
+          ...Object.fromEntries(
+            Object.entries(unref(variables) as Record<string, any>).map(([k, v]) => [
+              unref(k),
+              unref(v),
+            ]),
+          ),
         });
-        if (!data.success) {
+        if (!(data?.success ?? true)) {
           if (reSignInCodes.has(data.code)) {
             removeToken();
             showError({
@@ -162,7 +170,7 @@ export const queryClient = new QueryClient({
             });
           } else if ((variables as Record<string, any>)?.showError ?? true) {
             showError(
-              (data as unknown) as IResponseError,
+              data as unknown as IResponseError,
               (variables as Record<string, any>)?.showErrorType,
             );
           }

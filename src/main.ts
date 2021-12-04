@@ -1,17 +1,17 @@
 import Vue from 'vue';
 import '@/plugins';
+import { createPinia } from 'pinia';
 import router from './router';
-import store from './store';
 import App from './App.vue';
 import '@/styles/preflight.scss';
 import '@/styles/global.scss';
 import '@/styles/tailwind.scss';
 import '@/guard';
 
-Vue.config.productionTip = false;
-
-new Vue({
+const app = new Vue({
   router,
-  store,
+  pinia: createPinia(),
   render: (h) => h(App),
-}).$mount('#app');
+});
+
+app.$mount('#app');

@@ -158,10 +158,9 @@ pnpm run dev
 │   ├── global.d.ts
 │   ├── guard.ts                # 导航守卫
 │   ├── main.ts
-│   ├── shims-tsx.d.ts
+│   ├── shims-jsx.d.ts
 │   ├── shims-vue-query.d.ts
-│   ├── shims-vue.d.ts
-│   └── shims-vue2-helpers.d.ts
+│   └── shims-vue.d.ts
 ├── .commitlintrc.js            # commitlint 配置文件
 ├── .editorconfig
 ├── .env                        # 所有环境都载入的环境变量

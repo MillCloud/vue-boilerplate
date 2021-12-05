@@ -36,7 +36,7 @@ specifiers:
   picocolors: ~1.0.0
   pinia: ~2.0.6
   postcss-preset-env: ~7.0.1
-  prettier: ~2.5.0
+  prettier: ~2.5.1
   query-string: ~7.0.1
   release-it: ~14.11.8
   rimraf: ~3.0.2
@@ -47,8 +47,8 @@ specifiers:
   tailwindcss: ~1.9.6
   typescript: ~4.5.2
   unplugin-icons: ~0.12.22
-  unplugin-vue-components: ~0.17.2
-  unplugin-vue2-script-setup: ~0.7.3
+  unplugin-vue-components: ~0.17.4
+  unplugin-vue2-script-setup: ~0.8.1
   vite: ~2.6.14
   vite-plugin-compression: ~0.3.6
   vite-plugin-env-compatible: ~1.1.1
@@ -94,7 +94,7 @@ devDependencies:
   '@babel/eslint-parser': 7.16.3_@babel+core@7.16.0+eslint@8.4.0
   '@commitlint/cli': 15.0.0
   '@iconify/json': 1.1.438
-  '@modyqyw/fabric': 4.2.1_d6205fd00499fd50e0d8b2ac3373df94
+  '@modyqyw/fabric': 4.2.1_578c4d3a5b1ec5799cc1301ac8a08783
   '@types/node': 16.11.11
   '@types/nprogress': 0.2.0
   '@types/statuses': 2.0.0
@@ -112,7 +112,7 @@ devDependencies:
   npm-check-updates: 12.0.2
   picocolors: 1.0.0
   postcss-preset-env: 7.0.1
-  prettier: 2.5.0
+  prettier: 2.5.1
   release-it: 14.11.8
   rimraf: 3.0.2
   sass: 1.44.0
@@ -120,8 +120,8 @@ devDependencies:
   stylelint: 14.1.0
   typescript: 4.5.2
   unplugin-icons: 0.12.22_cd1846aafe4c35f31c699104ee2df148
-  unplugin-vue-components: 0.17.2_vite@2.6.14+vue@2.6.14
-  unplugin-vue2-script-setup: 0.7.3_vite@2.6.14
+  unplugin-vue-components: 0.17.4_vite@2.6.14+vue@2.6.14
+  unplugin-vue2-script-setup: 0.8.1_vite@2.6.14
   vite: 2.6.14_sass@1.44.0
   vite-plugin-compression: 0.3.6_vite@2.6.14
   vite-plugin-env-compatible: 1.1.1
@@ -794,7 +794,7 @@ packages:
       vue: 2.6.14
     dev: false
 
-  /@modyqyw/fabric/4.2.1_d6205fd00499fd50e0d8b2ac3373df94:
+  /@modyqyw/fabric/4.2.1_578c4d3a5b1ec5799cc1301ac8a08783:
     resolution: {integrity: sha512-EygJUxfoCI4O2eyYwUlsJHTWeI1R/s8mZF8nR5+o/B4B7nZDPM0UAncsdvUnWWJuKTuto0bcV2y8DtPlvslHrg==}
     engines: {node: ^12.22.6 || ^14.17.6 || ^16.8.0}
     hasBin: true
@@ -820,7 +820,7 @@ packages:
       eslint-plugin-functional: 4.0.2_d57b06087084b325af691be81f09e621
       eslint-plugin-import: 2.25.3_eslint@8.4.0
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.4.0
-      eslint-plugin-prettier: 4.0.0_27140960afd45c356c84f80c9a47df2a
+      eslint-plugin-prettier: 4.0.0_14354588a145aaef8cc0e524e93c2ca4
       eslint-plugin-react: 7.27.1_eslint@8.4.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.4.0
       eslint-plugin-regexp: 1.5.1_eslint@8.4.0
@@ -839,7 +839,7 @@ packages:
       stylelint-config-standard: 24.0.0_stylelint@14.1.0
       stylelint-config-standard-scss: 3.0.0_postcss@8.4.4+stylelint@14.1.0
       stylelint-order: 5.0.0_stylelint@14.1.0
-      stylelint-prettier: 2.0.0_prettier@2.5.0+stylelint@14.1.0
+      stylelint-prettier: 2.0.0_prettier@2.5.1+stylelint@14.1.0
       tsutils: 3.21.0_typescript@4.5.2
       typescript: 4.5.2
       update-notifier: 5.1.0
@@ -1530,7 +1530,7 @@ packages:
       source-map: 0.6.1
       vue-template-es2015-compiler: 1.9.1
     optionalDependencies:
-      prettier: 2.5.0
+      prettier: 2.5.1
     dev: true
 
   /@vue/composition-api/1.4.1_vue@2.6.14:
@@ -4025,7 +4025,7 @@ packages:
       minimatch: 3.0.4
     dev: true
 
-  /eslint-plugin-prettier/4.0.0_27140960afd45c356c84f80c9a47df2a:
+  /eslint-plugin-prettier/4.0.0_14354588a145aaef8cc0e524e93c2ca4:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -4038,7 +4038,7 @@ packages:
     dependencies:
       eslint: 8.4.0
       eslint-config-prettier: 8.3.0_eslint@8.4.0
-      prettier: 2.5.0
+      prettier: 2.5.1
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -5844,12 +5844,6 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /local-pkg/0.1.0:
-    resolution: {integrity: sha512-WsR2tHvRGIxcC2clC30ECb5fjywzsjQagaHIy1+ykZaHz0ByoB0OL2riHqIYA5YYnensRXLszwbzHkhKzehZDg==}
-    dependencies:
-      mlly: 0.2.10
-    dev: true
-
   /local-pkg/0.4.0:
     resolution: {integrity: sha512-2XBWjO/v63JeR1HPzLJxdTVRQDB84Av2p2KtBA5ahvpyLUPubcAU6iXlAJrONcY7aSqgJhXxElAnKtnYsRolPQ==}
     engines: {node: '>=14'}
@@ -7413,8 +7407,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.5.0:
-    resolution: {integrity: sha512-FM/zAKgWTxj40rH03VxzIPdXmj39SwSjwG0heUcNFwI+EMZJnY93yAiKXM3dObIKAM5TA88werc8T/EwhB45eg==}
+  /prettier/2.5.1:
+    resolution: {integrity: sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -8556,14 +8550,14 @@ packages:
       stylelint: 14.1.0
     dev: true
 
-  /stylelint-prettier/2.0.0_prettier@2.5.0+stylelint@14.1.0:
+  /stylelint-prettier/2.0.0_prettier@2.5.1+stylelint@14.1.0:
     resolution: {integrity: sha512-jvT3G+9lopkeB0ARmDPszyfaOnvnIF+30QCjZxyt7E6fynI1T9mOKgYDNb9bXX17M7PXMZaX3j/26wqakjp1tw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       prettier: '>=2.0.0'
       stylelint: '>=14.0.0'
     dependencies:
-      prettier: 2.5.0
+      prettier: 2.5.1
       prettier-linter-helpers: 1.0.0
       stylelint: 14.1.0
     dev: true
@@ -8981,8 +8975,8 @@ packages:
       - webpack
     dev: true
 
-  /unplugin-vue-components/0.17.2_vite@2.6.14+vue@2.6.14:
-    resolution: {integrity: sha512-e4ZdOpnzFMQJx3rDLotLyucTap0bUlMy+6BRYyoN6jE1ZyGAgR6jodmpHZAPR3xkC4pkqW5PLlyDfIH/+lzkng==}
+  /unplugin-vue-components/0.17.4_vite@2.6.14+vue@2.6.14:
+    resolution: {integrity: sha512-xBc/pprXOzIjW7aZ5Km5MfnbXev8ot13TUXH0Ln1Cs4zsNhKK3aWsl8IKo1RyL3c+pduR4IwWbMW/HHR+AuHuA==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8
@@ -8999,7 +8993,7 @@ packages:
       chokidar: 3.5.2
       debug: 4.3.3
       fast-glob: 3.2.7
-      local-pkg: 0.1.0
+      local-pkg: 0.4.0
       magic-string: 0.25.7
       minimatch: 3.0.4
       resolve: 1.20.0
@@ -9012,8 +9006,8 @@ packages:
       - webpack
     dev: true
 
-  /unplugin-vue2-script-setup/0.7.3_vite@2.6.14:
-    resolution: {integrity: sha512-3C32JkCS7BsNsgUkVnCEIJynHy+N/xwqiaUiMkeTm3Rk+HfHMhEPQ5Gysg3tejWY7KJyk8CohUKswTChurI1ng==}
+  /unplugin-vue2-script-setup/0.8.1_vite@2.6.14:
+    resolution: {integrity: sha512-BfA6aIic/BMXtwQkI+QjeRbn71c7luwxPLgeLCco0tIQHtcUFdLudp5WM0e6OJXWc2YhY0BEKUYKPRd+Nq9weg==}
     peerDependencies:
       pug: ^3.0.2
     peerDependenciesMeta:
@@ -9249,7 +9243,7 @@ packages:
       fs-extra: 9.1.0
       hash-sum: 2.0.0
       magic-string: 0.25.7
-      prettier: 2.5.0
+      prettier: 2.5.1
       querystring: 0.2.1
       rollup: 2.60.2
       slash: 3.0.0

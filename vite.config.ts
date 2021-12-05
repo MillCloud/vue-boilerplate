@@ -43,7 +43,6 @@ export default defineConfig({
       'vue-router',
       'vue2-helpers',
       'vue2-helpers/vue-router',
-      'vue2-helpers/vuex',
     ],
     exclude: ['vue-demi'],
   },

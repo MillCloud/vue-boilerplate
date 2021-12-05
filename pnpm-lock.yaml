@@ -64,7 +64,6 @@ specifiers:
   vue-template-compiler: ~2.6.14
   vue-tsc: ~0.29.8
   vue2-helpers: ~1.1.6
-  vuex: ~3.6.2
 
 dependencies:
   '@ant-design/colors': 6.0.0
@@ -86,8 +85,7 @@ dependencies:
   vue: 2.6.14
   vue-query: 1.14.0_79c14f24e73b193b29c2dfd67bb27713
   vue-router: 3.5.3
-  vue2-helpers: 1.1.6_6210733fa152b61610d8d3ce347f102c
-  vuex: 3.6.2_vue@2.6.14
+  vue2-helpers: 1.1.6_c32ede2f9d9729ba3463a8ee59a4bcba
 
 devDependencies:
   '@babel/core': 7.16.0
@@ -9539,7 +9537,7 @@ packages:
     resolution: {integrity: sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==}
     dev: false
 
-  /vue2-helpers/1.1.6_6210733fa152b61610d8d3ce347f102c:
+  /vue2-helpers/1.1.6_c32ede2f9d9729ba3463a8ee59a4bcba:
     resolution: {integrity: sha512-32JuEG31uxHzBC/sAkoOaEJlrr3IqdrMwm65BfHEn25L+azsf1UoGZ9xPyjDdjIZPzKMCyXGgISpI+FPZs3Puw==}
     peerDependencies:
       '@vue/composition-api': ^1
@@ -9551,15 +9549,6 @@ packages:
     dependencies:
       '@vue/composition-api': 1.4.1_vue@2.6.14
       vue-router: 3.5.3
-      vuex: 3.6.2_vue@2.6.14
-    dev: false
-
-  /vuex/3.6.2_vue@2.6.14:
-    resolution: {integrity: sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==}
-    peerDependencies:
-      vue: ^2.0.0
-    dependencies:
-      vue: 2.6.14
     dev: false
 
   /wcwidth/1.0.1:

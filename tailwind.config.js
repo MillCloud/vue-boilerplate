@@ -15,7 +15,7 @@ module.exports = {
   target: 'relaxed',
   prefix: '',
   important: false,
-  separator: '--',
+  separator: '_',
   presets: [],
   theme: {
     screens: {

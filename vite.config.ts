@@ -41,10 +41,8 @@ export default defineConfig({
       'vue-query',
       'vue-query/devtools',
       'vue-router',
-      'vue2-helpers',
       'vue2-helpers/vue-router',
     ],
-    exclude: ['vue-demi'],
   },
   plugins: [
     vue2(),

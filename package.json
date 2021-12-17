@@ -51,7 +51,7 @@
     "@babel/eslint-parser": "~7.16.5",
     "@commitlint/cli": "~15.0.0",
     "@iconify/json": "~1.1.443",
-    "@modyqyw/fabric": "~4.2.1",
+    "@modyqyw/fabric": "~4.3.0",
     "@types/node": "~17.0.0",
     "@types/nprogress": "~0.2.0",
     "@types/statuses": "~2.0.0",

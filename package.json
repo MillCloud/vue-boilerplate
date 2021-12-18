@@ -31,7 +31,7 @@
     "@sum.cumo/vue-browserupdate": "~3.0.1",
     "@vue/composition-api": "~1.4.1",
     "@vueuse/core": "~7.3.0",
-    "@vueuse/integrations": "~7.3.0",
+    "@vueuse/integrations": "~7.4.0",
     "axios": "~0.24.0",
     "dayjs": "~1.10.7",
     "element-ui": "~2.15.7",

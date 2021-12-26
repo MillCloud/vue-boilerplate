@@ -45,7 +45,7 @@ specifiers:
   stylelint: ~14.2.0
   tailwindcss: ~1.9.6
   typescript: ~4.5.4
-  unplugin-icons: ~0.12.23
+  unplugin-icons: ~0.13.0
   unplugin-vue-components: ~0.17.9
   unplugin-vue2-script-setup: ~0.8.3
   vite: ~2.7.5
@@ -115,7 +115,7 @@ devDependencies:
   shelljs: 0.8.4
   stylelint: 14.2.0
   typescript: 4.5.4
-  unplugin-icons: 0.12.23_be77c5c4165b4e7b17d244517dfd08d6
+  unplugin-icons: 0.13.0_be77c5c4165b4e7b17d244517dfd08d6
   unplugin-vue-components: 0.17.9_vite@2.7.5+vue@2.6.14
   unplugin-vue2-script-setup: 0.8.3_vite@2.7.5
   vite: 2.7.5_sass@1.45.1
@@ -147,6 +147,12 @@ packages:
 
   /@antfu/utils/0.3.0:
     resolution: {integrity: sha512-UU8TLr/EoXdg7OjMp0h9oDoIAVr+Z/oW9cpOxQQyrsz6Qzd2ms/1CdWx8fl2OQdFpxGmq5Vc4TwfLHId6nAZjA==}
+    dependencies:
+      '@types/throttle-debounce': 2.1.0
+    dev: true
+
+  /@antfu/utils/0.4.0:
+    resolution: {integrity: sha512-gqkpvjkgFUu+s3kP+Ly33OKpo5zvVY3FDFhv5BIb98SncS3KD6DNxPfNDjwHIoyXbz1leWo1j8DtRLZ1D2Jv+Q==}
     dependencies:
       '@types/throttle-debounce': 2.1.0
     dev: true
@@ -805,7 +811,7 @@ packages:
       '@commitlint/config-conventional': 15.0.0
       '@commitlint/types': 15.0.0
       '@types/eslint': 8.2.1
-      '@types/node': 17.0.2
+      '@types/node': 17.0.4
       '@types/prettier': 2.4.2
       '@typescript-eslint/eslint-plugin': 5.7.0_a6f6159640504abdd3de077f8bcadb33
       '@typescript-eslint/parser': 5.7.0_eslint@8.5.0+typescript@4.5.4
@@ -1111,7 +1117,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.3
-      '@types/node': 17.0.1
+      '@types/node': 17.0.4
       '@types/responselike': 1.0.0
     dev: true
 
@@ -1146,7 +1152,7 @@ packages:
   /@types/keyv/3.1.3:
     resolution: {integrity: sha512-FXCJgyyN3ivVgRoml4h94G/p3kY+u/B86La+QptcqJaWtBWtmc6TtkNfS40n9bIvyLteHh7zXOtgbobORKPbDg==}
     dependencies:
-      '@types/node': 17.0.1
+      '@types/node': 17.0.4
     dev: true
 
   /@types/lodash-es/4.17.5:
@@ -1167,12 +1173,8 @@ packages:
     resolution: {integrity: sha512-mK6BKLpL0bG6v2CxHbm0ed6RcZrAtTHBTd/ZpnlVPVa3HkumsqLE4BC4u6TQ8D7pnrRbOU0am6epuALs+Ncnzw==}
     dev: false
 
-  /@types/node/17.0.1:
-    resolution: {integrity: sha512-NXKvBVUzIbs6ylBwmOwHFkZS2EXCcjnqr8ZCRNaXBkHAf+3mn/rPcJxwrzuc6movh8fxQAsUUfYklJ/EG+hZqQ==}
-    dev: true
-
-  /@types/node/17.0.2:
-    resolution: {integrity: sha512-JepeIUPFDARgIs0zD/SKPgFsJEAF0X5/qO80llx59gOxFTboS9Amv3S+QfB7lqBId5sFXJ99BN0J6zFRvL9dDA==}
+  /@types/node/17.0.4:
+    resolution: {integrity: sha512-6xwbrW4JJiJLgF+zNypN5wr2ykM9/jHcL7rQ8fZe2vuftggjzZeRSM4OwRc6Xk8qWjwJ99qVHo/JgOGmomWRog==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -1194,7 +1196,7 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 17.0.1
+      '@types/node': 17.0.4
     dev: true
 
   /@types/retry/0.12.1:
@@ -9056,8 +9058,8 @@ packages:
       detect-node: 2.1.0
     dev: false
 
-  /unplugin-icons/0.12.23_be77c5c4165b4e7b17d244517dfd08d6:
-    resolution: {integrity: sha512-jhCogt+/3WEdPrfHkUGwiLnNJAOrE469J/Zlsh57KAaeEDxrw+PMqXDXRFA/fZjtal/btGPFcDOeQPPHGW6JHg==}
+  /unplugin-icons/0.13.0_be77c5c4165b4e7b17d244517dfd08d6:
+    resolution: {integrity: sha512-CyAl0HV3bZUGT7ut9agpPRhEYXCvufr80Fh72yrkD57BVCTZ7ze10Rt63ZrvPXiJQpd+aI/Bizm2aqOf3WPSfg==}
     peerDependencies:
       '@svgr/core': ^5.5.0
       '@vue/compiler-sfc': ^3.0.2
@@ -9074,7 +9076,7 @@ packages:
         optional: true
     dependencies:
       '@antfu/install-pkg': 0.1.0
-      '@antfu/utils': 0.3.0
+      '@antfu/utils': 0.4.0
       '@iconify/utils': 1.0.20
       debug: 4.3.3
       kolorist: 1.5.1

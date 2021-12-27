@@ -1,25 +1,13 @@
 {
+  "extends": "./node_modules/@modyqyw/fabric/tsconfig.base.json",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
+    "baseUrl": "./",
     "jsx": "preserve",
-    "moduleResolution": "node",
-    "isolatedModules": true,
-    "useDefineForClassFields": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "importHelpers": true,
-    "sourceMap": true,
-    "allowJs": true,
-    "checkJs": false,
-    "noEmit": true,
-    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "types": [
+      "type-fest",
       "vite/client",
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client",
@@ -27,17 +15,7 @@
       "unplugin-vue2-script-setup/types",
       "unplugin-vue2-script-setup/ref-macros"
     ],
-    "typeRoots": ["./node_modules/@types", "./typings", "./src/typings"],
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "lib": ["esnext", "dom"]
-  },
-  "vueCompilerOptions": {
-    "experimentalCompatMode": 2,
-    "experimentalTemplateCompilerOptions": {
-      "compatConfig": { "MODE": 2 }
-    }
+    "target": "ESNext"
   },
   "include": [
     "./**/.*.js",
@@ -46,7 +24,8 @@
     "./**/.*.ts",
     "./**/*.ts",
     "./**/*.tsx",
-    "./**/*.vue"
+    "./**/*.vue",
+    "./**/*.svelte"
   ],
-  "exclude": ["node_modules", "dist"]
+  "exclude": [".cache", ".temp", ".tmp", "dist*", "node_modules"]
 }

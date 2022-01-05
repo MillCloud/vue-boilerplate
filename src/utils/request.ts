@@ -40,8 +40,16 @@ export const showError = (
   error: IResponseError,
   type: 'alert' | 'notification' | 'message' = 'alert',
 ) => {
-  const content = `错误代码：${error?.code ?? error?.response?.data?.code ?? '无'}，错误信息：${
-    error?.message ?? error?.response?.data?.message ?? '无'
+  const content = `错误代码：${
+    error?.code ??
+    error?.response?.data?.code ??
+    // @ts-ignore
+    error?.response?.code ??
+    error?.response?.status ??
+    '无'
+  }，错误信息：${
+    // @ts-ignore
+    error?.message ?? error?.response?.data?.message ?? error?.response?.message ?? '无'
   }。`;
   if (type === 'alert') {
     MessageBox.alert(content, {

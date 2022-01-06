@@ -38,7 +38,7 @@
     "modern-normalize": "~1.1.0",
     "nprogress": "~0.2.0",
     "pinia": "~2.0.9",
-    "query-string": "~7.0.1",
+    "query-string": "~7.1.0",
     "statuses": "~2.0.1",
     "tailwindcss": "~1.9.6",
     "vue": "~2.6.14",

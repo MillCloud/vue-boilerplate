@@ -42,7 +42,7 @@
     "statuses": "~2.0.1",
     "tailwindcss": "~1.9.6",
     "vue": "~2.6.14",
-    "vue-query": "~1.16.2",
+    "vue-query": "~1.17.0",
     "vue-router": "~3.5.3",
     "vue2-helpers": "~1.1.6"
   },
@@ -50,7 +50,7 @@
     "@babel/core": "~7.16.7",
     "@babel/eslint-parser": "~7.16.5",
     "@commitlint/cli": "~16.0.2",
-    "@iconify/json": "~1.1.455",
+    "@iconify/json": "~1.1.456",
     "@modyqyw/fabric": "~4.7.3",
     "@types/browser-update": "~3.3.0",
     "@types/nprogress": "~0.2.0",

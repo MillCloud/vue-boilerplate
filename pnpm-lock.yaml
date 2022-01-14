@@ -5,7 +5,7 @@ specifiers:
   '@babel/core': ~7.16.7
   '@babel/eslint-parser': ~7.16.5
   '@commitlint/cli': ~16.0.2
-  '@iconify/json': ~1.1.455
+  '@iconify/json': ~1.1.456
   '@iconify/vue2': ~1.1.2
   '@modyqyw/fabric': ~4.7.3
   '@modyqyw/utils': ~2.1.2
@@ -61,7 +61,7 @@ specifiers:
   vite-plugin-vue-layouts: ~0.5.0
   vite-plugin-vue2: ~1.9.2
   vue: ~2.6.14
-  vue-query: ~1.16.2
+  vue-query: ~1.17.0
   vue-router: ~3.5.3
   vue-template-compiler: ~2.6.14
   vue-tsc: ~0.30.2
@@ -85,7 +85,7 @@ dependencies:
   statuses: 2.0.1
   tailwindcss: 1.9.6
   vue: 2.6.14
-  vue-query: 1.16.2_e5303bfcb7b5c4dcf864c0d0a9aab3b4
+  vue-query: 1.17.0_e5303bfcb7b5c4dcf864c0d0a9aab3b4
   vue-router: 3.5.3
   vue2-helpers: 1.1.6_11201cbde3b833de46ca62b5455e3270
 
@@ -93,7 +93,7 @@ devDependencies:
   '@babel/core': 7.16.7
   '@babel/eslint-parser': 7.16.5_@babel+core@7.16.7+eslint@8.6.0
   '@commitlint/cli': 16.0.2
-  '@iconify/json': 1.1.455
+  '@iconify/json': 1.1.456
   '@modyqyw/fabric': 4.7.3_ca713b64f90596a95d3daab57c6c38c3
   '@types/browser-update': 3.3.0
   '@types/nprogress': 0.2.0
@@ -909,8 +909,8 @@ packages:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: true
 
-  /@iconify/json/1.1.455:
-    resolution: {integrity: sha512-F57EnMYBm+59XKvmuI3fCXrsgss8JCAHZcseUW4Hui7RpSTYN4YMuJPbrwdu3SiFgFp2l1aaB+iQO0Gh1VUGIQ==}
+  /@iconify/json/1.1.456:
+    resolution: {integrity: sha512-JlsGLE0DG0fcbINV+VshwSx+Z2Xeji4iEnVQaYMuvwGL27nBn8iDsUg58Kva63stu5fHkOg5acC7NJoLYJ+cUg==}
     dev: true
 
   /@iconify/types/1.0.12:
@@ -9871,8 +9871,8 @@ packages:
       vue-class-component: 7.2.6_vue@2.6.14
     dev: true
 
-  /vue-query/1.16.2_e5303bfcb7b5c4dcf864c0d0a9aab3b4:
-    resolution: {integrity: sha512-lfWfadFgvHE6yOsSPX10bFdTvlpdYH2YgITRVq/SpJ7s7M9h4N+KRyuIy428cIIugzajqQkK70VgDiICl8/rbQ==}
+  /vue-query/1.17.0_e5303bfcb7b5c4dcf864c0d0a9aab3b4:
+    resolution: {integrity: sha512-Pnq5qwDE/kYVNX9MTiPvUjecTmocohMJ6d01H5VIfsGOmFVxh3F2xUejqGU6dt4AUi3lqB/rSc1/1N3Fah3BOw==}
     peerDependencies:
       '@nuxtjs/composition-api': ^0.24.4
       '@vue/composition-api': ^1.0.0

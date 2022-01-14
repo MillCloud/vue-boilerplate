@@ -27,11 +27,11 @@ export default defineConfig({
     include: [
       '@iconify/vue2',
       '@modyqyw/utils',
-      '@sum.cumo/vue-browserupdate',
       '@vue/composition-api',
       '@vueuse/core',
       '@vueuse/integrations',
       'axios',
+      'browser-update',
       'dayjs',
       'element-ui',
       'nprogress',

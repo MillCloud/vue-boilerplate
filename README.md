@@ -29,7 +29,7 @@
 - [tailwindcss](https://v1.tailwindcss.com/) - 支持了大部分 v2 类值、支持大部分类渐进增强、`0.5` 将会被替换成 `0_5`、`1/2` 将会被替换成 `1-2`，但仍然不要使用高级特性，否则不能支持低端浏览器，具体可以到 [caniuse](https://caniuse.com/) 查询
 - [element-ui](https://element.eleme.cn) - 对于移动端网页，请考虑 [vant](https://youzan.github.io/vant)
 - [iconify](https://iconify.design/)
-- [@sum.cumo/vue-browserupdate](https://browser-update.org/zh/)
+- [browser-update](https://browser-update.org/zh/)
 - [@modyqyw/utils](https://github.com/modyqyw/utils)
 - [dayjs](https://dayjs.gitee.io/zh-CN/)
 - [nprogress](https://ricostacruz.com/nprogress/)

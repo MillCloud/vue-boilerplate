@@ -4,9 +4,9 @@ import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { isRef, isReactive, unref } from '@vue/composition-api';
 import { isArray, isObject } from '@modyqyw/utils';
 import qs from 'query-string';
-import { removeToken, getToken } from './storage';
 import router from '@/router';
 import { DefaultHeaders } from '@/constants';
+import { removeToken, getToken } from './storage';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 

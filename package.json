@@ -31,7 +31,7 @@
     "@vue/composition-api": "~1.4.4",
     "@vueuse/core": "~7.5.3",
     "@vueuse/integrations": "~7.5.3",
-    "axios": "~0.24.0",
+    "axios": "~0.25.0",
     "browser-update": "~3.3.37",
     "dayjs": "~1.10.7",
     "element-ui": "~2.15.7",
@@ -42,9 +42,9 @@
     "statuses": "~2.0.1",
     "tailwindcss": "~1.9.6",
     "vue": "~2.6.14",
-    "vue-query": "~1.17.0",
+    "vue-query": "~1.18.0",
     "vue-router": "~3.5.3",
-    "vue2-helpers": "~1.1.6"
+    "vue2-helpers": "~1.1.7"
   },
   "devDependencies": {
     "@babel/core": "~7.16.7",
@@ -55,8 +55,8 @@
     "@types/browser-update": "~3.3.0",
     "@types/nprogress": "~0.2.0",
     "@types/statuses": "~2.0.0",
-    "@typescript-eslint/eslint-plugin": "~5.9.1",
-    "@typescript-eslint/parser": "~5.9.1",
+    "@typescript-eslint/eslint-plugin": "~5.10.0",
+    "@typescript-eslint/parser": "~5.10.0",
     "@vitejs/plugin-legacy": "~1.6.4",
     "@vue/runtime-dom": "~3.2.27",
     "commitizen": "~4.2.4",
@@ -64,7 +64,7 @@
     "eslint": "~8.7.0",
     "husky": "~7.0.4",
     "is-ci": "~3.0.1",
-    "lint-staged": "~12.1.7",
+    "lint-staged": "~12.2.0",
     "markdownlint-cli": "~0.30.0",
     "npm-check-updates": "~12.1.0",
     "picocolors": "~1.0.0",
@@ -73,15 +73,15 @@
     "prettier": "~2.5.1",
     "release-it": "~14.12.3",
     "rimraf": "~3.0.2",
-    "sass": "~1.48.0",
+    "sass": "~1.49.0",
     "shelljs": "~0.8.5",
     "stylelint": "~14.2.0",
     "type-fest": "~2.9.0",
     "typescript": "~4.5.4",
     "unplugin-icons": "~0.13.0",
     "unplugin-vue-components": "~0.17.13",
-    "unplugin-vue2-script-setup": "~0.9.0",
-    "vite": "~2.7.12",
+    "unplugin-vue2-script-setup": "~0.9.1",
+    "vite": "~2.7.13",
     "vite-plugin-compression": "~0.4.0",
     "vite-plugin-env-compatible": "~1.1.1",
     "vite-plugin-eslint": "~1.3.0",
@@ -91,6 +91,6 @@
     "vite-plugin-vue-layouts": "~0.5.0",
     "vite-plugin-vue2": "~1.9.2",
     "vue-template-compiler": "~2.6.14",
-    "vue-tsc": "0.30.2"
+    "vue-tsc": "~0.30.6"
   }
 }

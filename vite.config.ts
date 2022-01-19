@@ -47,7 +47,7 @@ export default defineConfig({
   plugins: [
     vue2(),
     vue2ScriptSetup({
-      refTransform: true,
+      reactivityTransform: true,
     }),
     pages({
       exclude: [

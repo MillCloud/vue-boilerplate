@@ -31,7 +31,7 @@ specifiers:
   lint-staged: ~12.2.0
   markdownlint-cli: ~0.30.0
   modern-normalize: ~1.1.0
-  npm-check-updates: ~12.1.0
+  npm-check-updates: ~12.2.0
   nprogress: ~0.2.0
   picocolors: ~1.0.0
   pinia: ~2.0.9
@@ -109,7 +109,7 @@ devDependencies:
   is-ci: 3.0.1
   lint-staged: 12.2.0
   markdownlint-cli: 0.30.0
-  npm-check-updates: 12.1.0
+  npm-check-updates: 12.2.0
   picocolors: 1.0.0
   postcss-flexbugs-fixes: 5.0.2
   postcss-preset-env: 7.2.3
@@ -2334,6 +2334,7 @@ packages:
 
   /axios/0.24.0:
     resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
+    requiresBuild: true
     dependencies:
       follow-redirects: 1.14.7
     transitivePeerDependencies:
@@ -5226,7 +5227,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.7
+      fast-glob: 3.2.11
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 3.0.0
@@ -6802,8 +6803,8 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/12.1.0:
-    resolution: {integrity: sha512-9GtSetBvcth7MuL+0MpOmWgdfiEgZcWRfnvoYnNZxbZpleHZCT0Z3HnbsL6/EAT2M+ye7FTZ+YjmDmZptt7Rkg==}
+  /npm-check-updates/12.2.0:
+    resolution: {integrity: sha512-upiHqivxtjtj/iHO7Amnd+Q5Nx5HzTwxMlu9lUzNFQvCAAFhJnPK8Weuoyz3OSwErpHVxJMry7W5d0H7Cokxdg==}
     engines: {node: '>=12'}
     hasBin: true
     dependencies:

@@ -61,7 +61,7 @@ specifiers:
   vite-plugin-vue-layouts: ~0.5.0
   vite-plugin-vue2: ~1.9.2
   vue: ~2.6.14
-  vue-query: ~1.18.0
+  vue-query: ~1.19.0
   vue-router: ~3.5.3
   vue-template-compiler: ~2.6.14
   vue-tsc: ~0.30.6
@@ -85,7 +85,7 @@ dependencies:
   statuses: 2.0.1
   tailwindcss: 1.9.6
   vue: 2.6.14
-  vue-query: 1.18.0_3a5e1d406804e5aa24fb9e416dcde6e0
+  vue-query: 1.19.0_3a5e1d406804e5aa24fb9e416dcde6e0
   vue-router: 3.5.3
   vue2-helpers: 1.1.7_bba48e7d270504d85a746f1ac3f97507
 
@@ -2334,6 +2334,7 @@ packages:
 
   /axios/0.24.0:
     resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
+    requiresBuild: true
     dependencies:
       follow-redirects: 1.14.7
     transitivePeerDependencies:
@@ -7996,8 +7997,8 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
-  /react-query/3.34.6:
-    resolution: {integrity: sha512-2UKldH8T2PjmLxaOzANok7yITQn9FF1pBbrZFF1hvukBjYefHtCjUur+GOVAWMhrsskcCoKRviei4hcpvj9wLQ==}
+  /react-query/3.34.11:
+    resolution: {integrity: sha512-vRC9J8dklE6rQ1uQHveNgoXOH4ceOn6Ww2+XUYOrEsUaSBZ76aQ/VTzDanXJn+E78lFQn0ajdSomduXP55iCwg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0
       react-dom: '*'
@@ -9880,8 +9881,8 @@ packages:
       vue-class-component: 7.2.6_vue@2.6.14
     dev: true
 
-  /vue-query/1.18.0_3a5e1d406804e5aa24fb9e416dcde6e0:
-    resolution: {integrity: sha512-h84R5zVx6ADssWzlzwVTjRpDjgzqXEg/g+DZXp+ztXb0je4f1uOESC95x6VcGxPhNMddyRZMZXcgt4l9+p4Njg==}
+  /vue-query/1.19.0_3a5e1d406804e5aa24fb9e416dcde6e0:
+    resolution: {integrity: sha512-mAtZFi3wWg9XrSvZsj6TU+9a3UchJsUCmwlUvq7k9siy4oOo10l0/d+pI1Vd3oXb56HsV5wrhACfgQx7QA3auw==}
     peerDependencies:
       '@nuxtjs/composition-api': ^0.24.4
       '@vue/composition-api': ^1.0.0
@@ -9894,7 +9895,7 @@ packages:
     dependencies:
       '@vue/composition-api': 1.4.4_vue@2.6.14
       match-sorter: 6.3.1
-      react-query: 3.34.6
+      react-query: 3.34.11
       vue: 2.6.14
       vue-demi: 0.10.1_3a5e1d406804e5aa24fb9e416dcde6e0
     transitivePeerDependencies:

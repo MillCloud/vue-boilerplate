@@ -28,7 +28,7 @@ specifiers:
   eslint: ~8.7.0
   husky: ~7.0.4
   is-ci: ~3.0.1
-  lint-staged: ~12.2.0
+  lint-staged: ~12.3.0
   markdownlint-cli: ~0.30.0
   modern-normalize: ~1.1.0
   npm-check-updates: ~12.1.0
@@ -107,7 +107,7 @@ devDependencies:
   eslint: 8.7.0
   husky: 7.0.4
   is-ci: 3.0.1
-  lint-staged: 12.2.0
+  lint-staged: 12.3.0
   markdownlint-cli: 0.30.0
   npm-check-updates: 12.1.0
   picocolors: 1.0.0
@@ -2334,6 +2334,7 @@ packages:
 
   /axios/0.24.0:
     resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
+    requiresBuild: true
     dependencies:
       follow-redirects: 1.14.7
     transitivePeerDependencies:
@@ -6155,8 +6156,8 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
-  /lint-staged/12.2.0:
-    resolution: {integrity: sha512-TnNciMBhmEqzqM+RvzqqdvrG4TsI8wCDMX1Vg9+rj2Y9uY70Nq84Mb1WOIiwxW9l5tUlCOqtY5La71RM2fSgfA==}
+  /lint-staged/12.3.0:
+    resolution: {integrity: sha512-bk+jvy5H+12Srg8MGlSmBt78B9GEbMtd4BETHdHS1mMmbgt3Gw18d8KwrJXCcJmICMGQTCiKBUMZSZ3NlfQ8PQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:

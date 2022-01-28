@@ -52,7 +52,7 @@ specifiers:
   unplugin-vue-components: ~0.17.14
   unplugin-vue2-script-setup: ~0.9.1
   vite: ~2.7.13
-  vite-plugin-compression: ~0.4.0
+  vite-plugin-compression: ~0.5.0
   vite-plugin-env-compatible: ~1.1.1
   vite-plugin-eslint: ~1.3.0
   vite-plugin-mkcert: ~1.5.2
@@ -125,7 +125,7 @@ devDependencies:
   unplugin-vue-components: 0.17.14_vite@2.7.13+vue@2.6.14
   unplugin-vue2-script-setup: 0.9.1_b1c7d06c7a50e9dfd14129e9365adf61
   vite: 2.7.13_sass@1.49.0
-  vite-plugin-compression: 0.4.0_vite@2.7.13
+  vite-plugin-compression: 0.5.0_vite@2.7.13
   vite-plugin-env-compatible: 1.1.1
   vite-plugin-eslint: 1.3.0_vite@2.7.13
   vite-plugin-mkcert: 1.5.2
@@ -560,7 +560,7 @@ packages:
       ajv: 6.12.6
     dev: true
 
-  /@commitlint/cz-commitlint/16.1.0_2f47f2f0c74c7e1541220fe3a8273f61:
+  /@commitlint/cz-commitlint/16.1.0_6df6d37d27709fee1b520f6bbafe05a7:
     resolution: {integrity: sha512-TThglfXEBW8TZ99dvaeto1c6hU25ONqL9qkENle2+1OFI64NgbICjLsJq7SVzJd4Jn/yZDp4xNqoV53WJPJ9aA==}
     engines: {node: '>= 10'}
     peerDependencies:
@@ -568,7 +568,7 @@ packages:
       inquirer: ^8.0.0
     dependencies:
       '@commitlint/ensure': 16.0.0
-      '@commitlint/load': 16.1.0_@types+node@17.0.12
+      '@commitlint/load': 16.1.0_@types+node@17.0.13
       '@commitlint/types': 16.0.0
       chalk: 4.1.2
       commitizen: 4.2.4
@@ -640,7 +640,7 @@ packages:
       - '@types/node'
     dev: true
 
-  /@commitlint/load/16.1.0_@types+node@17.0.12:
+  /@commitlint/load/16.1.0_@types+node@17.0.13:
     resolution: {integrity: sha512-MtlEhKjP8jAF85jjX4mw8DUUwCxKsCgAc865hhpnwxjrfBcmGP7Up2AFE/M3ZMGDmSl1X1TMybQk/zohj8Cqdg==}
     engines: {node: '>=v12'}
     dependencies:
@@ -650,7 +650,7 @@ packages:
       '@commitlint/types': 16.0.0
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 1.0.4_a4f631dedb43a025ec8d07f05ba12686
+      cosmiconfig-typescript-loader: 1.0.4_40146b36d18138e3202fbb722e5f65e4
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.5.5
@@ -884,11 +884,11 @@ packages:
       '@babel/core': 7.16.12
       '@babel/eslint-parser': 7.16.5_@babel+core@7.16.12+eslint@8.7.0
       '@commitlint/config-conventional': 16.0.0
-      '@commitlint/cz-commitlint': 16.1.0_2f47f2f0c74c7e1541220fe3a8273f61
+      '@commitlint/cz-commitlint': 16.1.0_6df6d37d27709fee1b520f6bbafe05a7
       '@commitlint/types': 16.0.0
       '@ota-meshi/eslint-plugin-svelte': 0.26.0_eslint@8.7.0
       '@types/eslint': 8.4.1
-      '@types/node': 17.0.12
+      '@types/node': 17.0.13
       '@types/prettier': 2.4.3
       '@typescript-eslint/eslint-plugin': 5.10.1_0f442f6b60390429061d5d9b6bcaaba6
       '@typescript-eslint/parser': 5.10.1_eslint@8.7.0+typescript@4.5.5
@@ -1255,7 +1255,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.3
-      '@types/node': 17.0.12
+      '@types/node': 17.0.13
       '@types/responselike': 1.0.0
     dev: true
 
@@ -1279,7 +1279,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 17.0.12
+      '@types/node': 17.0.13
     dev: true
 
   /@types/http-cache-semantics/4.0.1:
@@ -1297,7 +1297,7 @@ packages:
   /@types/keyv/3.1.3:
     resolution: {integrity: sha512-FXCJgyyN3ivVgRoml4h94G/p3kY+u/B86La+QptcqJaWtBWtmc6TtkNfS40n9bIvyLteHh7zXOtgbobORKPbDg==}
     dependencies:
-      '@types/node': 17.0.12
+      '@types/node': 17.0.13
     dev: true
 
   /@types/lodash-es/4.17.5:
@@ -1326,6 +1326,11 @@ packages:
 
   /@types/node/17.0.12:
     resolution: {integrity: sha512-4YpbAsnJXWYK/fpTVFlMIcUIho2AYCi4wg5aNPrG1ng7fn/1/RZfCIpRCiBX+12RVa34RluilnvCqD+g3KiSiA==}
+    dev: false
+
+  /@types/node/17.0.13:
+    resolution: {integrity: sha512-Y86MAxASe25hNzlDbsviXl8jQHb0RDvKt4c40ZJQ1Don0AAL0STLZSs4N+6gLEO55pedy7r2cLwS+ZDxPm/2Bw==}
+    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -1346,7 +1351,7 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 17.0.12
+      '@types/node': 17.0.13
     dev: true
 
   /@types/retry/0.12.1:
@@ -2849,16 +2854,16 @@ packages:
     requiresBuild: true
     dev: true
 
-  /cosmiconfig-typescript-loader/1.0.4_a4f631dedb43a025ec8d07f05ba12686:
+  /cosmiconfig-typescript-loader/1.0.4_40146b36d18138e3202fbb722e5f65e4:
     resolution: {integrity: sha512-ulv2dvwurP/MZAIthXm69bO7EzzIUThZ6RJ1qXhdlXM6to3F+IKBL/17EnhYSG52A5N1KcAUu66vSG/3/77KrA==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@types/node': '*'
       typescript: '>=3'
     dependencies:
-      '@types/node': 17.0.12
+      '@types/node': 17.0.13
       cosmiconfig: 7.0.1
-      ts-node: 10.4.0_a4f631dedb43a025ec8d07f05ba12686
+      ts-node: 10.4.0_40146b36d18138e3202fbb722e5f65e4
       typescript: 4.5.5
     transitivePeerDependencies:
       - '@swc/core'
@@ -8610,7 +8615,7 @@ packages:
       type-fest: 2.10.0
     dev: false
 
-  /ts-node/10.4.0_a4f631dedb43a025ec8d07f05ba12686:
+  /ts-node/10.4.0_40146b36d18138e3202fbb722e5f65e4:
     resolution: {integrity: sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==}
     hasBin: true
     peerDependencies:
@@ -8629,7 +8634,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
-      '@types/node': 17.0.12
+      '@types/node': 17.0.13
       acorn: 8.7.0
       acorn-walk: 8.2.0
       arg: 4.1.3
@@ -9041,8 +9046,8 @@ packages:
     engines: {node: '>= 0.10'}
     dev: false
 
-  /vite-plugin-compression/0.4.0_vite@2.7.13:
-    resolution: {integrity: sha512-CGC8DfIey0k4S4o54ylwFIzT1Mjb9s7cMmlXj6DMM1MZZIeWFjPCJc6YZWjnnS28ul3r7R1nmihvYvGg/lOYsQ==}
+  /vite-plugin-compression/0.5.0_vite@2.7.13:
+    resolution: {integrity: sha512-5Rwid9Q2B59aiQGauh7cw9uJI5OVTAuWkGwAsLza/uPxaGIHtMHe8q5OpXddalQFsQqS2GZ+fvQjJBS5kTJO5w==}
     peerDependencies:
       vite: '>=2.0.0'
     dependencies:

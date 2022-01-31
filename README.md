@@ -135,10 +135,11 @@ pnpm run dev
 
 ## 使用
 
-### 项目结构
+### 目录结构
 
 ```sh
 .
+├── .github                     # github 配置目录
 ├── .husky                      # husky 配置目录
 ├── public
 ├── src
@@ -178,6 +179,7 @@ pnpm run dev
 ├── pnpm-lock.yaml
 ├── postcss.config.js           # postcss 配置文件
 ├── README.md
+├── renovate.json               # renovate 配置文件
 ├── tailwind.config.js          # tailwindcss 配置文件
 ├── tsconfig.json               # typescript 配置文件
 └── vite.config.ts              # vite 配置文件
@@ -190,6 +192,18 @@ pnpm run dev
 ### 路由
 
 使用 [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) 和 [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts) 实现约定式路由。
+
+### 状态
+
+使用 [pinia](https://pinia.vuejs.org/) 作为状态管理工具。
+
+### 请求
+
+使用 [axios](https://axios-http.com/zh/) 作为底层请求，使用 [vue-query](https://vue-query.vercel.app/) 管理底层请求。
+
+查看 [@/utils/request.ts](./src/utils/request.ts) 了解预设配置。
+
+如果不喜欢 vue-query，也可以自行配置 [useFetch](https://vueuse.org/core/useFetch/) 或 [useAxios](https://vueuse.org/integrations/useAxios/) 使用。
 
 ### 部署
 

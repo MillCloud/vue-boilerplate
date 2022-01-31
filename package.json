@@ -67,7 +67,7 @@
     "npm-check-updates": "~12.2.1",
     "picocolors": "~1.0.0",
     "postcss-flexbugs-fixes": "~5.0.2",
-    "postcss-preset-env": "~7.2.3",
+    "postcss-preset-env": "~7.3.0",
     "prettier": "~2.5.1",
     "release-it": "~14.12.4",
     "rimraf": "~3.0.2",

@@ -162,25 +162,25 @@ pnpm run dev
 │   ├── shims-jsx.d.ts
 │   ├── shims-vue-query.d.ts
 │   └── shims-vue.d.ts
-├── .commitlintrc.js            # commitlint 配置文件
+├── .commitlintrc.cjs           # commitlint 配置文件
 ├── .editorconfig
 ├── .env                        # 所有环境都载入的环境变量
-├── .eslintrc.js                # eslint 配置文件
+├── .eslintrc.cjs               # eslint 配置文件
 ├── .gitattributes              # git 配置文件
 ├── .gitignore                  # git 配置文件
-├── .lintstagedrc.js            # lint-staged 配置文件
+├── .lintstagedrc.cjs           # lint-staged 配置文件
 ├── .markdownlint.json          # markdownlint 配置文件
 ├── .npmrc                      # npm 配置文件
-├── .prettierrc.js              # prettier 配置文件
-├── .release-it.js              # release-it 配置文件
-├── .stylelintrc.js             # stylelint 配置文件
+├── .postcssrc.cjs              # postcss 配置文件
+├── .prettierrc.cjs             # prettier 配置文件
+├── .release-it.cjs             # release-it 配置文件
+├── .stylelintrc.cjs            # stylelint 配置文件
 ├── index.html
 ├── package.json
 ├── pnpm-lock.yaml
-├── postcss.config.js           # postcss 配置文件
 ├── README.md
 ├── renovate.json               # renovate 配置文件
-├── tailwind.config.js          # tailwindcss 配置文件
+├── tailwind.config.cjs         # tailwindcss 配置文件
 ├── tsconfig.json               # typescript 配置文件
 └── vite.config.ts              # vite 配置文件
 ```

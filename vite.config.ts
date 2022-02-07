@@ -14,6 +14,7 @@ import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import compression from 'vite-plugin-compression';
 // import mkcert from 'vite-plugin-mkcert';
+import pkg from './package.json';
 
 export default defineConfig({
   css: {
@@ -24,25 +25,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: [
-      '@iconify/vue2',
-      '@modyqyw/utils',
-      '@vue/composition-api',
-      '@vueuse/core',
-      '@vueuse/integrations',
-      'axios',
-      'browser-update',
-      'dayjs',
-      'element-ui',
-      'nprogress',
-      'pinia',
-      'query-string',
-      'vue',
-      'vue-query',
-      'vue-query/devtools',
-      'vue-router',
-      'vue2-helpers/vue-router',
-    ],
+    include: Object.keys(pkg.dependencies),
   },
   plugins: [
     vue2(),

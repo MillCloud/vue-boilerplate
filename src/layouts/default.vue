@@ -1,5 +1,5 @@
 <template>
-  <el-container class="relative h-screen bg-gray-4">
+  <el-container class="relative h-screen bg-gray-100">
     <el-main>
       <router-view />
     </el-main>

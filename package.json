@@ -27,7 +27,7 @@
     "@modyqyw/utils": "~2.1.2",
     "@vue/composition-api": "~1.4.5",
     "@vueuse/core": "~7.5.5",
-    "@vueuse/integrations": "~7.5.5",
+    "@vueuse/integrations": "~7.6.0",
     "axios": "~0.25.0",
     "browser-update": "~3.3.37",
     "color": "~4.2.0",

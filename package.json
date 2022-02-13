@@ -47,7 +47,7 @@
   "devDependencies": {
     "@babel/core": "~7.17.2",
     "@babel/eslint-parser": "~7.17.0",
-    "@commitlint/cli": "~16.1.0",
+    "@commitlint/cli": "~16.2.0",
     "@iconify/json": "~2.0.35",
     "@modyqyw/fabric": "~4.12.0",
     "@types/browser-update": "~3.3.0",

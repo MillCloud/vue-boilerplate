@@ -28,7 +28,7 @@
     "@vue/composition-api": "~1.4.6",
     "@vueuse/core": "~7.6.2",
     "@vueuse/integrations": "~7.6.2",
-    "axios": "~0.25.0",
+    "axios": "~0.26.0",
     "browser-update": "~3.3.38",
     "color": "~4.2.1",
     "dayjs": "~1.10.7",

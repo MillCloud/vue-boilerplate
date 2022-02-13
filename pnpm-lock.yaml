@@ -20,7 +20,7 @@ specifiers:
   '@vue/runtime-dom': ~3.2.31
   '@vueuse/core': ~7.6.2
   '@vueuse/integrations': ~7.6.2
-  axios: ~0.25.0
+  axios: ~0.26.0
   browser-update: ~3.3.38
   color: ~4.2.1
   commitizen: ~4.2.4
@@ -75,8 +75,8 @@ dependencies:
   '@modyqyw/utils': 2.1.2
   '@vue/composition-api': 1.4.6_vue@2.6.14
   '@vueuse/core': 7.6.2_3f39d8fe5118d28f4db30f0090a1b0cf
-  '@vueuse/integrations': 7.6.2_0964947bb852f6e8b99df7675cc0fe1c
-  axios: 0.25.0
+  '@vueuse/integrations': 7.6.2_6fc6c99d5ac07a499bc930903f18804f
+  axios: 0.26.0
   browser-update: 3.3.38
   color: 4.2.1
   dayjs: 1.10.7
@@ -1875,7 +1875,7 @@ packages:
       vue-demi: 0.12.1_3f39d8fe5118d28f4db30f0090a1b0cf
     dev: false
 
-  /@vueuse/integrations/7.6.2_0964947bb852f6e8b99df7675cc0fe1c:
+  /@vueuse/integrations/7.6.2_6fc6c99d5ac07a499bc930903f18804f:
     resolution: {integrity: sha512-S5HAChCaHtFSlPQtf8fgNll21QZNWrsnD7+2egYd1UQkJbZDsuhZ5y5qJitvjH9FrPHFanU5MHAqylaWoTO2uw==}
     peerDependencies:
       axios: '*'
@@ -1906,7 +1906,7 @@ packages:
     dependencies:
       '@vueuse/core': 7.6.2_3f39d8fe5118d28f4db30f0090a1b0cf
       '@vueuse/shared': 7.6.2_3f39d8fe5118d28f4db30f0090a1b0cf
-      axios: 0.25.0
+      axios: 0.26.0
       nprogress: 0.2.0
       vue-demi: 0.12.1_3f39d8fe5118d28f4db30f0090a1b0cf
     transitivePeerDependencies:
@@ -2278,8 +2278,8 @@ packages:
       - debug
     dev: true
 
-  /axios/0.25.0:
-    resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
+  /axios/0.26.0:
+    resolution: {integrity: sha512-lKoGLMYtHvFrPVt3r+RBMp9nh34N0M8zEfCWqdWZx6phynIEhQqAdydpyBAAG211zlhX9Rgu08cOamy6XjE5Og==}
     dependencies:
       follow-redirects: 1.14.8
     transitivePeerDependencies:

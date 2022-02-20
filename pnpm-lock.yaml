@@ -33,7 +33,7 @@ specifiers:
   lint-staged: ~12.3.3
   markdownlint-cli: ~0.31.1
   modern-normalize: ~1.1.0
-  npm-check-updates: ~12.3.0
+  npm-check-updates: ~12.4.0
   nprogress: ~0.2.0
   picocolors: ~1.0.0
   pinia: ~2.0.11
@@ -114,7 +114,7 @@ devDependencies:
   is-ci: 3.0.1
   lint-staged: 12.3.3
   markdownlint-cli: 0.31.1
-  npm-check-updates: 12.3.0
+  npm-check-updates: 12.4.0
   picocolors: 1.0.0
   postcss-flexbugs-fixes: 5.0.2
   postcss-preset-env: 7.3.3
@@ -950,7 +950,7 @@ packages:
       '@commitlint/types': 16.0.0
       '@ota-meshi/eslint-plugin-svelte': 0.28.0_eslint@8.9.0
       '@types/eslint': 8.4.1
-      '@types/node': 17.0.17
+      '@types/node': 17.0.18
       '@types/prettier': 2.4.4
       '@typescript-eslint/eslint-plugin': 5.11.0_15a231715447500ed5c06da64c8aef1c
       '@typescript-eslint/parser': 5.11.0_eslint@8.9.0+typescript@4.5.5
@@ -1058,18 +1058,21 @@ packages:
   /@npmcli/fs/1.1.0:
     resolution: {integrity: sha512-VhP1qZLXcrXRIaPoqb4YA55JQxLNF3jNR4T55IdOJa3+IFJKNYHtPvtXx8slmeMavj37vCzCfrqQM1vWLsYKLA==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16}
+    deprecated: this version had an improper engines field added, update to 1.1.1
     dependencies:
       '@gar/promisify': 1.1.2
       semver: 7.3.5
     dev: true
 
-  /@npmcli/git/2.1.0:
-    resolution: {integrity: sha512-/hBFX/QG1b+N7PZBFs0bi+evgRZcK9nWBxQKZkGoXUT5hJSwl5c4d7y8/hm+NQZRPhQ67RzFaj5UM9YeyKoryw==}
+  /@npmcli/git/3.0.0:
+    resolution: {integrity: sha512-xfSBJ+KBMZWWqRHFbEgIaXG/LtELHrQZMJ72Gkb3yWdHysu/7+VGOs8ME0c3td7QNQX57Ggo3kYL6ylcd70/kA==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
     dependencies:
       '@npmcli/promise-spawn': 1.3.2
-      lru-cache: 6.0.0
+      lru-cache: 7.3.1
       mkdirp: 1.0.4
-      npm-pick-manifest: 6.1.1
+      npm-pick-manifest: 7.0.0
+      proc-log: 2.0.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
       semver: 7.3.5
@@ -1317,7 +1320,7 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.1
       '@types/keyv': 3.1.3
-      '@types/node': 17.0.17
+      '@types/node': 17.0.18
       '@types/responselike': 1.0.0
     dev: true
 
@@ -1352,7 +1355,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 3.0.5
-      '@types/node': 17.0.17
+      '@types/node': 17.0.18
     dev: true
 
   /@types/http-cache-semantics/4.0.1:
@@ -1370,7 +1373,7 @@ packages:
   /@types/keyv/3.1.3:
     resolution: {integrity: sha512-FXCJgyyN3ivVgRoml4h94G/p3kY+u/B86La+QptcqJaWtBWtmc6TtkNfS40n9bIvyLteHh7zXOtgbobORKPbDg==}
     dependencies:
-      '@types/node': 17.0.17
+      '@types/node': 17.0.18
     dev: true
 
   /@types/lodash-es/4.17.6:
@@ -1405,6 +1408,10 @@ packages:
     resolution: {integrity: sha512-e8PUNQy1HgJGV3iU/Bp2+D/DXh3PYeyli8LgIwsQcs1Ar1LoaWHSIT6Rw+H2rNJmiq6SNWiDytfx8+gYj7wDHw==}
     dev: true
 
+  /@types/node/17.0.18:
+    resolution: {integrity: sha512-eKj4f/BsN/qcculZiRSujogjvp5O/k4lOW5m35NopjZM/QwLOR075a8pJW5hD+Rtdm2DaCVPENS6KtSQnUD6BA==}
+    dev: true
+
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
@@ -1424,7 +1431,7 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 17.0.17
+      '@types/node': 17.0.18
     dev: true
 
   /@types/retry/0.12.1:
@@ -2368,6 +2375,12 @@ packages:
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
+
+  /brace-expansion/2.0.1:
+    resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+    dependencies:
+      balanced-match: 1.0.2
+    dev: true
 
   /braces/3.0.2:
     resolution: {integrity: sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==}
@@ -5885,6 +5898,11 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /lru-cache/7.3.1:
+    resolution: {integrity: sha512-nX1x4qUrKqwbIAhv4s9et4FIUVzNOpeY07bsjGUy8gwJrXH/wScImSQqXErmo/b2jZY2r0mohbLA9zVj7u1cNw==}
+    engines: {node: '>=12'}
+    dev: true
+
   /macos-release/2.5.0:
     resolution: {integrity: sha512-EIgv+QZ9r+814gjJj0Bt5vSLJLzswGmSUbUpbi9AIr/fsN2IWFBl2NucV9PAiek+U1STK468tEkxmVYUtuAN3g==}
     engines: {node: '>=6'}
@@ -5907,8 +5925,8 @@ packages:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     dev: true
 
-  /make-fetch-happen/10.0.0:
-    resolution: {integrity: sha512-CREcDkbKZZ64g5MN1FT+u58mDHX9FQFFtFyio5HonX44BdQdytqPZBXUz+6ibi2w/6ncji59f2phyXGSMGpgzA==}
+  /make-fetch-happen/10.0.3:
+    resolution: {integrity: sha512-CzarPHynPpHjhF5in/YapnO44rSZeYX5VCMfdXa99+gLwpbfFLh20CWa6dP/taV9Net9PWJwXNKtp/4ZTCQnag==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16}
     dependencies:
       agentkeepalive: 4.2.0
@@ -5917,7 +5935,7 @@ packages:
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.0
       is-lambda: 1.0.1
-      lru-cache: 6.0.0
+      lru-cache: 7.3.1
       minipass: 3.1.6
       minipass-collect: 1.0.2
       minipass-fetch: 1.4.1
@@ -6155,6 +6173,13 @@ packages:
     resolution: {integrity: sha512-tUpxzX0VAzJHjLu0xUfFv1gwVp9ba3IOuRAVH2EGuRW8a5emA2FlACLqiT/lDVtS1W+TGNwqz3sWaNyLgDJWuw==}
     dependencies:
       brace-expansion: 1.1.11
+
+  /minimatch/5.0.0:
+    resolution: {integrity: sha512-EU+GCVjXD00yOUf1TwAHVP7v3fBD3A8RkkPYsWWKGWesxM/572sL53wJQnHxquHlRhYUV36wHkqrN8cdikKc2g==}
+    engines: {node: '>=10'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: true
 
   /minimist-options/4.1.0:
     resolution: {integrity: sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==}
@@ -6407,15 +6432,15 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/12.3.0:
-    resolution: {integrity: sha512-NcVpbVYZymmr7lVCwqz1wpkAgWNQ/XyyPy/yyR2IjCHU4Dr1lpIJgIgtC0PCDobcYuYXpYSIgIWZA7RFvq8+Rw==}
+  /npm-check-updates/12.4.0:
+    resolution: {integrity: sha512-X14H74M8SVFkStmP1NDOMh0OjLB3mU2dwUeM71zyITJHkm08MASwwTcydW6YuGcNW1RUlVq1cQY2yWijv4zKUQ==}
     engines: {node: '>=12'}
     hasBin: true
     dependencies:
       chalk: 4.1.2
       cint: 8.2.1
       cli-table: 0.3.11
-      commander: 8.3.0
+      commander: 9.0.0
       fast-memoize: 2.5.2
       find-up: 5.0.0
       fp-and-or: 0.1.3
@@ -6426,9 +6451,9 @@ packages:
       jsonlines: 0.1.1
       libnpmconfig: 1.2.1
       lodash: 4.17.21
-      minimatch: 3.0.5
+      minimatch: 5.0.0
       p-map: 4.0.0
-      pacote: 12.0.3
+      pacote: 13.0.2
       parse-github-url: 1.0.2
       progress: 2.0.3
       prompts: 2.4.2
@@ -6456,9 +6481,9 @@ packages:
     resolution: {integrity: sha512-EPfafl6JL5/rU+ot6P3gRSCpPDW5VmIzX959Ob1+ySFUuuYHWHekXpwdUZcKP5C+DS4GEtdJluwBjnsNDl+fSA==}
     dev: true
 
-  /npm-package-arg/8.1.5:
-    resolution: {integrity: sha512-LhgZrg0n0VgvzVdSm1oiZworPbTxYHUJCgtsJW8mGvlDpxTM1vSJc3m5QZeUkhAHIzbz3VCHd/R4osi1L1Tg/Q==}
-    engines: {node: '>=10'}
+  /npm-package-arg/9.0.0:
+    resolution: {integrity: sha512-yhzXxeor+Zfhe5MGwPdDumz6HtNlj2pMekWB95IX3CC6uDNgde0oPKHDCLDPoJqQfd0HqAWt+y4Hs5m7CK1+9Q==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
     dependencies:
       hosted-git-info: 4.1.0
       semver: 7.3.5
@@ -6476,25 +6501,27 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-pick-manifest/6.1.1:
-    resolution: {integrity: sha512-dBsdBtORT84S8V8UTad1WlUyKIY9iMsAmqxHbLdeEeBNMLQDlDWWra3wYUx9EBEIiG/YwAy0XyNHDd2goAsfuA==}
+  /npm-pick-manifest/7.0.0:
+    resolution: {integrity: sha512-njM1AcdioFaKd0JSGtLO09YA1WRwctjGQJbnHGmKS+u+uwP8oFvtZtOQWPYdxrnY5eJud3wn8OpH4sEIx6+GEQ==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
     dependencies:
       npm-install-checks: 4.0.0
       npm-normalize-package-bin: 1.0.1
-      npm-package-arg: 8.1.5
+      npm-package-arg: 9.0.0
       semver: 7.3.5
     dev: true
 
-  /npm-registry-fetch/12.0.1:
-    resolution: {integrity: sha512-ricy4ezH3Uv0d4am6RSwHjCYTWJI74NJjurIigWMAG7Vs3PFyd0TUlkrez5L0AgaPzDLRsEzqb5cOZ/Ue01bmA==}
+  /npm-registry-fetch/13.0.0:
+    resolution: {integrity: sha512-MmiMuV9DU5gRuAU0jia952Qq+E4h7ZoUaeltCXivhClcqfOVKqNLZEQsRUOb6a8WQY+um8x97JcUuaWFoPoBBw==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16}
     dependencies:
-      make-fetch-happen: 10.0.0
+      make-fetch-happen: 10.0.3
       minipass: 3.1.6
       minipass-fetch: 1.4.1
       minipass-json-stream: 1.0.1
       minizlib: 2.1.2
-      npm-package-arg: 8.1.5
+      npm-package-arg: 9.0.0
+      proc-log: 2.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6760,12 +6787,12 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /pacote/12.0.3:
-    resolution: {integrity: sha512-CdYEl03JDrRO3x18uHjBYA9TyoW8gy+ThVcypcDkxPtKlw76e4ejhYB6i9lJ+/cebbjpqPW/CijjqxwDTts8Ow==}
+  /pacote/13.0.2:
+    resolution: {integrity: sha512-3LyfvDk2BSJNFQZIcDqnLNa7IsYb6KwX3H9uZPwaHJFIX6Gv5N9QHU+s7mEs/RbN4/ta6KUT39LAi2l6EkBi5A==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16}
     hasBin: true
     dependencies:
-      '@npmcli/git': 2.1.0
+      '@npmcli/git': 3.0.0
       '@npmcli/installed-package-contents': 1.0.7
       '@npmcli/promise-spawn': 1.3.2
       '@npmcli/run-script': 2.0.0
@@ -6775,11 +6802,13 @@ packages:
       infer-owner: 1.0.4
       minipass: 3.1.6
       mkdirp: 1.0.4
-      npm-package-arg: 8.1.5
+      npm-package-arg: 9.0.0
       npm-packlist: 3.0.0
-      npm-pick-manifest: 6.1.1
-      npm-registry-fetch: 12.0.1
+      npm-pick-manifest: 7.0.0
+      npm-registry-fetch: 13.0.0
+      proc-log: 2.0.0
       promise-retry: 2.0.1
+      read-package-json: 4.1.1
       read-package-json-fast: 2.0.3
       rimraf: 3.0.2
       ssri: 8.0.1
@@ -7400,6 +7429,11 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
+  /proc-log/2.0.0:
+    resolution: {integrity: sha512-I/35MfCX2H8jBUhKN8JB8nmqvQo/nKdrBodBY7L3RhDSPPyvOHwLYNmPuhwuJq7a7C3vgFKWGQM+ecPStcvOHA==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
+    dev: true
+
   /progress/2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
@@ -7666,6 +7700,16 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       json-parse-even-better-errors: 2.3.1
+      npm-normalize-package-bin: 1.0.1
+    dev: true
+
+  /read-package-json/4.1.1:
+    resolution: {integrity: sha512-P82sbZJ3ldDrWCOSKxJT0r/CXMWR0OR3KRh55SgKo3p91GSIEEC32v3lSHAvO/UcH3/IoL7uqhOFBduAnwdldw==}
+    engines: {node: '>=10'}
+    dependencies:
+      glob: 7.2.0
+      json-parse-even-better-errors: 2.3.1
+      normalize-package-data: 3.0.3
       npm-normalize-package-bin: 1.0.1
     dev: true
 

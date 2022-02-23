@@ -1,4 +1,5 @@
 import './composition-api';
-import './pinia';
 import './dayjs';
 import './element';
+import './pinia';
+import './vue-query';

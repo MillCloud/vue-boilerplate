@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
+import type { VueQueryPluginOptions } from 'vue-query';
 import { isRef, isReactive, unref } from '@vue/composition-api';
 import { isArray, isObject } from '@modyqyw/utils';
 import qs from 'query-string';
@@ -194,3 +195,7 @@ export const queryClient = new QueryClient({
     },
   },
 });
+
+export const vueQueryPluginOptions: VueQueryPluginOptions = {
+  queryClient,
+};

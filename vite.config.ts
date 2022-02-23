@@ -17,9 +17,6 @@ import compression from 'vite-plugin-compression';
 import pkg from './package.json';
 
 export default defineConfig({
-  build: {
-    target: 'es2015',
-  },
   css: {
     preprocessorOptions: {
       scss: {

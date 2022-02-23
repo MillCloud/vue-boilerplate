@@ -52,9 +52,7 @@ export default defineConfig({
     }),
     legacy({
       targets: [
-        '> 0.2%',
-        'last 2 versions',
-        'not dead',
+        'defaults',
         'chrome >= 49',
         'firefox >= 54',
         'safari >= 8',

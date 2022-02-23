@@ -14,7 +14,6 @@ import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import compression from 'vite-plugin-compression';
 // import mkcert from 'vite-plugin-mkcert';
-import pkg from './package.json';
 
 export default defineConfig({
   css: {
@@ -23,9 +22,6 @@ export default defineConfig({
         additionalData: '@import "@/styles/variables.scss";',
       },
     },
-  },
-  optimizeDeps: {
-    include: Object.keys(pkg.dependencies),
   },
   plugins: [
     vue2(),

@@ -14,6 +14,11 @@ declare global {
     response?: IResponse;
   }
 
+  interface IMutationVariables extends AxiosRequestConfig {
+    showError?: boolean;
+    showErrorType?: 'alert' | 'message' | 'notification';
+  }
+
   type TPageLimit = 10 | 20 | 50 | 100;
 }
 

@@ -1,4 +1,4 @@
-import type { AxiosError, AxiosResponse } from 'axios';
+import type { AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
 
 declare global {
   interface IResponseData {

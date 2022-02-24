@@ -2,7 +2,7 @@ import pkg from '@/../package.json';
 
 export { default as pkg } from '@/../package.json';
 
-export const DefaultHeaders = {
+export const Headers = {
   Accept: 'application/json',
   'Content-Type': 'application/json; charset=utf-8',
   'X-Requested-With': 'XMLHttpRequest',

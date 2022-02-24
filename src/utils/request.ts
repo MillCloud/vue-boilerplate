@@ -6,7 +6,7 @@ import { isRef, isReactive, unref } from '@vue/composition-api';
 import { isArray, isObject } from '@modyqyw/utils';
 import qs from 'query-string';
 import router from '@/router';
-import { DefaultHeaders } from '@/constants';
+import { Headers } from '@/constants';
 import { removeToken, getToken } from './storage';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
@@ -15,7 +15,7 @@ const instance = axios.create({
   baseURL: process.env.VITE_REQUEST_BASE_URL || '',
   timeout: 30_000,
   headers: {
-    ...DefaultHeaders,
+    ...Headers,
   },
   paramsSerializer: (params: Record<string, any>) =>
     qs.stringify(

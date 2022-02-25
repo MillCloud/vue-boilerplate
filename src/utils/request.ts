@@ -3,7 +3,7 @@ import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import type { VueQueryPluginOptions } from 'vue-query';
 import { isRef, isReactive, unref } from '@vue/composition-api';
-import { isArray, isObject } from '@modyqyw/utils';
+import { isObject } from 'lodash-es';
 import qs from 'query-string';
 import router from '@/router';
 import { Headers } from '@/constants';
@@ -91,7 +91,7 @@ export const queryClient = new QueryClient({
         // console.log('queryKey', queryKey);
         // console.log('');
         let url = `${queryKey[0]}`;
-        if (isArray(queryKey[1])) {
+        if (Array.isArray(queryKey[1])) {
           queryKey[1].forEach((item, index) => {
             url = url.replace(`:${index}`, `${unref(item)}`);
           });

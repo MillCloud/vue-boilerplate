@@ -1,9 +1,9 @@
 <template>
   <el-container class="relative h-screen bg-gray-100">
-    <el-main>
+    <el-main class="p-20">
       <router-view />
     </el-main>
-    <el-footer class="center">
+    <el-footer class="flex items-center justify-center">
       <template v-if="network.isSupported">
         <Icon
           :class="{ 'text-danger': networkText.includes('请检查') }"
@@ -40,9 +40,3 @@ const networkText = computed(() => {
   return '网络正常';
 });
 </script>
-
-<style scoped lang="scss">
-.el-main {
-  padding: 80px;
-}
-</style>

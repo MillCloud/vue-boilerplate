@@ -44,25 +44,3 @@
     --color-text: var(--vt-c-text-dark-2);
   }
 }
-
-.expansion {
-  position: relative;
-
-  &::after {
-    position: absolute;
-    top: -0.75rem;
-    right: -0.75rem;
-    bottom: -0.75rem;
-    left: -0.75rem;
-    color: transparent;
-    content: "";
-    background-color: transparent;
-    border-color: transparent;
-  }
-}
-
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

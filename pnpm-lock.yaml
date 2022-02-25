@@ -13,7 +13,7 @@ specifiers:
   '@types/color': ^3.0.3
   '@types/lodash-es': ^4.17.6
   '@types/nprogress': ^0.2.0
-  '@types/ramda': ^0.27.65
+  '@types/ramda': ^0.28.0
   '@types/statuses': ^2.0.0
   '@typescript-eslint/eslint-plugin': ^5.12.1
   '@typescript-eslint/parser': ^5.12.1
@@ -109,7 +109,7 @@ devDependencies:
   '@types/color': 3.0.3
   '@types/lodash-es': 4.17.6
   '@types/nprogress': 0.2.0
-  '@types/ramda': 0.27.65
+  '@types/ramda': 0.28.0
   '@types/statuses': 2.0.0
   '@typescript-eslint/eslint-plugin': 5.12.1_aa3af6382115a42a71cc388b7b2c30b3
   '@typescript-eslint/parser': 5.12.1_eslint@8.9.0+typescript@4.5.5
@@ -1395,8 +1395,8 @@ packages:
     resolution: {integrity: sha512-ReVR2rLTV1kvtlWFyuot+d1pkpG2Fw/XKE3PDAdj57rbM97ttSp9JZ2UsP+2EHTylra9cUf6JA7tGwW1INzUrA==}
     dev: true
 
-  /@types/ramda/0.27.65:
-    resolution: {integrity: sha512-JVX1qgW9xxKUraEbiftgrREtf8A2m+2IAl32oh9pHCrNj0nwPRnOhuvghn1ELTCjTq66slejsePafMXjbHpPAA==}
+  /@types/ramda/0.28.0:
+    resolution: {integrity: sha512-w3NK/csQSMwTTkC5iCXZu+b0RL55oZYZVEkPBtimL892KcmSQtleZV+Ytm/znFYiXQXjGjHrzfk3YURez8V7ig==}
     dependencies:
       ts-toolbelt: 6.15.5
     dev: true

@@ -57,7 +57,7 @@
     "@types/color": "^3.0.3",
     "@types/lodash-es": "^4.17.6",
     "@types/nprogress": "^0.2.0",
-    "@types/ramda": "^0.27.65",
+    "@types/ramda": "^0.28.0",
     "@types/statuses": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",

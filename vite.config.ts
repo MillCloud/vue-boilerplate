@@ -10,7 +10,7 @@ import icons from 'unplugin-icons/vite';
 import iconsResolver from 'unplugin-icons/resolver';
 import legacy from '@vitejs/plugin-legacy';
 import env from 'vite-plugin-env-compatible';
-import eslint from 'vite-plugin-eslint';
+import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import compression from 'vite-plugin-compression';
 // import mkcert from 'vite-plugin-mkcert';

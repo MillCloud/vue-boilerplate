@@ -41,7 +41,6 @@ export default defineConfig({
     }),
     layouts(),
     vueComponents({
-      // dts: 'src/components.d.ts',
       resolvers: [iconsResolver()],
     }),
     icons({

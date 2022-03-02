@@ -2,6 +2,7 @@ import Vue from 'vue';
 import '@/plugins';
 import { createPinia } from 'pinia';
 import browserUpdate from 'browser-update';
+import { Icon } from '@iconify/vue2';
 import router from './router';
 import App from './App.vue';
 import '@/styles/preflight.scss';
@@ -13,6 +14,8 @@ browserUpdate({
   insecure: true,
   unsupported: true,
 });
+
+Vue.component('VIcon', Icon);
 
 const app = new Vue({
   router,

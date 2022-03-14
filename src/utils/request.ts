@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { MessageBox, Notification, Message } from 'element-ui';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
-import type { VueQueryPluginOptions } from 'vue-query';
 import { isRef, isReactive, unref } from '@vue/composition-api';
 import { isObject } from 'lodash-es';
 import qs from 'query-string';
 import router from '@/router';
 import { Headers } from '@/constants';
 import { removeToken, getToken } from './storage';
+import type { VueQueryPluginOptions } from 'vue-query';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 

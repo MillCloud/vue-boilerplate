@@ -1,5 +1,5 @@
-import type { PluginObject } from 'vue';
 import { Icon } from '@iconify/vue2';
+import type { PluginObject } from 'vue';
 
 const Components: PluginObject<any> = {
   install: (Vue) => {

@@ -8,7 +8,7 @@
 
 如果你想要快速开发桌面端应用，请考虑使用 [electron](https://www.electronjs.org/) 或 [tauri](https://tauri.studio/)。
 
-**2022-02-07 Vue 3 成为新的默认版本。该模板只会支持 Vue 2 最新版本到 EOL。Vue 3 模板请查看 [boilerplate-vue3](https://github.com/MillCloud/boilerplate-vue3)。**
+**2022-02-07 Vue 3 成为新的默认版本。该模板只会支持 Vue 2 最新版本到 EOL，且不会频繁更新。Vue 3 模板请查看 [boilerplate-vue3](https://github.com/MillCloud/boilerplate-vue3)。**
 
 ### 主要依赖
 

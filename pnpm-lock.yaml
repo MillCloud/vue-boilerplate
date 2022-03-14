@@ -68,7 +68,7 @@ specifiers:
   vite-plugin-vue2: ^1.9.3
   vue: ^2.6.14
   vue-query: ^1.19.2
-  vue-router: ^3.5.3
+  vue-router: ^4.0.0
   vue-template-compiler: ^2.6.14
   vue-tsc: ^0.33.1
   vue2-helpers: ^1.1.7
@@ -93,8 +93,8 @@ dependencies:
   statuses: 2.0.1
   vue: 2.6.14
   vue-query: 1.19.2_8414dc0546a7fec2b290b41e4edbca0b
-  vue-router: 3.5.3
-  vue2-helpers: 1.1.7_a35b385fd499ebafc9bb78fdd0cb0154
+  vue-router: 4.0.14_vue@2.6.14
+  vue2-helpers: 1.1.7_3ac6a40cac80e12383c9cca7c812539e
   vuex: 3.6.2_vue@2.6.14
 
 devDependencies:
@@ -145,7 +145,7 @@ devDependencies:
   vite-plugin-mkcert: 1.6.0
   vite-plugin-pages: 0.21.4_vite@2.8.6
   vite-plugin-stylelint: 1.2.0_vite@2.8.6
-  vite-plugin-vue-layouts: 0.6.0_d11a041fb9dbdeb02c768bc634e45b0d
+  vite-plugin-vue-layouts: 0.6.0_ce47518b38a5659ab7a7b864524f59c4
   vite-plugin-vue2: 1.9.3_79e5dcfe8bf02d151f183bc73f7677d5
   vue-template-compiler: 2.6.14
   vue-tsc: 0.33.1_typescript@4.6.2
@@ -8942,7 +8942,7 @@ packages:
       vite: 2.8.6_sass@1.49.9
     dev: true
 
-  /vite-plugin-vue-layouts/0.6.0_d11a041fb9dbdeb02c768bc634e45b0d:
+  /vite-plugin-vue-layouts/0.6.0_ce47518b38a5659ab7a7b864524f59c4:
     resolution: {integrity: sha512-7QX7o/NpCfs+hyXphwYfmPqAEQ6qd4uXsvI0VsovjGT2eCoEE5dMdP6L+uqqNWY4uqv7oCvtinecZmbzZv/9Rg==}
     peerDependencies:
       vite: ^2.5.0
@@ -8954,7 +8954,7 @@ packages:
       fast-glob: 3.2.11
       vite: 2.8.6_sass@1.49.9
       vue: 2.6.14
-      vue-router: 3.5.3
+      vue-router: 4.0.14_vue@2.6.14
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9166,8 +9166,13 @@ packages:
       - react-native
     dev: false
 
-  /vue-router/3.5.3:
-    resolution: {integrity: sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg==}
+  /vue-router/4.0.14_vue@2.6.14:
+    resolution: {integrity: sha512-wAO6zF9zxA3u+7AkMPqw9LjoUCjSxfFvINQj3E/DceTt6uEz1XZLraDhdg2EYmvVwTBSGlLYsUw8bDmx0754Mw==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@vue/devtools-api': 6.0.2
+      vue: 2.6.14
     dev: false
 
   /vue-template-compiler/2.6.14:
@@ -9196,7 +9201,7 @@ packages:
     resolution: {integrity: sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==}
     dev: false
 
-  /vue2-helpers/1.1.7_a35b385fd499ebafc9bb78fdd0cb0154:
+  /vue2-helpers/1.1.7_3ac6a40cac80e12383c9cca7c812539e:
     resolution: {integrity: sha512-NLF7bYFPyoKMvn/Bkxr7+7Ure/kZpWmd6pQpG613dT0Sn6EwI+2+LwVUQyDkDk4P0UaAwvn/QEYzhBRzDzuGLw==}
     peerDependencies:
       '@vue/composition-api': ^1
@@ -9207,7 +9212,7 @@ packages:
         optional: true
     dependencies:
       '@vue/composition-api': 1.4.9_vue@2.6.14
-      vue-router: 3.5.3
+      vue-router: 4.0.14_vue@2.6.14
       vuex: 3.6.2_vue@2.6.14
     dev: false
 
